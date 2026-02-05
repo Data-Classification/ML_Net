@@ -17,7 +17,7 @@ namespace MLTest
             // quang khai báo
             // nguyen test
             // test hieu
-            //test thien1
+            //test thien
             var result = SentimentModel.Predict(sampleData);
 
             // If Prediction is 1, sentiment is "Positive"; otherwise, sentiment is "Negative"
