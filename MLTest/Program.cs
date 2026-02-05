@@ -16,7 +16,7 @@ namespace MLTest
             // Load model and predict output of sample data
             // quang khai báo
             // nguyen test
-            // test hieu22222
+            // test hieu22222222
             //test thien
             var result = SentimentModel.Predict(sampleData);
 
