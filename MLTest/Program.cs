@@ -5,9 +5,13 @@ namespace MLTest
     {
         static void Main(string[] args)
         {
+            WriteLine("Enter text to analyze sentiment:");
+            WriteLine();
+            string input = ReadLine();
             var sampleData = new SentimentModel.ModelInput()
             {
-                Col0 = "Youtube is so awful."
+                
+                Col0 = input
             };
 
             // Load model and predict output of sample data
