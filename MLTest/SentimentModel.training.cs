@@ -8,12 +8,13 @@ using System.Threading.Tasks;
 using Microsoft.ML;
 using Microsoft.ML.Data;
 using Microsoft.ML.Trainers;
+using Microsoft.ML.Trainers.FastTree;
 
 namespace MLTest
 {
     public partial class SentimentModel
     {
-        public const string RetrainFilePath =  @"C:\Users\Hieu\Desktop\code\MLTest\MLTest\yelp_labelled.txt";
+        public const string RetrainFilePath =  @"C:\Users\Hieu\Desktop\code\MLTest\MLTest\dataset_converted.txt";
         public const char RetrainSeparatorChar = '	';
         public const bool RetrainHasHeader =  false;
         public const bool RetrainAllowQuoting =  false;
@@ -89,10 +90,10 @@ namespace MLTest
         public static IEstimator<ITransformer> BuildPipeline(MLContext mlContext)
         {
             // Data process configuration with pipeline data transformations
-            var pipeline = mlContext.Transforms.Text.FeaturizeText(inputColumnName:@"col0",outputColumnName:@"col0")      
-                                    .Append(mlContext.Transforms.Concatenate(@"Features", new []{@"col0"}))      
-                                    .Append(mlContext.Transforms.Conversion.MapValueToKey(outputColumnName:@"col1",inputColumnName:@"col1",addKeyValueAnnotationsAsText:false))      
-                                    .Append(mlContext.MulticlassClassification.Trainers.LbfgsMaximumEntropy(new LbfgsMaximumEntropyMulticlassTrainer.Options(){L1Regularization=0.03125F,L2Regularization=0.44549352F,LabelColumnName=@"col1",FeatureColumnName=@"Features"}))      
+            var pipeline = mlContext.Transforms.ReplaceMissingValues(@"col1", @"col1")      
+                                    .Append(mlContext.Transforms.Concatenate(@"Features", new []{@"col1"}))      
+                                    .Append(mlContext.Transforms.Conversion.MapValueToKey(outputColumnName:@"col0",inputColumnName:@"col0",addKeyValueAnnotationsAsText:false))      
+                                    .Append(mlContext.MulticlassClassification.Trainers.OneVersusAll(binaryEstimator:mlContext.BinaryClassification.Trainers.FastTree(new FastTreeBinaryTrainer.Options(){NumberOfLeaves=4,MinimumExampleCountPerLeaf=20,NumberOfTrees=4,MaximumBinCountPerFeature=254,FeatureFraction=1,LearningRate=0.09999999999999998,LabelColumnName=@"col0",FeatureColumnName=@"Features",DiskTranspose=false}),labelColumnName: @"col0"))      
                                     .Append(mlContext.Transforms.Conversion.MapKeyToValue(outputColumnName:@"PredictedLabel",inputColumnName:@"PredictedLabel"));
 
             return pipeline;

@@ -8,14 +8,14 @@
     "KeepPunctuations": false,
     "AllowQuoting": false,
     "Type": "TabularFile",
-    "FilePath": "C:\\Users\\Hieu\\Desktop\\code\\MLTest\\MLTest\\yelp_labelled.txt",
+    "FilePath": "C:\\Users\\Hieu\\Desktop\\code\\MLTest\\MLTest\\dataset_converted.txt",
     "Delimiter": "\t",
     "DecimalMarker": ".",
     "HasHeader": false,
     "ColumnProperties": [
       {
         "ColumnName": "col0",
-        "ColumnPurpose": "Feature",
+        "ColumnPurpose": "Label",
         "ColumnDataFormat": "String",
         "IsCategorical": false,
         "Type": "Column",
@@ -23,7 +23,7 @@
       },
       {
         "ColumnName": "col1",
-        "ColumnPurpose": "Label",
+        "ColumnPurpose": "Feature",
         "ColumnDataFormat": "Single",
         "IsCategorical": true,
         "Type": "Column",
@@ -42,18 +42,22 @@
       {
         "Version": 1,
         "Type": "Trial",
-        "TrainerName": "LbfgsMaximumEntropyMulti",
-        "Score": 0.82071162103959971,
-        "RuntimeInSeconds": 0.243,
+        "TrainerName": "FastTreeOva",
+        "Score": 0.0,
+        "RuntimeInSeconds": 532.768,
         "Parameter": {
-          "_SCHEMA_": "e0 * e1 * e2 * e7 * e10",
+          "_SCHEMA_": "e0 * e1 * e2 * e3 * e10",
           "e0": {
-            "InputColumnName": "col0",
-            "OutputColumnName": "col0"
+            "OutputColumnNames": [
+              "col1"
+            ],
+            "InputColumnNames": [
+              "col1"
+            ]
           },
           "e1": {
             "InputColumnNames": [
-              "col0"
+              "col1"
             ],
             "OutputColumnName": "Features"
           },
@@ -62,161 +66,26 @@
             "InputColumnName": "PredictedLabel"
           },
           "e2": {
-            "OutputColumnName": "col1",
-            "InputColumnName": "col1",
-            "AddKeyValueAnnotationsAsText": false
-          },
-          "e7": {
-            "L1Regularization": 0.03125,
-            "L2Regularization": 0.44549352,
-            "LabelColumnName": "col1",
-            "FeatureColumnName": "Features"
-          }
-        }
-      },
-      {
-        "Version": 1,
-        "Type": "Trial",
-        "TrainerName": "LbfgsMaximumEntropyMulti",
-        "Score": 0.82071162103959971,
-        "RuntimeInSeconds": 0.231,
-        "Parameter": {
-          "_SCHEMA_": "e0 * e1 * e2 * e7 * e10",
-          "e0": {
+            "OutputColumnName": "col0",
             "InputColumnName": "col0",
-            "OutputColumnName": "col0"
-          },
-          "e1": {
-            "InputColumnNames": [
-              "col0"
-            ],
-            "OutputColumnName": "Features"
-          },
-          "e10": {
-            "OutputColumnName": "PredictedLabel",
-            "InputColumnName": "PredictedLabel"
-          },
-          "e2": {
-            "OutputColumnName": "col1",
-            "InputColumnName": "col1",
             "AddKeyValueAnnotationsAsText": false
           },
-          "e7": {
-            "L1Regularization": 0.03125,
-            "L2Regularization": 0.46265578,
-            "LabelColumnName": "col1",
-            "FeatureColumnName": "Features"
-          }
-        }
-      },
-      {
-        "Version": 1,
-        "Type": "Trial",
-        "TrainerName": "LbfgsMaximumEntropyMulti",
-        "Score": 0.82071162103959971,
-        "RuntimeInSeconds": 0.285,
-        "Parameter": {
-          "_SCHEMA_": "e0 * e1 * e2 * e7 * e10",
-          "e0": {
-            "InputColumnName": "col0",
-            "OutputColumnName": "col0"
-          },
-          "e1": {
-            "InputColumnNames": [
-              "col0"
-            ],
-            "OutputColumnName": "Features"
-          },
-          "e10": {
-            "OutputColumnName": "PredictedLabel",
-            "InputColumnName": "PredictedLabel"
-          },
-          "e2": {
-            "OutputColumnName": "col1",
-            "InputColumnName": "col1",
-            "AddKeyValueAnnotationsAsText": false
-          },
-          "e7": {
-            "L1Regularization": 0.03125,
-            "L2Regularization": 0.45987093,
-            "LabelColumnName": "col1",
-            "FeatureColumnName": "Features"
-          }
-        }
-      },
-      {
-        "Version": 1,
-        "Type": "Trial",
-        "TrainerName": "LbfgsMaximumEntropyMulti",
-        "Score": 0.82071162103959971,
-        "RuntimeInSeconds": 0.264,
-        "Parameter": {
-          "_SCHEMA_": "e0 * e1 * e2 * e7 * e10",
-          "e0": {
-            "InputColumnName": "col0",
-            "OutputColumnName": "col0"
-          },
-          "e1": {
-            "InputColumnNames": [
-              "col0"
-            ],
-            "OutputColumnName": "Features"
-          },
-          "e10": {
-            "OutputColumnName": "PredictedLabel",
-            "InputColumnName": "PredictedLabel"
-          },
-          "e2": {
-            "OutputColumnName": "col1",
-            "InputColumnName": "col1",
-            "AddKeyValueAnnotationsAsText": false
-          },
-          "e7": {
-            "L1Regularization": 0.03125,
-            "L2Regularization": 0.43521705,
-            "LabelColumnName": "col1",
-            "FeatureColumnName": "Features"
-          }
-        }
-      },
-      {
-        "Version": 1,
-        "Type": "Trial",
-        "TrainerName": "LbfgsMaximumEntropyMulti",
-        "Score": 0.82071162103959971,
-        "RuntimeInSeconds": 0.273,
-        "Parameter": {
-          "_SCHEMA_": "e0 * e1 * e2 * e7 * e10",
-          "e0": {
-            "InputColumnName": "col0",
-            "OutputColumnName": "col0"
-          },
-          "e1": {
-            "InputColumnNames": [
-              "col0"
-            ],
-            "OutputColumnName": "Features"
-          },
-          "e10": {
-            "OutputColumnName": "PredictedLabel",
-            "InputColumnName": "PredictedLabel"
-          },
-          "e2": {
-            "OutputColumnName": "col1",
-            "InputColumnName": "col1",
-            "AddKeyValueAnnotationsAsText": false
-          },
-          "e7": {
-            "L1Regularization": 0.031430826,
-            "L2Regularization": 0.45601264,
-            "LabelColumnName": "col1",
-            "FeatureColumnName": "Features"
+          "e3": {
+            "NumberOfLeaves": 4,
+            "MinimumExampleCountPerLeaf": 20,
+            "NumberOfTrees": 4,
+            "MaximumBinCountPerFeature": 254,
+            "FeatureFraction": 1.0,
+            "LearningRate": 0.099999999999999978,
+            "LabelColumnName": "col0",
+            "FeatureColumnName": "Features",
+            "DiskTranspose": false
           }
         }
       }
     ],
     "Estimators": {
-      "e0": "FeaturizeText",
+      "e0": "ReplaceMissingValues",
       "e1": "Concatenate",
       "e2": "MapValueToKey",
       "e3": "FastTreeOva",
@@ -238,8 +107,8 @@
     "Version": 2,
     "Subsampling": false,
     "Type": "ClassificationTrainingOption",
-    "TrainingTime": 120,
-    "LabelColumn": "col1",
+    "TrainingTime": 600,
+    "LabelColumn": "col0",
     "ValidationOption": {
       "Version": 0,
       "Type": "CrossValidationValidationOption",

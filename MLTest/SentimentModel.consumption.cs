@@ -34,16 +34,16 @@ namespace MLTest
         public class ModelOutput
         {
             [ColumnName(@"col0")]
-            public float[] Col0 { get; set; }
+            public uint Col0 { get; set; }
 
             [ColumnName(@"col1")]
-            public uint Col1 { get; set; }
+            public float Col1 { get; set; }
 
             [ColumnName(@"Features")]
             public float[] Features { get; set; }
 
             [ColumnName(@"PredictedLabel")]
-            public float PredictedLabel { get; set; }
+            public string PredictedLabel { get; set; }
 
             [ColumnName(@"Score")]
             public float[] Score { get; set; }
@@ -108,14 +108,14 @@ namespace MLTest
         {
             var schema = PredictEngine.Value.OutputSchema;
 
-            var labelColumn = schema.GetColumnOrNull("col1");
+            var labelColumn = schema.GetColumnOrNull("col0");
             if (labelColumn == null)
             {
-                throw new Exception("col1 column not found. Make sure the name searched for matches the name in the schema.");
+                throw new Exception("col0 column not found. Make sure the name searched for matches the name in the schema.");
             }
 
             // Key values contains an ordered array of the possible labels. This allows us to map the results to the correct label value.
-            var keyNames = new VBuffer<float>();
+            var keyNames = new VBuffer<ReadOnlyMemory<char>>();
             labelColumn.Value.GetKeyValues(ref keyNames);
             return keyNames.DenseValues().Select(x => x.ToString());
         }
