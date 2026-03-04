@@ -8,7 +8,7 @@
     "KeepPunctuations": false,
     "AllowQuoting": false,
     "Type": "TabularFile",
-    "FilePath": "C:\\Users\\Hieu\\Desktop\\code\\MLTest\\MLTest\\dataset_converted.txt",
+    "FilePath": "D:\\Visual_Studio_Code\\Cong_Nghe_Phan_Mem\\ML\\ML_Net\\MLTest\\dataset_converted.txt",
     "Delimiter": "\t",
     "DecimalMarker": ".",
     "HasHeader": false,
@@ -44,7 +44,7 @@
         "Type": "Trial",
         "TrainerName": "FastTreeOva",
         "Score": 0.0,
-        "RuntimeInSeconds": 532.768,
+        "RuntimeInSeconds": 675.664,
         "Parameter": {
           "_SCHEMA_": "e0 * e1 * e2 * e3 * e10",
           "e0": {
@@ -82,6 +82,170 @@
             "DiskTranspose": false
           }
         }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "SdcaMaximumEntropyMulti",
+        "Score": 0.0,
+        "RuntimeInSeconds": 3.156,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e8 * e10",
+          "e0": {
+            "OutputColumnNames": [
+              "col1"
+            ],
+            "InputColumnNames": [
+              "col1"
+            ]
+          },
+          "e1": {
+            "InputColumnNames": [
+              "col1"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e10": {
+            "OutputColumnName": "PredictedLabel",
+            "InputColumnName": "PredictedLabel"
+          },
+          "e2": {
+            "OutputColumnName": "col0",
+            "InputColumnName": "col0",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e8": {
+            "L1Regularization": 1.0,
+            "L2Regularization": 0.1,
+            "LabelColumnName": "col0",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "LightGbmMulti",
+        "Score": 0.0,
+        "RuntimeInSeconds": 11.101,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e5 * e10",
+          "e0": {
+            "OutputColumnNames": [
+              "col1"
+            ],
+            "InputColumnNames": [
+              "col1"
+            ]
+          },
+          "e1": {
+            "InputColumnNames": [
+              "col1"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e10": {
+            "OutputColumnName": "PredictedLabel",
+            "InputColumnName": "PredictedLabel"
+          },
+          "e2": {
+            "OutputColumnName": "col0",
+            "InputColumnName": "col0",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e5": {
+            "NumberOfLeaves": 4,
+            "MinimumExampleCountPerLeaf": 20,
+            "LearningRate": 1.0,
+            "NumberOfTrees": 4,
+            "SubsampleFraction": 1.0,
+            "MaximumBinCountPerFeature": 254,
+            "FeatureFraction": 1.0,
+            "L1Regularization": 2E-10,
+            "L2Regularization": 1.0,
+            "LabelColumnName": "col0",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "LbfgsLogisticRegressionOva",
+        "Score": 0.0,
+        "RuntimeInSeconds": 51.702,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e6 * e10",
+          "e0": {
+            "OutputColumnNames": [
+              "col1"
+            ],
+            "InputColumnNames": [
+              "col1"
+            ]
+          },
+          "e1": {
+            "InputColumnNames": [
+              "col1"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e10": {
+            "OutputColumnName": "PredictedLabel",
+            "InputColumnName": "PredictedLabel"
+          },
+          "e2": {
+            "OutputColumnName": "col0",
+            "InputColumnName": "col0",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e6": {
+            "L1Regularization": 1.0,
+            "L2Regularization": 1.0,
+            "LabelColumnName": "col0",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastForestOva",
+        "Score": 0.0,
+        "RuntimeInSeconds": 1468.922,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e4 * e10",
+          "e0": {
+            "OutputColumnNames": [
+              "col1"
+            ],
+            "InputColumnNames": [
+              "col1"
+            ]
+          },
+          "e1": {
+            "InputColumnNames": [
+              "col1"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e10": {
+            "OutputColumnName": "PredictedLabel",
+            "InputColumnName": "PredictedLabel"
+          },
+          "e2": {
+            "OutputColumnName": "col0",
+            "InputColumnName": "col0",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e4": {
+            "NumberOfTrees": 4,
+            "NumberOfLeaves": 4,
+            "FeatureFraction": 1.0,
+            "LabelColumnName": "col0",
+            "FeatureColumnName": "Features"
+          }
+        }
       }
     ],
     "Estimators": {
@@ -99,7 +263,7 @@
     },
     "Schema": "e0 * e1 * e2 * (e3 + e4 + e5 + e6 + e7 + e8 + e9) * e10",
     "MetricName": "MacroAccuracy",
-    "ModelFilePath": "C:\\Users\\Hieu\\Desktop\\code\\MLTest\\MLTest\\SentimentModel.mlnet"
+    "ModelFilePath": "D:\\Visual_Studio_Code\\Cong_Nghe_Phan_Mem\\ML\\ML_Net\\MLTest\\SentimentModel.mlnet"
   },
   "Type": "TrainingConfig",
   "Version": 5,
@@ -107,7 +271,7 @@
     "Version": 2,
     "Subsampling": false,
     "Type": "ClassificationTrainingOption",
-    "TrainingTime": 600,
+    "TrainingTime": 3600,
     "LabelColumn": "col0",
     "ValidationOption": {
       "Version": 0,

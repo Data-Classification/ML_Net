@@ -14,7 +14,7 @@ namespace MLTest
 {
     public partial class SentimentModel
     {
-        public const string RetrainFilePath =  @"C:\Users\Hieu\Desktop\code\MLTest\MLTest\dataset_converted.txt";
+        public const string RetrainFilePath =  @"D:\Visual_Studio_Code\Cong_Nghe_Phan_Mem\ML\ML_Net\MLTest\dataset_converted.txt";
         public const char RetrainSeparatorChar = '	';
         public const bool RetrainHasHeader =  false;
         public const bool RetrainAllowQuoting =  false;
