@@ -5,21 +5,35 @@ namespace MLTest
     {
         static void Main(string[] args)
         {
-            WriteLine("Enter text to analyze sentiment:");
-            WriteLine();
-            string input = ReadLine();
-            var sampleData = new SentimentModel.ModelInput()
+            while (true)
             {
-                
-                Col0 = input
-            };
+                Clear();
+                WriteLine("Enter text to analyze sentiment (or type 'exit' to quit):");
+                WriteLine();
+                string input = ReadLine();
 
-            // Load model and predict output of sample data
-            var result = SentimentModel.Predict(sampleData);
+                // Check if user wants to exit
+                if (input?.ToLower() == "exit" || string.IsNullOrWhiteSpace(input))
+                {
+                    WriteLine("Exiting program...");
+                    break;
+                }
 
-            // If Prediction is 1, sentiment is "Positive"; otherwise, sentiment is "Negative"
-            var sentiment = result.PredictedLabel == "1" ? "Positive" : "Negative";
-            WriteLine($"Text: {sampleData.Col0}\nSentiment: {sentiment}");
+                var sampleData = new SentimentModel.ModelInput()
+                {
+                    Col0 = input!
+                };
+
+                // Load model and predict output of sample data
+                var result = SentimentModel.Predict(sampleData);
+
+                // If Prediction is 1, sentiment is "Positive"; otherwise, sentiment is "Negative"
+                var sentiment = result.PredictedLabel == "1" ? "Positive" : "Negative";
+                WriteLine($"Text: {sampleData.Col0}\nSentiment: {sentiment}");
+                WriteLine(new string('-', 50));
+                WriteLine();
+                ReadKey();
+            }
         }
     }
 }
