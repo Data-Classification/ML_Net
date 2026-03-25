@@ -1,0 +1,2001 @@
+StudentID,Age,Gender,YearOfStudy,Major,GPA
+1,28,Female,2,Business,3.44
+2,17,Non-Binary,3,Computer Science,3.75
+3,23,Non-Binary,4,Arts,2.57
+4,24,Non-Binary,2,Arts,2.81
+5,19,Non-Binary,5,Engineering,3.42
+6,22,Non-Binary,1,Education,2.66
+7,18,Male,4,Biology,3.59
+8,26,Male,3,Biology,3.13
+9,21,Male,1,Nursing,3.08
+10,24,Male,1,Mathematics,2.95
+11,22,Female,1,Nursing,2.83
+12,19,Male,2,Business,2.92
+13,22,Non-Binary,1,Mathematics,3.17
+14,23,Male,4,Arts,3.57
+15,18,Male,2,Psychology,3.35
+16,28,Non-Binary,3,Law,2.3
+17,17,Non-Binary,1,Arts,2.57
+18,25,Male,1,Computer Science,2.21
+19,22,Male,5,Nursing,2.47
+20,19,Female,2,Arts,3.29
+21,24,Non-Binary,4,Mathematics,2.98
+22,28,Non-Binary,1,Engineering,2.32
+23,25,Male,2,Engineering,2.4
+24,19,Male,1,Psychology,4
+25,24,Female,2,Biology,3.16
+26,24,Non-Binary,3,Biology,2.98
+27,17,Male,3,Arts,1.95
+28,19,Female,5,Business,2.51
+29,20,Non-Binary,3,Business,2.84
+30,23,Male,5,Business,2.19
+31,27,Non-Binary,2,Business,2.14
+32,27,Female,4,Education,2.34
+33,23,Male,5,Arts,3.47
+34,26,Female,5,Mathematics,3.11
+35,22,Non-Binary,5,Arts,3.83
+36,21,Male,2,Arts,3.54
+37,28,Female,4,Arts,3.43
+38,27,Female,5,Business,2.75
+39,25,Female,5,Mathematics,1.16
+40,26,Male,4,Arts,2.99
+41,25,Non-Binary,4,Education,3.37
+42,28,Female,4,Engineering,3.31
+43,21,Non-Binary,1,Business,3.44
+44,26,Male,3,Computer Science,2.14
+45,17,Female,5,Engineering,2.89
+46,19,Male,4,Biology,2.85
+47,27,Female,5,Arts,3.19
+48,17,Male,3,Computer Science,3.98
+49,25,Non-Binary,5,Arts,1.77
+50,20,Male,3,Arts,2.74
+51,25,Male,1,Arts,3.09
+52,28,Male,4,Arts,3.13
+53,18,Female,5,Business,3.18
+54,27,Female,4,Mathematics,3.67
+55,22,Female,2,Law,3.18
+56,22,Non-Binary,4,Mathematics,3.86
+57,18,Male,4,Law,1.81
+58,24,Female,2,Law,2.38
+59,21,Male,4,Engineering,3.68
+60,26,Non-Binary,2,Education,4
+61,20,Male,5,Business,2.65
+62,27,Female,1,Psychology,3.96
+63,27,Female,5,Education,2.61
+64,28,Female,4,Mathematics,3.1
+65,26,Non-Binary,3,Biology,3.01
+66,25,Non-Binary,5,Mathematics,2.26
+67,23,Male,4,Mathematics,3.12
+68,22,Male,1,Education,3.24
+69,25,Non-Binary,3,Business,2.09
+70,23,Non-Binary,3,Law,4
+71,20,Female,1,Nursing,2.43
+72,22,Non-Binary,1,Law,2.97
+73,18,Non-Binary,2,Engineering,3.2
+74,25,Female,5,Psychology,2.18
+75,20,Non-Binary,4,Mathematics,3.44
+76,21,Non-Binary,5,Computer Science,3.68
+77,27,Non-Binary,4,Business,3.32
+78,24,Female,2,Nursing,1.71
+79,26,Male,1,Arts,4
+80,26,Male,5,Business,4
+81,18,Female,1,Law,3.67
+82,20,Female,5,Biology,3.15
+83,22,Female,3,Nursing,2.97
+84,28,Male,4,Mathematics,2.03
+85,17,Female,3,Arts,3.2
+86,27,Male,5,Biology,2.69
+87,18,Male,2,Arts,3.39
+88,20,Female,5,Education,2.92
+89,20,Male,1,Nursing,2.1
+90,28,Non-Binary,1,Education,4
+91,25,Female,4,Engineering,3.45
+92,18,Non-Binary,5,Arts,1.68
+93,24,Male,1,Computer Science,2.74
+94,26,Male,4,Business,3.33
+95,18,Non-Binary,5,Computer Science,2.69
+96,22,Female,1,Nursing,2.23
+97,17,Female,4,Business,2.57
+98,25,Female,3,Engineering,3.3
+99,22,Female,3,Nursing,2.52
+100,22,Female,4,Computer Science,3.58
+101,22,Non-Binary,4,Business,2.9
+102,21,Male,4,Law,4
+103,25,Female,2,Mathematics,2.48
+104,25,Male,4,Education,2.99
+105,22,Non-Binary,4,Law,3.38
+106,21,Female,3,Biology,2.81
+107,21,Male,3,Computer Science,2.38
+108,28,Male,3,Arts,3.42
+109,20,Female,3,Business,2.22
+110,18,Female,1,Law,2.98
+111,20,Female,4,Arts,2.89
+112,24,Male,5,Psychology,2.31
+113,24,Non-Binary,4,Business,4
+114,27,Male,4,Biology,2.36
+115,25,Male,4,Education,2.85
+116,17,Non-Binary,3,Mathematics,1.87
+117,27,Male,5,Psychology,3.45
+118,20,Female,1,Computer Science,3.91
+119,26,Male,1,Engineering,3.46
+120,25,Male,3,Computer Science,2.65
+121,28,Male,4,Arts,2.01
+122,28,Non-Binary,2,Law,2.48
+123,27,Non-Binary,5,Biology,2.98
+124,24,Non-Binary,2,Nursing,2.63
+125,26,Non-Binary,5,Business,2.33
+126,26,Male,1,Computer Science,1.69
+127,23,Female,3,Engineering,3.1
+128,24,Female,2,Business,2.21
+129,27,Female,4,Nursing,2.79
+130,22,Male,2,Biology,3.32
+131,25,Male,4,Mathematics,3.04
+132,27,Female,2,Psychology,3.3
+133,23,Male,4,Computer Science,2.07
+134,19,Non-Binary,5,Computer Science,3.71
+135,24,Non-Binary,1,Arts,2.87
+136,26,Female,2,Psychology,2.42
+137,23,Female,4,Law,3.35
+138,18,Male,3,Nursing,3.57
+139,17,Non-Binary,1,Biology,2.61
+140,24,Male,4,Nursing,3.15
+141,17,Male,3,Nursing,2.01
+142,18,Female,2,Nursing,3.27
+143,26,Non-Binary,4,Education,2.88
+144,18,Female,3,Engineering,2.86
+145,22,Non-Binary,4,Biology,2.43
+146,24,Non-Binary,2,Psychology,3.3
+147,25,Male,1,Mathematics,3.94
+148,21,Female,1,Education,3.12
+149,25,Female,2,Education,2.84
+150,17,Non-Binary,1,Education,3.35
+151,25,Female,5,Business,3.1
+152,28,Non-Binary,1,Psychology,3.88
+153,25,Non-Binary,1,Mathematics,2.98
+154,17,Male,4,Law,2.64
+155,25,Male,2,Mathematics,3.64
+156,17,Female,4,Business,3.55
+157,18,Male,4,Psychology,2.73
+158,23,Non-Binary,5,Mathematics,3.8
+159,24,Non-Binary,3,Computer Science,3.08
+160,17,Female,4,Nursing,2.33
+161,21,Male,5,Education,2.3
+162,18,Male,1,Arts,2.83
+163,19,Female,4,Biology,3.46
+164,23,Male,1,Biology,1.73
+165,19,Female,3,Law,4
+166,19,Non-Binary,5,Computer Science,2.9
+167,28,Male,1,Engineering,2.88
+168,19,Female,2,Computer Science,2.64
+169,26,Female,1,Psychology,2.97
+170,22,Female,4,Biology,2.45
+171,21,Male,5,Psychology,2.34
+172,17,Male,1,Business,3.8
+173,23,Female,1,Education,3.1
+174,27,Non-Binary,1,Engineering,3.87
+175,17,Male,5,Computer Science,4
+176,17,Female,4,Psychology,3.23
+177,23,Non-Binary,3,Arts,2.62
+178,27,Male,1,Biology,2.27
+179,18,Non-Binary,5,Engineering,2.63
+180,26,Non-Binary,3,Business,2.92
+181,22,Female,2,Arts,3.89
+182,20,Male,3,Computer Science,3.06
+183,24,Male,3,Engineering,3.18
+184,26,Male,3,Arts,3.04
+185,28,Male,1,Computer Science,4
+186,25,Non-Binary,4,Mathematics,3.27
+187,25,Male,2,Biology,2.81
+188,21,Female,1,Biology,3.35
+189,28,Female,5,Nursing,2.62
+190,20,Male,5,Psychology,2.2
+191,21,Non-Binary,2,Computer Science,2.41
+192,24,Non-Binary,1,Biology,3.06
+193,21,Female,4,Computer Science,3.89
+194,28,Female,2,Arts,2.41
+195,27,Non-Binary,5,Education,2.34
+196,18,Male,1,Computer Science,2.76
+197,19,Non-Binary,5,Arts,2.2
+198,28,Male,3,Mathematics,2.71
+199,19,Male,5,Nursing,2.33
+200,21,Female,4,Nursing,3.16
+201,28,Female,1,Arts,3.26
+202,18,Female,5,Business,3.73
+203,19,Male,4,Biology,1.88
+204,18,Non-Binary,3,Nursing,2.92
+205,28,Non-Binary,5,Arts,3.12
+206,20,Female,2,Mathematics,3.8
+207,25,Male,5,Psychology,3.24
+208,26,Male,1,Nursing,2.96
+209,23,Non-Binary,2,Business,3.43
+210,19,Non-Binary,3,Business,2.74
+211,17,Non-Binary,2,Education,2.9
+212,24,Female,3,Business,2.76
+213,27,Non-Binary,3,Arts,3.05
+214,19,Non-Binary,5,Arts,2.99
+215,20,Non-Binary,5,Education,0.84
+216,28,Male,5,Computer Science,2.42
+217,19,Female,4,Business,1.86
+218,28,Male,5,Mathematics,3.86
+219,18,Male,5,Law,3.04
+220,24,Non-Binary,1,Biology,3.16
+221,27,Male,2,Business,3.5
+222,22,Male,4,Computer Science,3.34
+223,24,Male,3,Computer Science,2.16
+224,19,Non-Binary,1,Psychology,3.2
+225,19,Female,5,Mathematics,3.54
+226,24,Female,2,Engineering,2.28
+227,27,Female,3,Business,2.36
+228,28,Non-Binary,5,Law,2.7
+229,18,Non-Binary,4,Psychology,2.29
+230,20,Female,4,Computer Science,2.85
+231,21,Male,2,Mathematics,3.03
+232,23,Non-Binary,1,Biology,2.13
+233,27,Male,4,Engineering,2.78
+234,17,Male,5,Engineering,2.62
+235,23,Male,5,Law,2.72
+236,24,Non-Binary,2,Computer Science,3.47
+237,25,Non-Binary,5,Business,2.17
+238,22,Male,5,Law,3.33
+239,20,Non-Binary,3,Engineering,1.85
+240,20,Male,4,Computer Science,3.19
+241,21,Male,3,Mathematics,3.11
+242,28,Female,2,Computer Science,2.7
+243,17,Non-Binary,3,Arts,3.53
+244,18,Female,3,Mathematics,1.7
+245,23,Female,1,Computer Science,2.43
+246,17,Non-Binary,4,Psychology,3.78
+247,24,Female,5,Education,2.11
+248,28,Non-Binary,2,Engineering,3.34
+249,22,Female,3,Nursing,2.07
+250,23,Male,1,Arts,3.8
+251,24,Non-Binary,3,Computer Science,2.82
+252,23,Female,4,Law,2.72
+253,17,Female,4,Business,2.29
+254,26,Male,4,Computer Science,3.41
+255,22,Female,5,Biology,2.29
+256,25,Non-Binary,4,Education,4
+257,24,Male,2,Psychology,3.13
+258,25,Non-Binary,2,Mathematics,2.82
+259,26,Non-Binary,5,Biology,4
+260,18,Non-Binary,4,Arts,2.38
+261,27,Male,5,Education,3.39
+262,22,Male,5,Mathematics,2.16
+263,24,Male,2,Psychology,3.16
+264,19,Male,3,Business,3.88
+265,18,Female,1,Arts,2.65
+266,28,Non-Binary,2,Education,2.86
+267,24,Male,4,Engineering,2.28
+268,24,Female,2,Education,2.78
+269,25,Female,4,Engineering,2.39
+270,23,Female,2,Computer Science,2.94
+271,26,Non-Binary,4,Biology,3.57
+272,20,Male,1,Law,2.63
+273,23,Male,3,Mathematics,3.41
+274,25,Non-Binary,2,Biology,3.03
+275,18,Male,4,Psychology,3.07
+276,20,Female,1,Psychology,4
+277,17,Non-Binary,3,Computer Science,3.63
+278,17,Female,2,Engineering,3.15
+279,18,Female,3,Arts,2.59
+280,20,Female,1,Nursing,2.21
+281,24,Male,1,Engineering,3.86
+282,23,Male,4,Nursing,3.31
+283,23,Female,3,Computer Science,2.42
+284,21,Female,1,Arts,3.34
+285,23,Male,2,Arts,2.26
+286,21,Non-Binary,5,Biology,4
+287,28,Female,3,Biology,3.43
+288,19,Female,2,Engineering,2.44
+289,27,Female,1,Engineering,2.87
+290,20,Non-Binary,4,Computer Science,2.22
+291,26,Non-Binary,5,Education,3.75
+292,23,Non-Binary,4,Education,2.99
+293,24,Non-Binary,3,Mathematics,3.43
+294,19,Female,4,Mathematics,2.95
+295,23,Male,3,Biology,3.29
+296,19,Female,3,Arts,3.25
+297,25,Female,4,Law,2.68
+298,27,Non-Binary,5,Psychology,3.17
+299,22,Male,5,Computer Science,3.72
+300,24,Male,2,Psychology,3.74
+301,28,Male,1,Psychology,3.17
+302,23,Non-Binary,1,Business,2.44
+303,20,Male,4,Business,2.79
+304,20,Female,1,Education,3.65
+305,27,Female,4,Law,4
+306,25,Female,1,Arts,2.98
+307,27,Non-Binary,1,Law,3.19
+308,22,Female,1,Psychology,3.01
+309,20,Non-Binary,3,Arts,4
+310,24,Female,5,Nursing,2.08
+311,17,Female,5,Mathematics,3.9
+312,28,Male,3,Mathematics,2.44
+313,26,Female,1,Nursing,2.66
+314,23,Non-Binary,3,Mathematics,3.18
+315,25,Non-Binary,5,Education,2.62
+316,23,Female,3,Psychology,2.45
+317,25,Male,5,Mathematics,2.72
+318,28,Non-Binary,3,Arts,2.69
+319,22,Male,2,Biology,3.16
+320,25,Non-Binary,2,Arts,3.5
+321,26,Male,4,Nursing,3.35
+322,22,Non-Binary,5,Nursing,3.38
+323,19,Male,5,Nursing,2.72
+324,21,Non-Binary,5,Psychology,2.16
+325,21,Non-Binary,3,Engineering,2.75
+326,18,Female,2,Mathematics,4
+327,19,Non-Binary,1,Psychology,2.92
+328,17,Female,1,Psychology,1.88
+329,26,Female,4,Biology,2.69
+330,17,Male,4,Mathematics,2.12
+331,18,Female,5,Nursing,3.03
+332,23,Non-Binary,4,Engineering,3.73
+333,26,Male,4,Mathematics,2.99
+334,18,Non-Binary,3,Computer Science,2.76
+335,17,Female,2,Mathematics,2.26
+336,21,Female,5,Engineering,3.13
+337,23,Female,4,Business,3.18
+338,23,Female,4,Engineering,2.92
+339,17,Female,1,Arts,3.89
+340,24,Non-Binary,2,Computer Science,3.41
+341,18,Female,1,Mathematics,3.02
+342,25,Female,4,Business,2.61
+343,18,Non-Binary,1,Law,2.9
+344,25,Male,3,Computer Science,2.75
+345,24,Female,5,Computer Science,3.21
+346,17,Female,2,Computer Science,3.17
+347,19,Male,3,Nursing,3.21
+348,18,Female,5,Arts,2.23
+349,27,Male,1,Engineering,3.23
+350,27,Female,1,Law,3.84
+351,25,Non-Binary,1,Psychology,3.24
+352,22,Female,2,Education,2.92
+353,26,Non-Binary,1,Arts,2.67
+354,28,Male,4,Nursing,4
+355,27,Non-Binary,3,Nursing,2.66
+356,19,Female,5,Law,3.71
+357,18,Female,2,Nursing,3.35
+358,18,Male,2,Mathematics,3.06
+359,25,Female,2,Engineering,2.64
+360,25,Male,5,Business,2.53
+361,20,Male,5,Biology,2.15
+362,17,Female,3,Mathematics,3.42
+363,23,Male,1,Law,3.02
+364,22,Non-Binary,3,Mathematics,3.16
+365,20,Non-Binary,3,Law,2.72
+366,26,Female,5,Mathematics,2.75
+367,22,Non-Binary,4,Business,0.93
+368,28,Male,1,Law,2.93
+369,26,Non-Binary,3,Computer Science,2.89
+370,24,Male,5,Law,3.69
+371,19,Female,4,Education,2.84
+372,18,Non-Binary,2,Arts,3.91
+373,24,Non-Binary,5,Mathematics,2.66
+374,26,Non-Binary,5,Nursing,3.23
+375,28,Female,4,Computer Science,3.19
+376,27,Non-Binary,1,Psychology,1.52
+377,20,Male,5,Mathematics,2
+378,17,Female,3,Arts,3.09
+379,25,Male,2,Mathematics,3.04
+380,23,Non-Binary,1,Biology,3.11
+381,27,Female,4,Nursing,2.89
+382,20,Male,5,Arts,2.55
+383,23,Non-Binary,1,Mathematics,3.13
+384,20,Non-Binary,3,Engineering,3.1
+385,23,Male,5,Psychology,1.68
+386,22,Non-Binary,1,Biology,3.64
+387,25,Non-Binary,2,Nursing,2.9
+388,25,Male,5,Computer Science,3.87
+389,22,Non-Binary,4,Biology,3.04
+390,18,Male,3,Nursing,3
+391,21,Female,2,Mathematics,2.58
+392,20,Female,2,Biology,2.67
+393,17,Male,3,Business,3.44
+394,26,Non-Binary,3,Arts,3.72
+395,21,Female,4,Engineering,3.45
+396,22,Female,3,Education,3.14
+397,23,Non-Binary,4,Law,4
+398,28,Male,4,Mathematics,2.09
+399,18,Non-Binary,5,Education,2
+400,27,Male,1,Psychology,1.88
+401,27,Non-Binary,5,Psychology,3.01
+402,23,Male,4,Nursing,3.18
+403,21,Male,2,Law,3.74
+404,18,Female,4,Engineering,2.53
+405,26,Non-Binary,2,Engineering,3.09
+406,19,Male,5,Computer Science,1.68
+407,27,Non-Binary,4,Education,3.14
+408,19,Male,1,Mathematics,1.84
+409,18,Female,1,Mathematics,2.3
+410,24,Male,2,Engineering,2.8
+411,23,Male,3,Mathematics,3.4
+412,22,Non-Binary,4,Education,3.78
+413,20,Male,2,Computer Science,2.97
+414,27,Female,5,Law,3.53
+415,18,Non-Binary,4,Business,1.79
+416,17,Male,5,Psychology,2.9
+417,21,Non-Binary,4,Business,4
+418,17,Non-Binary,4,Biology,2.51
+419,25,Non-Binary,2,Engineering,2.38
+420,18,Male,2,Education,2.63
+421,18,Male,4,Business,3.6
+422,28,Female,2,Education,3.23
+423,28,Male,4,Business,2.36
+424,20,Female,5,Arts,3.6
+425,22,Non-Binary,4,Business,2.71
+426,21,Female,1,Biology,2.65
+427,23,Male,4,Mathematics,2.74
+428,22,Female,4,Engineering,2.34
+429,19,Non-Binary,1,Law,3.02
+430,26,Male,5,Mathematics,3.32
+431,26,Non-Binary,3,Nursing,3.79
+432,21,Female,5,Education,2.76
+433,23,Non-Binary,3,Nursing,3.48
+434,21,Female,2,Mathematics,3.2
+435,18,Non-Binary,2,Business,2.23
+436,28,Male,2,Mathematics,2.98
+437,25,Male,3,Mathematics,3.05
+438,25,Non-Binary,3,Education,2.26
+439,17,Female,2,Education,2.66
+440,28,Male,5,Biology,1.85
+441,28,Female,3,Nursing,2.29
+442,28,Female,5,Engineering,2.46
+443,19,Non-Binary,1,Education,3.3
+444,28,Non-Binary,1,Biology,3.61
+445,26,Male,3,Engineering,2.22
+446,21,Female,2,Computer Science,3.69
+447,24,Male,1,Biology,2.6
+448,28,Male,5,Psychology,3.59
+449,23,Non-Binary,1,Nursing,2.88
+450,27,Non-Binary,2,Psychology,2.61
+451,26,Male,1,Arts,2.73
+452,26,Female,2,Nursing,1.07
+453,19,Female,3,Mathematics,2.51
+454,18,Male,4,Psychology,1.47
+455,17,Female,5,Mathematics,3.1
+456,28,Non-Binary,5,Nursing,3.32
+457,19,Non-Binary,4,Psychology,2.45
+458,24,Female,1,Computer Science,3.32
+459,17,Non-Binary,1,Business,3.02
+460,27,Female,2,Psychology,3.69
+461,20,Male,3,Education,2.27
+462,24,Male,4,Engineering,3.14
+463,26,Female,5,Education,4
+464,26,Female,2,Business,2.62
+465,23,Male,2,Engineering,3.12
+466,19,Female,1,Mathematics,3.32
+467,17,Female,3,Arts,3.74
+468,20,Non-Binary,4,Psychology,2.14
+469,27,Non-Binary,3,Business,3.04
+470,26,Male,5,Law,4
+471,23,Male,5,Biology,2.43
+472,26,Non-Binary,4,Arts,2.45
+473,18,Male,5,Computer Science,2.54
+474,21,Non-Binary,3,Law,3.34
+475,19,Male,5,Nursing,2.99
+476,21,Non-Binary,2,Biology,3.51
+477,22,Male,1,Education,3.87
+478,24,Female,4,Law,2.74
+479,26,Male,4,Biology,2.89
+480,27,Female,4,Nursing,2.52
+481,19,Female,1,Arts,2.41
+482,27,Female,1,Arts,2.25
+483,20,Non-Binary,1,Nursing,3.01
+484,27,Male,4,Nursing,2.65
+485,20,Male,4,Biology,2.53
+486,25,Non-Binary,1,Education,3.47
+487,26,Male,4,Engineering,3.3
+488,18,Male,1,Nursing,4
+489,19,Female,2,Business,4
+490,17,Female,5,Nursing,2.82
+491,17,Non-Binary,5,Law,3.28
+492,27,Non-Binary,5,Biology,3.42
+493,24,Female,5,Business,3.64
+494,28,Female,2,Nursing,3.07
+495,18,Female,3,Arts,2.63
+496,26,Non-Binary,1,Education,2.3
+497,18,Non-Binary,5,Mathematics,2.58
+498,24,Non-Binary,5,Law,3.49
+499,26,Non-Binary,5,Psychology,2.61
+500,19,Male,3,Biology,3.56
+501,19,Non-Binary,5,Law,3.38
+502,18,Male,4,Arts,3.32
+503,23,Non-Binary,5,Mathematics,3.15
+504,22,Male,2,Law,3.17
+505,21,Non-Binary,1,Biology,2.87
+506,17,Female,1,Engineering,3.33
+507,25,Female,3,Nursing,2.05
+508,21,Male,2,Nursing,1.4
+509,18,Non-Binary,3,Education,2.44
+510,26,Female,1,Mathematics,4
+511,17,Female,4,Engineering,2.24
+512,22,Female,5,Computer Science,2.93
+513,27,Non-Binary,5,Education,2.81
+514,28,Non-Binary,2,Business,3.32
+515,22,Female,3,Psychology,1.95
+516,24,Female,4,Computer Science,2.79
+517,22,Male,2,Business,4
+518,19,Non-Binary,3,Law,3.29
+519,28,Male,2,Arts,3.86
+520,27,Male,1,Mathematics,2.58
+521,26,Non-Binary,5,Arts,2.99
+522,28,Female,4,Education,3.21
+523,25,Male,5,Engineering,3.36
+524,22,Male,4,Arts,3.04
+525,20,Female,1,Business,3.85
+526,26,Female,2,Psychology,3.42
+527,17,Male,4,Biology,2.5
+528,17,Male,3,Law,2.88
+529,23,Non-Binary,5,Business,3.03
+530,22,Male,5,Mathematics,3.27
+531,21,Male,3,Business,2.37
+532,23,Female,4,Law,3.44
+533,26,Female,1,Biology,4
+534,21,Male,3,Computer Science,2.28
+535,27,Female,1,Law,3.53
+536,23,Non-Binary,2,Psychology,2.66
+537,24,Male,2,Education,3.55
+538,22,Female,4,Business,2.61
+539,22,Female,1,Biology,2.31
+540,21,Female,4,Education,3.61
+541,27,Female,2,Engineering,3.78
+542,22,Male,3,Psychology,3.56
+543,27,Male,3,Education,2.89
+544,19,Female,1,Nursing,2.9
+545,26,Male,2,Engineering,2.08
+546,25,Non-Binary,2,Biology,2.78
+547,23,Male,1,Nursing,1.67
+548,28,Male,1,Arts,2.99
+549,24,Male,1,Arts,2.27
+550,28,Male,5,Education,2.87
+551,23,Male,3,Biology,2.51
+552,27,Non-Binary,1,Law,3.27
+553,26,Non-Binary,4,Law,3.4
+554,17,Male,5,Biology,2.86
+555,17,Female,2,Computer Science,2.45
+556,25,Female,1,Law,2.56
+557,23,Non-Binary,5,Engineering,2.24
+558,17,Male,4,Computer Science,2.07
+559,27,Female,2,Engineering,3.16
+560,26,Male,4,Biology,2.28
+561,28,Non-Binary,5,Arts,3.75
+562,28,Male,3,Psychology,3.94
+563,22,Non-Binary,3,Education,2.68
+564,28,Female,3,Mathematics,2.46
+565,25,Male,4,Biology,2.64
+566,21,Non-Binary,4,Engineering,3.82
+567,25,Female,5,Education,2.38
+568,26,Non-Binary,3,Computer Science,2.97
+569,23,Female,4,Mathematics,3.05
+570,28,Non-Binary,4,Psychology,3.13
+571,25,Non-Binary,4,Mathematics,2.54
+572,21,Male,4,Psychology,2.73
+573,18,Non-Binary,2,Biology,3.68
+574,27,Non-Binary,2,Arts,2.45
+575,24,Male,5,Law,3.17
+576,18,Non-Binary,1,Biology,2.88
+577,22,Non-Binary,2,Business,3.26
+578,28,Non-Binary,2,Nursing,3.26
+579,20,Non-Binary,5,Mathematics,3.88
+580,24,Non-Binary,1,Computer Science,3.77
+581,17,Male,2,Education,2.48
+582,26,Non-Binary,1,Arts,3.44
+583,21,Non-Binary,2,Arts,2.66
+584,22,Male,3,Biology,3.01
+585,23,Female,5,Biology,2.75
+586,28,Female,1,Arts,3.2
+587,20,Female,2,Business,2.61
+588,26,Non-Binary,3,Business,3.12
+589,23,Male,2,Biology,3.52
+590,17,Male,4,Education,3.3
+591,20,Non-Binary,4,Engineering,2.26
+592,23,Female,5,Psychology,3.65
+593,21,Male,5,Psychology,1.86
+594,24,Non-Binary,4,Business,2.47
+595,22,Female,1,Arts,3.53
+596,22,Male,3,Law,3.03
+597,26,Female,2,Mathematics,3.24
+598,20,Non-Binary,3,Arts,3.54
+599,22,Female,5,Engineering,3.78
+600,26,Non-Binary,1,Computer Science,3.65
+601,25,Male,5,Mathematics,2.42
+602,20,Female,3,Education,2.83
+603,25,Male,5,Nursing,2.92
+604,17,Female,4,Computer Science,3.68
+605,25,Non-Binary,5,Computer Science,3.51
+606,23,Male,4,Engineering,3.21
+607,19,Male,4,Nursing,3.32
+608,23,Non-Binary,1,Arts,1.71
+609,23,Female,4,Computer Science,3.03
+610,24,Male,4,Nursing,2.74
+611,21,Female,4,Psychology,4
+612,26,Non-Binary,5,Nursing,2.58
+613,18,Female,5,Mathematics,1.39
+614,21,Non-Binary,1,Nursing,3.05
+615,17,Male,3,Psychology,2.99
+616,26,Male,3,Psychology,2.28
+617,26,Male,4,Computer Science,1.93
+618,17,Female,4,Psychology,2.81
+619,19,Non-Binary,4,Biology,2.89
+620,24,Non-Binary,5,Education,3.5
+621,19,Male,4,Nursing,3.12
+622,28,Non-Binary,2,Business,2.59
+623,26,Female,2,Engineering,2.71
+624,17,Female,4,Engineering,2.27
+625,28,Female,2,Engineering,3.98
+626,28,Non-Binary,5,Arts,2.97
+627,21,Female,1,Computer Science,2.86
+628,24,Non-Binary,2,Education,3.77
+629,24,Non-Binary,5,Psychology,2.98
+630,19,Non-Binary,4,Arts,3.04
+631,28,Male,2,Mathematics,3.13
+632,24,Non-Binary,5,Psychology,3.12
+633,22,Male,3,Nursing,2.78
+634,20,Female,4,Computer Science,2.49
+635,24,Male,4,Psychology,2.43
+636,23,Female,2,Biology,2.7
+637,23,Male,4,Computer Science,3.32
+638,22,Female,4,Psychology,3.22
+639,23,Non-Binary,1,Nursing,2.58
+640,19,Non-Binary,2,Arts,3.8
+641,21,Female,2,Psychology,2.98
+642,25,Non-Binary,5,Nursing,2.65
+643,27,Female,2,Education,2.89
+644,23,Male,3,Psychology,3.09
+645,20,Non-Binary,4,Business,2.55
+646,26,Non-Binary,4,Law,2.42
+647,24,Male,3,Arts,2.56
+648,25,Male,4,Business,3.7
+649,17,Male,4,Arts,2.87
+650,24,Non-Binary,4,Education,2.82
+651,22,Female,5,Business,2.59
+652,21,Non-Binary,5,Computer Science,3.55
+653,24,Female,1,Education,2.83
+654,19,Male,3,Education,3.15
+655,22,Non-Binary,1,Engineering,3.47
+656,25,Male,3,Engineering,2.05
+657,17,Female,1,Mathematics,3.22
+658,23,Male,3,Computer Science,2.87
+659,22,Female,5,Psychology,3.15
+660,19,Male,5,Biology,2.88
+661,18,Female,2,Education,3.09
+662,18,Male,3,Engineering,2.45
+663,21,Male,2,Computer Science,3.28
+664,25,Female,3,Engineering,4
+665,18,Female,4,Law,3.22
+666,20,Male,5,Law,2.77
+667,24,Female,1,Law,3.1
+668,25,Female,4,Nursing,3.32
+669,23,Female,3,Nursing,3.27
+670,18,Female,5,Engineering,4
+671,24,Non-Binary,2,Education,3.27
+672,25,Female,3,Law,2.68
+673,17,Male,4,Mathematics,3.54
+674,18,Male,4,Law,3.49
+675,24,Male,3,Law,3.57
+676,18,Female,4,Psychology,2.67
+677,22,Non-Binary,5,Business,3.7
+678,28,Non-Binary,4,Psychology,3.24
+679,17,Female,2,Law,2.64
+680,25,Male,2,Law,2.81
+681,27,Non-Binary,3,Nursing,2.59
+682,25,Female,5,Arts,2.96
+683,22,Male,3,Law,3.03
+684,22,Non-Binary,1,Mathematics,2.79
+685,21,Female,1,Biology,2.93
+686,25,Male,3,Biology,3.09
+687,19,Female,1,Business,2.57
+688,25,Male,3,Nursing,3.89
+689,19,Male,2,Law,2.43
+690,21,Non-Binary,3,Psychology,2.2
+691,28,Female,1,Law,2.69
+692,18,Male,2,Business,2.53
+693,17,Male,2,Mathematics,2.64
+694,27,Female,2,Biology,2.81
+695,26,Male,3,Business,4
+696,19,Non-Binary,5,Nursing,2.86
+697,17,Female,5,Mathematics,2.9
+698,24,Male,3,Law,2.71
+699,22,Male,1,Education,3.72
+700,27,Non-Binary,2,Nursing,3.69
+701,23,Female,1,Arts,3.48
+702,24,Non-Binary,2,Engineering,2.62
+703,23,Female,3,Engineering,3.52
+704,25,Male,2,Law,3.58
+705,27,Non-Binary,4,Education,4
+706,19,Non-Binary,3,Biology,3.37
+707,22,Male,5,Arts,2.36
+708,22,Male,5,Education,3.33
+709,23,Non-Binary,4,Nursing,3.64
+710,22,Male,2,Mathematics,3.28
+711,28,Non-Binary,2,Business,3.41
+712,18,Male,5,Education,2.78
+713,20,Female,1,Mathematics,3.11
+714,20,Male,3,Computer Science,2.8
+715,21,Female,3,Education,2.44
+716,26,Male,3,Engineering,2.18
+717,18,Non-Binary,5,Nursing,3.35
+718,25,Non-Binary,2,Nursing,2.69
+719,19,Female,5,Biology,2.15
+720,22,Non-Binary,1,Arts,2.58
+721,27,Female,1,Psychology,1.86
+722,26,Male,1,Mathematics,1.65
+723,24,Non-Binary,3,Arts,2.93
+724,18,Male,1,Engineering,3.18
+725,24,Male,5,Nursing,3.43
+726,23,Male,1,Arts,1.7
+727,27,Female,5,Psychology,2.48
+728,19,Male,4,Computer Science,4
+729,21,Male,1,Nursing,4
+730,26,Male,2,Computer Science,3.43
+731,28,Male,1,Arts,2.26
+732,23,Non-Binary,2,Biology,2.76
+733,26,Female,5,Law,3.86
+734,25,Female,2,Education,3.01
+735,26,Female,4,Mathematics,2.87
+736,18,Female,4,Business,3.22
+737,20,Male,5,Business,1.69
+738,22,Female,1,Computer Science,2.84
+739,22,Female,2,Engineering,2.59
+740,27,Female,3,Mathematics,2.66
+741,24,Female,2,Arts,2.64
+742,20,Male,5,Computer Science,2.84
+743,22,Female,1,Education,2.67
+744,21,Non-Binary,5,Law,3.11
+745,18,Male,1,Mathematics,3.35
+746,17,Female,1,Psychology,2.97
+747,20,Non-Binary,5,Law,4
+748,23,Female,2,Mathematics,3.65
+749,17,Non-Binary,5,Biology,3.55
+750,24,Female,2,Nursing,2.78
+751,23,Female,5,Psychology,2.4
+752,25,Male,3,Business,3.53
+753,18,Female,5,Engineering,1.99
+754,20,Non-Binary,1,Engineering,3.92
+755,20,Male,3,Mathematics,3.3
+756,21,Male,4,Biology,3.24
+757,28,Non-Binary,4,Law,3.44
+758,26,Female,5,Mathematics,3.96
+759,22,Male,2,Biology,2.92
+760,19,Female,1,Education,1.93
+761,21,Male,1,Business,3.63
+762,25,Non-Binary,1,Law,2.53
+763,20,Non-Binary,2,Biology,3.16
+764,25,Non-Binary,4,Education,2.28
+765,17,Female,1,Business,2.96
+766,21,Female,5,Mathematics,2.29
+767,21,Female,5,Biology,3.19
+768,28,Non-Binary,5,Law,2.65
+769,27,Female,3,Nursing,2.92
+770,27,Non-Binary,4,Law,2.59
+771,18,Non-Binary,5,Education,3.01
+772,26,Female,5,Mathematics,3.5
+773,18,Male,3,Engineering,2.95
+774,25,Male,2,Biology,4
+775,18,Female,3,Mathematics,3.78
+776,24,Female,5,Mathematics,3.43
+777,17,Non-Binary,3,Engineering,2.8
+778,21,Non-Binary,1,Business,3.16
+779,17,Non-Binary,4,Engineering,3.36
+780,21,Female,1,Business,3.37
+781,19,Female,1,Mathematics,3.15
+782,27,Female,2,Nursing,1.9
+783,23,Non-Binary,4,Psychology,3.29
+784,28,Female,4,Psychology,3.04
+785,26,Male,5,Nursing,2.8
+786,20,Female,5,Nursing,2.38
+787,19,Female,4,Arts,3.5
+788,22,Female,5,Mathematics,2.27
+789,26,Non-Binary,2,Arts,3.44
+790,19,Female,5,Education,3.64
+791,24,Female,3,Psychology,3.23
+792,27,Female,2,Education,3.67
+793,26,Non-Binary,3,Law,1.79
+794,23,Non-Binary,2,Biology,3.29
+795,17,Male,3,Engineering,3.14
+796,24,Female,3,Engineering,2.55
+797,27,Male,5,Mathematics,2.58
+798,18,Female,3,Biology,3.18
+799,20,Female,4,Mathematics,3.4
+800,17,Female,5,Business,2.84
+801,17,Male,4,Engineering,3.47
+802,26,Male,2,Biology,3.34
+803,18,Non-Binary,2,Psychology,3.15
+804,26,Non-Binary,3,Computer Science,2.55
+805,25,Male,1,Engineering,2.5
+806,22,Non-Binary,3,Law,2.61
+807,19,Male,1,Biology,1.43
+808,27,Female,2,Arts,1.57
+809,28,Male,2,Nursing,2.99
+810,28,Female,1,Psychology,4
+811,25,Male,4,Business,2.79
+812,18,Non-Binary,4,Psychology,3.65
+813,17,Male,2,Nursing,3.86
+814,19,Female,1,Computer Science,3.47
+815,23,Female,3,Law,3.35
+816,17,Female,3,Mathematics,2.45
+817,20,Female,1,Business,3.16
+818,18,Non-Binary,1,Mathematics,3.1
+819,19,Non-Binary,3,Nursing,2.72
+820,22,Male,5,Engineering,3.07
+821,26,Male,5,Computer Science,2.84
+822,17,Male,1,Mathematics,1.28
+823,21,Female,1,Arts,3.11
+824,26,Non-Binary,5,Biology,3.77
+825,17,Female,2,Biology,3.24
+826,26,Male,2,Business,2.6
+827,19,Female,4,Mathematics,2.19
+828,22,Non-Binary,4,Law,3.67
+829,19,Female,2,Mathematics,1.83
+830,25,Non-Binary,1,Computer Science,3.4
+831,18,Non-Binary,1,Arts,2.01
+832,28,Female,1,Engineering,3.27
+833,25,Female,3,Engineering,3.03
+834,20,Female,4,Education,3.05
+835,17,Non-Binary,5,Business,2.57
+836,28,Non-Binary,3,Computer Science,2.32
+837,17,Female,5,Business,2.44
+838,25,Male,4,Arts,3.63
+839,25,Male,4,Biology,3.77
+840,17,Male,4,Psychology,3.14
+841,27,Male,2,Mathematics,3.05
+842,19,Female,1,Mathematics,3.16
+843,20,Female,3,Psychology,2.5
+844,23,Male,1,Biology,3
+845,18,Female,3,Psychology,3.39
+846,18,Male,5,Law,2.95
+847,26,Male,1,Arts,2.02
+848,27,Non-Binary,1,Psychology,3.6
+849,21,Male,4,Psychology,2.78
+850,17,Female,5,Biology,3.7
+851,19,Female,3,Mathematics,2.94
+852,24,Female,4,Computer Science,2.84
+853,18,Male,3,Nursing,4
+854,24,Male,2,Business,3.18
+855,21,Female,4,Biology,2.65
+856,26,Female,2,Education,3.57
+857,24,Non-Binary,3,Nursing,3.24
+858,26,Non-Binary,5,Nursing,2.5
+859,24,Male,1,Engineering,1.94
+860,25,Female,3,Computer Science,3.77
+861,28,Female,4,Arts,4
+862,25,Female,3,Biology,3.19
+863,24,Female,5,Biology,2.67
+864,27,Male,3,Business,3.33
+865,27,Female,4,Psychology,2.96
+866,24,Female,2,Arts,3.61
+867,22,Female,1,Nursing,3.34
+868,22,Male,3,Engineering,4
+869,26,Non-Binary,5,Biology,3.29
+870,28,Female,4,Business,3.61
+871,17,Male,3,Business,2.97
+872,18,Female,1,Biology,3.15
+873,19,Non-Binary,2,Education,2.56
+874,17,Non-Binary,3,Arts,4
+875,24,Female,1,Computer Science,1.77
+876,18,Female,1,Computer Science,2.69
+877,17,Non-Binary,4,Biology,2.5
+878,21,Female,5,Computer Science,1.93
+879,24,Male,1,Computer Science,3.53
+880,28,Female,5,Engineering,2.38
+881,19,Male,1,Nursing,2.65
+882,20,Non-Binary,3,Engineering,3.91
+883,19,Female,5,Nursing,4
+884,22,Non-Binary,3,Biology,2.45
+885,26,Male,1,Arts,1.16
+886,27,Non-Binary,3,Business,4
+887,25,Non-Binary,2,Nursing,4
+888,22,Non-Binary,5,Engineering,1.72
+889,21,Non-Binary,5,Education,4
+890,18,Male,3,Psychology,4
+891,18,Non-Binary,3,Biology,2.61
+892,28,Female,1,Mathematics,3.29
+893,23,Male,2,Nursing,3.05
+894,21,Non-Binary,5,Business,2.62
+895,19,Male,3,Nursing,2.98
+896,20,Male,5,Education,3.42
+897,27,Male,4,Nursing,2.46
+898,26,Non-Binary,5,Biology,3.36
+899,23,Male,3,Law,3.08
+900,22,Male,4,Arts,2.9
+901,20,Male,3,Education,2.76
+902,19,Male,2,Business,4
+903,24,Non-Binary,3,Biology,1.94
+904,26,Non-Binary,3,Psychology,3.09
+905,26,Male,4,Nursing,2.92
+906,19,Non-Binary,2,Business,3.28
+907,18,Male,4,Law,2.61
+908,24,Female,3,Education,2.32
+909,27,Female,4,Biology,3.04
+910,26,Female,2,Engineering,2.58
+911,20,Female,5,Engineering,3.41
+912,27,Female,4,Business,3.3
+913,23,Male,1,Psychology,3.75
+914,20,Female,4,Nursing,2.61
+915,22,Non-Binary,1,Business,2.97
+916,21,Female,2,Law,2.76
+917,21,Non-Binary,2,Education,3.14
+918,20,Female,1,Nursing,2.81
+919,27,Female,3,Education,3.45
+920,20,Female,2,Business,4
+921,26,Female,5,Biology,2.51
+922,20,Non-Binary,5,Law,3.15
+923,20,Non-Binary,4,Arts,4
+924,26,Non-Binary,2,Education,2.5
+925,23,Female,2,Nursing,3.09
+926,23,Non-Binary,5,Mathematics,2.72
+927,26,Female,3,Business,3.11
+928,17,Female,1,Engineering,2.48
+929,22,Male,2,Biology,3.6
+930,22,Male,1,Mathematics,3.55
+931,26,Non-Binary,4,Arts,2.88
+932,17,Male,1,Computer Science,3.73
+933,19,Male,2,Engineering,2.79
+934,22,Male,1,Biology,2.78
+935,28,Female,4,Business,3.42
+936,28,Non-Binary,4,Arts,2.34
+937,28,Female,2,Engineering,2.8
+938,20,Non-Binary,4,Biology,1.76
+939,25,Male,4,Law,3.95
+940,26,Female,1,Business,3.08
+941,18,Non-Binary,4,Law,3.7
+942,22,Male,3,Education,2.96
+943,27,Non-Binary,3,Mathematics,2.83
+944,21,Non-Binary,5,Mathematics,2.66
+945,18,Male,3,Nursing,2.22
+946,22,Female,2,Arts,2.93
+947,23,Male,5,Nursing,3.34
+948,24,Non-Binary,1,Business,2.66
+949,23,Non-Binary,1,Law,3.62
+950,17,Female,4,Arts,3.26
+951,28,Male,5,Arts,3.09
+952,25,Female,1,Psychology,2.84
+953,28,Female,2,Mathematics,3.11
+954,28,Female,4,Engineering,3.08
+955,22,Male,2,Law,1.85
+956,26,Female,3,Nursing,2.92
+957,24,Non-Binary,4,Education,3.67
+958,26,Female,5,Business,3.14
+959,27,Non-Binary,3,Law,3.15
+960,27,Male,5,Law,2.74
+961,22,Female,1,Arts,2.48
+962,21,Female,4,Computer Science,3.23
+963,19,Non-Binary,1,Biology,2.99
+964,21,Female,2,Law,2.57
+965,18,Female,1,Engineering,2.56
+966,22,Non-Binary,4,Business,3.34
+967,25,Male,3,Mathematics,3.68
+968,20,Female,3,Mathematics,4
+969,23,Non-Binary,4,Nursing,3.57
+970,22,Female,1,Business,2.51
+971,22,Female,2,Engineering,3.2
+972,20,Non-Binary,1,Business,3.16
+973,25,Female,2,Business,3.95
+974,19,Non-Binary,2,Computer Science,4
+975,23,Male,2,Law,2.54
+976,20,Non-Binary,4,Arts,3.43
+977,18,Male,5,Biology,2.14
+978,22,Male,3,Psychology,2.86
+979,27,Male,4,Engineering,2.91
+980,19,Male,4,Engineering,2.38
+981,22,Non-Binary,5,Arts,2.46
+982,24,Male,5,Arts,2.56
+983,18,Non-Binary,2,Computer Science,1.9
+984,25,Non-Binary,2,Psychology,3.55
+985,18,Female,2,Nursing,1.6
+986,28,Non-Binary,5,Biology,3.53
+987,19,Male,1,Arts,3.58
+988,25,Male,2,Education,2.15
+989,19,Non-Binary,3,Law,3.36
+990,23,Female,4,Mathematics,2.77
+991,26,Male,1,Law,2.47
+992,17,Non-Binary,5,Psychology,2.46
+993,22,Female,2,Computer Science,2.44
+994,20,Female,1,Arts,2.85
+995,17,Female,4,Psychology,2.74
+996,21,Male,5,Engineering,2.62
+997,28,Male,4,Mathematics,2.26
+998,17,Male,3,Engineering,2.45
+999,18,Male,5,Nursing,2.45
+1000,18,Female,3,Business,3.01
+1001,20,Non-Binary,4,Biology,2.81
+1002,23,Male,4,Business,2.97
+1003,22,Non-Binary,5,Biology,3.63
+1004,20,Male,1,Business,2.5
+1005,20,Male,4,Biology,2.61
+1006,22,Male,2,Nursing,3.02
+1007,20,Female,5,Education,2.97
+1008,24,Female,1,Computer Science,2.75
+1009,20,Male,4,Biology,2.92
+1010,19,Female,5,Nursing,3.24
+1011,22,Female,2,Arts,2.06
+1012,17,Non-Binary,2,Arts,3.57
+1013,21,Female,2,Psychology,4
+1014,23,Non-Binary,4,Business,3.03
+1015,20,Female,1,Computer Science,2.91
+1016,25,Non-Binary,1,Computer Science,2.98
+1017,28,Male,3,Education,2.34
+1018,18,Female,4,Arts,2.37
+1019,20,Non-Binary,5,Mathematics,3.24
+1020,26,Male,3,Psychology,2.34
+1021,17,Male,2,Engineering,2.87
+1022,24,Male,2,Biology,3.65
+1023,24,Female,2,Law,3.25
+1024,21,Non-Binary,5,Nursing,2.34
+1025,20,Male,4,Education,1.62
+1026,26,Female,5,Education,2.09
+1027,21,Female,3,Nursing,2.1
+1028,22,Male,2,Nursing,3.21
+1029,17,Male,1,Computer Science,2.09
+1030,20,Non-Binary,1,Mathematics,2.57
+1031,19,Non-Binary,3,Mathematics,1.77
+1032,21,Male,3,Business,3.72
+1033,26,Non-Binary,1,Psychology,2.39
+1034,17,Female,3,Engineering,3.66
+1035,21,Male,2,Nursing,2.33
+1036,22,Non-Binary,4,Mathematics,2.57
+1037,22,Female,5,Computer Science,3.21
+1038,19,Non-Binary,5,Business,2.44
+1039,17,Male,3,Biology,2.96
+1040,17,Female,3,Computer Science,3.69
+1041,27,Female,2,Mathematics,3.48
+1042,20,Female,1,Psychology,3.18
+1043,25,Non-Binary,5,Computer Science,3.44
+1044,22,Non-Binary,2,Engineering,2.93
+1045,25,Female,5,Mathematics,3.55
+1046,26,Female,4,Biology,2.13
+1047,28,Female,4,Computer Science,3.45
+1048,17,Male,1,Business,3.18
+1049,26,Male,4,Arts,2.61
+1050,20,Female,3,Psychology,3.99
+1051,23,Female,2,Arts,1.12
+1052,20,Non-Binary,3,Law,3.35
+1053,28,Male,1,Psychology,3.19
+1054,24,Female,1,Biology,3.33
+1055,21,Female,1,Business,2.46
+1056,17,Male,2,Biology,3.39
+1057,18,Non-Binary,1,Nursing,2.74
+1058,23,Male,2,Arts,3.74
+1059,17,Non-Binary,5,Mathematics,2.3
+1060,26,Female,1,Law,4
+1061,25,Male,4,Business,4
+1062,19,Female,3,Business,2.53
+1063,17,Male,1,Education,2.52
+1064,22,Female,3,Law,2.54
+1065,21,Non-Binary,1,Computer Science,3.6
+1066,18,Female,2,Psychology,0.9
+1067,19,Non-Binary,3,Mathematics,3.23
+1068,22,Non-Binary,4,Mathematics,2.9
+1069,27,Non-Binary,3,Nursing,3.13
+1070,20,Female,3,Arts,3.17
+1071,26,Female,4,Law,1.97
+1072,28,Female,4,Business,2.52
+1073,20,Non-Binary,5,Education,3.03
+1074,28,Male,1,Mathematics,2.4
+1075,23,Male,2,Education,3.19
+1076,24,Non-Binary,2,Mathematics,2.91
+1077,27,Female,1,Psychology,2.94
+1078,25,Non-Binary,1,Psychology,2.66
+1079,18,Non-Binary,5,Psychology,3.36
+1080,17,Non-Binary,2,Law,3.52
+1081,25,Male,5,Psychology,2.63
+1082,28,Female,5,Engineering,2.45
+1083,21,Male,3,Computer Science,3.02
+1084,24,Non-Binary,5,Biology,3.79
+1085,28,Non-Binary,5,Psychology,2.87
+1086,18,Male,1,Computer Science,2.78
+1087,20,Female,1,Law,3.54
+1088,18,Non-Binary,5,Law,2.45
+1089,26,Non-Binary,4,Nursing,3.66
+1090,27,Non-Binary,1,Engineering,2.57
+1091,18,Female,2,Biology,3.02
+1092,21,Non-Binary,5,Biology,2.69
+1093,18,Non-Binary,2,Education,2.97
+1094,18,Female,1,Computer Science,3.91
+1095,25,Male,2,Arts,3.29
+1096,17,Male,4,Business,2.57
+1097,20,Male,3,Psychology,2.6
+1098,24,Non-Binary,4,Biology,3.25
+1099,24,Female,1,Psychology,3.95
+1100,17,Male,1,Law,1.94
+1101,22,Non-Binary,3,Arts,4
+1102,20,Non-Binary,5,Arts,3.09
+1103,26,Male,5,Business,2.99
+1104,24,Non-Binary,1,Arts,4
+1105,19,Female,3,Law,2.68
+1106,26,Male,3,Business,3.75
+1107,17,Male,1,Engineering,2.78
+1108,27,Female,4,Biology,3.33
+1109,17,Male,5,Mathematics,1.87
+1110,20,Non-Binary,3,Psychology,2.83
+1111,25,Non-Binary,4,Education,4
+1112,27,Male,2,Law,3.2
+1113,25,Female,3,Computer Science,3.6
+1114,20,Non-Binary,3,Engineering,2.86
+1115,18,Male,2,Law,1.62
+1116,26,Non-Binary,4,Computer Science,3.05
+1117,27,Non-Binary,3,Psychology,2.02
+1118,22,Male,2,Law,2.41
+1119,20,Female,4,Engineering,2.55
+1120,23,Non-Binary,5,Business,2.43
+1121,22,Non-Binary,3,Psychology,3.19
+1122,18,Non-Binary,5,Law,3.54
+1123,20,Non-Binary,2,Psychology,3.37
+1124,28,Male,1,Computer Science,2.41
+1125,27,Male,5,Computer Science,2.48
+1126,21,Female,1,Law,3.88
+1127,21,Non-Binary,3,Biology,3.28
+1128,23,Non-Binary,4,Education,2.87
+1129,17,Female,2,Nursing,3.73
+1130,18,Female,4,Law,3.25
+1131,21,Non-Binary,2,Arts,3.37
+1132,23,Non-Binary,5,Computer Science,2.63
+1133,27,Male,2,Arts,3.12
+1134,17,Male,5,Law,2.87
+1135,21,Male,5,Engineering,3.37
+1136,18,Male,5,Education,2.62
+1137,24,Female,1,Biology,3.33
+1138,21,Male,2,Psychology,3.01
+1139,19,Non-Binary,3,Arts,3.37
+1140,26,Female,2,Mathematics,2.4
+1141,24,Male,1,Engineering,2.62
+1142,17,Non-Binary,3,Biology,2.87
+1143,27,Female,3,Arts,2.27
+1144,17,Male,4,Engineering,2.59
+1145,20,Male,1,Computer Science,3.43
+1146,19,Non-Binary,1,Computer Science,2.53
+1147,23,Male,3,Education,2.97
+1148,18,Non-Binary,1,Engineering,3.81
+1149,22,Non-Binary,4,Education,4
+1150,19,Male,2,Law,3.01
+1151,18,Female,3,Psychology,2.38
+1152,27,Non-Binary,4,Engineering,3.18
+1153,26,Male,3,Engineering,2.74
+1154,28,Non-Binary,5,Nursing,3.47
+1155,21,Non-Binary,1,Psychology,3.63
+1156,18,Male,2,Education,2.38
+1157,28,Non-Binary,5,Biology,2.46
+1158,26,Male,5,Business,1.73
+1159,17,Non-Binary,1,Arts,2.22
+1160,18,Female,3,Computer Science,2.34
+1161,27,Non-Binary,2,Engineering,1.95
+1162,20,Male,1,Arts,3.29
+1163,27,Female,5,Education,3.02
+1164,18,Male,2,Arts,2.88
+1165,19,Male,5,Mathematics,2.74
+1166,28,Female,1,Education,3.16
+1167,22,Male,2,Mathematics,3.17
+1168,21,Male,1,Nursing,2.16
+1169,27,Female,1,Law,3.6
+1170,21,Female,5,Business,2.69
+1171,17,Female,1,Business,2.44
+1172,25,Female,3,Engineering,3.62
+1173,26,Non-Binary,2,Law,2.79
+1174,19,Female,4,Mathematics,3.35
+1175,25,Female,2,Biology,2.06
+1176,25,Female,4,Arts,3.48
+1177,19,Female,4,Business,2.71
+1178,17,Male,4,Nursing,2.09
+1179,23,Non-Binary,3,Biology,2.71
+1180,22,Male,2,Mathematics,2.68
+1181,22,Male,4,Mathematics,3.19
+1182,28,Female,5,Business,2.71
+1183,19,Non-Binary,1,Computer Science,2.92
+1184,21,Non-Binary,2,Engineering,2.88
+1185,23,Female,5,Computer Science,3.14
+1186,23,Male,5,Computer Science,2.84
+1187,28,Non-Binary,4,Psychology,2.73
+1188,26,Female,5,Business,3.22
+1189,26,Female,4,Engineering,2.86
+1190,20,Male,3,Education,3.04
+1191,20,Male,1,Nursing,2.7
+1192,23,Female,4,Psychology,2.47
+1193,17,Non-Binary,3,Engineering,3.44
+1194,24,Non-Binary,1,Engineering,2.62
+1195,20,Male,1,Law,3.76
+1196,28,Non-Binary,4,Engineering,3.78
+1197,20,Female,1,Law,1.67
+1198,23,Male,2,Engineering,2.73
+1199,25,Female,1,Arts,4
+1200,25,Female,2,Computer Science,2.96
+1201,25,Male,2,Biology,2.09
+1202,23,Non-Binary,3,Psychology,2.94
+1203,17,Male,3,Law,3.5
+1204,18,Non-Binary,1,Psychology,4
+1205,23,Male,5,Business,2.88
+1206,23,Non-Binary,2,Arts,3.21
+1207,23,Male,5,Psychology,3.41
+1208,21,Male,4,Mathematics,3.35
+1209,18,Male,5,Psychology,3.39
+1210,18,Female,3,Psychology,3.2
+1211,21,Male,1,Arts,3.58
+1212,28,Female,4,Nursing,4
+1213,20,Male,3,Computer Science,3.36
+1214,28,Non-Binary,5,Law,3.91
+1215,21,Non-Binary,5,Computer Science,3.03
+1216,27,Male,1,Computer Science,2.02
+1217,26,Male,2,Mathematics,3.1
+1218,26,Female,1,Education,4
+1219,23,Male,5,Education,2.04
+1220,22,Female,5,Computer Science,3.41
+1221,19,Male,4,Mathematics,3.55
+1222,24,Male,4,Psychology,2.44
+1223,20,Male,1,Psychology,2.76
+1224,27,Female,4,Business,4
+1225,19,Non-Binary,2,Nursing,2.77
+1226,25,Non-Binary,5,Education,3.1
+1227,28,Female,3,Mathematics,3.66
+1228,24,Female,2,Biology,2.61
+1229,18,Female,5,Nursing,3.29
+1230,27,Female,5,Psychology,2.65
+1231,20,Non-Binary,4,Mathematics,2.88
+1232,28,Female,5,Nursing,2.67
+1233,19,Male,5,Business,4
+1234,19,Male,2,Law,3.15
+1235,22,Non-Binary,5,Mathematics,2.87
+1236,19,Female,4,Education,3
+1237,27,Female,4,Nursing,2.76
+1238,21,Non-Binary,3,Mathematics,4
+1239,24,Male,2,Education,2.51
+1240,27,Female,2,Computer Science,3.2
+1241,23,Male,4,Business,4
+1242,19,Male,5,Computer Science,2.95
+1243,28,Male,1,Business,1.5
+1244,24,Female,2,Education,3.01
+1245,28,Non-Binary,5,Nursing,2.66
+1246,21,Male,3,Law,2.39
+1247,23,Non-Binary,3,Education,2.35
+1248,21,Male,4,Engineering,3.3
+1249,23,Male,1,Computer Science,3.34
+1250,21,Female,5,Mathematics,2.37
+1251,26,Female,1,Mathematics,2.94
+1252,28,Non-Binary,3,Psychology,3.66
+1253,20,Female,5,Biology,2.62
+1254,22,Female,2,Computer Science,3.09
+1255,25,Female,4,Mathematics,3.16
+1256,23,Female,2,Psychology,2.51
+1257,21,Female,4,Arts,2.76
+1258,18,Female,5,Education,2.8
+1259,17,Female,5,Engineering,3.93
+1260,20,Male,3,Computer Science,4
+1261,24,Male,4,Education,2.07
+1262,27,Female,2,Biology,3.46
+1263,25,Male,3,Biology,3.08
+1264,19,Male,4,Mathematics,2.74
+1265,20,Non-Binary,3,Mathematics,3.14
+1266,25,Female,5,Computer Science,3.53
+1267,21,Non-Binary,1,Nursing,2.84
+1268,21,Female,5,Education,1.49
+1269,23,Female,5,Mathematics,3.31
+1270,17,Non-Binary,5,Education,2.12
+1271,17,Male,2,Engineering,2.96
+1272,26,Non-Binary,1,Computer Science,2.53
+1273,17,Male,1,Law,2.97
+1274,24,Female,3,Arts,2.8
+1275,28,Non-Binary,5,Mathematics,3.41
+1276,24,Female,3,Biology,2.91
+1277,22,Non-Binary,4,Education,2.82
+1278,20,Non-Binary,5,Engineering,3.41
+1279,27,Female,5,Law,2.1
+1280,19,Female,3,Biology,3.32
+1281,25,Male,5,Psychology,2.01
+1282,28,Male,1,Arts,3.11
+1283,27,Female,5,Nursing,2.82
+1284,23,Female,4,Education,4
+1285,18,Male,5,Business,3.06
+1286,28,Male,1,Computer Science,3.33
+1287,25,Male,2,Engineering,2.82
+1288,23,Non-Binary,5,Nursing,3.67
+1289,17,Male,4,Psychology,2.48
+1290,19,Female,5,Arts,4
+1291,24,Female,3,Computer Science,2.91
+1292,24,Male,3,Mathematics,2.83
+1293,19,Non-Binary,3,Computer Science,2.38
+1294,25,Male,3,Education,2.98
+1295,20,Female,4,Psychology,3.38
+1296,18,Male,5,Biology,3.26
+1297,28,Non-Binary,5,Education,3.39
+1298,28,Male,5,Business,3.83
+1299,25,Male,2,Arts,2.8
+1300,24,Male,1,Psychology,3.91
+1301,23,Non-Binary,2,Biology,2.83
+1302,23,Female,5,Nursing,3.19
+1303,22,Non-Binary,3,Education,2.47
+1304,21,Female,2,Arts,2.73
+1305,18,Non-Binary,3,Business,3.29
+1306,21,Female,1,Law,2.5
+1307,22,Male,2,Arts,2.93
+1308,26,Female,1,Education,3.66
+1309,22,Non-Binary,3,Computer Science,3.11
+1310,25,Female,5,Education,3.48
+1311,24,Female,3,Arts,3.57
+1312,28,Female,2,Biology,2.74
+1313,17,Male,5,Engineering,2.28
+1314,22,Non-Binary,4,Business,4
+1315,22,Female,3,Computer Science,3.73
+1316,28,Non-Binary,1,Computer Science,4
+1317,23,Non-Binary,4,Engineering,3.79
+1318,21,Male,1,Law,3.28
+1319,22,Female,1,Psychology,2.46
+1320,27,Female,5,Psychology,3.13
+1321,24,Male,4,Nursing,3.8
+1322,22,Female,5,Mathematics,3.34
+1323,26,Male,1,Business,2.89
+1324,24,Non-Binary,4,Nursing,3.3
+1325,28,Female,1,Business,3.12
+1326,19,Non-Binary,2,Arts,2.26
+1327,24,Non-Binary,5,Engineering,4
+1328,19,Non-Binary,1,Psychology,3.23
+1329,24,Male,4,Education,1.41
+1330,27,Non-Binary,5,Biology,3.45
+1331,27,Female,5,Psychology,3.94
+1332,26,Female,3,Engineering,4
+1333,22,Male,4,Mathematics,2.5
+1334,28,Non-Binary,5,Business,4
+1335,24,Female,2,Business,3.98
+1336,24,Male,2,Arts,2.97
+1337,23,Female,5,Law,2.2
+1338,19,Male,4,Law,3.48
+1339,22,Female,2,Law,2.28
+1340,17,Male,2,Business,2.68
+1341,17,Non-Binary,1,Mathematics,2.72
+1342,28,Female,2,Business,3.23
+1343,23,Female,5,Computer Science,2.27
+1344,23,Non-Binary,5,Business,2.82
+1345,17,Female,3,Psychology,2.81
+1346,28,Non-Binary,4,Business,2.93
+1347,22,Male,4,Mathematics,3.62
+1348,23,Non-Binary,1,Computer Science,3.26
+1349,20,Female,3,Law,2.9
+1350,27,Male,3,Biology,3.03
+1351,19,Male,1,Nursing,3.51
+1352,23,Non-Binary,2,Mathematics,2.9
+1353,22,Female,1,Nursing,2.85
+1354,18,Female,1,Engineering,1.64
+1355,23,Non-Binary,4,Engineering,3.69
+1356,21,Female,3,Nursing,3.93
+1357,25,Male,4,Mathematics,3.95
+1358,24,Male,4,Mathematics,3.14
+1359,28,Female,4,Biology,3.56
+1360,25,Female,2,Nursing,3.11
+1361,24,Non-Binary,1,Law,2.57
+1362,22,Non-Binary,5,Education,2.07
+1363,22,Non-Binary,4,Psychology,2.8
+1364,25,Male,4,Engineering,3.2
+1365,18,Male,1,Psychology,3.62
+1366,23,Female,3,Business,2.59
+1367,19,Non-Binary,5,Mathematics,2.9
+1368,28,Non-Binary,4,Engineering,2.76
+1369,17,Non-Binary,4,Computer Science,3.12
+1370,26,Male,1,Psychology,2.82
+1371,24,Female,1,Psychology,3.38
+1372,28,Female,3,Psychology,3.21
+1373,28,Female,4,Law,3.49
+1374,24,Non-Binary,5,Engineering,3.44
+1375,17,Female,5,Mathematics,3
+1376,25,Female,5,Mathematics,2.67
+1377,17,Male,1,Business,3.35
+1378,22,Female,3,Arts,3.74
+1379,18,Male,4,Psychology,1.91
+1380,26,Female,1,Mathematics,3.22
+1381,18,Male,5,Biology,2.19
+1382,24,Female,3,Law,2.58
+1383,19,Non-Binary,1,Computer Science,3.26
+1384,20,Male,4,Mathematics,3.83
+1385,28,Non-Binary,2,Biology,2.79
+1386,20,Non-Binary,1,Education,3.72
+1387,25,Male,2,Computer Science,1.78
+1388,21,Male,2,Arts,3.38
+1389,22,Male,3,Arts,3.46
+1390,28,Male,2,Business,2.73
+1391,28,Non-Binary,2,Engineering,3.24
+1392,23,Non-Binary,2,Computer Science,3.99
+1393,21,Female,1,Nursing,2.88
+1394,20,Male,5,Computer Science,2.94
+1395,24,Female,5,Computer Science,2.72
+1396,22,Non-Binary,5,Mathematics,3.1
+1397,28,Male,1,Law,3.3
+1398,18,Male,1,Mathematics,3.45
+1399,18,Female,4,Arts,2.84
+1400,23,Male,2,Mathematics,3.16
+1401,25,Male,5,Business,2.52
+1402,24,Male,5,Arts,2.25
+1403,22,Non-Binary,2,Biology,2.39
+1404,20,Female,2,Education,2.62
+1405,28,Female,4,Mathematics,3.03
+1406,27,Male,4,Computer Science,2.41
+1407,18,Male,4,Computer Science,4
+1408,18,Male,4,Nursing,2.68
+1409,25,Male,3,Law,2.84
+1410,22,Non-Binary,5,Business,1.7
+1411,17,Male,1,Psychology,3.24
+1412,19,Non-Binary,3,Nursing,2.13
+1413,27,Female,4,Education,3.32
+1414,21,Non-Binary,5,Business,2.16
+1415,18,Non-Binary,2,Biology,1.96
+1416,22,Male,4,Arts,2.48
+1417,21,Female,3,Arts,2.76
+1418,23,Male,2,Biology,1.89
+1419,18,Non-Binary,4,Mathematics,2.38
+1420,28,Non-Binary,1,Law,3.45
+1421,24,Female,2,Psychology,3.3
+1422,21,Non-Binary,3,Arts,2.58
+1423,18,Female,4,Psychology,2.02
+1424,25,Non-Binary,5,Computer Science,2.81
+1425,22,Non-Binary,4,Engineering,3.39
+1426,21,Non-Binary,1,Engineering,4
+1427,19,Non-Binary,5,Business,2.92
+1428,28,Male,5,Psychology,3.52
+1429,28,Female,2,Education,2.96
+1430,22,Non-Binary,5,Business,2.53
+1431,27,Non-Binary,3,Education,3.27
+1432,27,Male,4,Computer Science,2.48
+1433,25,Female,5,Education,1.63
+1434,26,Non-Binary,3,Education,2.82
+1435,26,Female,4,Engineering,3.22
+1436,17,Female,4,Computer Science,2.55
+1437,17,Female,3,Education,3.65
+1438,21,Non-Binary,2,Arts,1.6
+1439,18,Female,2,Mathematics,3
+1440,22,Non-Binary,1,Engineering,2.85
+1441,28,Non-Binary,4,Mathematics,3.32
+1442,20,Non-Binary,5,Nursing,2.68
+1443,26,Female,3,Biology,2.44
+1444,25,Non-Binary,1,Law,3.82
+1445,26,Non-Binary,4,Psychology,2.93
+1446,20,Non-Binary,4,Nursing,3.92
+1447,20,Female,3,Biology,2.79
+1448,17,Female,2,Arts,2.62
+1449,17,Male,1,Law,3.48
+1450,19,Female,5,Psychology,2.87
+1451,26,Non-Binary,3,Engineering,3.52
+1452,20,Non-Binary,3,Psychology,3.23
+1453,20,Male,1,Education,2.87
+1454,27,Non-Binary,2,Biology,2.85
+1455,17,Non-Binary,1,Biology,3.23
+1456,18,Female,2,Biology,3.48
+1457,19,Male,4,Computer Science,2.31
+1458,24,Female,5,Education,3.13
+1459,20,Female,1,Law,3.41
+1460,17,Male,4,Law,3.34
+1461,25,Non-Binary,3,Computer Science,2.55
+1462,21,Female,5,Business,2.62
+1463,28,Male,4,Business,3.71
+1464,28,Non-Binary,2,Business,3.22
+1465,25,Male,4,Engineering,2.6
+1466,25,Male,2,Biology,4
+1467,17,Female,1,Law,3.42
+1468,25,Female,3,Psychology,3.24
+1469,17,Non-Binary,4,Law,3.26
+1470,22,Non-Binary,5,Engineering,2
+1471,23,Non-Binary,3,Biology,2.73
+1472,18,Non-Binary,2,Business,2.8
+1473,26,Non-Binary,1,Education,2.77
+1474,22,Female,5,Engineering,1.91
+1475,27,Non-Binary,1,Psychology,2.47
+1476,21,Male,4,Mathematics,3.77
+1477,26,Male,3,Nursing,3.46
+1478,27,Non-Binary,2,Education,2.43
+1479,27,Male,1,Nursing,4
+1480,20,Female,5,Law,3.06
+1481,26,Male,1,Biology,3.86
+1482,28,Male,5,Mathematics,3.23
+1483,28,Male,3,Mathematics,3.39
+1484,19,Male,1,Education,4
+1485,28,Female,4,Psychology,4
+1486,26,Non-Binary,1,Computer Science,3.54
+1487,24,Non-Binary,3,Education,2.4
+1488,21,Male,1,Engineering,3.2
+1489,22,Non-Binary,3,Biology,2.91
+1490,23,Female,2,Computer Science,3.83
+1491,28,Female,4,Engineering,4
+1492,20,Male,4,Engineering,3.43
+1493,17,Female,2,Psychology,2.9
+1494,21,Female,4,Biology,2.72
+1495,26,Non-Binary,3,Psychology,3.34
+1496,27,Female,4,Arts,3.05
+1497,27,Male,4,Arts,3.27
+1498,24,Male,1,Nursing,2.44
+1499,17,Female,4,Biology,2.53
+1500,26,Non-Binary,3,Law,2.79
+1501,19,Female,2,Nursing,2.5
+1502,19,Male,4,Arts,3.06
+1503,28,Male,5,Biology,2.9
+1504,20,Female,3,Business,2.43
+1505,20,Male,2,Biology,2.91
+1506,26,Male,2,Biology,3.24
+1507,28,Non-Binary,2,Nursing,3.03
+1508,24,Non-Binary,3,Engineering,2.85
+1509,24,Non-Binary,5,Psychology,4
+1510,25,Female,1,Engineering,3.34
+1511,18,Female,5,Engineering,3.14
+1512,25,Male,3,Engineering,1.97
+1513,21,Non-Binary,3,Education,2.67
+1514,28,Female,1,Biology,2.83
+1515,18,Non-Binary,4,Education,3.53
+1516,23,Non-Binary,3,Mathematics,4
+1517,28,Male,1,Psychology,3.6
+1518,22,Male,5,Business,3.33
+1519,21,Non-Binary,1,Psychology,2.9
+1520,26,Male,3,Mathematics,3.29
+1521,23,Female,1,Engineering,3.24
+1522,25,Non-Binary,2,Computer Science,3.76
+1523,26,Male,3,Psychology,3.34
+1524,18,Female,3,Nursing,2.88
+1525,27,Female,1,Law,3.57
+1526,25,Female,1,Biology,2.84
+1527,24,Non-Binary,2,Education,3.41
+1528,22,Non-Binary,4,Business,2.58
+1529,28,Male,4,Law,2.79
+1530,25,Male,3,Engineering,3.76
+1531,24,Male,1,Mathematics,3.08
+1532,26,Female,1,Business,1.49
+1533,20,Female,1,Arts,2.61
+1534,21,Male,3,Biology,2.9
+1535,19,Male,4,Biology,3.08
+1536,28,Male,1,Arts,2.11
+1537,28,Female,1,Computer Science,2.82
+1538,20,Male,3,Nursing,3.19
+1539,18,Female,3,Biology,3.8
+1540,24,Non-Binary,3,Law,3.31
+1541,22,Male,5,Biology,3.51
+1542,21,Female,5,Biology,2.97
+1543,27,Non-Binary,2,Nursing,3.65
+1544,25,Female,4,Nursing,2.69
+1545,27,Female,1,Business,1.69
+1546,28,Male,4,Engineering,3.3
+1547,26,Female,5,Biology,2.61
+1548,25,Male,4,Biology,2.91
+1549,18,Male,4,Nursing,2.39
+1550,17,Female,3,Computer Science,3.88
+1551,17,Female,5,Arts,2.99
+1552,21,Female,5,Psychology,3.14
+1553,22,Female,2,Mathematics,2.78
+1554,20,Male,5,Engineering,3.18
+1555,17,Female,3,Law,3.76
+1556,22,Female,4,Education,2.99
+1557,18,Female,2,Mathematics,2.66
+1558,19,Non-Binary,4,Law,2.69
+1559,23,Female,1,Nursing,2.65
+1560,25,Non-Binary,5,Mathematics,2.91
+1561,25,Non-Binary,2,Arts,3.3
+1562,19,Non-Binary,3,Law,3.6
+1563,26,Non-Binary,1,Computer Science,3.35
+1564,24,Male,3,Nursing,2.06
+1565,19,Non-Binary,3,Biology,2.65
+1566,27,Non-Binary,1,Mathematics,2.48
+1567,24,Male,3,Computer Science,3.45
+1568,19,Non-Binary,3,Psychology,2.24
+1569,19,Female,5,Education,2.97
+1570,19,Non-Binary,3,Law,3.06
+1571,20,Male,5,Nursing,2.88
+1572,25,Male,3,Mathematics,2.82
+1573,25,Female,5,Engineering,3.59
+1574,26,Female,4,Psychology,2.6
+1575,27,Male,1,Nursing,2.1
+1576,19,Male,3,Biology,1.45
+1577,24,Female,2,Computer Science,2
+1578,25,Female,3,Nursing,4
+1579,26,Male,1,Business,3.82
+1580,21,Non-Binary,3,Education,4
+1581,24,Female,1,Arts,2.32
+1582,27,Male,2,Engineering,3.02
+1583,23,Male,1,Law,2.17
+1584,19,Non-Binary,2,Engineering,3.64
+1585,27,Female,4,Psychology,4
+1586,20,Non-Binary,1,Engineering,3.07
+1587,26,Male,3,Mathematics,3.24
+1588,25,Female,3,Arts,3.84
+1589,17,Non-Binary,4,Nursing,2.54
+1590,27,Non-Binary,1,Biology,1.81
+1591,21,Male,2,Business,3.31
+1592,23,Non-Binary,2,Biology,2.45
+1593,19,Male,5,Business,2.7
+1594,24,Male,5,Nursing,3.57
+1595,20,Male,4,Psychology,2.89
+1596,26,Female,5,Mathematics,3.02
+1597,19,Female,1,Nursing,3.24
+1598,17,Non-Binary,3,Psychology,3.07
+1599,17,Male,5,Computer Science,3.13
+1600,19,Female,1,Psychology,2.36
+1601,20,Female,1,Engineering,3.49
+1602,20,Non-Binary,3,Education,3.48
+1603,22,Female,3,Business,2.35
+1604,19,Female,1,Biology,2.85
+1605,21,Female,2,Arts,2.29
+1606,28,Male,5,Arts,2.66
+1607,26,Female,3,Biology,3.12
+1608,27,Male,5,Psychology,2.29
+1609,22,Non-Binary,3,Psychology,3.19
+1610,26,Female,4,Education,2.24
+1611,25,Non-Binary,2,Biology,2.99
+1612,20,Female,1,Nursing,3.02
+1613,27,Female,2,Law,2.28
+1614,28,Female,5,Law,3.48
+1615,21,Male,3,Education,3.81
+1616,27,Non-Binary,1,Computer Science,3.53
+1617,26,Male,2,Computer Science,3
+1618,27,Female,5,Biology,3.8
+1619,23,Male,2,Computer Science,3.04
+1620,26,Non-Binary,4,Nursing,2.86
+1621,22,Male,5,Biology,2.27
+1622,21,Non-Binary,5,Business,3.76
+1623,22,Male,1,Education,3.07
+1624,17,Female,2,Education,2.94
+1625,17,Male,3,Arts,1.97
+1626,28,Non-Binary,3,Engineering,3.4
+1627,22,Non-Binary,4,Education,3.65
+1628,27,Male,1,Business,2.76
+1629,27,Male,2,Nursing,4
+1630,25,Male,2,Nursing,2.97
+1631,19,Non-Binary,2,Nursing,3.13
+1632,20,Male,5,Business,2.87
+1633,20,Non-Binary,3,Computer Science,3.93
+1634,26,Non-Binary,1,Business,3.16
+1635,23,Male,5,Computer Science,2.33
+1636,19,Male,5,Education,2.96
+1637,18,Male,5,Law,3.14
+1638,22,Male,5,Computer Science,3.09
+1639,18,Male,5,Engineering,1.25
+1640,26,Non-Binary,4,Mathematics,2.69
+1641,22,Female,3,Psychology,2.7
+1642,20,Male,1,Law,3.34
+1643,19,Male,3,Arts,2.03
+1644,21,Female,1,Nursing,2.39
+1645,24,Male,5,Computer Science,2.55
+1646,21,Non-Binary,1,Law,3.35
+1647,24,Male,5,Education,4
+1648,20,Female,2,Computer Science,2.73
+1649,21,Female,5,Law,3.63
+1650,24,Non-Binary,5,Law,3.3
+1651,19,Non-Binary,5,Psychology,1.85
+1652,24,Male,1,Arts,3.56
+1653,27,Non-Binary,3,Mathematics,3.74
+1654,22,Male,2,Nursing,3.17
+1655,22,Female,4,Engineering,2.75
+1656,28,Non-Binary,1,Computer Science,3.39
+1657,19,Female,3,Law,1.78
+1658,17,Female,5,Education,2.8
+1659,19,Non-Binary,3,Psychology,3.15
+1660,28,Non-Binary,1,Mathematics,2.64
+1661,17,Female,1,Computer Science,2.49
+1662,27,Male,3,Nursing,3.63
+1663,17,Female,5,Computer Science,2.01
+1664,17,Male,3,Biology,2.86
+1665,24,Female,3,Nursing,2.31
+1666,28,Male,4,Psychology,1.73
+1667,23,Non-Binary,4,Education,3.51
+1668,17,Non-Binary,4,Biology,2.46
+1669,25,Non-Binary,2,Psychology,2.53
+1670,22,Male,5,Business,3.4
+1671,28,Non-Binary,1,Biology,3.63
+1672,26,Non-Binary,1,Nursing,3.23
+1673,23,Female,2,Education,2.42
+1674,20,Male,3,Psychology,2.47
+1675,18,Non-Binary,2,Arts,2.35
+1676,21,Male,2,Nursing,2.62
+1677,18,Female,5,Biology,4
+1678,26,Female,3,Mathematics,2.74
+1679,26,Non-Binary,4,Education,3.87
+1680,25,Female,3,Engineering,2.72
+1681,19,Male,5,Education,2.96
+1682,25,Male,1,Biology,2.17
+1683,20,Female,4,Law,2.96
+1684,17,Non-Binary,1,Engineering,2.93
+1685,17,Female,2,Business,2.87
+1686,28,Male,2,Business,4
+1687,22,Female,2,Business,4
+1688,18,Non-Binary,1,Computer Science,1.99
+1689,23,Non-Binary,5,Law,2.83
+1690,26,Male,4,Mathematics,3.38
+1691,24,Female,3,Arts,2.49
+1692,23,Non-Binary,5,Mathematics,2.38
+1693,28,Non-Binary,5,Computer Science,3.28
+1694,28,Female,4,Psychology,3.39
+1695,21,Male,1,Engineering,2.12
+1696,23,Male,4,Computer Science,3.47
+1697,17,Non-Binary,2,Psychology,3.67
+1698,28,Female,3,Nursing,3.1
+1699,20,Non-Binary,4,Psychology,2.41
+1700,21,Female,4,Psychology,3.48
+1701,21,Non-Binary,2,Mathematics,2.42
+1702,22,Female,3,Nursing,3.02
+1703,18,Female,2,Psychology,3.05
+1704,27,Female,1,Law,2.43
+1705,19,Female,2,Biology,2.42
+1706,25,Female,1,Nursing,2.67
+1707,25,Male,4,Biology,2.62
+1708,18,Female,1,Arts,2.6
+1709,26,Non-Binary,4,Nursing,4
+1710,24,Male,2,Mathematics,2.38
+1711,27,Male,4,Computer Science,3.86
+1712,17,Female,3,Biology,3.13
+1713,21,Non-Binary,3,Law,2.81
+1714,23,Male,2,Computer Science,3.83
+1715,22,Non-Binary,2,Mathematics,4
+1716,17,Non-Binary,1,Business,3.46
+1717,22,Female,5,Biology,2.49
+1718,18,Female,5,Education,3.72
+1719,21,Non-Binary,2,Nursing,2.87
+1720,28,Female,5,Mathematics,4
+1721,25,Non-Binary,4,Nursing,2.71
+1722,19,Male,1,Arts,2.77
+1723,23,Male,1,Law,2.67
+1724,28,Male,1,Mathematics,3.36
+1725,25,Non-Binary,1,Biology,3.3
+1726,17,Female,4,Engineering,4
+1727,28,Male,2,Nursing,2.43
+1728,19,Non-Binary,2,Nursing,2.57
+1729,23,Male,3,Education,1.9
+1730,26,Male,4,Psychology,1.9
+1731,27,Female,5,Biology,2.27
+1732,23,Female,3,Arts,2.45
+1733,25,Male,5,Mathematics,3.5
+1734,22,Non-Binary,5,Nursing,2.88
+1735,17,Female,1,Nursing,2.77
+1736,26,Female,1,Law,3.09
+1737,27,Female,1,Mathematics,3.24
+1738,25,Non-Binary,3,Law,2.8
+1739,28,Non-Binary,2,Law,2.8
+1740,28,Female,1,Biology,2.14
+1741,28,Non-Binary,2,Law,3.67
+1742,21,Non-Binary,4,Arts,3.03
+1743,22,Male,5,Psychology,3.59
+1744,22,Male,4,Law,3.5
+1745,21,Male,4,Psychology,2.21
+1746,17,Female,1,Business,3.6
+1747,22,Male,4,Computer Science,2.91
+1748,28,Male,3,Arts,3.74
+1749,20,Male,4,Law,2.38
+1750,21,Male,3,Law,2.74
+1751,26,Female,2,Education,2.76
+1752,27,Male,2,Law,2.93
+1753,28,Female,2,Computer Science,3.19
+1754,26,Non-Binary,4,Business,2.82
+1755,22,Female,5,Business,2.78
+1756,17,Male,2,Psychology,3.51
+1757,17,Male,2,Business,2.7
+1758,22,Female,4,Arts,3.63
+1759,28,Non-Binary,1,Biology,2.39
+1760,24,Non-Binary,3,Biology,3.12
+1761,22,Non-Binary,1,Psychology,2.88
+1762,23,Female,1,Nursing,3.26
+1763,20,Non-Binary,4,Education,3.44
+1764,18,Non-Binary,2,Business,3.86
+1765,25,Male,4,Arts,2.12
+1766,17,Female,4,Education,2.87
+1767,19,Non-Binary,3,Psychology,3.26
+1768,26,Female,5,Engineering,3.22
+1769,25,Female,3,Psychology,2.71
+1770,25,Female,2,Engineering,3.63
+1771,22,Male,1,Engineering,4
+1772,19,Non-Binary,3,Education,2.88
+1773,26,Non-Binary,2,Nursing,3.67
+1774,24,Non-Binary,4,Computer Science,1.7
+1775,28,Male,2,Biology,2.62
+1776,24,Male,4,Nursing,3.6
+1777,20,Male,5,Business,2.42
+1778,24,Female,4,Computer Science,4
+1779,24,Male,1,Psychology,3.68
+1780,26,Male,5,Biology,3.18
+1781,17,Non-Binary,1,Engineering,2.17
+1782,18,Non-Binary,2,Engineering,3.06
+1783,22,Female,4,Biology,3.17
+1784,23,Female,2,Computer Science,3.45
+1785,25,Non-Binary,2,Business,3.2
+1786,28,Male,1,Engineering,3.32
+1787,26,Male,3,Psychology,3.76
+1788,25,Male,4,Computer Science,2.87
+1789,19,Non-Binary,2,Biology,3.03
+1790,19,Non-Binary,1,Psychology,2.59
+1791,17,Non-Binary,3,Business,4
+1792,26,Female,4,Biology,3.24
+1793,20,Female,2,Education,3.91
+1794,23,Female,2,Business,2.62
+1795,23,Female,4,Business,2.4
+1796,24,Female,3,Law,2.95
+1797,26,Female,5,Psychology,3.25
+1798,19,Female,2,Computer Science,2.57
+1799,26,Female,5,Education,2.04
+1800,23,Non-Binary,5,Engineering,2.41
+1801,27,Male,3,Nursing,4
+1802,20,Male,2,Engineering,3.36
+1803,23,Non-Binary,4,Mathematics,2.88
+1804,27,Female,5,Law,2.85
+1805,17,Non-Binary,1,Psychology,2.94
+1806,20,Non-Binary,3,Mathematics,3.12
+1807,19,Non-Binary,5,Computer Science,3.59
+1808,19,Non-Binary,1,Education,2.68
+1809,18,Female,1,Mathematics,1.91
+1810,20,Female,5,Law,3.4
+1811,22,Non-Binary,4,Engineering,3.04
+1812,23,Male,4,Engineering,2.93
+1813,20,Female,5,Engineering,3.32
+1814,20,Female,3,Computer Science,3.48
+1815,19,Male,1,Psychology,1.83
+1816,25,Non-Binary,1,Psychology,3.87
+1817,24,Female,3,Nursing,3.16
+1818,26,Male,1,Law,2.42
+1819,20,Non-Binary,5,Engineering,2.52
+1820,22,Non-Binary,5,Biology,4
+1821,23,Male,4,Arts,2.61
+1822,26,Female,5,Nursing,3.28
+1823,18,Non-Binary,3,Education,3.85
+1824,21,Male,3,Engineering,2.45
+1825,22,Non-Binary,1,Computer Science,3.14
+1826,26,Female,2,Arts,2.53
+1827,23,Non-Binary,3,Nursing,3.09
+1828,27,Non-Binary,2,Biology,4
+1829,28,Male,3,Law,2.65
+1830,26,Non-Binary,2,Mathematics,2.44
+1831,17,Female,1,Arts,3.51
+1832,28,Non-Binary,3,Business,3.64
+1833,18,Female,2,Computer Science,2.87
+1834,22,Non-Binary,3,Nursing,2.61
+1835,20,Male,4,Psychology,3.55
+1836,20,Male,5,Mathematics,3.35
+1837,28,Non-Binary,3,Business,2.38
+1838,27,Non-Binary,5,Arts,2.67
+1839,28,Male,2,Biology,3.27
+1840,19,Female,3,Arts,1.94
+1841,17,Male,1,Law,3.09
+1842,25,Non-Binary,5,Computer Science,3.16
+1843,18,Male,5,Mathematics,3.68
+1844,24,Female,4,Arts,4
+1845,18,Male,1,Nursing,2.27
+1846,18,Female,5,Arts,1.91
+1847,24,Male,2,Mathematics,2.77
+1848,26,Female,3,Education,2.73
+1849,18,Male,2,Education,2.32
+1850,21,Non-Binary,3,Nursing,3.83
+1851,21,Male,5,Psychology,4
+1852,20,Male,4,Computer Science,2.38
+1853,21,Non-Binary,4,Psychology,2.92
+1854,21,Non-Binary,5,Nursing,2.26
+1855,25,Female,4,Biology,2.81
+1856,28,Male,2,Computer Science,4
+1857,17,Female,1,Engineering,2.64
+1858,28,Non-Binary,1,Business,3.11
+1859,18,Non-Binary,5,Biology,2.55
+1860,18,Non-Binary,1,Psychology,3.05
+1861,21,Male,4,Engineering,3.25
+1862,22,Non-Binary,5,Education,2.48
+1863,17,Non-Binary,1,Law,1.9
+1864,17,Non-Binary,1,Computer Science,4
+1865,23,Male,5,Biology,3.43
+1866,25,Female,5,Biology,2.73
+1867,23,Non-Binary,2,Computer Science,3.32
+1868,26,Female,1,Education,3.33
+1869,20,Female,3,Business,2.21
+1870,24,Male,2,Psychology,3.11
+1871,24,Female,1,Psychology,2.33
+1872,23,Non-Binary,5,Biology,3.37
+1873,22,Male,4,Law,2.95
+1874,28,Female,1,Engineering,4
+1875,21,Non-Binary,1,Education,3.88
+1876,17,Female,2,Engineering,2.86
+1877,19,Female,5,Business,2.52
+1878,17,Non-Binary,4,Biology,2.6
+1879,27,Female,3,Computer Science,3.01
+1880,17,Non-Binary,2,Computer Science,3.02
+1881,24,Male,3,Nursing,3.37
+1882,23,Non-Binary,3,Arts,3.52
+1883,20,Female,2,Engineering,3.44
+1884,18,Male,5,Biology,2.41
+1885,26,Female,1,Biology,3.21
+1886,21,Male,2,Business,3.57
+1887,24,Non-Binary,4,Computer Science,1.98
+1888,22,Female,5,Biology,1.88
+1889,20,Male,2,Arts,3.09
+1890,19,Female,4,Computer Science,2.38
+1891,28,Male,3,Law,3.1
+1892,28,Non-Binary,4,Business,3.57
+1893,28,Non-Binary,3,Education,3.15
+1894,23,Female,3,Mathematics,2.99
+1895,22,Male,1,Law,1.77
+1896,25,Female,1,Arts,3.84
+1897,17,Female,4,Computer Science,2.44
+1898,21,Male,1,Business,2.33
+1899,26,Non-Binary,5,Nursing,2.59
+1900,23,Non-Binary,2,Engineering,2.53
+1901,18,Female,5,Nursing,2.68
+1902,26,Male,2,Arts,2.66
+1903,19,Male,1,Education,2.93
+1904,19,Male,3,Psychology,2.12
+1905,27,Female,1,Business,2.58
+1906,17,Non-Binary,4,Mathematics,3.13
+1907,19,Female,1,Psychology,3.73
+1908,26,Female,2,Psychology,3.21
+1909,27,Male,1,Engineering,3.27
+1910,19,Non-Binary,4,Nursing,3.25
+1911,18,Female,3,Engineering,4
+1912,23,Non-Binary,2,Engineering,1.79
+1913,20,Non-Binary,5,Nursing,3.8
+1914,27,Non-Binary,1,Computer Science,3.54
+1915,17,Female,3,Business,4
+1916,27,Female,1,Business,3.42
+1917,27,Male,2,Arts,3.7
+1918,17,Female,3,Computer Science,2.86
+1919,25,Non-Binary,3,Law,2.2
+1920,18,Male,4,Nursing,3.26
+1921,24,Non-Binary,5,Education,1.82
+1922,24,Non-Binary,1,Law,2.27
+1923,19,Non-Binary,4,Computer Science,3.1
+1924,20,Female,3,Nursing,3.09
+1925,17,Male,4,Arts,3
+1926,19,Female,5,Law,4
+1927,21,Non-Binary,2,Mathematics,3.43
+1928,18,Female,4,Biology,3.54
+1929,19,Female,3,Psychology,3.07
+1930,23,Female,5,Mathematics,2.77
+1931,28,Non-Binary,2,Business,3.92
+1932,24,Female,2,Psychology,3.49
+1933,18,Male,4,Mathematics,3.91
+1934,17,Non-Binary,4,Nursing,3.43
+1935,26,Non-Binary,2,Engineering,1.78
+1936,24,Female,3,Education,3.1
+1937,24,Non-Binary,4,Nursing,2.41
+1938,20,Male,2,Nursing,3.12
+1939,22,Non-Binary,5,Law,3.11
+1940,19,Female,4,Business,2.88
+1941,23,Non-Binary,3,Computer Science,2.36
+1942,28,Male,1,Business,2.66
+1943,23,Female,3,Computer Science,2.78
+1944,25,Female,4,Biology,4
+1945,28,Female,4,Law,3.03
+1946,22,Female,4,Education,2.99
+1947,24,Female,3,Arts,2.15
+1948,25,Male,1,Business,1.7
+1949,23,Female,2,Psychology,2.59
+1950,27,Non-Binary,4,Mathematics,2.49
+1951,17,Male,2,Biology,3.12
+1952,27,Female,5,Education,2.73
+1953,19,Female,4,Education,2.52
+1954,18,Non-Binary,3,Engineering,3.24
+1955,18,Female,3,Arts,2.53
+1956,26,Male,2,Computer Science,4
+1957,25,Male,3,Engineering,1.84
+1958,27,Non-Binary,5,Arts,3.57
+1959,27,Male,3,Mathematics,1.81
+1960,25,Female,3,Nursing,3.8
+1961,25,Non-Binary,4,Engineering,3.2
+1962,18,Non-Binary,1,Arts,2.79
+1963,26,Male,4,Computer Science,2.44
+1964,27,Male,1,Business,3.4
+1965,20,Female,4,Nursing,2.51
+1966,22,Female,3,Business,3.55
+1967,20,Non-Binary,1,Biology,2.71
+1968,22,Female,5,Biology,2.38
+1969,21,Non-Binary,1,Law,3.3
+1970,27,Male,2,Engineering,3.37
+1971,26,Male,5,Nursing,1.61
+1972,25,Female,3,Mathematics,2.75
+1973,27,Male,2,Engineering,3.68
+1974,17,Male,1,Engineering,1.98
+1975,26,Female,5,Business,2.97
+1976,25,Female,3,Engineering,2.3
+1977,25,Non-Binary,1,Business,1.85
+1978,24,Male,5,Education,2.56
+1979,24,Non-Binary,2,Arts,1.73
+1980,19,Male,5,Arts,3.38
+1981,26,Non-Binary,3,Biology,2.66
+1982,25,Female,2,Business,2.91
+1983,23,Non-Binary,3,Arts,2.46
+1984,25,Non-Binary,1,Biology,3.24
+1985,19,Non-Binary,5,Mathematics,2.59
+1986,26,Non-Binary,3,Business,3.74
+1987,23,Non-Binary,2,Education,3.11
+1988,26,Non-Binary,1,Engineering,2.63
+1989,20,Non-Binary,1,Biology,3.38
+1990,28,Non-Binary,2,Education,3.04
+1991,27,Female,5,Law,1.75
+1992,20,Non-Binary,2,Business,3.54
+1993,25,Male,4,Mathematics,3.04
+1994,23,Male,5,Arts,2.91
+1995,17,Non-Binary,4,Education,3.75
+1996,24,Male,4,Biology,2.44
+1997,17,Male,5,Psychology,2.66
+1998,28,Female,3,Engineering,2.92
+1999,28,Non-Binary,4,Nursing,2
+2000,23,Female,1,Arts,2.37

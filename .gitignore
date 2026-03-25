@@ -3,3 +3,4 @@ bin/
 obj/
 prompts/
 clean-prompts.bat
+*.zip

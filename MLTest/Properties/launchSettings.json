@@ -1,13 +1,17 @@
 {
   "$schema": "https://json.schemastore.org/launchsettings.json",
   "profiles": {
-    "MLTest (Evaluate)": {
+    "MLTest (Train)": {
       "commandName": "Project",
-      "commandLineArgs": "\"Student_performance_data _.csv\""
+      "commandLineArgs": "train"
     },
-    "MLTest (Predict-only)": {
+    "MLTest (Predict data_set_1)": {
       "commandName": "Project",
-      "commandLineArgs": "data_predict.csv"
+      "commandLineArgs": "predict data_set_1.csv"
+    },
+    "MLTest (Evaluate data_set_1)": {
+      "commandName": "Project",
+      "commandLineArgs": "evaluate data_set_1.csv data_set_1_full.csv"
     }
   }
 }

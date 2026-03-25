@@ -1,4 +1,5 @@
 using System.Globalization;
+using System.Text;
 using static System.Console;
 
 namespace MLTest;
@@ -9,39 +10,34 @@ internal static class CsvBatchPredictor
     {
         public bool VerbosePerRow { get; init; }
         public int MaxPreviewRows { get; init; } = 20;
+        public string? GroundTruthCsvPath { get; init; }
+        public string? OutputCsvPath { get; init; }
     }
 
-    private static readonly string[] FeatureColumns =
+    private static readonly string[] PredictColumns =
     [
+        "StudentID",
         "Age",
         "Gender",
-        "Ethnicity",
-        "ParentalEducation",
-        "StudyTimeWeekly",
-        "Absences",
-        "Tutoring",
-        "ParentalSupport",
-        "Extracurricular",
-        "Sports",
-        "Music",
-        "Volunteering"
+        "Major",
+        "GPA"
     ];
 
-    private const string LabelColumn = "GradeClass";
+    private const string LabelColumn = "YearOfStudy";
 
-    public static int Run(string csvPath, RunOptions? options = null)
+    public static int Run(string predictCsvPath, RunOptions? options = null)
     {
         options ??= new RunOptions();
 
-        if (string.IsNullOrWhiteSpace(csvPath))
+        if (string.IsNullOrWhiteSpace(predictCsvPath))
         {
-            WriteLine("ERROR: CSV path is empty.");
+            WriteLine("ERROR: Predict CSV path is empty.");
             return 1;
         }
 
-        if (!File.Exists(csvPath))
+        if (!File.Exists(predictCsvPath))
         {
-            WriteLine($"ERROR: CSV file not found: {csvPath}");
+            WriteLine($"ERROR: Predict CSV file not found: {predictCsvPath}");
             return 1;
         }
 
@@ -52,208 +48,167 @@ internal static class CsvBatchPredictor
             return 1;
         }
 
-        var lines = File.ReadLines(csvPath).GetEnumerator();
-        if (!lines.MoveNext())
+        if (!TryReadPredictRows(predictCsvPath, out var predictRows, out var predictHeader, out var predictReadError))
         {
-            WriteLine("ERROR: CSV file is empty.");
+            WriteLine($"ERROR: {predictReadError}");
             return 1;
         }
 
-        var headerLine = lines.Current ?? string.Empty;
-        var delimiter = DetectDelimiter(headerLine);
-        var headers = ParseCsvLine(headerLine, delimiter)
-            .Select(h => h.Trim())
-            .ToArray();
-
-        if (headers.Length == 0)
+        List<GroundTruthRow>? groundTruthRows = null;
+        if (!string.IsNullOrWhiteSpace(options.GroundTruthCsvPath))
         {
-            WriteLine("ERROR: Cannot parse CSV header.");
-            return 1;
-        }
-
-        var headerMap = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
-        for (int i = 0; i < headers.Length; i++)
-        {
-            if (!headerMap.ContainsKey(headers[i]))
+            if (!TryReadGroundTruthRows(options.GroundTruthCsvPath, out groundTruthRows, out var groundTruthError))
             {
-                headerMap[headers[i]] = i;
+                WriteLine($"ERROR: {groundTruthError}");
+                return 1;
             }
         }
 
-        var missingRequired = FeatureColumns.Where(c => !headerMap.ContainsKey(c)).ToList();
-        if (missingRequired.Count > 0)
-        {
-            WriteLine("ERROR: Missing required feature columns in CSV header:");
-            WriteLine($"  - {string.Join(", ", missingRequired)}");
-            WriteLine("Header found:");
-            WriteLine($"  {string.Join(", ", headers)}");
-            return 1;
-        }
+        var evaluateMode = groundTruthRows is { Count: > 0 };
+        var mode = evaluateMode ? "Evaluate" : "Predict-only";
 
-        var hasLabel = headerMap.ContainsKey(LabelColumn);
-        var mode = hasLabel ? "Evaluate" : "Predict-only";
+        WriteLine(evaluateMode
+            ? "=== Evaluate YearOfStudy model on labeled CSV ==="
+            : "=== Predict YearOfStudy from CSV (predict-only) ===");
 
-        WriteLine(hasLabel
-            ? "=== Evaluate GradeClass model on labeled CSV ==="
-            : "=== Predict GradeClass from CSV (predict-only) ===");
-
-        WriteLine($"Input CSV         : {csvPath}");
+        WriteLine($"Predict CSV       : {predictCsvPath}");
+        WriteLine($"Ground truth CSV  : {(evaluateMode ? options.GroundTruthCsvPath : "(none)")}");
         WriteLine($"Model             : {modelPath}");
-        WriteLine($"Delimiter         : '{DisplayDelimiter(delimiter)}'");
+        WriteLine($"Predict columns   : {string.Join(", ", predictHeader)}");
         WriteLine($"Mode              : {mode}");
-        WriteLine($"Has label column? : {(hasLabel ? "Yes" : "No")}");
         WriteLine($"Verbose row logs  : {(options.VerbosePerRow ? "On" : "Off")}");
         WriteLine();
 
-        var totalRows = 0;
-        var parsedRows = 0;
-        var predictedRows = 0;
-        var skippedFormatRows = 0;
+        var joinedGroundTruth = evaluateMode
+            ? BuildGroundTruthLookup(groundTruthRows!)
+            : null;
+
+        var results = new List<PredictionResultRow>(predictRows.Count);
         var detailedRowsPrinted = 0;
 
-        var correct = 0;
-        var rowsWithGroundTruth = 0;
-        var perClass = new Dictionary<int, ClassStats>();
-
-        while (lines.MoveNext())
+        foreach (var row in predictRows)
         {
-            totalRows++;
-            var raw = lines.Current;
-            if (string.IsNullOrWhiteSpace(raw))
-            {
-                skippedFormatRows++;
-                continue;
-            }
-
-            var fields = ParseCsvLine(raw, delimiter);
-
-            if (!TryBuildInput(fields, headerMap, out var input, out var parseError))
-            {
-                skippedFormatRows++;
-                WriteLine($"[WARN] Row {totalRows}: {parseError}");
-                continue;
-            }
-
-            parsedRows++;
-
-            int actualLabel = 0;
-            if (hasLabel && !TryReadOptionalLabel(fields, headerMap, out actualLabel, out var labelError))
-            {
-                skippedFormatRows++;
-                WriteLine($"[WARN] Row {totalRows}: {labelError}");
-                continue;
-            }
-
             SentimentModel.ModelOutput result;
             try
             {
+                var input = new SentimentModel.ModelInput
+                {
+                    StudentID = row.StudentId ?? 0,
+                    Age = row.Age,
+                    Gender = row.Gender,
+                    Major = row.Major,
+                    GPA = row.Gpa
+                };
                 result = SentimentModel.Predict(input);
-                predictedRows++;
             }
             catch (Exception ex)
             {
-                skippedFormatRows++;
-                WriteLine($"[WARN] Row {totalRows}: prediction failed - {ex.Message}");
+                WriteLine($"[WARN] Row {row.SourceRowNumber}: prediction failed - {ex.Message}");
                 continue;
             }
 
             var predictedLabel = Convert.ToInt32(MathF.Round(result.PredictedLabel), CultureInfo.InvariantCulture);
             var topScore = result.Score is { Length: > 0 } ? result.Score.Max() : float.NaN;
 
-            if (hasLabel)
-            {
-                rowsWithGroundTruth++;
-                var isCorrect = predictedLabel == actualLabel;
-                if (isCorrect)
-                {
-                    correct++;
-                }
+            int? actual = null;
+            bool? isCorrect = null;
 
-                UpdateClassStats(perClass, actualLabel, predictedLabel, isCorrect);
-                TryWriteRowDetail(
-                    options,
-                    ref detailedRowsPrinted,
-                    $"Row {totalRows}: Actual={actualLabel}, Predicted={predictedLabel}, Correct={(isCorrect ? "Y" : "N")}, TopScore={(float.IsNaN(topScore) ? "N/A" : topScore.ToString("0.####", CultureInfo.InvariantCulture))}");
-            }
-            else
+            if (evaluateMode && joinedGroundTruth is not null)
             {
-                UpdateClassStats(perClass, actualLabel: null, predictedLabel, isCorrect: false);
-                TryWriteRowDetail(
-                    options,
-                    ref detailedRowsPrinted,
-                    $"Row {totalRows}: Predicted={predictedLabel}, TopScore={(float.IsNaN(topScore) ? "N/A" : topScore.ToString("0.####", CultureInfo.InvariantCulture))}");
+                var matched = TryResolveActualYear(row, joinedGroundTruth);
+                actual = matched.ActualYearOfStudy;
+                if (actual.HasValue)
+                {
+                    isCorrect = predictedLabel == actual.Value;
+                }
             }
+
+            var resultRow = new PredictionResultRow(
+                row.SequenceIndex,
+                row.StudentId,
+                row.Age,
+                row.Gender,
+                row.Major,
+                row.Gpa,
+                actual,
+                predictedLabel,
+                isCorrect,
+                topScore);
+
+            results.Add(resultRow);
+
+            TryWriteRowDetail(options, ref detailedRowsPrinted, resultRow);
         }
 
-        if (!options.VerbosePerRow && totalRows > detailedRowsPrinted)
+        if (results.Count == 0)
+        {
+            WriteLine("ERROR: No valid predictions were produced.");
+            return 1;
+        }
+
+        if (!options.VerbosePerRow && results.Count > detailedRowsPrinted)
         {
             WriteLine();
             WriteLine($"[INFO] Row-level output limited to first {detailedRowsPrinted} rows. Use --verbose to print all rows.");
         }
 
+        var outputPath = ResolveOutputPath(predictCsvPath, options.OutputCsvPath, evaluateMode);
+        WriteResultsCsv(outputPath, results);
+
+        var summary = BuildSummary(results);
+
         WriteLine();
         WriteLine("================ SUMMARY ================");
-        WriteLine($"Total data rows           : {totalRows}");
-        WriteLine($"Rows parsed successfully  : {parsedRows}");
-        WriteLine($"Rows predicted successfully: {predictedRows}");
-        WriteLine($"Rows skipped/errors       : {skippedFormatRows}");
+        WriteLine($"Total samples            : {summary.TotalSamples}");
+        WriteLine($"Predicted samples        : {summary.PredictedSamples}");
+        WriteLine($"Rows with actual label   : {summary.RowsWithActual}");
+        WriteLine($"Correct predictions      : {summary.CorrectPredictions}");
+        WriteLine($"Incorrect predictions    : {summary.IncorrectPredictions}");
+        WriteLine($"Accuracy                 : {(summary.Accuracy.HasValue ? summary.Accuracy.Value.ToString("P2", CultureInfo.InvariantCulture) : "N/A")}");
+        WriteLine($"Output CSV               : {outputPath}");
 
         WriteLine();
-        WriteLine("Predicted label distribution:");
-        var totalPred = perClass.Values.Sum(v => v.PredictedCount);
-        foreach (var kv in perClass.OrderBy(k => k.Key))
+        WriteLine("Predicted YearOfStudy distribution:");
+        var totalPred = summary.PredictedDistribution.Values.Sum();
+        foreach (var kv in summary.PredictedDistribution.OrderBy(k => k.Key))
         {
-            var count = kv.Value.PredictedCount;
-            if (count == 0)
-            {
-                continue;
-            }
-
+            var count = kv.Value;
             var ratio = totalPred > 0 ? (double)count / totalPred : 0;
             WriteLine($"  Label {kv.Key}: Count={count}, Ratio={ratio:P2}");
         }
 
-        if (hasLabel)
+        if (summary.RowsWithActual > 0)
         {
-            WriteLine($"Rows with ground-truth    : {rowsWithGroundTruth}");
-            WriteLine($"Correct predictions       : {correct}");
-            WriteLine($"Wrong predictions         : {Math.Max(0, rowsWithGroundTruth - correct)}");
-            var accuracy = rowsWithGroundTruth > 0 ? (double)correct / rowsWithGroundTruth : 0;
-            WriteLine($"Accuracy                  : {accuracy:P2}");
-
             WriteLine();
-            WriteLine("Actual label distribution:");
-            foreach (var kv in perClass.OrderBy(k => k.Key))
+            WriteLine("Actual YearOfStudy distribution:");
+            foreach (var kv in summary.ActualDistribution.OrderBy(k => k.Key))
             {
-                var actualCount = kv.Value.ActualCount;
-                if (actualCount == 0)
-                {
-                    continue;
-                }
-
-                var actualRatio = rowsWithGroundTruth > 0 ? (double)actualCount / rowsWithGroundTruth : 0;
+                var actualCount = kv.Value;
+                var actualRatio = summary.RowsWithActual > 0 ? (double)actualCount / summary.RowsWithActual : 0;
                 WriteLine($"  Label {kv.Key}: Count={actualCount}, Ratio={actualRatio:P2}");
             }
 
-            WriteLine();
-            WriteLine("Per-class stats (ActualClass => ActualCount / PredictedCount / Correct):");
-            foreach (var kv in perClass.OrderBy(k => k.Key))
+            if (joinedGroundTruth is not null && joinedGroundTruth.FallbackToRowOrderCount > 0)
             {
-                var s = kv.Value;
-                WriteLine($"  Class {kv.Key}: Actual={s.ActualCount}, Predicted={s.PredictedCount}, Correct={s.CorrectCount}");
+                WriteLine();
+                WriteLine($"[INFO] Fallback matched by row order for {joinedGroundTruth.FallbackToRowOrderCount} record(s) where StudentID could not be matched.");
             }
         }
         else
         {
             WriteLine();
-            WriteLine("[INFO] No 'GradeClass' column detected in input header.");
-            WriteLine("[INFO] Accuracy / Actual label distribution / Per-class correct count are only available in Evaluate mode.");
+            WriteLine("[INFO] No ground-truth file was provided. Accuracy is available only in Evaluate mode.");
         }
+
         return 0;
     }
 
-    private static void TryWriteRowDetail(RunOptions options, ref int detailedRowsPrinted, string message)
+    private static void TryWriteRowDetail(RunOptions options, ref int detailedRowsPrinted, PredictionResultRow row)
     {
+        var message = row.ActualYearOfStudy.HasValue
+            ? $"Row {row.SequenceIndex}: StudentID={DisplayNullableInt(row.StudentId)}, Age={row.Age.ToString("0.##", CultureInfo.InvariantCulture)}, Gender={row.Gender}, Major={row.Major}, GPA={row.Gpa.ToString("0.##", CultureInfo.InvariantCulture)}, Actual={row.ActualYearOfStudy.Value}, Predicted={row.PredictedYearOfStudy}, Correct={(row.IsCorrect == true ? "Y" : "N")}, TopScore={DisplayScore(row.TopScore)}"
+            : $"Row {row.SequenceIndex}: StudentID={DisplayNullableInt(row.StudentId)}, Age={row.Age.ToString("0.##", CultureInfo.InvariantCulture)}, Gender={row.Gender}, Major={row.Major}, GPA={row.Gpa.ToString("0.##", CultureInfo.InvariantCulture)}, Predicted={row.PredictedYearOfStudy}, TopScore={DisplayScore(row.TopScore)}";
+
         if (options.VerbosePerRow)
         {
             WriteLine(message);
@@ -268,48 +223,317 @@ internal static class CsvBatchPredictor
         }
     }
 
-    private static bool TryBuildInput(
-        string[] fields,
-        Dictionary<string, int> headerMap,
-        out SentimentModel.ModelInput input,
-        out string error)
+    private static string DisplayNullableInt(int? value) => value.HasValue ? value.Value.ToString(CultureInfo.InvariantCulture) : "N/A";
+
+    private static string DisplayScore(float score) => float.IsNaN(score)
+        ? "N/A"
+        : score.ToString("0.####", CultureInfo.InvariantCulture);
+
+    private static bool TryReadPredictRows(string csvPath, out List<PredictRow> rows, out string[] header, out string error)
     {
-        input = new SentimentModel.ModelInput();
+        rows = new List<PredictRow>();
+        header = [];
         error = string.Empty;
 
-        if (!TryGetRequiredFloat(fields, headerMap, "Age", out var age, out error)
-            || !TryGetRequiredFloat(fields, headerMap, "Gender", out var gender, out error)
-            || !TryGetRequiredFloat(fields, headerMap, "Ethnicity", out var ethnicity, out error)
-            || !TryGetRequiredFloat(fields, headerMap, "ParentalEducation", out var parentalEducation, out error)
-            || !TryGetRequiredFloat(fields, headerMap, "StudyTimeWeekly", out var studyTimeWeekly, out error)
-            || !TryGetRequiredFloat(fields, headerMap, "Absences", out var absences, out error)
-            || !TryGetRequiredFloat(fields, headerMap, "Tutoring", out var tutoring, out error)
-            || !TryGetRequiredFloat(fields, headerMap, "ParentalSupport", out var parentalSupport, out error)
-            || !TryGetRequiredFloat(fields, headerMap, "Extracurricular", out var extracurricular, out error)
-            || !TryGetRequiredFloat(fields, headerMap, "Sports", out var sports, out error)
-            || !TryGetRequiredFloat(fields, headerMap, "Music", out var music, out error)
-            || !TryGetRequiredFloat(fields, headerMap, "Volunteering", out var volunteering, out error))
+        if (!TryReadHeader(csvPath, out header, out var headerMap, out var delimiter, out error))
         {
             return false;
         }
 
-        input.Age = age;
-        input.Gender = gender;
-        input.Ethnicity = ethnicity;
-        input.ParentalEducation = parentalEducation;
-        input.StudyTimeWeekly = studyTimeWeekly;
-        input.Absences = absences;
-        input.Tutoring = tutoring;
-        input.ParentalSupport = parentalSupport;
-        input.Extracurricular = extracurricular;
-        input.Sports = sports;
-        input.Music = music;
-        input.Volunteering = volunteering;
-
-        // Label is never used as feature; only pass through when available.
-        if (TryReadOptionalLabel(fields, headerMap, out var label, out _))
+        var missingRequired = PredictColumns.Where(c => !headerMap.ContainsKey(c)).ToList();
+        if (missingRequired.Count > 0)
         {
-            input.GradeClass = label;
+            error = $"Missing required columns in predict CSV: {string.Join(", ", missingRequired)}";
+            return false;
+        }
+
+        var sourceRow = 1;
+        var sequence = 0;
+        foreach (var raw in File.ReadLines(csvPath).Skip(1))
+        {
+            sourceRow++;
+            if (string.IsNullOrWhiteSpace(raw))
+            {
+                continue;
+            }
+
+            var fields = ParseCsvLine(raw, delimiter);
+
+            if (!TryGetRequiredFloat(fields, headerMap, "StudentID", out var studentIdValue, out var parseError)
+                || !TryGetRequiredFloat(fields, headerMap, "Age", out var age, out parseError)
+                || !TryGetRequiredText(fields, headerMap, "Gender", out var gender, out parseError)
+                || !TryGetRequiredText(fields, headerMap, "Major", out var major, out parseError)
+                || !TryGetRequiredFloat(fields, headerMap, "GPA", out var gpa, out parseError))
+            {
+                WriteLine($"[WARN] Predict row {sourceRow}: {parseError}");
+                continue;
+            }
+
+            sequence++;
+            rows.Add(new PredictRow(
+                sourceRow,
+                sequence,
+                Convert.ToInt32(MathF.Round(studentIdValue), CultureInfo.InvariantCulture),
+                age,
+                gender,
+                major,
+                gpa));
+        }
+
+        if (rows.Count == 0)
+        {
+            error = "Predict CSV has no valid data rows after parsing.";
+            return false;
+        }
+
+        return true;
+    }
+
+    private static bool TryReadGroundTruthRows(string csvPath, out List<GroundTruthRow> rows, out string error)
+    {
+        rows = new List<GroundTruthRow>();
+        error = string.Empty;
+
+        if (string.IsNullOrWhiteSpace(csvPath))
+        {
+            error = "Ground-truth CSV path is empty.";
+            return false;
+        }
+
+        if (!File.Exists(csvPath))
+        {
+            error = $"Ground-truth CSV file not found: {csvPath}";
+            return false;
+        }
+
+        if (!TryReadHeader(csvPath, out _, out var headerMap, out var delimiter, out error))
+        {
+            return false;
+        }
+
+        var requiredColumns = new[] { "StudentID", LabelColumn };
+        var missingRequired = requiredColumns.Where(c => !headerMap.ContainsKey(c)).ToList();
+        if (missingRequired.Count > 0)
+        {
+            error = $"Missing required columns in ground-truth CSV: {string.Join(", ", missingRequired)}";
+            return false;
+        }
+
+        var sourceRow = 1;
+        var sequence = 0;
+        foreach (var raw in File.ReadLines(csvPath).Skip(1))
+        {
+            sourceRow++;
+            if (string.IsNullOrWhiteSpace(raw))
+            {
+                continue;
+            }
+
+            var fields = ParseCsvLine(raw, delimiter);
+            if (!TryGetRequiredFloat(fields, headerMap, "StudentID", out var studentIdValue, out var parseError)
+                || !TryReadOptionalLabel(fields, headerMap, out var actual, out parseError))
+            {
+                WriteLine($"[WARN] Ground-truth row {sourceRow}: {parseError}");
+                continue;
+            }
+
+            sequence++;
+            rows.Add(new GroundTruthRow(
+                sourceRow,
+                sequence,
+                Convert.ToInt32(MathF.Round(studentIdValue), CultureInfo.InvariantCulture),
+                actual));
+        }
+
+        if (rows.Count == 0)
+        {
+            error = "Ground-truth CSV has no valid data rows after parsing.";
+            return false;
+        }
+
+        return true;
+    }
+
+    private static bool TryReadHeader(
+        string csvPath,
+        out string[] header,
+        out Dictionary<string, int> headerMap,
+        out char delimiter,
+        out string error)
+    {
+        header = [];
+        headerMap = new Dictionary<string, int>(StringComparer.OrdinalIgnoreCase);
+        delimiter = ',';
+        error = string.Empty;
+
+        var lines = File.ReadLines(csvPath).GetEnumerator();
+        if (!lines.MoveNext())
+        {
+            error = $"CSV file is empty: {csvPath}";
+            return false;
+        }
+
+        var headerLine = lines.Current ?? string.Empty;
+        delimiter = DetectDelimiter(headerLine);
+        header = ParseCsvLine(headerLine, delimiter)
+            .Select(h => h.Trim())
+            .ToArray();
+
+        if (header.Length == 0)
+        {
+            error = $"Cannot parse CSV header: {csvPath}";
+            return false;
+        }
+
+        for (int i = 0; i < header.Length; i++)
+        {
+            if (!headerMap.ContainsKey(header[i]))
+            {
+                headerMap[header[i]] = i;
+            }
+        }
+
+        return true;
+    }
+
+    private static GroundTruthLookup BuildGroundTruthLookup(List<GroundTruthRow> rows)
+    {
+        var byStudentId = new Dictionary<int, Queue<GroundTruthRow>>();
+        var byRowOrder = rows.ToDictionary(r => r.SequenceIndex, r => r);
+        return new GroundTruthLookup(byStudentId, byRowOrder);
+    }
+
+    private static GroundTruthMatch TryResolveActualYear(PredictRow row, GroundTruthLookup lookup)
+    {
+        if (row.StudentId.HasValue)
+        {
+            if (!lookup.ByStudentId.TryGetValue(row.StudentId.Value, out var queue))
+            {
+                queue = new Queue<GroundTruthRow>(
+                    lookup.ByRowOrder.Values.Where(g => g.StudentId == row.StudentId.Value));
+                lookup.ByStudentId[row.StudentId.Value] = queue;
+            }
+
+            if (queue.Count > 0)
+            {
+                var matched = queue.Dequeue();
+                lookup.ByRowOrder.Remove(matched.SequenceIndex);
+                return new GroundTruthMatch(matched.ActualYearOfStudy);
+            }
+        }
+
+        if (lookup.ByRowOrder.TryGetValue(row.SequenceIndex, out var fallback))
+        {
+            lookup.ByRowOrder.Remove(row.SequenceIndex);
+            lookup.FallbackToRowOrderCount++;
+            return new GroundTruthMatch(fallback.ActualYearOfStudy);
+        }
+
+        return new GroundTruthMatch(null);
+    }
+
+    private static PredictionSummary BuildSummary(List<PredictionResultRow> rows)
+    {
+        var total = rows.Count;
+        var rowsWithActual = rows.Count(r => r.ActualYearOfStudy.HasValue);
+        var correct = rows.Count(r => r.IsCorrect == true);
+        var incorrect = rows.Count(r => r.IsCorrect == false);
+
+        var predictedDistribution = rows
+            .GroupBy(r => r.PredictedYearOfStudy)
+            .ToDictionary(g => g.Key, g => g.Count());
+
+        var actualDistribution = rows
+            .Where(r => r.ActualYearOfStudy.HasValue)
+            .GroupBy(r => r.ActualYearOfStudy!.Value)
+            .ToDictionary(g => g.Key, g => g.Count());
+
+        var accuracy = rowsWithActual > 0 ? (double)correct / rowsWithActual : (double?)null;
+
+        return new PredictionSummary(
+            total,
+            total,
+            rowsWithActual,
+            correct,
+            incorrect,
+            accuracy,
+            predictedDistribution,
+            actualDistribution);
+    }
+
+    private static void WriteResultsCsv(string outputPath, List<PredictionResultRow> rows)
+    {
+        var directory = Path.GetDirectoryName(outputPath);
+        if (!string.IsNullOrWhiteSpace(directory) && !Directory.Exists(directory))
+        {
+            Directory.CreateDirectory(directory);
+        }
+
+        using var writer = new StreamWriter(outputPath, append: false, Encoding.UTF8);
+        writer.WriteLine("StudentID,Age,Gender,Major,GPA,ActualYearOfStudy,PredictedYearOfStudy,IsCorrect,TopScore");
+        foreach (var row in rows)
+        {
+            var values = new[]
+            {
+                row.StudentId?.ToString(CultureInfo.InvariantCulture) ?? string.Empty,
+                row.Age.ToString("0.####", CultureInfo.InvariantCulture),
+                row.Gender,
+                row.Major,
+                row.Gpa.ToString("0.####", CultureInfo.InvariantCulture),
+                row.ActualYearOfStudy?.ToString(CultureInfo.InvariantCulture) ?? string.Empty,
+                row.PredictedYearOfStudy.ToString(CultureInfo.InvariantCulture),
+                row.IsCorrect.HasValue ? (row.IsCorrect.Value ? "true" : "false") : string.Empty,
+                float.IsNaN(row.TopScore) ? string.Empty : row.TopScore.ToString("0.####", CultureInfo.InvariantCulture)
+            };
+
+            writer.WriteLine(string.Join(',', values.Select(EscapeCsvValue)));
+        }
+    }
+
+    private static string ResolveOutputPath(string predictCsvPath, string? explicitPath, bool evaluateMode)
+    {
+        if (!string.IsNullOrWhiteSpace(explicitPath))
+        {
+            return Path.GetFullPath(explicitPath);
+        }
+
+        var dir = Path.GetDirectoryName(Path.GetFullPath(predictCsvPath)) ?? AppContext.BaseDirectory;
+        var fileName = evaluateMode ? "evaluation_data_set_1.csv" : "predictions_data_set_1.csv";
+        return Path.Combine(dir, fileName);
+    }
+
+    private static string EscapeCsvValue(string value)
+    {
+        if (value.Contains(',') || value.Contains('"') || value.Contains('\n') || value.Contains('\r'))
+        {
+            return $"\"{value.Replace("\"", "\"\"")}\"";
+        }
+
+        return value;
+    }
+
+    private static bool TryGetRequiredText(
+        string[] fields,
+        Dictionary<string, int> headerMap,
+        string column,
+        out string value,
+        out string error)
+    {
+        value = string.Empty;
+        error = string.Empty;
+
+        var index = headerMap[column];
+        if (index < 0 || index >= fields.Length)
+        {
+            error = $"missing value for required column '{column}'";
+            return false;
+        }
+
+        value = fields[index].Trim();
+        if (string.IsNullOrWhiteSpace(value))
+        {
+            error = $"required text column '{column}' is empty";
+            return false;
         }
 
         return true;
@@ -373,31 +597,6 @@ internal static class CsvBatchPredictor
         return true;
     }
 
-    private static void UpdateClassStats(Dictionary<int, ClassStats> perClass, int? actualLabel, int predictedLabel, bool isCorrect)
-    {
-        if (!perClass.TryGetValue(predictedLabel, out var predStats))
-        {
-            predStats = new ClassStats();
-            perClass[predictedLabel] = predStats;
-        }
-        predStats.PredictedCount++;
-
-        if (actualLabel.HasValue)
-        {
-            if (!perClass.TryGetValue(actualLabel.Value, out var actualStats))
-            {
-                actualStats = new ClassStats();
-                perClass[actualLabel.Value] = actualStats;
-            }
-            actualStats.ActualCount++;
-
-            if (isCorrect)
-            {
-                actualStats.CorrectCount++;
-            }
-        }
-    }
-
     private static char DetectDelimiter(string header)
     {
         var candidates = new[] { ',', '\t', ';', '|' };
@@ -408,7 +607,7 @@ internal static class CsvBatchPredictor
         {
             var cols = ParseCsvLine(header, delimiter);
             var normalized = new HashSet<string>(cols.Select(c => c.Trim()), StringComparer.OrdinalIgnoreCase);
-            var score = FeatureColumns.Count(normalized.Contains);
+            var score = PredictColumns.Count(normalized.Contains);
 
             if (score > bestScore)
             {
@@ -419,12 +618,6 @@ internal static class CsvBatchPredictor
 
         return bestDelimiter;
     }
-
-    private static string DisplayDelimiter(char delimiter) => delimiter switch
-    {
-        '\t' => "\\t",
-        _ => delimiter.ToString()
-    };
 
     private static string? ResolveModelPath()
     {
@@ -476,10 +669,51 @@ internal static class CsvBatchPredictor
         return values.ToArray();
     }
 
-    private sealed class ClassStats
+    private sealed record PredictRow(
+        int SourceRowNumber,
+        int SequenceIndex,
+        int? StudentId,
+        float Age,
+        string Gender,
+        string Major,
+        float Gpa);
+
+    private sealed record GroundTruthRow(
+        int SourceRowNumber,
+        int SequenceIndex,
+        int? StudentId,
+        int ActualYearOfStudy);
+
+    private sealed record PredictionResultRow(
+        int SequenceIndex,
+        int? StudentId,
+        float Age,
+        string Gender,
+        string Major,
+        float Gpa,
+        int? ActualYearOfStudy,
+        int PredictedYearOfStudy,
+        bool? IsCorrect,
+        float TopScore);
+
+    private sealed record PredictionSummary(
+        int TotalSamples,
+        int PredictedSamples,
+        int RowsWithActual,
+        int CorrectPredictions,
+        int IncorrectPredictions,
+        double? Accuracy,
+        Dictionary<int, int> PredictedDistribution,
+        Dictionary<int, int> ActualDistribution);
+
+    private sealed class GroundTruthLookup(
+        Dictionary<int, Queue<GroundTruthRow>> byStudentId,
+        Dictionary<int, GroundTruthRow> byRowOrder)
     {
-        public int ActualCount { get; set; }
-        public int PredictedCount { get; set; }
-        public int CorrectCount { get; set; }
+        public Dictionary<int, Queue<GroundTruthRow>> ByStudentId { get; } = byStudentId;
+        public Dictionary<int, GroundTruthRow> ByRowOrder { get; } = byRowOrder;
+        public int FallbackToRowOrderCount { get; set; }
     }
+
+    private sealed record GroundTruthMatch(int? ActualYearOfStudy);
 }

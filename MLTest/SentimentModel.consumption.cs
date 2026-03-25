@@ -16,56 +16,28 @@ namespace MLTest
         public class ModelInput
         {
             [LoadColumn(0)]
+            [ColumnName(@"StudentID")]
+            public float StudentID { get; set; }
+
+            [LoadColumn(1)]
             [ColumnName(@"Age")]
             public float Age { get; set; }
 
-            [LoadColumn(1)]
-            [ColumnName(@"Gender")]
-            public float Gender { get; set; }
-
             [LoadColumn(2)]
-            [ColumnName(@"Ethnicity")]
-            public float Ethnicity { get; set; }
+            [ColumnName(@"Gender")]
+            public string Gender { get; set; }
 
             [LoadColumn(3)]
-            [ColumnName(@"ParentalEducation")]
-            public float ParentalEducation { get; set; }
+            [ColumnName(@"YearOfStudy")]
+            public float YearOfStudy { get; set; }
 
             [LoadColumn(4)]
-            [ColumnName(@"StudyTimeWeekly")]
-            public float StudyTimeWeekly { get; set; }
+            [ColumnName(@"Major")]
+            public string Major { get; set; }
 
             [LoadColumn(5)]
-            [ColumnName(@"Absences")]
-            public float Absences { get; set; }
-
-            [LoadColumn(6)]
-            [ColumnName(@"Tutoring")]
-            public float Tutoring { get; set; }
-
-            [LoadColumn(7)]
-            [ColumnName(@"ParentalSupport")]
-            public float ParentalSupport { get; set; }
-
-            [LoadColumn(8)]
-            [ColumnName(@"Extracurricular")]
-            public float Extracurricular { get; set; }
-
-            [LoadColumn(9)]
-            [ColumnName(@"Sports")]
-            public float Sports { get; set; }
-
-            [LoadColumn(10)]
-            [ColumnName(@"Music")]
-            public float Music { get; set; }
-
-            [LoadColumn(11)]
-            [ColumnName(@"Volunteering")]
-            public float Volunteering { get; set; }
-
-            [LoadColumn(12)]
-            [ColumnName(@"GradeClass")]
-            public float GradeClass { get; set; }
+            [ColumnName(@"GPA")]
+            public float GPA { get; set; }
 
         }
 
@@ -77,44 +49,23 @@ namespace MLTest
         #region model output class
         public class ModelOutput
         {
+            [ColumnName(@"StudentID")]
+            public float StudentID { get; set; }
+
             [ColumnName(@"Age")]
             public float Age { get; set; }
 
             [ColumnName(@"Gender")]
-            public float Gender { get; set; }
+            public float[] Gender { get; set; }
 
-            [ColumnName(@"Ethnicity")]
-            public float Ethnicity { get; set; }
+            [ColumnName(@"YearOfStudy")]
+            public uint YearOfStudy { get; set; }
 
-            [ColumnName(@"ParentalEducation")]
-            public float ParentalEducation { get; set; }
+            [ColumnName(@"Major")]
+            public float[] Major { get; set; }
 
-            [ColumnName(@"StudyTimeWeekly")]
-            public float StudyTimeWeekly { get; set; }
-
-            [ColumnName(@"Absences")]
-            public float Absences { get; set; }
-
-            [ColumnName(@"Tutoring")]
-            public float Tutoring { get; set; }
-
-            [ColumnName(@"ParentalSupport")]
-            public float ParentalSupport { get; set; }
-
-            [ColumnName(@"Extracurricular")]
-            public float Extracurricular { get; set; }
-
-            [ColumnName(@"Sports")]
-            public float Sports { get; set; }
-
-            [ColumnName(@"Music")]
-            public float Music { get; set; }
-
-            [ColumnName(@"Volunteering")]
-            public float Volunteering { get; set; }
-
-            [ColumnName(@"GradeClass")]
-            public uint GradeClass { get; set; }
+            [ColumnName(@"GPA")]
+            public float GPA { get; set; }
 
             [ColumnName(@"Features")]
             public float[] Features { get; set; }
@@ -185,10 +136,10 @@ namespace MLTest
         {
             var schema = PredictEngine.Value.OutputSchema;
 
-            var labelColumn = schema.GetColumnOrNull("GradeClass");
+            var labelColumn = schema.GetColumnOrNull("YearOfStudy");
             if (labelColumn == null)
             {
-                throw new Exception("GradeClass column not found. Make sure the name searched for matches the name in the schema.");
+                throw new Exception("YearOfStudy column not found. Make sure the name searched for matches the name in the schema.");
             }
 
             // Key values contains an ordered array of the possible labels. This allows us to map the results to the correct label value.

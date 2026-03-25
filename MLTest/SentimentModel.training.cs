@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 using Microsoft.ML;
 using Microsoft.ML.Data;
 using Microsoft.ML.Trainers;
-using Microsoft.ML.Trainers.FastTree;
+using Microsoft.ML.Transforms;
 
 namespace MLTest
 {
     public partial class SentimentModel
     {
-        public const string RetrainFilePath =  @"C:\Users\Hieu\Downloads\Student_performance_data _.csv";
+        public const string RetrainFilePath =  @"C:\Users\Hieu\Desktop\code\MLTest\MLTest\Student_mental_health_data.csv";
         public const char RetrainSeparatorChar = ',';
         public const bool RetrainHasHeader =  true;
         public const bool RetrainAllowQuoting =  false;
@@ -90,10 +90,12 @@ namespace MLTest
         public static IEstimator<ITransformer> BuildPipeline(MLContext mlContext)
         {
             // Data process configuration with pipeline data transformations
-            var pipeline = mlContext.Transforms.ReplaceMissingValues(new []{new InputOutputColumnPair(@"Age", @"Age"),new InputOutputColumnPair(@"Gender", @"Gender"),new InputOutputColumnPair(@"Ethnicity", @"Ethnicity"),new InputOutputColumnPair(@"ParentalEducation", @"ParentalEducation"),new InputOutputColumnPair(@"StudyTimeWeekly", @"StudyTimeWeekly"),new InputOutputColumnPair(@"Absences", @"Absences"),new InputOutputColumnPair(@"Tutoring", @"Tutoring"),new InputOutputColumnPair(@"ParentalSupport", @"ParentalSupport"),new InputOutputColumnPair(@"Extracurricular", @"Extracurricular"),new InputOutputColumnPair(@"Sports", @"Sports"),new InputOutputColumnPair(@"Music", @"Music"),new InputOutputColumnPair(@"Volunteering", @"Volunteering")})      
-                                    .Append(mlContext.Transforms.Concatenate(@"Features", new []{@"Age",@"Gender",@"Ethnicity",@"ParentalEducation",@"StudyTimeWeekly",@"Absences",@"Tutoring",@"ParentalSupport",@"Extracurricular",@"Sports",@"Music",@"Volunteering"}))      
-                                    .Append(mlContext.Transforms.Conversion.MapValueToKey(outputColumnName:@"GradeClass",inputColumnName:@"GradeClass",addKeyValueAnnotationsAsText:false))      
-                                    .Append(mlContext.MulticlassClassification.Trainers.OneVersusAll(binaryEstimator:mlContext.BinaryClassification.Trainers.FastForest(new FastForestBinaryTrainer.Options(){NumberOfTrees=23,NumberOfLeaves=4,FeatureFraction=0.81475747F,LabelColumnName=@"GradeClass",FeatureColumnName=@"Features"}),labelColumnName:@"GradeClass"))      
+            var pipeline = mlContext.Transforms.Categorical.OneHotEncoding(@"Gender", @"Gender", outputKind: OneHotEncodingEstimator.OutputKind.Indicator)      
+                                    .Append(mlContext.Transforms.ReplaceMissingValues(new []{new InputOutputColumnPair(@"StudentID", @"StudentID"),new InputOutputColumnPair(@"Age", @"Age"),new InputOutputColumnPair(@"GPA", @"GPA")}))      
+                                    .Append(mlContext.Transforms.Text.FeaturizeText(inputColumnName:@"Major",outputColumnName:@"Major"))      
+                                    .Append(mlContext.Transforms.Concatenate(@"Features", new []{@"Gender",@"StudentID",@"Age",@"GPA",@"Major"}))      
+                                    .Append(mlContext.Transforms.Conversion.MapValueToKey(outputColumnName:@"YearOfStudy",inputColumnName:@"YearOfStudy",addKeyValueAnnotationsAsText:false))      
+                                    .Append(mlContext.MulticlassClassification.Trainers.OneVersusAll(binaryEstimator: mlContext.BinaryClassification.Trainers.LbfgsLogisticRegression(new LbfgsLogisticRegressionBinaryTrainer.Options(){L1Regularization=5.1715994F,L2Regularization=15.895467F,LabelColumnName=@"YearOfStudy",FeatureColumnName=@"Features"}), labelColumnName:@"YearOfStudy"))      
                                     .Append(mlContext.Transforms.Conversion.MapKeyToValue(outputColumnName:@"PredictedLabel",inputColumnName:@"PredictedLabel"));
 
             return pipeline;
