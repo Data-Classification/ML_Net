@@ -14,9 +14,9 @@ namespace MLTest
 {
     public partial class SentimentModel
     {
-        public const string RetrainFilePath =  @"D:\Visual_Studio_Code\Cong_Nghe_Phan_Mem\ML\ML_Net\MLTest\dataset_converted.txt";
-        public const char RetrainSeparatorChar = '	';
-        public const bool RetrainHasHeader =  false;
+        public const string RetrainFilePath =  @"C:\Users\Hieu\Downloads\Student_performance_data _.csv";
+        public const char RetrainSeparatorChar = ',';
+        public const bool RetrainHasHeader =  true;
         public const bool RetrainAllowQuoting =  false;
 
          /// <summary>
@@ -90,10 +90,10 @@ namespace MLTest
         public static IEstimator<ITransformer> BuildPipeline(MLContext mlContext)
         {
             // Data process configuration with pipeline data transformations
-            var pipeline = mlContext.Transforms.ReplaceMissingValues(@"col1", @"col1")      
-                                    .Append(mlContext.Transforms.Concatenate(@"Features", new []{@"col1"}))      
-                                    .Append(mlContext.Transforms.Conversion.MapValueToKey(outputColumnName:@"col0",inputColumnName:@"col0",addKeyValueAnnotationsAsText:false))      
-                                    .Append(mlContext.MulticlassClassification.Trainers.OneVersusAll(binaryEstimator:mlContext.BinaryClassification.Trainers.FastTree(new FastTreeBinaryTrainer.Options(){NumberOfLeaves=4,MinimumExampleCountPerLeaf=20,NumberOfTrees=4,MaximumBinCountPerFeature=254,FeatureFraction=1,LearningRate=0.09999999999999998,LabelColumnName=@"col0",FeatureColumnName=@"Features",DiskTranspose=false}),labelColumnName: @"col0"))      
+            var pipeline = mlContext.Transforms.ReplaceMissingValues(new []{new InputOutputColumnPair(@"Age", @"Age"),new InputOutputColumnPair(@"Gender", @"Gender"),new InputOutputColumnPair(@"Ethnicity", @"Ethnicity"),new InputOutputColumnPair(@"ParentalEducation", @"ParentalEducation"),new InputOutputColumnPair(@"StudyTimeWeekly", @"StudyTimeWeekly"),new InputOutputColumnPair(@"Absences", @"Absences"),new InputOutputColumnPair(@"Tutoring", @"Tutoring"),new InputOutputColumnPair(@"ParentalSupport", @"ParentalSupport"),new InputOutputColumnPair(@"Extracurricular", @"Extracurricular"),new InputOutputColumnPair(@"Sports", @"Sports"),new InputOutputColumnPair(@"Music", @"Music"),new InputOutputColumnPair(@"Volunteering", @"Volunteering")})      
+                                    .Append(mlContext.Transforms.Concatenate(@"Features", new []{@"Age",@"Gender",@"Ethnicity",@"ParentalEducation",@"StudyTimeWeekly",@"Absences",@"Tutoring",@"ParentalSupport",@"Extracurricular",@"Sports",@"Music",@"Volunteering"}))      
+                                    .Append(mlContext.Transforms.Conversion.MapValueToKey(outputColumnName:@"GradeClass",inputColumnName:@"GradeClass",addKeyValueAnnotationsAsText:false))      
+                                    .Append(mlContext.MulticlassClassification.Trainers.OneVersusAll(binaryEstimator:mlContext.BinaryClassification.Trainers.FastForest(new FastForestBinaryTrainer.Options(){NumberOfTrees=23,NumberOfLeaves=4,FeatureFraction=0.81475747F,LabelColumnName=@"GradeClass",FeatureColumnName=@"Features"}),labelColumnName:@"GradeClass"))      
                                     .Append(mlContext.Transforms.Conversion.MapKeyToValue(outputColumnName:@"PredictedLabel",inputColumnName:@"PredictedLabel"));
 
             return pipeline;

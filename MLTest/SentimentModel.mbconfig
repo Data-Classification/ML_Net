@@ -8,22 +8,110 @@
     "KeepPunctuations": false,
     "AllowQuoting": false,
     "Type": "TabularFile",
-    "FilePath": "D:\\Visual_Studio_Code\\Cong_Nghe_Phan_Mem\\ML\\ML_Net\\MLTest\\dataset_converted.txt",
-    "Delimiter": "\t",
+    "FilePath": "C:\\Users\\Hieu\\Downloads\\Student_performance_data _.csv",
+    "Delimiter": ",",
     "DecimalMarker": ".",
-    "HasHeader": false,
+    "HasHeader": true,
     "ColumnProperties": [
       {
-        "ColumnName": "col0",
-        "ColumnPurpose": "Label",
-        "ColumnDataFormat": "String",
+        "ColumnName": "Age",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "Gender",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "Ethnicity",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "ParentalEducation",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "StudyTimeWeekly",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
         "IsCategorical": false,
         "Type": "Column",
         "Version": 5
       },
       {
-        "ColumnName": "col1",
+        "ColumnName": "Absences",
         "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "Tutoring",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "ParentalSupport",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "Extracurricular",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "Sports",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "Music",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "Volunteering",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": true,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "GradeClass",
+        "ColumnPurpose": "Label",
         "ColumnDataFormat": "Single",
         "IsCategorical": true,
         "Type": "Column",
@@ -42,22 +130,55 @@
       {
         "Version": 1,
         "Type": "Trial",
-        "TrainerName": "FastTreeOva",
-        "Score": 0.0,
-        "RuntimeInSeconds": 675.664,
+        "TrainerName": "FastForestOva",
+        "Score": 0.54145907028015761,
+        "RuntimeInSeconds": 4.853,
         "Parameter": {
-          "_SCHEMA_": "e0 * e1 * e2 * e3 * e10",
+          "_SCHEMA_": "e0 * e1 * e2 * e4 * e10",
           "e0": {
             "OutputColumnNames": [
-              "col1"
+              "Age",
+              "Gender",
+              "Ethnicity",
+              "ParentalEducation",
+              "StudyTimeWeekly",
+              "Absences",
+              "Tutoring",
+              "ParentalSupport",
+              "Extracurricular",
+              "Sports",
+              "Music",
+              "Volunteering"
             ],
             "InputColumnNames": [
-              "col1"
+              "Age",
+              "Gender",
+              "Ethnicity",
+              "ParentalEducation",
+              "StudyTimeWeekly",
+              "Absences",
+              "Tutoring",
+              "ParentalSupport",
+              "Extracurricular",
+              "Sports",
+              "Music",
+              "Volunteering"
             ]
           },
           "e1": {
             "InputColumnNames": [
-              "col1"
+              "Age",
+              "Gender",
+              "Ethnicity",
+              "ParentalEducation",
+              "StudyTimeWeekly",
+              "Absences",
+              "Tutoring",
+              "ParentalSupport",
+              "Extracurricular",
+              "Sports",
+              "Music",
+              "Volunteering"
             ],
             "OutputColumnName": "Features"
           },
@@ -66,58 +187,15 @@
             "InputColumnName": "PredictedLabel"
           },
           "e2": {
-            "OutputColumnName": "col0",
-            "InputColumnName": "col0",
+            "OutputColumnName": "GradeClass",
+            "InputColumnName": "GradeClass",
             "AddKeyValueAnnotationsAsText": false
           },
-          "e3": {
+          "e4": {
+            "NumberOfTrees": 23,
             "NumberOfLeaves": 4,
-            "MinimumExampleCountPerLeaf": 20,
-            "NumberOfTrees": 4,
-            "MaximumBinCountPerFeature": 254,
-            "FeatureFraction": 1.0,
-            "LearningRate": 0.099999999999999978,
-            "LabelColumnName": "col0",
-            "FeatureColumnName": "Features",
-            "DiskTranspose": false
-          }
-        }
-      },
-      {
-        "Version": 1,
-        "Type": "Trial",
-        "TrainerName": "SdcaMaximumEntropyMulti",
-        "Score": 0.0,
-        "RuntimeInSeconds": 3.156,
-        "Parameter": {
-          "_SCHEMA_": "e0 * e1 * e2 * e8 * e10",
-          "e0": {
-            "OutputColumnNames": [
-              "col1"
-            ],
-            "InputColumnNames": [
-              "col1"
-            ]
-          },
-          "e1": {
-            "InputColumnNames": [
-              "col1"
-            ],
-            "OutputColumnName": "Features"
-          },
-          "e10": {
-            "OutputColumnName": "PredictedLabel",
-            "InputColumnName": "PredictedLabel"
-          },
-          "e2": {
-            "OutputColumnName": "col0",
-            "InputColumnName": "col0",
-            "AddKeyValueAnnotationsAsText": false
-          },
-          "e8": {
-            "L1Regularization": 1.0,
-            "L2Regularization": 0.1,
-            "LabelColumnName": "col0",
+            "FeatureFraction": 0.81475747,
+            "LabelColumnName": "GradeClass",
             "FeatureColumnName": "Features"
           }
         }
@@ -126,21 +204,54 @@
         "Version": 1,
         "Type": "Trial",
         "TrainerName": "LightGbmMulti",
-        "Score": 0.0,
-        "RuntimeInSeconds": 11.101,
+        "Score": 0.54040773231757411,
+        "RuntimeInSeconds": 1.067,
         "Parameter": {
           "_SCHEMA_": "e0 * e1 * e2 * e5 * e10",
           "e0": {
             "OutputColumnNames": [
-              "col1"
+              "Age",
+              "Gender",
+              "Ethnicity",
+              "ParentalEducation",
+              "StudyTimeWeekly",
+              "Absences",
+              "Tutoring",
+              "ParentalSupport",
+              "Extracurricular",
+              "Sports",
+              "Music",
+              "Volunteering"
             ],
             "InputColumnNames": [
-              "col1"
+              "Age",
+              "Gender",
+              "Ethnicity",
+              "ParentalEducation",
+              "StudyTimeWeekly",
+              "Absences",
+              "Tutoring",
+              "ParentalSupport",
+              "Extracurricular",
+              "Sports",
+              "Music",
+              "Volunteering"
             ]
           },
           "e1": {
             "InputColumnNames": [
-              "col1"
+              "Age",
+              "Gender",
+              "Ethnicity",
+              "ParentalEducation",
+              "StudyTimeWeekly",
+              "Absences",
+              "Tutoring",
+              "ParentalSupport",
+              "Extracurricular",
+              "Sports",
+              "Music",
+              "Volunteering"
             ],
             "OutputColumnName": "Features"
           },
@@ -149,60 +260,21 @@
             "InputColumnName": "PredictedLabel"
           },
           "e2": {
-            "OutputColumnName": "col0",
-            "InputColumnName": "col0",
+            "OutputColumnName": "GradeClass",
+            "InputColumnName": "GradeClass",
             "AddKeyValueAnnotationsAsText": false
           },
           "e5": {
-            "NumberOfLeaves": 4,
-            "MinimumExampleCountPerLeaf": 20,
-            "LearningRate": 1.0,
+            "NumberOfLeaves": 7761,
+            "MinimumExampleCountPerLeaf": 26,
+            "LearningRate": 0.585627971990199,
             "NumberOfTrees": 4,
-            "SubsampleFraction": 1.0,
-            "MaximumBinCountPerFeature": 254,
-            "FeatureFraction": 1.0,
+            "SubsampleFraction": 0.99999977667298645,
+            "MaximumBinCountPerFeature": 269,
+            "FeatureFraction": 0.99999999,
             "L1Regularization": 2E-10,
-            "L2Regularization": 1.0,
-            "LabelColumnName": "col0",
-            "FeatureColumnName": "Features"
-          }
-        }
-      },
-      {
-        "Version": 1,
-        "Type": "Trial",
-        "TrainerName": "LbfgsLogisticRegressionOva",
-        "Score": 0.0,
-        "RuntimeInSeconds": 51.702,
-        "Parameter": {
-          "_SCHEMA_": "e0 * e1 * e2 * e6 * e10",
-          "e0": {
-            "OutputColumnNames": [
-              "col1"
-            ],
-            "InputColumnNames": [
-              "col1"
-            ]
-          },
-          "e1": {
-            "InputColumnNames": [
-              "col1"
-            ],
-            "OutputColumnName": "Features"
-          },
-          "e10": {
-            "OutputColumnName": "PredictedLabel",
-            "InputColumnName": "PredictedLabel"
-          },
-          "e2": {
-            "OutputColumnName": "col0",
-            "InputColumnName": "col0",
-            "AddKeyValueAnnotationsAsText": false
-          },
-          "e6": {
-            "L1Regularization": 1.0,
-            "L2Regularization": 1.0,
-            "LabelColumnName": "col0",
+            "L2Regularization": 0.44648868107697115,
+            "LabelColumnName": "GradeClass",
             "FeatureColumnName": "Features"
           }
         }
@@ -211,21 +283,54 @@
         "Version": 1,
         "Type": "Trial",
         "TrainerName": "FastForestOva",
-        "Score": 0.0,
-        "RuntimeInSeconds": 1468.922,
+        "Score": 0.53690131518838946,
+        "RuntimeInSeconds": 4.982,
         "Parameter": {
           "_SCHEMA_": "e0 * e1 * e2 * e4 * e10",
           "e0": {
             "OutputColumnNames": [
-              "col1"
+              "Age",
+              "Gender",
+              "Ethnicity",
+              "ParentalEducation",
+              "StudyTimeWeekly",
+              "Absences",
+              "Tutoring",
+              "ParentalSupport",
+              "Extracurricular",
+              "Sports",
+              "Music",
+              "Volunteering"
             ],
             "InputColumnNames": [
-              "col1"
+              "Age",
+              "Gender",
+              "Ethnicity",
+              "ParentalEducation",
+              "StudyTimeWeekly",
+              "Absences",
+              "Tutoring",
+              "ParentalSupport",
+              "Extracurricular",
+              "Sports",
+              "Music",
+              "Volunteering"
             ]
           },
           "e1": {
             "InputColumnNames": [
-              "col1"
+              "Age",
+              "Gender",
+              "Ethnicity",
+              "ParentalEducation",
+              "StudyTimeWeekly",
+              "Absences",
+              "Tutoring",
+              "ParentalSupport",
+              "Extracurricular",
+              "Sports",
+              "Music",
+              "Volunteering"
             ],
             "OutputColumnName": "Features"
           },
@@ -234,15 +339,161 @@
             "InputColumnName": "PredictedLabel"
           },
           "e2": {
-            "OutputColumnName": "col0",
-            "InputColumnName": "col0",
+            "OutputColumnName": "GradeClass",
+            "InputColumnName": "GradeClass",
             "AddKeyValueAnnotationsAsText": false
           },
           "e4": {
-            "NumberOfTrees": 4,
+            "NumberOfTrees": 24,
             "NumberOfLeaves": 4,
-            "FeatureFraction": 1.0,
-            "LabelColumnName": "col0",
+            "FeatureFraction": 0.79475373,
+            "LabelColumnName": "GradeClass",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastForestOva",
+        "Score": 0.53674768022963115,
+        "RuntimeInSeconds": 5.311,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e4 * e10",
+          "e0": {
+            "OutputColumnNames": [
+              "Age",
+              "Gender",
+              "Ethnicity",
+              "ParentalEducation",
+              "StudyTimeWeekly",
+              "Absences",
+              "Tutoring",
+              "ParentalSupport",
+              "Extracurricular",
+              "Sports",
+              "Music",
+              "Volunteering"
+            ],
+            "InputColumnNames": [
+              "Age",
+              "Gender",
+              "Ethnicity",
+              "ParentalEducation",
+              "StudyTimeWeekly",
+              "Absences",
+              "Tutoring",
+              "ParentalSupport",
+              "Extracurricular",
+              "Sports",
+              "Music",
+              "Volunteering"
+            ]
+          },
+          "e1": {
+            "InputColumnNames": [
+              "Age",
+              "Gender",
+              "Ethnicity",
+              "ParentalEducation",
+              "StudyTimeWeekly",
+              "Absences",
+              "Tutoring",
+              "ParentalSupport",
+              "Extracurricular",
+              "Sports",
+              "Music",
+              "Volunteering"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e10": {
+            "OutputColumnName": "PredictedLabel",
+            "InputColumnName": "PredictedLabel"
+          },
+          "e2": {
+            "OutputColumnName": "GradeClass",
+            "InputColumnName": "GradeClass",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e4": {
+            "NumberOfTrees": 22,
+            "NumberOfLeaves": 4,
+            "FeatureFraction": 0.82248676,
+            "LabelColumnName": "GradeClass",
+            "FeatureColumnName": "Features"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "FastForestOva",
+        "Score": 0.53612219901753,
+        "RuntimeInSeconds": 5.555,
+        "Parameter": {
+          "_SCHEMA_": "e0 * e1 * e2 * e4 * e10",
+          "e0": {
+            "OutputColumnNames": [
+              "Age",
+              "Gender",
+              "Ethnicity",
+              "ParentalEducation",
+              "StudyTimeWeekly",
+              "Absences",
+              "Tutoring",
+              "ParentalSupport",
+              "Extracurricular",
+              "Sports",
+              "Music",
+              "Volunteering"
+            ],
+            "InputColumnNames": [
+              "Age",
+              "Gender",
+              "Ethnicity",
+              "ParentalEducation",
+              "StudyTimeWeekly",
+              "Absences",
+              "Tutoring",
+              "ParentalSupport",
+              "Extracurricular",
+              "Sports",
+              "Music",
+              "Volunteering"
+            ]
+          },
+          "e1": {
+            "InputColumnNames": [
+              "Age",
+              "Gender",
+              "Ethnicity",
+              "ParentalEducation",
+              "StudyTimeWeekly",
+              "Absences",
+              "Tutoring",
+              "ParentalSupport",
+              "Extracurricular",
+              "Sports",
+              "Music",
+              "Volunteering"
+            ],
+            "OutputColumnName": "Features"
+          },
+          "e10": {
+            "OutputColumnName": "PredictedLabel",
+            "InputColumnName": "PredictedLabel"
+          },
+          "e2": {
+            "OutputColumnName": "GradeClass",
+            "InputColumnName": "GradeClass",
+            "AddKeyValueAnnotationsAsText": false
+          },
+          "e4": {
+            "NumberOfTrees": 23,
+            "NumberOfLeaves": 4,
+            "FeatureFraction": 0.81313986,
+            "LabelColumnName": "GradeClass",
             "FeatureColumnName": "Features"
           }
         }
@@ -263,7 +514,7 @@
     },
     "Schema": "e0 * e1 * e2 * (e3 + e4 + e5 + e6 + e7 + e8 + e9) * e10",
     "MetricName": "MacroAccuracy",
-    "ModelFilePath": "D:\\Visual_Studio_Code\\Cong_Nghe_Phan_Mem\\ML\\ML_Net\\MLTest\\SentimentModel.mlnet"
+    "ModelFilePath": "C:\\Users\\Hieu\\Desktop\\code\\MLTest\\MLTest\\SentimentModel.mlnet"
   },
   "Type": "TrainingConfig",
   "Version": 5,
@@ -271,8 +522,8 @@
     "Version": 2,
     "Subsampling": false,
     "Type": "ClassificationTrainingOption",
-    "TrainingTime": 3600,
-    "LabelColumn": "col0",
+    "TrainingTime": 600,
+    "LabelColumn": "GradeClass",
     "ValidationOption": {
       "Version": 0,
       "Type": "CrossValidationValidationOption",

@@ -1,39 +1,51 @@
 ﻿using static System.Console;
-namespace MLTest
+
+namespace MLTest;
+
+internal class Program
 {
-    internal class Program
+    static int Main(string[] args)
     {
-        static void Main(string[] args)
+        // Ensure relative model path (SentimentModel.mlnet) resolves from app output directory.
+        Directory.SetCurrentDirectory(AppContext.BaseDirectory);
+
+        WriteLine("=== MLTest - Predict GradeClass from CSV (using existing model) ===");
+
+        var csvPath = args.Length > 0 ? args[0] : ResolveDefaultCsvPath();
+        if (string.IsNullOrWhiteSpace(csvPath))
         {
-            while (true)
-            {
-                Clear();
-                WriteLine("Enter text to analyze sentiment (or type 'exit' to quit):");
-                WriteLine();
-                string input = ReadLine();
-
-                // Check if user wants to exit
-                if (input?.ToLower() == "exit" || string.IsNullOrWhiteSpace(input))
-                {
-                    WriteLine("Exiting program...");
-                    break;
-                }
-
-                var sampleData = new SentimentModel.ModelInput()
-                {
-                    Col0 = input!
-                };
-
-                // Load model and predict output of sample data
-                var result = SentimentModel.Predict(sampleData);
-
-                // If Prediction is 1, sentiment is "Positive"; otherwise, sentiment is "Negative"
-                var sentiment = result.PredictedLabel == "1" ? "Positive" : "Negative";
-                WriteLine($"Text: {sampleData.Col0}\nSentiment: {sentiment}");
-                WriteLine(new string('-', 50));
-                WriteLine();
-                ReadKey();
-            }
+            WriteLine("ERROR: No CSV file path was provided and default file 'data_predict.csv' was not found.");
+            WriteLine();
+            WriteLine("Usage:");
+            WriteLine("  dotnet run --project .\\MLTest\\MLTest.csproj -- <path-to-test-csv>");
+            WriteLine();
+            WriteLine("Example:");
+            WriteLine("  dotnet run --project .\\MLTest\\MLTest.csproj -- C:\\data\\student_test.csv");
+            return 1;
         }
+
+        if (args.Length == 0)
+        {
+            WriteLine($"No args detected. Using default CSV: {csvPath}");
+            WriteLine();
+        }
+
+        var exitCode = CsvBatchPredictor.Run(csvPath);
+
+        WriteLine();
+        WriteLine(exitCode == 0 ? "Done." : "Finished with errors.");
+        return exitCode;
+    }
+
+    private static string? ResolveDefaultCsvPath()
+    {
+        var candidates = new[]
+        {
+            Path.Combine(AppContext.BaseDirectory, "data_predict.csv"),
+            Path.GetFullPath("data_predict.csv"),
+            Path.GetFullPath(Path.Combine(AppContext.BaseDirectory, "..", "..", "..", "data_predict.csv"))
+        };
+
+        return candidates.FirstOrDefault(File.Exists);
     }
 }
