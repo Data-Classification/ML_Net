@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json.schemastore.org/launchsettings.json",
+  "profiles": {
+    "MLTest (Evaluate)": {
+      "commandName": "Project",
+      "commandLineArgs": "\"Student_performance_data _.csv\""
+    },
+    "MLTest (Predict-only)": {
+      "commandName": "Project",
+      "commandLineArgs": "data_predict.csv"
+    }
+  }
+}

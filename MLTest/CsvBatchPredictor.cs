@@ -5,6 +5,12 @@ namespace MLTest;
 
 internal static class CsvBatchPredictor
 {
+    internal sealed class RunOptions
+    {
+        public bool VerbosePerRow { get; init; }
+        public int MaxPreviewRows { get; init; } = 20;
+    }
+
     private static readonly string[] FeatureColumns =
     [
         "Age",
@@ -23,8 +29,10 @@ internal static class CsvBatchPredictor
 
     private const string LabelColumn = "GradeClass";
 
-    public static int Run(string csvPath)
+    public static int Run(string csvPath, RunOptions? options = null)
     {
+        options ??= new RunOptions();
+
         if (string.IsNullOrWhiteSpace(csvPath))
         {
             WriteLine("ERROR: CSV path is empty.");
@@ -83,17 +91,25 @@ internal static class CsvBatchPredictor
         }
 
         var hasLabel = headerMap.ContainsKey(LabelColumn);
+        var mode = hasLabel ? "Evaluate" : "Predict-only";
+
+        WriteLine(hasLabel
+            ? "=== Evaluate GradeClass model on labeled CSV ==="
+            : "=== Predict GradeClass from CSV (predict-only) ===");
 
         WriteLine($"Input CSV         : {csvPath}");
         WriteLine($"Model             : {modelPath}");
         WriteLine($"Delimiter         : '{DisplayDelimiter(delimiter)}'");
+        WriteLine($"Mode              : {mode}");
         WriteLine($"Has label column? : {(hasLabel ? "Yes" : "No")}");
+        WriteLine($"Verbose row logs  : {(options.VerbosePerRow ? "On" : "Off")}");
         WriteLine();
 
         var totalRows = 0;
         var parsedRows = 0;
         var predictedRows = 0;
         var skippedFormatRows = 0;
+        var detailedRowsPrinted = 0;
 
         var correct = 0;
         var rowsWithGroundTruth = 0;
@@ -120,6 +136,14 @@ internal static class CsvBatchPredictor
 
             parsedRows++;
 
+            int actualLabel = 0;
+            if (hasLabel && !TryReadOptionalLabel(fields, headerMap, out actualLabel, out var labelError))
+            {
+                skippedFormatRows++;
+                WriteLine($"[WARN] Row {totalRows}: {labelError}");
+                continue;
+            }
+
             SentimentModel.ModelOutput result;
             try
             {
@@ -136,7 +160,7 @@ internal static class CsvBatchPredictor
             var predictedLabel = Convert.ToInt32(MathF.Round(result.PredictedLabel), CultureInfo.InvariantCulture);
             var topScore = result.Score is { Length: > 0 } ? result.Score.Max() : float.NaN;
 
-            if (hasLabel && TryReadOptionalLabel(fields, headerMap, out var actualLabel, out _))
+            if (hasLabel)
             {
                 rowsWithGroundTruth++;
                 var isCorrect = predictedLabel == actualLabel;
@@ -146,13 +170,25 @@ internal static class CsvBatchPredictor
                 }
 
                 UpdateClassStats(perClass, actualLabel, predictedLabel, isCorrect);
-                WriteLine($"Row {totalRows}: Actual={actualLabel}, Predicted={predictedLabel}, Correct={(isCorrect ? "Y" : "N")}, TopScore={(float.IsNaN(topScore) ? "N/A" : topScore.ToString("0.####", CultureInfo.InvariantCulture))}");
+                TryWriteRowDetail(
+                    options,
+                    ref detailedRowsPrinted,
+                    $"Row {totalRows}: Actual={actualLabel}, Predicted={predictedLabel}, Correct={(isCorrect ? "Y" : "N")}, TopScore={(float.IsNaN(topScore) ? "N/A" : topScore.ToString("0.####", CultureInfo.InvariantCulture))}");
             }
             else
             {
                 UpdateClassStats(perClass, actualLabel: null, predictedLabel, isCorrect: false);
-                WriteLine($"Row {totalRows}: Predicted={predictedLabel}, TopScore={(float.IsNaN(topScore) ? "N/A" : topScore.ToString("0.####", CultureInfo.InvariantCulture))}");
+                TryWriteRowDetail(
+                    options,
+                    ref detailedRowsPrinted,
+                    $"Row {totalRows}: Predicted={predictedLabel}, TopScore={(float.IsNaN(topScore) ? "N/A" : topScore.ToString("0.####", CultureInfo.InvariantCulture))}");
             }
+        }
+
+        if (!options.VerbosePerRow && totalRows > detailedRowsPrinted)
+        {
+            WriteLine();
+            WriteLine($"[INFO] Row-level output limited to first {detailedRowsPrinted} rows. Use --verbose to print all rows.");
         }
 
         WriteLine();
@@ -162,12 +198,42 @@ internal static class CsvBatchPredictor
         WriteLine($"Rows predicted successfully: {predictedRows}");
         WriteLine($"Rows skipped/errors       : {skippedFormatRows}");
 
+        WriteLine();
+        WriteLine("Predicted label distribution:");
+        var totalPred = perClass.Values.Sum(v => v.PredictedCount);
+        foreach (var kv in perClass.OrderBy(k => k.Key))
+        {
+            var count = kv.Value.PredictedCount;
+            if (count == 0)
+            {
+                continue;
+            }
+
+            var ratio = totalPred > 0 ? (double)count / totalPred : 0;
+            WriteLine($"  Label {kv.Key}: Count={count}, Ratio={ratio:P2}");
+        }
+
         if (hasLabel)
         {
             WriteLine($"Rows with ground-truth    : {rowsWithGroundTruth}");
             WriteLine($"Correct predictions       : {correct}");
+            WriteLine($"Wrong predictions         : {Math.Max(0, rowsWithGroundTruth - correct)}");
             var accuracy = rowsWithGroundTruth > 0 ? (double)correct / rowsWithGroundTruth : 0;
             WriteLine($"Accuracy                  : {accuracy:P2}");
+
+            WriteLine();
+            WriteLine("Actual label distribution:");
+            foreach (var kv in perClass.OrderBy(k => k.Key))
+            {
+                var actualCount = kv.Value.ActualCount;
+                if (actualCount == 0)
+                {
+                    continue;
+                }
+
+                var actualRatio = rowsWithGroundTruth > 0 ? (double)actualCount / rowsWithGroundTruth : 0;
+                WriteLine($"  Label {kv.Key}: Count={actualCount}, Ratio={actualRatio:P2}");
+            }
 
             WriteLine();
             WriteLine("Per-class stats (ActualClass => ActualCount / PredictedCount / Correct):");
@@ -180,17 +246,26 @@ internal static class CsvBatchPredictor
         else
         {
             WriteLine();
-            WriteLine("Predicted label distribution:");
-            var totalPred = perClass.Values.Sum(v => v.PredictedCount);
-            foreach (var kv in perClass.OrderBy(k => k.Key))
-            {
-                var count = kv.Value.PredictedCount;
-                var ratio = totalPred > 0 ? (double)count / totalPred : 0;
-                WriteLine($"  Label {kv.Key}: Count={count}, Ratio={ratio:P2}");
-            }
+            WriteLine("[INFO] No 'GradeClass' column detected in input header.");
+            WriteLine("[INFO] Accuracy / Actual label distribution / Per-class correct count are only available in Evaluate mode.");
+        }
+        return 0;
+    }
+
+    private static void TryWriteRowDetail(RunOptions options, ref int detailedRowsPrinted, string message)
+    {
+        if (options.VerbosePerRow)
+        {
+            WriteLine(message);
+            detailedRowsPrinted++;
+            return;
         }
 
-        return 0;
+        if (detailedRowsPrinted < options.MaxPreviewRows)
+        {
+            WriteLine(message);
+            detailedRowsPrinted++;
+        }
     }
 
     private static bool TryBuildInput(
