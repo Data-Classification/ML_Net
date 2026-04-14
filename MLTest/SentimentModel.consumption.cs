@@ -80,7 +80,7 @@ namespace MLTest
 
         #endregion
 
-        private static string MLNetModelPath = Path.GetFullPath("SentimentModel.mlnet");
+        private static string MLNetModelPath = PredictionModelPathResolver.ResolveModelPathOrThrow();
 
         public static readonly Lazy<PredictionEngine<ModelInput, ModelOutput>> PredictEngine = new Lazy<PredictionEngine<ModelInput, ModelOutput>>(() => CreatePredictEngine(), true);
 

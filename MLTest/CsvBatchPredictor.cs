@@ -1,5 +1,6 @@
 using System.Globalization;
 using System.Text;
+using System.Text.Json;
 using static System.Console;
 
 namespace MLTest;
@@ -12,6 +13,9 @@ internal static class CsvBatchPredictor
         public int MaxPreviewRows { get; init; } = 20;
         public string? GroundTruthCsvPath { get; init; }
         public string? OutputCsvPath { get; init; }
+        public string? SummaryJsonPath { get; init; }
+        public string? ModelPath { get; init; }
+        public string? CommandText { get; init; }
     }
 
     private static readonly string[] PredictColumns =
@@ -41,12 +45,20 @@ internal static class CsvBatchPredictor
             return 1;
         }
 
-        var modelPath = ResolveModelPath();
-        if (modelPath is null)
+        YearOfStudyPredictionService predictionService;
+        try
+        {
+            predictionService = new YearOfStudyPredictionService(options.ModelPath);
+        }
+        catch (FileNotFoundException)
         {
             WriteLine("ERROR: Model file not found: SentimentModel.mlnet");
             return 1;
         }
+
+        var modelPath = predictionService.ModelPath;
+
+        var trainingMetadata = TryResolveTrainingMetadata(modelPath);
 
         if (!TryReadPredictRows(predictCsvPath, out var predictRows, out var predictHeader, out var predictReadError))
         {
@@ -71,9 +83,16 @@ internal static class CsvBatchPredictor
             ? "=== Evaluate YearOfStudy model on labeled CSV ==="
             : "=== Predict YearOfStudy from CSV (predict-only) ===");
 
+        if (!string.IsNullOrWhiteSpace(options.CommandText))
+        {
+            WriteLine($"Command           : {options.CommandText}");
+        }
+
         WriteLine($"Predict CSV       : {predictCsvPath}");
         WriteLine($"Ground truth CSV  : {(evaluateMode ? options.GroundTruthCsvPath : "(none)")}");
         WriteLine($"Model             : {modelPath}");
+        WriteLine($"Model trainer     : {(trainingMetadata is null ? "(unknown)" : trainingMetadata.Trainer)}");
+        WriteLine($"Model run id      : {(trainingMetadata is null ? "(unknown)" : trainingMetadata.RunId)}");
         WriteLine($"Predict columns   : {string.Join(", ", predictHeader)}");
         WriteLine($"Mode              : {mode}");
         WriteLine($"Verbose row logs  : {(options.VerbosePerRow ? "On" : "Off")}");
@@ -88,18 +107,17 @@ internal static class CsvBatchPredictor
 
         foreach (var row in predictRows)
         {
-            SentimentModel.ModelOutput result;
+            StudentPredictionResult prediction;
             try
             {
-                var input = new SentimentModel.ModelInput
+                prediction = predictionService.Predict(new StudentPredictionInput
                 {
-                    StudentID = row.StudentId ?? 0,
+                    StudentId = row.StudentId,
                     Age = row.Age,
                     Gender = row.Gender,
                     Major = row.Major,
-                    GPA = row.Gpa
-                };
-                result = SentimentModel.Predict(input);
+                    Gpa = row.Gpa
+                });
             }
             catch (Exception ex)
             {
@@ -107,8 +125,8 @@ internal static class CsvBatchPredictor
                 continue;
             }
 
-            var predictedLabel = Convert.ToInt32(MathF.Round(result.PredictedLabel), CultureInfo.InvariantCulture);
-            var topScore = result.Score is { Length: > 0 } ? result.Score.Max() : float.NaN;
+            var predictedLabel = prediction.PredictedYearOfStudy;
+            var topScore = prediction.TopScore ?? float.NaN;
 
             int? actual = null;
             bool? isCorrect = null;
@@ -154,8 +172,9 @@ internal static class CsvBatchPredictor
 
         var outputPath = ResolveOutputPath(predictCsvPath, options.OutputCsvPath, evaluateMode);
         WriteResultsCsv(outputPath, results);
+        var summaryPath = ResolveSummaryPath(predictCsvPath, options.SummaryJsonPath, evaluateMode);
 
-        var summary = BuildSummary(results);
+        var summary = BuildSummary(results, joinedGroundTruth?.FallbackToRowOrderCount ?? 0);
 
         WriteLine();
         WriteLine("================ SUMMARY ================");
@@ -166,6 +185,7 @@ internal static class CsvBatchPredictor
         WriteLine($"Incorrect predictions    : {summary.IncorrectPredictions}");
         WriteLine($"Accuracy                 : {(summary.Accuracy.HasValue ? summary.Accuracy.Value.ToString("P2", CultureInfo.InvariantCulture) : "N/A")}");
         WriteLine($"Output CSV               : {outputPath}");
+        WriteLine($"Summary JSON             : {summaryPath}");
 
         WriteLine();
         WriteLine("Predicted YearOfStudy distribution:");
@@ -198,6 +218,31 @@ internal static class CsvBatchPredictor
         {
             WriteLine();
             WriteLine("[INFO] No ground-truth file was provided. Accuracy is available only in Evaluate mode.");
+        }
+
+        WriteSummaryJson(summaryPath, summary, modelPath, evaluateMode, predictCsvPath, options.GroundTruthCsvPath, outputPath, trainingMetadata, options.CommandText);
+
+        if (evaluateMode)
+        {
+            var retention = ArtifactRetentionService.PruneEvaluationArtifacts(outputPath, summaryPath);
+            if (retention.Skipped)
+            {
+                WriteLine("[retention] evaluations: skipped because CSV and summary are in different directories.");
+            }
+            else if (retention.DeletedFileCount > 0)
+            {
+                WriteLine($"[retention] evaluation output: {outputPath}");
+                WriteLine($"[retention] kept latest {retention.RunsToKeep} run(s), pruned {retention.DeletedFileCount} old file(s).");
+            }
+        }
+        else
+        {
+            var retention = ArtifactRetentionService.PrunePredictionArtifacts(outputPath, summaryPath);
+            if (retention.DeletedFileCount > 0)
+            {
+                WriteLine($"[retention] prediction output: {outputPath}");
+                WriteLine($"[retention] kept latest {retention.RunsToKeep} run(s), pruned {retention.DeletedFileCount} old file(s).");
+            }
         }
 
         return 0;
@@ -432,7 +477,7 @@ internal static class CsvBatchPredictor
         return new GroundTruthMatch(null);
     }
 
-    private static PredictionSummary BuildSummary(List<PredictionResultRow> rows)
+    private static PredictionSummary BuildSummary(List<PredictionResultRow> rows, int fallbackMatchedByRowOrder)
     {
         var total = rows.Count;
         var rowsWithActual = rows.Count(r => r.ActualYearOfStudy.HasValue);
@@ -458,7 +503,71 @@ internal static class CsvBatchPredictor
             incorrect,
             accuracy,
             predictedDistribution,
-            actualDistribution);
+            actualDistribution,
+            fallbackMatchedByRowOrder);
+    }
+
+    private static void WriteSummaryJson(
+        string summaryPath,
+        PredictionSummary summary,
+        string modelPath,
+        bool evaluateMode,
+        string predictCsvPath,
+        string? groundTruthPath,
+        string outputCsvPath,
+        TrainingRunMetadata? trainingMetadata,
+        string? commandText)
+    {
+        var directory = Path.GetDirectoryName(summaryPath);
+        if (!string.IsNullOrWhiteSpace(directory) && !Directory.Exists(directory))
+        {
+            Directory.CreateDirectory(directory);
+        }
+
+        var report = new
+        {
+            generatedAtUtc = DateTimeOffset.UtcNow.ToString("O", CultureInfo.InvariantCulture),
+            mode = evaluateMode ? "evaluate" : "predict",
+            command = commandText,
+            model = new
+            {
+                path = modelPath,
+                trainer = trainingMetadata?.Trainer,
+                runId = trainingMetadata?.RunId,
+                trainedAtUtc = trainingMetadata?.TrainedAtUtc,
+                trainingDataPath = trainingMetadata?.DataPath,
+                testFraction = trainingMetadata?.TestFraction,
+                seed = trainingMetadata?.Seed
+            },
+            input = new
+            {
+                predictCsvPath,
+                groundTruthCsvPath = groundTruthPath
+            },
+            output = new
+            {
+                outputCsvPath,
+                summaryJsonPath = summaryPath
+            },
+            metrics = new
+            {
+                totalSamples = summary.TotalSamples,
+                evaluatedSamples = summary.RowsWithActual,
+                predictedSamples = summary.PredictedSamples,
+                correctPredictions = summary.CorrectPredictions,
+                incorrectPredictions = summary.IncorrectPredictions,
+                accuracy = summary.Accuracy,
+                fallbackMatchedByRowOrder = summary.FallbackMatchedByRowOrder
+            },
+            distribution = new
+            {
+                predicted = summary.PredictedDistribution,
+                actual = summary.ActualDistribution
+            }
+        };
+
+        var json = JsonSerializer.Serialize(report, new JsonSerializerOptions { WriteIndented = true });
+        File.WriteAllText(summaryPath, json, Encoding.UTF8);
     }
 
     private static void WriteResultsCsv(string outputPath, List<PredictionResultRow> rows)
@@ -498,7 +607,25 @@ internal static class CsvBatchPredictor
         }
 
         var dir = Path.GetDirectoryName(Path.GetFullPath(predictCsvPath)) ?? AppContext.BaseDirectory;
-        var fileName = evaluateMode ? "evaluation_data_set_1.csv" : "predictions_data_set_1.csv";
+        var timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss", CultureInfo.InvariantCulture);
+        var fileName = evaluateMode
+            ? $"evaluation_{timestamp}.csv"
+            : $"predictions_{timestamp}.csv";
+        return Path.Combine(dir, fileName);
+    }
+
+    private static string ResolveSummaryPath(string predictCsvPath, string? explicitPath, bool evaluateMode)
+    {
+        if (!string.IsNullOrWhiteSpace(explicitPath))
+        {
+            return Path.GetFullPath(explicitPath);
+        }
+
+        var dir = Path.GetDirectoryName(Path.GetFullPath(predictCsvPath)) ?? AppContext.BaseDirectory;
+        var timestamp = DateTime.Now.ToString("yyyyMMdd_HHmmss", CultureInfo.InvariantCulture);
+        var fileName = evaluateMode
+            ? $"summary_evaluation_{timestamp}.json"
+            : $"summary_predict_{timestamp}.json";
         return Path.Combine(dir, fileName);
     }
 
@@ -619,16 +746,59 @@ internal static class CsvBatchPredictor
         return bestDelimiter;
     }
 
-    private static string? ResolveModelPath()
+    private static TrainingRunMetadata? TryResolveTrainingMetadata(string modelPath)
     {
+        var normalizedModelPath = Path.GetFullPath(modelPath);
+        var modelDir = Path.GetDirectoryName(normalizedModelPath) ?? AppContext.BaseDirectory;
         var candidates = new[]
         {
-            Path.Combine(AppContext.BaseDirectory, "SentimentModel.mlnet"),
-            Path.GetFullPath("SentimentModel.mlnet"),
-            Path.GetFullPath(Path.Combine("MLTest", "SentimentModel.mlnet"))
+            Path.Combine(modelDir, "training_runs", "training_runs.jsonl"),
+            Path.Combine(AppContext.BaseDirectory, "training_runs", "training_runs.jsonl"),
+            Path.Combine(Path.GetFullPath(Path.Combine(modelDir, "..")), "training_runs", "training_runs.jsonl")
         };
 
-        return candidates.FirstOrDefault(File.Exists);
+        foreach (var candidate in candidates.Distinct(StringComparer.OrdinalIgnoreCase))
+        {
+            if (!File.Exists(candidate))
+            {
+                continue;
+            }
+
+            try
+            {
+                TrainingRunMetadata? matched = null;
+                foreach (var line in File.ReadLines(candidate))
+                {
+                    if (string.IsNullOrWhiteSpace(line))
+                    {
+                        continue;
+                    }
+
+                    var entry = JsonSerializer.Deserialize<TrainingRunMetadata>(line);
+                    if (entry is null || string.IsNullOrWhiteSpace(entry.ModelPath))
+                    {
+                        continue;
+                    }
+
+                    var loggedModelPath = Path.GetFullPath(entry.ModelPath);
+                    if (string.Equals(loggedModelPath, normalizedModelPath, StringComparison.OrdinalIgnoreCase))
+                    {
+                        matched = entry;
+                    }
+                }
+
+                if (matched is not null)
+                {
+                    return matched;
+                }
+            }
+            catch
+            {
+                // Ignore malformed metadata file and continue with next candidate.
+            }
+        }
+
+        return null;
     }
 
     private static string[] ParseCsvLine(string line, char delimiter)
@@ -704,7 +874,19 @@ internal static class CsvBatchPredictor
         int IncorrectPredictions,
         double? Accuracy,
         Dictionary<int, int> PredictedDistribution,
-        Dictionary<int, int> ActualDistribution);
+        Dictionary<int, int> ActualDistribution,
+        int FallbackMatchedByRowOrder);
+
+    private sealed class TrainingRunMetadata
+    {
+        public string? RunId { get; set; }
+        public string? Trainer { get; set; }
+        public string? TrainedAtUtc { get; set; }
+        public string? DataPath { get; set; }
+        public string? ModelPath { get; set; }
+        public float? TestFraction { get; set; }
+        public int? Seed { get; set; }
+    }
 
     private sealed class GroundTruthLookup(
         Dictionary<int, Queue<GroundTruthRow>> byStudentId,

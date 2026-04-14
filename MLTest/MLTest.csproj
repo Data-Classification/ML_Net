@@ -9,10 +9,14 @@
     <PackageReference Include="Google.GenAI" Version="0.13.1" />
     <PackageReference Include="Microsoft.ML" Version="3.0.1" />
     <PackageReference Include="Microsoft.ML.FastTree" Version="3.0.1" />
+    <PackageReference Include="Microsoft.ML.LightGbm" Version="3.0.1" />
   </ItemGroup>
   <ItemGroup Label="SentimentModel">
     <None Include="SentimentModel.mlnet">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MLNET_API\MLNET_API.csproj" />
   </ItemGroup>
 </Project>

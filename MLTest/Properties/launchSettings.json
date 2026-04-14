@@ -12,6 +12,10 @@
     "MLTest (Evaluate data_set_1)": {
       "commandName": "Project",
       "commandLineArgs": "evaluate data_set_1.csv data_set_1_full.csv"
+    },
+    "MLTest (Compare reports)": {
+      "commandName": "Project",
+      "commandLineArgs": "compare"
     }
   }
 }

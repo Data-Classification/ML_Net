@@ -1,0 +1,47 @@
+﻿{
+  "generatedAtUtc": "2026-04-01T06:36:11.5194836\u002B00:00",
+  "mode": "evaluate",
+  "command": "evaluate data_set_1.csv data_set_1_full.csv",
+  "model": {
+    "path": "C:\\Users\\Hieu\\Desktop\\code\\MLTest\\MLTest\\bin\\Debug\\net10.0\\SentimentModel.mlnet",
+    "trainer": null,
+    "runId": null,
+    "trainedAtUtc": null,
+    "trainingDataPath": null,
+    "testFraction": null,
+    "seed": null
+  },
+  "input": {
+    "predictCsvPath": "C:\\Users\\Hieu\\Desktop\\code\\MLTest\\MLTest\\data_set_1.csv",
+    "groundTruthCsvPath": "C:\\Users\\Hieu\\Desktop\\code\\MLTest\\MLTest\\data_set_1_full.csv"
+  },
+  "output": {
+    "outputCsvPath": "C:\\Users\\Hieu\\Desktop\\code\\MLTest\\MLTest\\evaluation_20260401_133611.csv",
+    "summaryJsonPath": "C:\\Users\\Hieu\\Desktop\\code\\MLTest\\MLTest\\summary_evaluation_20260401_133611.json"
+  },
+  "metrics": {
+    "totalSamples": 2000,
+    "evaluatedSamples": 2000,
+    "predictedSamples": 2000,
+    "correctPredictions": 430,
+    "incorrectPredictions": 1570,
+    "accuracy": 0.215,
+    "fallbackMatchedByRowOrder": 0
+  },
+  "distribution": {
+    "predicted": {
+      "4": 490,
+      "5": 572,
+      "1": 482,
+      "2": 366,
+      "3": 90
+    },
+    "actual": {
+      "5": 386,
+      "1": 394,
+      "3": 374,
+      "4": 424,
+      "2": 422
+    }
+  }
+}
