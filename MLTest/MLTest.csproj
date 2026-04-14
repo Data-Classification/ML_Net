@@ -16,7 +16,4 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MLNET_API\MLNET_API.csproj" />
-  </ItemGroup>
 </Project>
