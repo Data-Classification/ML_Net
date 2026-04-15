@@ -1,7 +1,5 @@
 # Year of Study Prediction with ML.NET
 
-## Trả lời nhanh: project này dự đoán cái gì?
-
 Project này **dự đoán `YearOfStudy` (năm học của sinh viên, nhãn 1-5)** dựa trên các thuộc tính:
 
 - `Age`
