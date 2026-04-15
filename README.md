@@ -9,6 +9,13 @@ Project này **dự đoán `YearOfStudy` (năm học của sinh viên, nhãn 1-5
 - `Major`
 - `GPA`
 
+## Phân công (nhóm 2 - Data Classification)
+
+- **Hoàng Khôi Nguyên - DTC235210040**: phụ trách lõi dự đoán cục bộ của hệ thống.
+- **Nguyễn Minh Hiếu - DTC235210023**: phụ trách lớp Web API của hệ thống (để client/ứng dụng khác gọi trực tiếp).
+- **Tạ Việt Quang Khải - DTC235210074**: phụ trách tích hợp dịch vụ bên ngoài, cụ thể là `Ollama Cloud` và cấu hình API ngoài.
+- **Trịnh Xuân Thiện - DTC245340018**: phụ trách luồng tổng hợp của API (ghép dự đoán cục bộ với giải thích), xử lý batch và kiểm thử toàn bộ luồng.
+
 `StudentID` chỉ dùng để đối chiếu bản ghi khi đánh giá (evaluate), **không dùng làm feature train**.
 
 Lưu ý quan trọng: tên file model hiện tại là `SentimentModel.mlnet` (do tên auto-generated cũ), nhưng nghiệp vụ thực tế là **phân loại YearOfStudy**, không phải sentiment.
