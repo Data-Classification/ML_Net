@@ -1,33 +1,42 @@
-# MLTest API Demo
+# Demo API MLTest
 
-## Overview
+## Phân công (nhóm 2 – Data Classification)
 
-This solution contains two projects:
+Mục tiêu: tách phần machine learning ra khỏi lớp API để hệ thống có thể tái sử dụng mô hình dự đoán một cách rõ ràng và ổn định.
 
-- `MLTest`: existing console/ML project that owns training, evaluation, comparison, artifacts, and the reusable local prediction core.
-- `MLNET_API`: ASP.NET Core Web API host that exposes health, single prediction, and batch prediction endpoints.
+- **Hoàng Khôi Nguyên**: phụ trách lõi dự đoán cục bộ của hệ thống.
+- **Nguyễn Minh Hiếu**: phụ trách lớp Web API của hệ thống (để client/ứng dụng khác gọi trực tiếp).
+- **Tạ Việt Quang Khải**: phụ trách tích hợp dịch vụ bên ngoài, cụ thể là `Ollama Cloud`.
+- **Trịnh Xuân Thiện**: phụ trách luồng tổng hợp của API (ghép dự đoán cục bộ với giải thích), xử lý batch và kiểm thử toàn bộ luồng.
 
-The external explanation provider is now `ollama-cloud`. The API keeps the same safe flow:
+## Tổng quan
 
-1. Run local prediction first.
-2. Call Ollama Cloud only for `POST /predict`.
-3. Return the local prediction even if the external explanation fails.
+Giải pháp này gồm 2 dự án:
 
-## Architecture
+- **MLTest**: dự án console/ML hiện có, sở hữu các phần huấn luyện (training), đánh giá (evaluation), so sánh (comparison), lưu artifacts và **lõi dự đoán cục bộ (local prediction core)** có thể tái sử dụng.
+- **MLNET_API**: ASP.NET Core Web API để cung cấp các endpoint: health check, dự đoán 1 mẫu và dự đoán theo lô (batch).
+
+Hệ thống có thể gọi dịch vụ giải thích (explanation) bên ngoài qua **Ollama Cloud** (provider: `ollama-cloud`). Luồng an toàn được giữ nguyên:
+
+1. Luôn chạy dự đoán cục bộ trước.
+2. Chỉ gọi Ollama Cloud cho `POST /predict`.
+3. Nếu giải thích từ dịch vụ ngoài bị lỗi, API **vẫn trả về kết quả dự đoán cục bộ**.
+
+## Kiến trúc
 
 ```text
 Client / Swagger / Postman
         |
         v
-    MLNET_API
+    MLNET_API (Web API)
         |
         +--> PredictionApiService
                 |
-                +--> MLTest YearOfStudyPredictionService
+                +--> MLTest/YearOfStudyPredictionService (dự đoán cục bộ)
                 |       |
                 |       +--> SentimentModel.mlnet
                 |
-                +--> OllamaCloudPredictionExplanationService (optional)
+                +--> OllamaCloudPredictionExplanationService (tùy chọn)
                         |
                         +--> https://ollama.com/api/generate
                         +--> Authorization: Bearer <API_KEY>
@@ -36,31 +45,31 @@ Client / Swagger / Postman
    JSON response
 ```
 
-## Implemented Flows
+## Các luồng đã triển khai
 
 - `GET /health`
 - `POST /predict`
 - `POST /predict/batch`
-- `POST /predict` fallback when Ollama Cloud is unavailable
+- Cơ chế fallback cho `POST /predict` khi Ollama Cloud không khả dụng
 
-Still intentionally out of scope:
+Chủ động **không làm** trong phạm vi hiện tại:
 
 - Auth / database / frontend
-- CSV upload API
-- Evaluate / compare API
-- Batch explanation generation
+- API upload CSV
+- API evaluate / compare
+- Sinh giải thích (explanation) cho batch
 
-## Run Locally
+## Chạy cục bộ
 
-1. Build the whole solution:
+1. Build toàn bộ giải pháp:
 
 ```powershell
 dotnet build .\MLTest.slnx
 ```
 
-2. Optional: configure Ollama Cloud explanation.
+2. (Tùy chọn) Cấu hình Ollama Cloud để sinh explanation.
 
-User-secrets:
+Thiết lập bằng user-secrets:
 
 ```powershell
 dotnet user-secrets set "PredictionExplanation:ApiKey" "<your-ollama-api-key>" --project .\MLNET_API\MLNET_API.csproj
@@ -68,7 +77,7 @@ dotnet user-secrets set "PredictionExplanation:BaseUrl" "https://ollama.com/api"
 dotnet user-secrets set "PredictionExplanation:Model" "gemma3:4b-cloud" --project .\MLNET_API\MLNET_API.csproj
 ```
 
-Environment variable alternative:
+Hoặc dùng biến môi trường:
 
 ```powershell
 $env:OLLAMA_API_KEY = "<your-ollama-api-key>"
@@ -76,24 +85,24 @@ $env:PredictionExplanation__BaseUrl = "https://ollama.com/api"
 $env:PredictionExplanation__Model = "gemma3:4b-cloud"
 ```
 
-3. Run the API:
+3. Chạy API:
 
 ```powershell
 dotnet run --project .\MLNET_API\MLNET_API.csproj --launch-profile http
 ```
 
-4. Open Swagger:
+4. Mở Swagger:
 
 - `http://localhost:5157/swagger`
 
-## Configuration
+## Cấu hình
 
-`MLNET_API/appsettings.json` exposes two main config groups:
+File `MLNET_API/appsettings.json` có 2 nhóm cấu hình chính:
 
 - `Prediction:ModelPath`
-  Optional override for model resolution. If left empty, the API resolves `MLTest/SentimentModel.mlnet` automatically during local development and falls back to the output copy when needed.
+  Ghi đè (tùy chọn) đường dẫn model. Nếu để trống, API sẽ tự resolve `MLTest/SentimentModel.mlnet` khi dev cục bộ và fallback sang bản copy trong output khi cần.
 - `PredictionExplanation`
-  Controls Ollama Cloud explanation generation:
+  Điều khiển việc sinh explanation từ Ollama Cloud:
   - `Enabled`
   - `Provider`
   - `ApiKey`
@@ -101,46 +110,40 @@ dotnet run --project .\MLNET_API\MLNET_API.csproj --launch-profile http
   - `Model`
   - `TimeoutMilliseconds`
 
-Do not store a real API key in `appsettings.json`.
+Không lưu API key thật vào `appsettings.json`.
 
-## External Explanation Behavior
+## Hành vi giải thích (Ollama Cloud)
 
-- Default provider: `ollama-cloud`
-- Target API: `https://ollama.com/api/generate`
-- Auth: `Authorization: Bearer <API_KEY>`
-- Request mode: `stream=false`
-- Where it runs: local prediction first, explanation second, only for `POST /predict`
-- Fallback behavior: if the API key is missing, the key is rejected, the base URL is invalid/unreachable, the provider times out, or the cloud response is empty, the API still returns the local prediction and marks `explanation.available = false`
+- Provider mặc định: `ollama-cloud`
+- Endpoint đích: `https://ollama.com/api/generate`
+- Xác thực: `Authorization: Bearer <API_KEY>`
+- Chế độ request: `stream=false`
+- Thời điểm chạy: dự đoán cục bộ trước, giải thích sau, **chỉ** cho `POST /predict`
+- Cơ chế fallback: nếu thiếu API key, API key bị từ chối, base URL không hợp lệ/không truy cập được, bị timeout, hoặc response rỗng… API vẫn trả về dự đoán cục bộ và đánh dấu `explanation.available = false`
 
-Detailed payload examples are in [API_USAGE.md](/D:/old_data/code/MLTest/API_USAGE.md).
+Ví dụ payload chi tiết: xem [API_USAGE.md](API_USAGE.md).
 
-## Manual Verification Summary
+## Tóm tắt kiểm chứng thủ công
 
-Latest local verification on April 15, 2026:
+Lần kiểm chứng cục bộ gần nhất: **15/04/2026**
 
-- Solution build: passed
-- Swagger UI endpoint: usable
-- `GET /health`: passed
-- `POST /predict` with no API key: passed, local prediction still returned and `explanation.status = missing_api_key`
-- `POST /predict` with a fake API key against Ollama Cloud: passed, local prediction still returned and `explanation.status = unauthorized`
-- `POST /predict` with bad base URL `https://example.invalid/api`: passed, local prediction still returned and `explanation.status = connection_error`
-- `POST /predict/batch`: still works and keeps `explanation = not_requested`
+- Build giải pháp: đạt
+- Swagger UI: dùng được
+- `GET /health`: đạt
+- `POST /predict` không có API key: đạt, vẫn trả dự đoán cục bộ và `explanation.status = missing_api_key`
+- `POST /predict` dùng API key giả với Ollama Cloud: đạt, vẫn trả dự đoán cục bộ và `explanation.status = unauthorized`
+- `POST /predict` với base URL sai `https://example.invalid/api`: đạt, vẫn trả dự đoán cục bộ và `explanation.status = connection_error`
+- `POST /predict/batch`: vẫn chạy và giữ `explanation = not_requested`
 
-Current environment limitation:
+Giới hạn môi trường hiện tại:
 
-- No real Ollama Cloud API key was available in environment variables or user-secrets during verification, so the live success path for explanation generation is code-ready but not runtime-verified here.
+- Không có API key Ollama Cloud thật trong biến môi trường hoặc user-secrets tại thời điểm kiểm chứng, nên luồng “explanation thành công thật” đã sẵn sàng về mặt code nhưng chưa được xác nhận bằng runtime.
 
-## Important Files
+## Tệp quan trọng
 
-- [MLNET_API/Program.cs](/D:/old_data/code/MLTest/MLNET_API/Program.cs)
-- [MLNET_API/Controllers/PredictionController.cs](/D:/old_data/code/MLTest/MLNET_API/Controllers/PredictionController.cs)
-- [MLNET_API/Services/PredictionApiService.cs](/D:/old_data/code/MLTest/MLNET_API/Services/PredictionApiService.cs)
-- [MLNET_API/Services/OllamaCloudPredictionExplanationService.cs](/D:/old_data/code/MLTest/MLNET_API/Services/OllamaCloudPredictionExplanationService.cs)
-- [MLTest/YearOfStudyPredictionService.cs](/D:/old_data/code/MLTest/MLTest/YearOfStudyPredictionService.cs)
-- [API_USAGE.md](/D:/old_data/code/MLTest/API_USAGE.md)
-
-## Known Limitations
-
-- External explanation success still needs one live run with a real Ollama Cloud API key.
-- Batch responses keep explanation as `not_requested` for now.
-- No evaluate/compare API was added because it is outside the prompt chain scope.
+- [MLNET_API/Program.cs](MLNET_API/Program.cs)
+- [MLNET_API/Controllers/PredictionController.cs](MLNET_API/Controllers/PredictionController.cs)
+- [MLNET_API/Services/PredictionApiService.cs](MLNET_API/Services/PredictionApiService.cs)
+- [MLNET_API/Services/OllamaCloudPredictionExplanationService.cs](MLNET_API/Services/OllamaCloudPredictionExplanationService.cs)
+- [MLTest/YearOfStudyPredictionService.cs](MLTest/YearOfStudyPredictionService.cs)
+- [API_USAGE.md](API_USAGE.md)
