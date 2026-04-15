@@ -83,7 +83,7 @@ Sample success response:
 {
   "status": "ok",
   "modelReady": true,
-  "modelPath": "D:\\old_data\\code\\MLTest\\MLTest\\SentimentModel.mlnet",
+  "modelPath": "D:\\old_data\\code\\MLNet\\MLNet\\SentimentModel.mlnet",
   "configuredModelPath": null,
   "error": null
 }
@@ -107,7 +107,7 @@ Expected explanation success shape when a real Ollama Cloud API key and valid mo
 
 ```json
 {
-  "modelPath": "D:\\old_data\\code\\MLTest\\MLTest\\SentimentModel.mlnet",
+  "modelPath": "D:\\old_data\\code\\MLNet\\MLNet\\SentimentModel.mlnet",
   "predictedYearOfStudy": 4,
   "rawPredictedLabel": 4,
   "topScore": 0.2199474,
@@ -127,7 +127,7 @@ Actual fallback example from this environment with no API key configured:
 
 ```json
 {
-  "modelPath": "D:\\old_data\\code\\MLTest\\MLTest\\SentimentModel.mlnet",
+  "modelPath": "D:\\old_data\\code\\MLNet\\MLNet\\SentimentModel.mlnet",
   "predictedYearOfStudy": 4,
   "rawPredictedLabel": 4,
   "topScore": 0.2199474,

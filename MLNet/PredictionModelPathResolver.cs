@@ -1,9 +1,9 @@
-namespace MLTest;
+namespace MLNet;
 
 public static class PredictionModelPathResolver
 {
     public const string DefaultModelFileName = "SentimentModel.mlnet";
-    private const string ProjectFileName = "MLTest.csproj";
+    private const string ProjectFileName = "MLNet.csproj";
 
     public static string? TryResolveModelPath(string? explicitModelPath = null, IEnumerable<string?>? probeDirectories = null)
     {
@@ -140,7 +140,7 @@ public static class PredictionModelPathResolver
                 return current.FullName;
             }
 
-            var siblingProjectDirectory = Path.Combine(current.FullName, "MLTest");
+            var siblingProjectDirectory = Path.Combine(current.FullName, "MLNet");
             if (File.Exists(Path.Combine(siblingProjectDirectory, ProjectFileName)))
             {
                 return siblingProjectDirectory;

@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MLTest\MLTest.csproj" />
+    <ProjectReference Include="..\MLNet\MLNet.csproj" />
   </ItemGroup>
 
 </Project>

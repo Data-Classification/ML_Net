@@ -1,0 +1,2001 @@
+﻿StudentID,Age,Gender,Major,GPA,ActualYearOfStudy,PredictedYearOfStudy,IsCorrect,TopScore
+1,22,Male,Economics,3.16,5,4,false,0.2201
+2,25,Female,Economics,2.8,1,5,false,0.2101
+3,19,Male,Computer Science,2.53,3,1,false,0.23
+4,24,Non-Binary,Arts,3.9,3,2,false,0.2742
+5,21,Female,Nursing,3.33,1,4,false,0.2032
+6,28,Male,Law,2.02,4,1,false,0.2417
+7,25,Non-Binary,Engineering,3.55,1,2,false,0.2301
+8,25,Male,Education,3.8,2,2,true,0.2325
+9,21,Non-Binary,Business,3.29,5,5,true,0.2421
+10,26,Non-Binary,Data Science,2.99,2,5,false,0.2195
+11,19,Female,Business,3.17,5,5,true,0.2291
+12,18,Non-Binary,Nursing,3.75,4,3,false,0.2228
+13,26,Female,Engineering,3.02,2,4,false,0.2357
+14,23,Female,Nursing,2.46,5,5,true,0.2138
+15,27,Non-Binary,Business,3.08,5,5,true,0.2433
+16,25,Male,Biology,3.9,4,2,false,0.2615
+17,27,Non-Binary,Data Science,2.62,2,5,false,0.2258
+18,28,Female,Economics,3.09,4,2,false,0.22
+19,18,Non-Binary,Arts,2.92,4,3,false,0.2266
+20,26,Male,Biology,2.37,2,2,true,0.2204
+21,28,Male,Psychology,3.41,3,4,false,0.2373
+22,18,Non-Binary,Psychology,2.72,3,3,true,0.2477
+23,23,Male,Engineering,3.34,1,4,false,0.2505
+24,25,Male,Arts,3.26,3,2,false,0.2614
+25,19,Male,Psychology,3.63,2,1,false,0.2312
+26,26,Non-Binary,Mathematics,4,4,4,true,0.2295
+27,21,Non-Binary,Psychology,3.46,4,3,false,0.2332
+28,19,Female,Mathematics,3.04,5,4,false,0.2345
+29,23,Non-Binary,Mathematics,2.96,2,5,false,0.2329
+30,25,Male,Law,3.16,4,1,false,0.2436
+31,20,Male,Education,2.86,3,5,false,0.2289
+32,24,Female,Computer Science,3.73,5,1,false,0.2394
+33,26,Non-Binary,Arts,3.95,1,2,false,0.2858
+34,21,Female,Education,3.57,4,5,false,0.2305
+35,27,Female,Education,3.34,4,5,false,0.2316
+36,24,Male,Business,3.07,1,4,false,0.2227
+37,20,Non-Binary,Law,3.49,3,1,false,0.2413
+38,26,Non-Binary,Data Science,3.49,1,5,false,0.2108
+39,21,Female,Nursing,2.46,5,5,true,0.2143
+40,28,Female,Engineering,3.67,5,2,false,0.2458
+41,25,Non-Binary,Engineering,3.43,3,2,false,0.2267
+42,21,Female,Education,3.53,1,5,false,0.2312
+43,26,Male,Nursing,3.19,4,4,true,0.2187
+44,19,Male,Computer Science,3.3,2,1,false,0.2283
+45,28,Female,Economics,2.71,1,5,false,0.2105
+46,24,Non-Binary,Nursing,3.67,2,2,true,0.2189
+47,20,Female,Computer Science,2.98,1,1,true,0.2478
+48,23,Non-Binary,Economics,2.63,4,5,false,0.2284
+49,27,Female,Biology,3.48,2,2,true,0.2529
+50,18,Male,Business,3.38,4,4,true,0.2211
+51,21,Non-Binary,Data Science,2.48,2,5,false,0.2295
+52,27,Non-Binary,Mathematics,2.93,5,5,true,0.2321
+53,24,Female,Arts,3.73,2,2,true,0.2677
+54,24,Male,Law,4,2,1,false,0.2427
+55,24,Female,Mathematics,2.91,4,4,true,0.2369
+56,18,Male,Economics,3.11,4,4,true,0.2179
+57,19,Male,Business,2.89,4,5,false,0.2199
+58,24,Female,Biology,2.95,5,2,false,0.2237
+59,27,Non-Binary,Engineering,3.15,4,2,false,0.2273
+60,23,Non-Binary,Business,2.23,3,5,false,0.2619
+61,18,Male,Data Science,3.17,3,4,false,0.2159
+62,22,Non-Binary,Economics,3.05,3,5,false,0.2212
+63,26,Non-Binary,Biology,2.31,4,5,false,0.249
+64,19,Non-Binary,Arts,3.09,2,2,true,0.2266
+65,24,Non-Binary,Arts,2.78,5,2,false,0.2402
+66,23,Female,Biology,3.38,3,2,false,0.2319
+67,28,Female,Arts,3,4,2,false,0.2646
+68,23,Male,Engineering,3.78,2,4,false,0.2511
+69,18,Male,Mathematics,3.93,1,4,false,0.2532
+70,24,Female,Economics,3.23,3,2,false,0.2074
+71,23,Non-Binary,Law,3.76,1,1,true,0.2369
+72,22,Male,Biology,3.01,5,2,false,0.2215
+73,26,Male,Arts,4,1,2,false,0.2892
+74,18,Female,Computer Science,4,1,1,true,0.2481
+75,25,Male,Law,3.6,1,1,true,0.2424
+76,19,Non-Binary,Arts,3.07,4,2,false,0.2261
+77,27,Female,Data Science,3.63,1,1,true,0.2191
+78,18,Male,Arts,4,1,2,false,0.2503
+79,19,Non-Binary,Data Science,3.43,4,5,false,0.2138
+80,27,Male,Nursing,3.07,2,2,true,0.219
+81,20,Female,Computer Science,2.8,5,1,false,0.2482
+82,20,Non-Binary,Data Science,2.01,4,5,false,0.2376
+83,21,Non-Binary,Biology,3.06,2,5,false,0.2366
+84,27,Female,Law,3.12,5,1,false,0.2611
+85,23,Non-Binary,Psychology,4,4,3,false,0.2228
+86,18,Non-Binary,Mathematics,3.53,2,5,false,0.2242
+87,23,Male,Business,2.83,3,4,false,0.2216
+88,22,Male,Education,3.87,3,4,false,0.2233
+89,22,Female,Engineering,3.5,5,4,false,0.2352
+90,28,Non-Binary,Economics,3.36,3,2,false,0.2275
+91,21,Non-Binary,Computer Science,3.48,5,1,false,0.2183
+92,19,Female,Law,2.93,4,1,false,0.2733
+93,20,Male,Business,2.24,1,5,false,0.2311
+94,28,Female,Mathematics,2.99,4,4,true,0.2391
+95,21,Female,Economics,3.11,1,1,true,0.2097
+96,24,Male,Psychology,3.26,1,4,false,0.2334
+97,21,Female,Education,2.69,5,5,true,0.2472
+98,24,Female,Arts,4,2,2,true,0.276
+99,20,Male,Psychology,1.98,4,3,false,0.2399
+100,27,Non-Binary,Education,2.35,5,5,true,0.2675
+101,26,Non-Binary,Nursing,3.78,4,2,false,0.2307
+102,21,Male,Psychology,3.55,2,4,false,0.2321
+103,19,Male,Biology,2.08,4,5,false,0.2259
+104,21,Male,Business,3.16,4,4,true,0.2218
+105,27,Male,Economics,2.69,1,4,false,0.221
+106,22,Male,Education,3.94,1,2,false,0.2237
+107,23,Female,Psychology,3.29,4,1,false,0.2478
+108,27,Non-Binary,Mathematics,3.92,2,4,false,0.2296
+109,19,Female,Psychology,4,4,1,false,0.2518
+110,25,Male,Engineering,3.39,2,4,false,0.2512
+111,25,Male,Business,2.75,3,4,false,0.2222
+112,19,Male,Engineering,2.25,4,4,true,0.2456
+113,28,Non-Binary,Business,2.32,1,5,false,0.2581
+114,24,Non-Binary,Arts,3.98,5,2,false,0.2767
+115,24,Male,Nursing,3.69,4,2,false,0.2235
+116,22,Female,Business,3.01,2,5,false,0.231
+117,18,Female,Law,2.97,2,1,false,0.2746
+118,20,Male,Data Science,2.37,5,1,false,0.2142
+119,28,Non-Binary,Psychology,3.54,2,1,false,0.2143
+120,28,Male,Arts,3.23,1,2,false,0.275
+121,28,Non-Binary,Law,3.61,1,1,true,0.2301
+122,25,Male,Business,2.87,5,4,false,0.2225
+123,19,Female,Law,1.98,2,1,false,0.2739
+124,21,Female,Education,2.24,3,5,false,0.2558
+125,20,Male,Law,2.94,3,1,false,0.2509
+126,20,Male,Biology,2.6,1,5,false,0.2165
+127,28,Male,Arts,2.55,5,2,false,0.2543
+128,26,Non-Binary,Engineering,3.31,5,2,false,0.2276
+129,27,Non-Binary,Computer Science,2.61,3,5,false,0.2245
+130,19,Female,Law,3.4,4,1,false,0.2726
+131,27,Male,Mathematics,4,4,4,true,0.2572
+132,20,Male,Psychology,3.53,4,4,true,0.2311
+133,28,Female,Law,3.92,4,1,false,0.257
+134,21,Male,Psychology,3.05,2,1,false,0.2298
+135,26,Non-Binary,Education,2.28,2,5,false,0.2694
+136,19,Male,Data Science,3.16,5,4,false,0.2165
+137,25,Male,Nursing,3.73,5,2,false,0.2289
+138,18,Male,Mathematics,3.85,4,4,true,0.2529
+139,22,Non-Binary,Data Science,3.99,5,2,false,0.2045
+140,27,Non-Binary,Engineering,3,1,4,false,0.225
+141,23,Female,Nursing,3.16,3,4,false,0.2037
+142,25,Non-Binary,Computer Science,3.03,1,5,false,0.2177
+143,25,Non-Binary,Mathematics,4,1,4,false,0.2291
+144,21,Male,Mathematics,3.84,5,4,false,0.2545
+145,26,Male,Computer Science,3.87,4,4,true,0.2205
+146,18,Female,Engineering,3.54,4,4,true,0.2336
+147,23,Non-Binary,Psychology,2.72,3,3,true,0.2338
+148,25,Female,Arts,3.59,5,2,false,0.2682
+149,21,Female,Arts,3.99,3,2,false,0.2611
+150,25,Male,Arts,3.71,3,2,false,0.2751
+151,27,Male,Nursing,2.49,4,4,true,0.2174
+152,19,Male,Law,1.9,3,1,false,0.2531
+153,21,Male,Economics,2.46,4,4,true,0.2174
+154,19,Non-Binary,Biology,2.97,4,5,false,0.239
+155,27,Female,Economics,3.32,4,2,false,0.2222
+156,20,Male,Psychology,4,2,4,false,0.2332
+157,22,Female,Computer Science,3.42,3,1,false,0.2436
+158,18,Non-Binary,Nursing,3.68,1,3,false,0.2235
+159,25,Non-Binary,Law,3.37,5,1,false,0.2349
+160,19,Male,Education,2.36,1,5,false,0.2383
+161,21,Male,Economics,3.27,3,4,false,0.2199
+162,21,Female,Arts,3.29,5,2,false,0.2405
+163,24,Female,Business,4,1,2,false,0.2265
+164,26,Non-Binary,Nursing,3.47,5,2,false,0.2218
+165,18,Male,Biology,1.88,4,5,false,0.2296
+166,18,Male,Computer Science,2.95,1,1,true,0.2305
+167,28,Non-Binary,Engineering,3.55,4,2,false,0.2432
+168,25,Female,Data Science,3.08,2,1,false,0.2243
+169,19,Male,Data Science,2.38,2,1,false,0.2154
+170,20,Male,Computer Science,3.72,4,1,false,0.2257
+171,26,Non-Binary,Mathematics,3.08,5,5,true,0.2297
+172,27,Non-Binary,Computer Science,2.4,4,5,false,0.2282
+173,25,Non-Binary,Biology,3.01,3,5,false,0.2357
+174,22,Non-Binary,Psychology,2.49,4,3,false,0.2385
+175,20,Male,Data Science,2.84,3,4,false,0.216
+176,26,Male,Arts,3.2,3,2,false,0.2643
+177,21,Male,Psychology,3.38,3,4,false,0.2313
+178,22,Male,Business,3.24,2,4,false,0.2224
+179,22,Female,Psychology,2.78,3,1,false,0.2498
+180,25,Female,Law,4,4,1,false,0.2618
+181,24,Male,Computer Science,3.57,1,1,true,0.2203
+182,26,Male,Biology,3.13,4,2,false,0.2425
+183,23,Female,Mathematics,3.67,5,4,false,0.2391
+184,21,Non-Binary,Education,2.78,4,5,false,0.2612
+185,27,Male,Nursing,3.28,5,2,false,0.2248
+186,20,Female,Engineering,3.64,1,4,false,0.2347
+187,22,Male,Computer Science,2.3,4,1,false,0.2265
+188,27,Male,Data Science,3.63,2,4,false,0.2216
+189,19,Female,Economics,2.51,1,5,false,0.2167
+190,19,Non-Binary,Mathematics,3.53,4,4,true,0.2247
+191,20,Non-Binary,Biology,2.29,3,5,false,0.2516
+192,18,Female,Mathematics,2.49,3,4,false,0.2313
+193,26,Non-Binary,Nursing,3.08,1,5,false,0.2161
+194,22,Female,Data Science,3.06,2,1,false,0.2289
+195,25,Female,Nursing,3.75,4,2,false,0.226
+196,27,Female,Economics,3.16,3,2,false,0.2178
+197,23,Non-Binary,Economics,3.04,5,5,true,0.2211
+198,22,Female,Economics,3.55,3,2,false,0.2079
+199,22,Male,Biology,2.4,1,5,false,0.2194
+200,19,Male,Mathematics,2.99,5,4,false,0.2502
+201,24,Female,Computer Science,3.39,2,1,false,0.2405
+202,22,Non-Binary,Engineering,3.89,1,2,false,0.2267
+203,24,Female,Arts,3.63,5,2,false,0.2646
+204,26,Male,Psychology,2.53,4,4,true,0.2317
+205,26,Male,Data Science,2.04,2,4,false,0.2167
+206,28,Female,Economics,3.72,4,2,false,0.2379
+207,28,Female,Biology,2.97,4,2,false,0.2418
+208,22,Male,Arts,3.44,3,2,false,0.2526
+209,21,Male,Arts,3.23,5,2,false,0.2418
+210,23,Female,Education,3.4,1,5,false,0.2327
+211,20,Non-Binary,Arts,3.19,4,2,false,0.2339
+212,26,Female,Mathematics,1.84,2,5,false,0.2367
+213,23,Female,Mathematics,3.16,1,4,false,0.2373
+214,19,Non-Binary,Computer Science,1.94,4,5,false,0.2365
+215,25,Male,Biology,3.02,5,2,false,0.2348
+216,26,Male,Education,3.03,4,5,false,0.2231
+217,21,Male,Computer Science,3.2,2,1,false,0.2258
+218,22,Non-Binary,Education,3.18,3,5,false,0.2529
+219,27,Male,Engineering,3.46,4,4,true,0.2518
+220,23,Non-Binary,Nursing,2.41,5,5,true,0.2288
+221,19,Male,Psychology,2.88,2,3,false,0.2351
+222,18,Female,Education,3.33,1,5,false,0.2362
+223,20,Female,Nursing,4,2,2,true,0.2118
+224,25,Non-Binary,Psychology,3.02,4,3,false,0.2258
+225,28,Non-Binary,Nursing,2.58,1,5,false,0.2243
+226,21,Female,Law,3.5,5,1,false,0.2695
+227,24,Female,Economics,3.22,3,2,false,0.2072
+228,19,Non-Binary,Biology,3.29,5,5,true,0.233
+229,18,Female,Engineering,3.88,4,4,true,0.2344
+230,21,Non-Binary,Psychology,3.27,4,3,false,0.2348
+231,28,Non-Binary,Engineering,3.47,4,2,false,0.2409
+232,25,Male,Business,3.77,4,2,false,0.2286
+233,28,Male,Law,2.62,3,1,false,0.2406
+234,25,Male,Psychology,3.63,1,4,false,0.2358
+235,26,Female,Engineering,3.1,3,4,false,0.2358
+236,27,Male,Business,3.04,2,4,false,0.2236
+237,27,Female,Education,4,4,2,false,0.2431
+238,19,Non-Binary,Arts,2.56,5,3,false,0.2276
+239,20,Non-Binary,Engineering,2.93,1,4,false,0.2219
+240,27,Male,Nursing,3.06,3,4,false,0.2188
+241,20,Female,Engineering,2.35,2,4,false,0.2312
+242,27,Non-Binary,Engineering,2.1,3,4,false,0.2228
+243,24,Female,Mathematics,3.56,1,4,false,0.2392
+244,18,Male,Law,2.85,2,1,false,0.2536
+245,25,Female,Psychology,2.68,4,1,false,0.2462
+246,20,Non-Binary,Education,2.85,4,5,false,0.2602
+247,28,Female,Economics,3.24,4,2,false,0.2242
+248,24,Non-Binary,Engineering,3.52,1,4,false,0.225
+249,21,Female,Computer Science,2.47,2,1,false,0.2474
+250,18,Male,Nursing,1.98,2,3,false,0.2324
+251,22,Female,Biology,3.03,5,5,true,0.2219
+252,18,Male,Computer Science,4,2,1,false,0.2277
+253,19,Female,Economics,2.37,1,5,false,0.2191
+254,27,Male,Engineering,3.52,5,4,false,0.2518
+255,18,Female,Education,3.65,4,5,false,0.2303
+256,20,Female,Biology,3.5,2,2,true,0.2223
+257,21,Male,Computer Science,1.82,2,1,false,0.2286
+258,20,Female,Computer Science,2.99,4,1,false,0.2478
+259,25,Non-Binary,Mathematics,2.84,5,5,true,0.2345
+260,26,Male,Computer Science,2.36,4,1,false,0.221
+261,28,Non-Binary,Arts,2.04,3,2,false,0.2368
+262,23,Male,Biology,3.62,5,2,false,0.2437
+263,20,Non-Binary,Business,3.47,4,5,false,0.239
+264,20,Non-Binary,Law,2.94,5,1,false,0.2419
+265,26,Female,Biology,3.93,5,2,false,0.2622
+266,24,Male,Computer Science,3.95,4,4,true,0.2198
+267,27,Female,Computer Science,3.12,5,1,false,0.2366
+268,27,Non-Binary,Arts,2.69,5,2,false,0.2514
+269,25,Female,Arts,3.32,3,2,false,0.26
+270,27,Female,Nursing,3.34,5,2,false,0.223
+271,19,Non-Binary,Data Science,3.05,3,5,false,0.2201
+272,21,Female,Law,2.74,2,1,false,0.2707
+273,20,Non-Binary,Economics,2.97,5,5,true,0.2232
+274,23,Non-Binary,Nursing,3.28,2,5,false,0.2136
+275,26,Non-Binary,Economics,3.82,3,2,false,0.2321
+276,27,Non-Binary,Computer Science,2.68,5,5,true,0.2233
+277,26,Non-Binary,Computer Science,4,1,2,false,0.2098
+278,19,Female,Arts,3.22,2,2,true,0.2296
+279,24,Male,Data Science,3.91,3,4,false,0.2211
+280,19,Female,Computer Science,3.43,2,1,false,0.2482
+281,28,Male,Psychology,1.41,4,4,true,0.2276
+282,22,Female,Data Science,2.69,2,1,false,0.2298
+283,20,Male,Business,4,5,4,false,0.2236
+284,27,Female,Economics,3.18,5,2,false,0.2183
+285,24,Female,Biology,3.83,4,2,false,0.2498
+286,25,Female,Law,3.15,1,1,true,0.2642
+287,25,Non-Binary,Economics,3.8,3,2,false,0.2272
+288,26,Male,Psychology,3.5,2,4,false,0.2361
+289,19,Male,Business,3.61,2,4,false,0.2222
+290,20,Male,Data Science,3.77,3,4,false,0.219
+291,19,Female,Mathematics,4,1,4,false,0.2382
+292,23,Female,Computer Science,2.74,4,1,false,0.2439
+293,20,Male,Economics,3.77,2,4,false,0.2207
+294,21,Female,Biology,3.2,2,5,false,0.2192
+295,28,Male,Mathematics,4,4,4,true,0.2574
+296,25,Male,Business,2.99,5,4,false,0.2229
+297,27,Non-Binary,Law,2.6,2,5,false,0.2344
+298,22,Male,Psychology,3.34,5,4,false,0.232
+299,21,Female,Computer Science,3.2,3,1,false,0.2458
+300,27,Non-Binary,Engineering,1.77,4,4,true,0.2218
+301,24,Male,Education,3.41,1,4,false,0.2228
+302,24,Non-Binary,Law,2.56,5,1,false,0.2373
+303,21,Female,Engineering,3.09,4,4,true,0.2339
+304,22,Non-Binary,Mathematics,3.83,4,4,true,0.2274
+305,22,Female,Economics,2.99,3,1,false,0.2086
+306,26,Male,Business,1.92,2,5,false,0.235
+307,23,Male,Business,2.86,2,4,false,0.2217
+308,18,Female,Biology,2.6,3,5,false,0.2312
+309,28,Male,Engineering,3.27,1,4,false,0.2518
+310,26,Female,Mathematics,2.09,5,4,false,0.2347
+311,24,Male,Psychology,3.13,1,4,false,0.2328
+312,21,Male,Education,3.2,2,5,false,0.2224
+313,26,Female,Mathematics,2.92,5,4,false,0.238
+314,28,Male,Psychology,3.49,5,4,false,0.2376
+315,20,Non-Binary,Arts,3.24,1,2,false,0.2353
+316,24,Female,Mathematics,3.13,4,4,true,0.2377
+317,28,Non-Binary,Law,2.7,3,5,false,0.2326
+318,26,Non-Binary,Psychology,4,2,1,false,0.2159
+319,18,Female,Law,3.99,4,1,false,0.2729
+320,18,Male,Arts,3.74,1,2,false,0.2428
+321,25,Non-Binary,Nursing,2.82,1,5,false,0.221
+322,25,Male,Economics,3.42,1,4,false,0.2219
+323,26,Non-Binary,Data Science,3.15,1,5,false,0.2167
+324,22,Male,Psychology,3.02,5,4,false,0.2305
+325,18,Male,Education,3.32,3,5,false,0.2213
+326,23,Non-Binary,Nursing,2.94,5,5,true,0.2195
+327,25,Female,Computer Science,3.75,3,1,false,0.2377
+328,23,Male,Data Science,2.54,4,4,true,0.2168
+329,23,Non-Binary,Mathematics,3.17,3,5,false,0.2292
+330,20,Non-Binary,Mathematics,3.55,5,4,false,0.2253
+331,22,Female,Nursing,2.85,5,5,true,0.2075
+332,28,Female,Computer Science,3.74,3,1,false,0.2326
+333,27,Female,Arts,3.62,3,2,false,0.2789
+334,19,Female,Nursing,3.52,1,1,true,0.204
+335,24,Non-Binary,Business,3.84,5,5,true,0.23
+336,23,Non-Binary,Computer Science,2.68,2,5,false,0.224
+337,27,Female,Mathematics,2.75,2,4,false,0.2379
+338,19,Female,Nursing,2.67,2,5,false,0.2112
+339,23,Non-Binary,Data Science,2.59,3,5,false,0.2273
+340,18,Non-Binary,Mathematics,3.23,2,5,false,0.2294
+341,19,Male,Business,2.48,1,5,false,0.2271
+342,19,Non-Binary,Nursing,3.09,5,3,false,0.2263
+343,25,Female,Psychology,2.7,4,1,false,0.2462
+344,28,Male,Education,2.76,3,5,false,0.2272
+345,18,Female,Arts,3.34,1,2,false,0.2285
+346,24,Female,Education,3.49,4,5,false,0.2305
+347,25,Female,Business,3.83,4,2,false,0.2259
+348,24,Female,Business,4,4,2,false,0.2265
+349,24,Non-Binary,Psychology,3.8,3,3,true,0.2218
+350,26,Non-Binary,Data Science,3.3,1,5,false,0.2141
+351,28,Non-Binary,Economics,2.36,2,5,false,0.2317
+352,19,Male,Computer Science,2.93,5,1,false,0.2292
+353,23,Male,Law,2.92,4,1,false,0.2469
+354,22,Female,Psychology,3.2,5,1,false,0.2493
+355,27,Male,Computer Science,3.49,1,4,false,0.22
+356,23,Non-Binary,Engineering,2.45,3,4,false,0.222
+357,27,Female,Education,3.83,5,2,false,0.238
+358,18,Female,Arts,2.84,1,1,true,0.2233
+359,25,Non-Binary,Economics,3.58,3,2,false,0.2209
+360,28,Male,Arts,3.45,5,2,false,0.2818
+361,22,Female,Business,2.33,2,5,false,0.2436
+362,21,Female,Data Science,2.4,1,1,true,0.2318
+363,26,Male,Education,3.62,3,2,false,0.2316
+364,25,Male,Engineering,3.5,1,4,false,0.2513
+365,22,Male,Economics,3.14,3,4,false,0.22
+366,27,Male,Psychology,2.9,3,4,false,0.2343
+367,23,Female,Economics,3.06,2,1,false,0.207
+368,19,Male,Law,2.9,4,1,false,0.2523
+369,24,Female,Computer Science,3.04,2,1,false,0.2416
+370,28,Male,Nursing,1.24,1,5,false,0.219
+371,18,Female,Nursing,3.51,2,1,false,0.2054
+372,21,Female,Nursing,3.07,3,5,false,0.2042
+373,23,Non-Binary,Mathematics,2.18,3,5,false,0.2471
+374,20,Male,Engineering,4,1,4,false,0.2504
+375,26,Female,Mathematics,3.1,2,4,false,0.2386
+376,26,Female,Computer Science,2.68,1,1,true,0.2395
+377,23,Non-Binary,Law,3.53,2,1,false,0.2373
+378,28,Female,Psychology,3.64,5,1,false,0.2402
+379,24,Female,Biology,2.76,5,5,true,0.226
+380,23,Male,Arts,2.97,2,2,true,0.2435
+381,25,Male,Mathematics,2.98,5,4,false,0.2537
+382,19,Male,Economics,3.14,2,4,false,0.2185
+383,27,Non-Binary,Mathematics,2.67,1,5,false,0.2369
+384,27,Male,Nursing,3.52,3,2,false,0.2316
+385,24,Male,Data Science,2.82,5,4,false,0.2183
+386,24,Male,Education,3.84,3,2,false,0.2293
+387,24,Non-Binary,Education,1.74,3,5,false,0.2811
+388,19,Male,Business,3.18,5,4,false,0.2209
+389,26,Female,Law,3.3,5,1,false,0.2622
+390,21,Male,Nursing,3.21,2,4,false,0.2166
+391,19,Non-Binary,Law,3.25,2,1,false,0.2429
+392,19,Male,Data Science,3.11,5,4,false,0.2163
+393,24,Male,Engineering,3.26,4,4,true,0.2507
+394,24,Male,Business,2.54,4,5,false,0.2244
+395,27,Female,Computer Science,3.52,5,1,false,0.2352
+396,26,Male,Engineering,2.75,4,4,true,0.2506
+397,23,Non-Binary,Arts,3.44,3,2,false,0.2551
+398,20,Male,Biology,3.09,3,2,false,0.2153
+399,24,Female,Law,3.12,2,1,false,0.2658
+400,28,Female,Law,3.51,1,1,true,0.2584
+401,20,Female,Arts,2.63,2,1,false,0.2211
+402,18,Non-Binary,Nursing,3.12,2,3,false,0.229
+403,27,Male,Engineering,2.99,5,4,false,0.2513
+404,25,Female,Computer Science,3.28,2,1,false,0.2393
+405,18,Female,Law,2.44,4,1,false,0.275
+406,25,Non-Binary,Computer Science,2.54,3,5,false,0.2261
+407,23,Male,Economics,3.17,2,4,false,0.2206
+408,27,Female,Engineering,1.88,4,4,true,0.2334
+409,18,Female,Engineering,3.24,1,4,false,0.2328
+410,18,Female,Data Science,3.23,3,1,false,0.2343
+411,21,Non-Binary,Arts,3.52,2,2,true,0.2481
+412,24,Non-Binary,Nursing,4,2,2,true,0.2283
+413,27,Male,Law,2.94,2,1,false,0.2413
+414,18,Non-Binary,Law,2.31,4,1,false,0.2443
+415,28,Non-Binary,Computer Science,3.84,2,2,true,0.2136
+416,22,Non-Binary,Psychology,2.57,3,3,true,0.2378
+417,28,Non-Binary,Biology,2.82,5,5,true,0.2378
+418,22,Female,Engineering,2.9,3,4,false,0.2339
+419,27,Non-Binary,Economics,2.55,3,5,false,0.2285
+420,23,Male,Law,1.99,1,1,true,0.2482
+421,22,Male,Arts,2.49,4,4,true,0.2259
+422,19,Non-Binary,Mathematics,3.91,2,4,false,0.2262
+423,25,Female,Biology,1.87,5,5,true,0.2425
+424,24,Non-Binary,Mathematics,3.21,1,5,false,0.2281
+425,22,Male,Education,3,2,5,false,0.2256
+426,26,Female,Law,3.22,4,1,false,0.2625
+427,22,Female,Economics,3.63,4,2,false,0.21
+428,26,Male,Data Science,2.35,3,4,false,0.2178
+429,28,Male,Nursing,2.67,2,4,false,0.2183
+430,23,Male,Law,2.87,2,1,false,0.247
+431,23,Male,Data Science,4,2,4,false,0.2209
+432,21,Non-Binary,Law,2.64,5,1,false,0.2409
+433,20,Non-Binary,Computer Science,3.48,1,1,true,0.2197
+434,25,Male,Computer Science,2.85,3,1,false,0.2211
+435,24,Male,Law,4,5,1,false,0.2427
+436,20,Male,Economics,1.71,5,5,true,0.2157
+437,19,Male,Computer Science,3.19,2,1,false,0.2286
+438,25,Female,Education,2.82,5,5,true,0.243
+439,18,Non-Binary,Psychology,2.65,3,3,true,0.2483
+440,22,Female,Law,3.25,5,1,false,0.2685
+441,21,Male,Mathematics,2.72,1,4,false,0.2503
+442,20,Non-Binary,Law,2.74,4,1,false,0.242
+443,20,Male,Business,2.83,4,5,false,0.2207
+444,22,Male,Computer Science,2.52,3,1,false,0.2261
+445,22,Female,Data Science,2.84,1,1,true,0.2294
+446,21,Male,Data Science,2.67,2,4,false,0.216
+447,18,Non-Binary,Biology,2.33,1,5,false,0.2514
+448,18,Female,Education,2.59,1,5,false,0.2501
+449,18,Male,Nursing,3.13,3,3,true,0.2214
+450,23,Female,Biology,2.93,2,5,false,0.2233
+451,24,Non-Binary,Arts,2.96,2,2,true,0.2455
+452,21,Female,Economics,2.9,5,1,false,0.2103
+453,28,Male,Engineering,2.61,1,4,false,0.251
+454,24,Female,Law,2.9,5,1,false,0.2662
+455,28,Female,Arts,1.9,3,2,false,0.2323
+456,28,Non-Binary,Business,3.02,2,5,false,0.244
+457,25,Male,Arts,3.18,4,2,false,0.259
+458,25,Male,Law,3.62,1,1,true,0.2424
+459,20,Non-Binary,Data Science,2.62,3,5,false,0.2272
+460,20,Male,Nursing,3.42,4,4,true,0.2166
+461,18,Female,Psychology,3.29,2,1,false,0.2541
+462,27,Female,Nursing,2.1,5,5,true,0.2189
+463,23,Male,Arts,2.41,2,2,true,0.2277
+464,23,Non-Binary,Economics,3.86,2,2,true,0.2204
+465,26,Female,Arts,2.91,5,2,false,0.2524
+466,21,Male,Mathematics,2.84,3,4,false,0.2509
+467,23,Non-Binary,Arts,3.33,5,2,false,0.2518
+468,22,Female,Engineering,3,3,4,false,0.2341
+469,22,Female,Economics,2.98,2,1,false,0.2086
+470,25,Non-Binary,Computer Science,3.4,1,1,true,0.213
+471,23,Female,Biology,2.96,2,5,false,0.2227
+472,18,Female,Mathematics,4,1,4,false,0.2377
+473,21,Male,Nursing,3.78,3,4,false,0.218
+474,25,Non-Binary,Nursing,2.57,1,5,false,0.2255
+475,22,Non-Binary,Computer Science,4,2,1,false,0.2156
+476,20,Male,Computer Science,3.33,3,1,false,0.2269
+477,26,Non-Binary,Law,2.75,4,1,false,0.2345
+478,20,Male,Biology,3.75,1,2,false,0.2341
+479,28,Female,Psychology,3.48,4,1,false,0.2406
+480,21,Non-Binary,Computer Science,3.24,2,1,false,0.2188
+481,25,Non-Binary,Computer Science,3.55,1,1,true,0.2126
+482,19,Male,Economics,3.58,4,4,true,0.2198
+483,25,Male,Nursing,2.94,1,4,false,0.2177
+484,19,Male,Engineering,3.98,2,4,false,0.2501
+485,28,Male,Mathematics,2.29,4,4,true,0.2528
+486,20,Female,Education,2.56,4,5,false,0.25
+487,19,Male,Nursing,3.29,2,3,false,0.2168
+488,21,Male,Economics,3.19,5,4,false,0.2197
+489,27,Non-Binary,Education,3.57,3,5,false,0.2424
+490,25,Male,Computer Science,2.98,5,1,false,0.2207
+491,24,Male,Mathematics,2.64,1,4,false,0.2519
+492,24,Non-Binary,Engineering,3.61,5,2,false,0.2275
+493,19,Non-Binary,Law,2.83,5,1,false,0.2431
+494,19,Female,Business,3.6,3,5,false,0.2214
+495,24,Male,Education,2.97,2,5,false,0.2253
+496,19,Male,Engineering,4,5,4,false,0.2501
+497,18,Non-Binary,Biology,3.02,2,5,false,0.2384
+498,27,Female,Mathematics,3.04,3,4,false,0.2388
+499,21,Non-Binary,Economics,3.8,3,2,false,0.2104
+500,25,Non-Binary,Mathematics,3.5,2,4,false,0.2276
+501,27,Female,Law,4,3,1,false,0.2584
+502,21,Male,Law,2.35,5,1,false,0.2504
+503,26,Female,Nursing,3.02,4,2,false,0.21
+504,24,Male,Mathematics,3.92,2,4,false,0.256
+505,22,Male,Psychology,3.36,4,4,true,0.2321
+506,18,Female,Nursing,3.07,4,3,false,0.2075
+507,20,Non-Binary,Computer Science,2.01,5,5,true,0.2354
+508,20,Non-Binary,Data Science,2.58,3,5,false,0.2279
+509,20,Male,Arts,4,5,2,false,0.2597
+510,26,Male,Arts,2.51,2,2,true,0.2439
+511,23,Non-Binary,Education,3.19,4,5,false,0.2523
+512,19,Male,Law,2.7,5,1,false,0.2525
+513,27,Male,Law,3.8,2,1,false,0.2387
+514,22,Female,Data Science,3.62,1,1,true,0.2272
+515,27,Female,Computer Science,2.72,3,1,false,0.2379
+516,24,Male,Education,3.09,5,5,true,0.223
+517,28,Female,Education,3.25,5,5,true,0.2328
+518,26,Non-Binary,Biology,2.01,3,5,false,0.255
+519,22,Female,Data Science,2.02,5,1,false,0.2311
+520,18,Male,Psychology,3.6,4,1,false,0.2324
+521,21,Male,Computer Science,2.53,1,1,true,0.2274
+522,21,Female,Data Science,1.75,2,1,false,0.2329
+523,26,Non-Binary,Education,3.51,4,5,false,0.2442
+524,27,Female,Education,3.03,2,5,false,0.2378
+525,19,Non-Binary,Law,3.24,4,1,false,0.2429
+526,26,Female,Psychology,2.58,3,1,false,0.245
+527,22,Non-Binary,Business,2.91,4,5,false,0.249
+528,27,Male,Education,2.96,5,5,true,0.2239
+529,18,Non-Binary,Engineering,2.5,4,4,true,0.2193
+530,24,Male,Law,3.35,3,1,false,0.2446
+531,27,Male,Biology,3.86,2,2,true,0.2698
+532,22,Female,Biology,1.85,5,5,true,0.2439
+533,19,Non-Binary,Business,3.24,2,5,false,0.2438
+534,18,Female,Arts,3.37,5,2,false,0.2294
+535,27,Male,Computer Science,3.8,4,4,true,0.2207
+536,18,Female,Education,2.25,5,5,true,0.2564
+537,25,Female,Data Science,2.68,1,1,true,0.2255
+538,20,Female,Nursing,3.6,4,4,true,0.2035
+539,21,Male,Engineering,3.03,4,4,true,0.2491
+540,25,Non-Binary,Mathematics,2.59,4,5,false,0.2391
+541,27,Female,Education,1.79,3,5,false,0.2625
+542,18,Female,Engineering,2.86,4,4,true,0.2317
+543,24,Male,Nursing,2.85,5,4,false,0.217
+544,21,Non-Binary,Arts,3.78,1,2,false,0.2559
+545,28,Male,Computer Science,2.54,3,4,false,0.2179
+546,20,Male,Business,3.83,5,4,false,0.2232
+547,20,Non-Binary,Economics,2.07,5,5,true,0.2389
+548,20,Female,Economics,3.36,2,1,false,0.2104
+549,27,Non-Binary,Biology,3.35,3,2,false,0.2482
+550,22,Female,Nursing,2.82,5,5,true,0.208
+551,23,Female,Business,3.63,5,5,true,0.219
+552,21,Male,Psychology,1.96,1,3,false,0.2373
+553,25,Male,Economics,2.27,2,4,false,0.2189
+554,23,Non-Binary,Data Science,1.22,3,5,false,0.2512
+555,18,Male,Computer Science,2.94,1,1,true,0.2305
+556,28,Female,Biology,3.42,3,2,false,0.2556
+557,18,Female,Business,2.62,5,5,true,0.2394
+558,22,Non-Binary,Engineering,3.44,3,4,false,0.2242
+559,20,Non-Binary,Business,4,4,5,false,0.229
+560,23,Female,Computer Science,3.92,2,1,false,0.2403
+561,22,Female,Mathematics,3.01,5,4,false,0.2362
+562,23,Female,Education,2.95,5,5,true,0.2414
+563,27,Male,Data Science,2.67,2,4,false,0.2194
+564,20,Non-Binary,Economics,3.37,4,5,false,0.2162
+565,19,Non-Binary,Biology,3.93,4,2,false,0.2297
+566,26,Male,Mathematics,1.81,5,4,false,0.2495
+567,27,Female,Law,2.9,3,1,false,0.2617
+568,21,Male,Computer Science,2.11,2,1,false,0.2282
+569,27,Male,Engineering,3.07,5,4,false,0.2514
+570,26,Male,Nursing,3.89,4,2,false,0.2379
+571,22,Non-Binary,Arts,3.62,4,2,false,0.2558
+572,20,Non-Binary,Economics,4,2,2,true,0.2117
+573,28,Non-Binary,Education,3.54,3,5,false,0.2423
+574,28,Female,Computer Science,3.98,5,1,false,0.2316
+575,25,Non-Binary,Education,3.75,3,5,false,0.2399
+576,24,Non-Binary,Engineering,3.33,1,4,false,0.2247
+577,25,Male,Psychology,4,3,4,false,0.2373
+578,27,Male,Law,3.78,4,1,false,0.2388
+579,28,Female,Data Science,3.48,5,1,false,0.2181
+580,27,Non-Binary,Psychology,3.17,2,3,false,0.2191
+581,26,Non-Binary,Education,2.17,4,5,false,0.2716
+582,18,Female,Education,3.98,2,5,false,0.2242
+583,27,Male,Education,2.73,2,5,false,0.2283
+584,21,Female,Data Science,3.24,1,1,true,0.2299
+585,18,Non-Binary,Data Science,3.83,5,5,true,0.2074
+586,19,Non-Binary,Economics,2.95,2,5,false,0.2238
+587,19,Male,Business,3.41,3,4,false,0.2216
+588,25,Non-Binary,Engineering,3.43,5,2,false,0.2267
+589,19,Non-Binary,Law,3.3,3,1,false,0.2428
+590,27,Female,Arts,3.28,2,2,true,0.2683
+591,19,Male,Mathematics,3.61,5,4,false,0.2526
+592,25,Non-Binary,Psychology,2.61,4,3,false,0.2292
+593,25,Male,Mathematics,2.23,2,4,false,0.2508
+594,23,Male,Law,1.72,1,1,true,0.2484
+595,21,Non-Binary,Business,2.03,3,5,false,0.2664
+596,27,Female,Computer Science,3.03,3,1,false,0.2369
+597,23,Female,Psychology,2.53,4,1,false,0.2488
+598,21,Female,Computer Science,3.64,3,1,false,0.2445
+599,21,Female,Biology,2.65,2,5,false,0.2293
+600,18,Male,Business,3.03,3,4,false,0.2199
+601,25,Non-Binary,Arts,3.36,3,2,false,0.2623
+602,23,Female,Law,2.97,1,1,true,0.2675
+603,27,Male,Engineering,3.22,2,4,false,0.2516
+604,24,Male,Biology,2.95,4,2,false,0.2284
+605,24,Male,Nursing,3.16,5,4,false,0.2178
+606,27,Non-Binary,Data Science,3.39,2,5,false,0.2122
+607,26,Female,Mathematics,3.02,3,4,false,0.2383
+608,27,Non-Binary,Engineering,3.26,4,2,false,0.2304
+609,27,Male,Mathematics,2.22,3,4,false,0.2519
+610,27,Non-Binary,Business,1.96,5,5,true,0.2658
+611,25,Female,Computer Science,1.91,1,1,true,0.2427
+612,18,Female,Computer Science,2.48,2,1,false,0.2515
+613,27,Male,Nursing,3.3,5,2,false,0.2254
+614,19,Male,Law,3.39,4,1,false,0.2515
+615,19,Female,Nursing,2.77,5,5,true,0.2095
+616,19,Male,Business,2.87,4,5,false,0.2203
+617,27,Non-Binary,Economics,3.27,4,2,false,0.2207
+618,24,Non-Binary,Data Science,3.18,4,5,false,0.2168
+619,27,Non-Binary,Engineering,3.19,2,2,true,0.2285
+620,24,Non-Binary,Education,2.43,4,5,false,0.2671
+621,22,Non-Binary,Biology,3.98,2,2,true,0.2447
+622,20,Male,Psychology,3.18,3,1,false,0.2307
+623,20,Male,Psychology,2.93,2,3,false,0.2319
+624,24,Non-Binary,Engineering,2.95,2,4,false,0.2238
+625,18,Non-Binary,Psychology,2.29,3,3,true,0.2511
+626,25,Non-Binary,Biology,2.9,3,5,false,0.2378
+627,20,Female,Education,4,4,5,false,0.2229
+628,28,Non-Binary,Computer Science,3.65,2,2,true,0.2085
+629,20,Female,Arts,3.33,1,2,false,0.2372
+630,19,Male,Law,4,1,1,true,0.2501
+631,24,Female,Education,3.11,4,5,false,0.2378
+632,25,Male,Nursing,4,3,2,false,0.2366
+633,27,Male,Computer Science,2.79,1,1,true,0.2184
+634,20,Female,Business,3.35,5,5,true,0.2255
+635,19,Male,Computer Science,4,2,1,false,0.2263
+636,27,Male,Computer Science,2.46,3,1,false,0.2193
+637,18,Non-Binary,Engineering,3.31,5,4,false,0.222
+638,27,Non-Binary,Nursing,3.08,4,5,false,0.2157
+639,25,Male,Mathematics,2.77,3,4,false,0.253
+640,28,Male,Engineering,4,1,2,false,0.2588
+641,19,Female,Mathematics,2.36,3,4,false,0.2314
+642,24,Non-Binary,Biology,3.3,1,2,false,0.2331
+643,21,Non-Binary,Engineering,3.08,1,4,false,0.2229
+644,21,Male,Arts,3.19,4,2,false,0.2407
+645,26,Non-Binary,Nursing,2.46,1,5,false,0.2272
+646,18,Non-Binary,Data Science,2.86,4,5,false,0.2234
+647,19,Male,Arts,2.3,3,4,false,0.2242
+648,19,Female,Mathematics,2.5,2,4,false,0.2321
+649,22,Female,Mathematics,4,2,4,false,0.2396
+650,23,Non-Binary,Education,2.22,1,5,false,0.2717
+651,27,Female,Arts,3.15,2,2,true,0.2644
+652,27,Female,Psychology,2.92,1,1,true,0.2432
+653,23,Female,Law,3.29,4,1,false,0.2669
+654,20,Female,Psychology,3.11,1,1,true,0.2519
+655,19,Non-Binary,Engineering,3.24,3,4,false,0.2223
+656,19,Non-Binary,Arts,3,1,2,false,0.2241
+657,27,Non-Binary,Economics,2.93,1,5,false,0.2216
+658,22,Male,Engineering,2.88,5,4,false,0.2492
+659,19,Non-Binary,Nursing,2.95,3,3,true,0.2276
+660,26,Non-Binary,Economics,2.34,1,5,false,0.2327
+661,27,Male,Computer Science,3.86,4,4,true,0.2208
+662,22,Non-Binary,Business,3.02,3,5,false,0.2469
+663,20,Female,Economics,4,4,2,false,0.2118
+664,27,Male,Data Science,3.48,4,4,true,0.2214
+665,23,Male,Mathematics,2.12,1,4,false,0.249
+666,22,Female,Computer Science,3.66,2,1,false,0.2428
+667,25,Non-Binary,Arts,2.08,4,2,false,0.2247
+668,27,Male,Arts,3.19,2,2,true,0.2689
+669,24,Female,Psychology,3.56,2,1,false,0.246
+670,28,Female,Mathematics,2.69,1,4,false,0.2381
+671,20,Non-Binary,Law,2.93,5,1,false,0.2419
+672,23,Male,Psychology,2.85,4,4,true,0.2306
+673,27,Female,Education,3.98,1,2,false,0.2425
+674,28,Non-Binary,Mathematics,3.23,3,4,false,0.228
+675,24,Male,Nursing,3.36,3,4,false,0.2183
+676,20,Female,Education,3.02,4,5,false,0.2413
+677,18,Female,Business,2.12,4,5,false,0.2485
+678,22,Female,Engineering,3.04,2,4,false,0.2342
+679,26,Non-Binary,Nursing,2.68,2,5,false,0.2232
+680,18,Male,Engineering,2.08,3,4,false,0.2443
+681,18,Female,Arts,4,1,2,false,0.2473
+682,28,Male,Mathematics,1.96,1,4,false,0.2514
+683,25,Female,Economics,3.01,3,4,false,0.2067
+684,26,Female,Mathematics,3.93,2,4,false,0.2409
+685,23,Non-Binary,Engineering,1.8,4,4,true,0.2197
+686,26,Female,Law,3.77,3,1,false,0.2609
+687,25,Female,Law,2.45,2,1,false,0.2655
+688,26,Non-Binary,Economics,3.26,3,2,false,0.2162
+689,27,Male,Computer Science,2.95,1,4,false,0.2186
+690,18,Female,Data Science,2.98,3,1,false,0.2348
+691,21,Non-Binary,Data Science,4,4,5,false,0.2038
+692,18,Male,Engineering,2.45,1,4,false,0.2457
+693,22,Male,Education,3.2,1,5,false,0.2219
+694,19,Non-Binary,Mathematics,2.71,3,5,false,0.2383
+695,26,Male,Biology,2.95,2,2,true,0.2372
+696,21,Female,Nursing,2.63,3,5,false,0.2114
+697,21,Female,Biology,2.13,5,5,true,0.2389
+698,22,Non-Binary,Computer Science,3.22,1,1,true,0.2176
+699,20,Non-Binary,Economics,3.65,4,5,false,0.2114
+700,20,Male,Mathematics,2.74,3,4,false,0.2498
+701,23,Male,Engineering,2.46,1,4,false,0.2486
+702,21,Female,Psychology,3.7,5,1,false,0.2497
+703,25,Male,Data Science,3.6,3,4,false,0.2208
+704,27,Non-Binary,Psychology,2.96,4,3,false,0.2209
+705,19,Female,Mathematics,2.92,3,4,false,0.234
+706,23,Female,Economics,4,2,2,true,0.2243
+707,27,Non-Binary,Psychology,2.56,1,3,false,0.2242
+708,20,Non-Binary,Biology,2.03,4,5,false,0.2566
+709,20,Male,Economics,2.2,1,4,false,0.2158
+710,24,Male,Law,3.62,5,1,false,0.2439
+711,20,Male,Education,2.56,2,5,false,0.2343
+712,18,Male,Data Science,2,3,1,false,0.2172
+713,26,Male,Computer Science,2.87,4,1,false,0.2196
+714,25,Male,Arts,3.6,4,2,false,0.2717
+715,25,Male,Business,3.7,5,2,false,0.2266
+716,18,Male,Business,2.55,2,5,false,0.2261
+717,23,Female,Engineering,3.23,1,4,false,0.235
+718,26,Female,Computer Science,3.28,1,1,true,0.2377
+719,18,Non-Binary,Computer Science,2.82,5,1,false,0.2233
+720,18,Female,Biology,3.09,3,5,false,0.2223
+721,25,Non-Binary,Biology,1.91,5,5,true,0.2574
+722,19,Male,Law,2.7,1,1,true,0.2525
+723,26,Non-Binary,Biology,3.05,4,2,false,0.2345
+724,27,Female,Business,3.62,3,2,false,0.2283
+725,23,Female,Data Science,3.88,5,1,false,0.2246
+726,22,Male,Economics,3.45,1,4,false,0.2208
+727,18,Female,Mathematics,3.15,4,4,true,0.2344
+728,18,Female,Business,3.21,1,5,false,0.2287
+729,19,Non-Binary,Nursing,3.76,3,3,true,0.2197
+730,23,Female,Engineering,3.24,2,4,false,0.235
+731,26,Male,Biology,3.12,3,2,false,0.2422
+732,18,Non-Binary,Economics,2.74,4,5,false,0.2276
+733,26,Non-Binary,Business,2.62,3,5,false,0.253
+734,21,Female,Computer Science,2.44,4,1,false,0.2474
+735,28,Female,Engineering,2.54,1,4,false,0.2354
+736,24,Non-Binary,Nursing,2.33,1,5,false,0.23
+737,21,Non-Binary,Education,2.83,3,5,false,0.2603
+738,27,Female,Biology,3.35,3,2,false,0.2488
+739,27,Female,Mathematics,3.75,3,4,false,0.2408
+740,28,Non-Binary,Law,2.46,1,5,false,0.2367
+741,23,Female,Business,3.13,2,5,false,0.2283
+742,21,Female,Business,2.6,2,5,false,0.2389
+743,22,Non-Binary,Economics,2.51,1,5,false,0.2308
+744,21,Male,Nursing,3.28,2,4,false,0.2168
+745,23,Male,Business,3.56,1,4,false,0.2236
+746,21,Female,Education,2.82,1,5,false,0.2447
+747,25,Female,Arts,2.57,4,2,false,0.238
+748,23,Non-Binary,Economics,2.55,3,5,false,0.2298
+749,28,Non-Binary,Education,2.63,2,5,false,0.2611
+750,20,Non-Binary,Engineering,2.71,5,4,false,0.2212
+751,21,Male,Psychology,3.13,2,4,false,0.2301
+752,24,Female,Law,3.48,5,1,false,0.2649
+753,26,Female,Economics,3.31,3,2,false,0.2177
+754,24,Non-Binary,Biology,3.31,1,2,false,0.2334
+755,25,Non-Binary,Law,2.6,4,1,false,0.236
+756,24,Non-Binary,Computer Science,2.3,5,5,true,0.2304
+757,21,Female,Biology,3.69,1,2,false,0.2321
+758,22,Non-Binary,Mathematics,3.52,5,4,false,0.2263
+759,27,Female,Law,3.21,2,1,false,0.2609
+760,18,Non-Binary,Arts,3.29,5,2,false,0.2278
+761,25,Female,Engineering,2.79,1,4,false,0.2349
+762,26,Female,Economics,3.79,5,2,false,0.2312
+763,23,Male,Business,2.38,5,5,true,0.2277
+764,27,Non-Binary,Business,2.83,4,5,false,0.2483
+765,27,Male,Mathematics,3.08,4,4,true,0.255
+766,22,Female,Psychology,3.37,1,1,true,0.249
+767,25,Female,Biology,2.7,2,5,false,0.2266
+768,26,Female,Nursing,3.12,2,2,true,0.2127
+769,22,Male,Education,3.03,5,5,true,0.225
+770,25,Male,Business,3.6,2,4,false,0.2243
+771,25,Male,Engineering,3.17,1,4,false,0.2509
+772,22,Male,Nursing,3.05,2,4,false,0.2166
+773,26,Male,Biology,3.19,5,2,false,0.2443
+774,20,Female,Biology,2.55,1,5,false,0.2315
+775,25,Non-Binary,Data Science,3.14,4,5,false,0.2172
+776,18,Female,Data Science,3.14,2,1,false,0.2345
+777,21,Male,Data Science,2.34,4,4,true,0.2147
+778,27,Male,Arts,3.66,4,2,false,0.2835
+779,19,Female,Data Science,3.66,4,1,false,0.2316
+780,23,Non-Binary,Psychology,3.22,4,3,false,0.2297
+781,21,Male,Biology,2.53,3,5,false,0.2174
+782,22,Female,Biology,2.19,2,5,false,0.2375
+783,18,Female,Economics,3.47,4,1,false,0.2129
+784,21,Female,Arts,4,2,2,true,0.2614
+785,21,Female,Biology,3.09,4,5,false,0.2212
+786,20,Non-Binary,Mathematics,3.67,2,4,false,0.2258
+787,21,Male,Economics,3.04,5,4,false,0.2193
+788,28,Male,Biology,3.32,2,2,true,0.2575
+789,22,Non-Binary,Education,3,5,5,true,0.2565
+790,28,Non-Binary,Business,2.97,5,5,true,0.245
+791,25,Male,Computer Science,3.59,4,4,true,0.2194
+792,22,Non-Binary,Psychology,3.51,4,3,false,0.2299
+793,24,Female,Psychology,1.49,3,1,false,0.2482
+794,24,Female,Engineering,3.25,4,4,true,0.2354
+795,27,Female,Data Science,3.43,3,1,false,0.2199
+796,22,Male,Computer Science,2.29,5,1,false,0.2266
+797,18,Male,Biology,2.27,2,5,false,0.2229
+798,23,Non-Binary,Engineering,2.84,1,4,false,0.2231
+799,26,Female,Nursing,2.38,3,5,false,0.2144
+800,21,Non-Binary,Psychology,2.17,5,3,false,0.2437
+801,18,Non-Binary,Arts,3.42,2,2,true,0.2315
+802,23,Non-Binary,Nursing,1.78,4,5,false,0.2399
+803,25,Female,Business,2.5,5,5,true,0.2393
+804,24,Male,Mathematics,4,3,4,false,0.2562
+805,22,Female,Business,2.99,5,5,true,0.2313
+806,28,Male,Biology,3.4,4,2,false,0.26
+807,21,Non-Binary,Mathematics,2.69,5,5,true,0.2383
+808,25,Non-Binary,Law,3.42,1,1,true,0.2348
+809,27,Male,Biology,2.84,1,2,false,0.2383
+810,27,Non-Binary,Arts,2.71,1,2,false,0.252
+811,27,Male,Business,3.75,4,2,false,0.2366
+812,22,Non-Binary,Psychology,4,5,3,false,0.2256
+813,23,Non-Binary,Economics,3.09,4,5,false,0.2202
+814,21,Male,Arts,2.65,2,4,false,0.2257
+815,26,Non-Binary,Psychology,2.89,2,3,false,0.2242
+816,27,Male,Nursing,3.62,4,2,false,0.2345
+817,18,Female,Data Science,2.86,1,1,true,0.2351
+818,24,Non-Binary,Engineering,3.19,5,4,false,0.2244
+819,20,Non-Binary,Biology,3.27,5,5,true,0.233
+820,25,Male,Education,3.8,3,2,false,0.2325
+821,19,Non-Binary,Mathematics,2.9,2,5,false,0.235
+822,24,Male,Economics,3.13,1,4,false,0.2209
+823,22,Male,Education,2.5,3,5,false,0.2348
+824,23,Male,Engineering,3.29,5,4,false,0.2504
+825,28,Male,Mathematics,3.27,4,4,true,0.2559
+826,22,Male,Business,3.18,5,4,false,0.2222
+827,20,Non-Binary,Nursing,3.21,1,3,false,0.2221
+828,26,Female,Arts,2.17,5,2,false,0.2311
+829,27,Female,Arts,2.91,5,2,false,0.2571
+830,20,Female,Education,3.98,4,5,false,0.2232
+831,20,Male,Economics,3.65,5,4,false,0.2204
+832,19,Female,Arts,3.3,4,2,false,0.2318
+833,18,Male,Computer Science,3.24,4,1,false,0.2299
+834,26,Female,Nursing,4,4,2,false,0.2375
+835,21,Non-Binary,Economics,2.91,3,5,false,0.224
+836,24,Non-Binary,Engineering,4,3,2,false,0.2386
+837,18,Male,Arts,4,4,2,false,0.2503
+838,25,Non-Binary,Mathematics,3.22,2,5,false,0.2276
+839,24,Male,Arts,4,3,2,false,0.2792
+840,25,Male,Biology,3.09,5,2,false,0.2369
+841,28,Non-Binary,Nursing,3.68,3,2,false,0.2366
+842,22,Female,Psychology,2.93,5,1,false,0.2496
+843,20,Non-Binary,Business,3.28,3,5,false,0.2427
+844,19,Male,Psychology,2.57,2,3,false,0.2377
+845,28,Male,Psychology,3.55,2,4,false,0.2378
+846,18,Male,Nursing,3.41,5,3,false,0.2186
+847,28,Male,Mathematics,3.51,5,4,false,0.2565
+848,20,Non-Binary,Mathematics,2.38,3,5,false,0.244
+849,21,Non-Binary,Arts,2.71,3,2,false,0.2248
+850,18,Female,Engineering,2.96,5,4,false,0.232
+851,27,Non-Binary,Arts,3.35,4,2,false,0.2717
+852,18,Female,Business,1.9,5,5,true,0.2525
+853,19,Male,Biology,3.02,1,5,false,0.2095
+854,27,Male,Engineering,3.42,5,4,false,0.2517
+855,18,Non-Binary,Business,2.49,4,5,false,0.2582
+856,26,Female,Arts,2.21,2,2,true,0.2322
+857,18,Non-Binary,Biology,2.39,2,5,false,0.2502
+858,18,Female,Computer Science,2.94,1,1,true,0.2508
+859,21,Female,Computer Science,4,5,1,false,0.2433
+860,21,Male,Arts,3.38,4,2,false,0.2462
+861,25,Non-Binary,Nursing,1.61,5,5,true,0.2426
+862,27,Female,Business,4,3,2,false,0.2394
+863,22,Male,Economics,3.15,4,4,true,0.2201
+864,20,Female,Data Science,3.6,5,1,false,0.2303
+865,28,Female,Computer Science,3.77,3,1,false,0.2325
+866,24,Male,Psychology,2.44,5,4,false,0.2294
+867,22,Male,Economics,3.52,4,4,true,0.221
+868,18,Male,Law,3.36,2,1,false,0.2529
+869,27,Female,Arts,2.25,5,2,false,0.2378
+870,26,Male,Engineering,3.28,4,4,true,0.2514
+871,21,Male,Economics,3.02,1,4,false,0.2192
+872,27,Non-Binary,Law,3.62,3,1,false,0.2316
+873,20,Male,Business,3.74,4,4,true,0.223
+874,19,Female,Data Science,3.49,4,1,false,0.2321
+875,26,Female,Mathematics,2.94,5,4,false,0.2381
+876,22,Male,Law,3.63,1,1,true,0.2468
+877,19,Non-Binary,Economics,3.76,4,5,false,0.2098
+878,23,Female,Mathematics,1.64,4,5,false,0.2408
+879,20,Non-Binary,Law,3.13,2,1,false,0.2417
+880,21,Female,Computer Science,3.64,5,1,false,0.2445
+881,23,Non-Binary,Law,3.11,5,1,false,0.238
+882,23,Male,Nursing,3.1,1,4,false,0.2172
+883,20,Female,Arts,3.02,1,2,false,0.2284
+884,18,Female,Mathematics,3.26,2,4,false,0.2348
+885,27,Non-Binary,Mathematics,2.72,5,5,true,0.236
+886,18,Female,Data Science,3.01,5,1,false,0.2348
+887,28,Non-Binary,Law,2.92,2,1,false,0.2316
+888,21,Non-Binary,Law,3.97,1,1,true,0.2392
+889,21,Non-Binary,Economics,2.55,1,5,false,0.2303
+890,24,Female,Mathematics,3.01,1,4,false,0.2373
+891,24,Non-Binary,Mathematics,3.53,5,4,false,0.2273
+892,18,Female,Business,2.61,1,5,false,0.2396
+893,18,Female,Business,3.25,3,5,false,0.228
+894,19,Non-Binary,Computer Science,3.5,4,1,false,0.221
+895,22,Non-Binary,Psychology,3.26,2,3,false,0.2321
+896,19,Female,Mathematics,2.56,1,4,false,0.2323
+897,25,Male,Law,2.99,4,1,false,0.244
+898,27,Male,Computer Science,3.28,1,4,false,0.2195
+899,19,Non-Binary,Mathematics,3.83,4,4,true,0.2259
+900,18,Female,Biology,1.99,1,5,false,0.2422
+901,28,Non-Binary,Education,4,3,2,false,0.2467
+902,27,Male,Law,3.46,5,1,false,0.2398
+903,19,Male,Computer Science,3.31,1,1,true,0.2283
+904,18,Non-Binary,Biology,3.24,2,5,false,0.2343
+905,22,Non-Binary,Nursing,2.58,2,5,false,0.226
+906,21,Female,Mathematics,2.24,2,4,false,0.2322
+907,18,Male,Law,2.35,1,1,true,0.254
+908,23,Female,Data Science,2.72,4,1,false,0.2283
+909,21,Male,Data Science,4,4,4,true,0.22
+910,18,Female,Arts,3.07,5,1,false,0.2222
+911,28,Non-Binary,Mathematics,2.56,1,5,false,0.2386
+912,22,Non-Binary,Law,2.82,2,1,false,0.2395
+913,24,Female,Nursing,3.61,4,2,false,0.2178
+914,24,Male,Law,2.59,2,1,false,0.2462
+915,21,Non-Binary,Computer Science,2.11,1,5,false,0.2338
+916,24,Non-Binary,Nursing,2.4,5,5,true,0.2288
+917,19,Female,Nursing,3.6,5,1,false,0.2037
+918,25,Male,Nursing,3.34,3,4,false,0.2186
+919,25,Female,Psychology,3.01,4,1,false,0.2457
+920,28,Male,Education,3.37,4,2,false,0.2329
+921,27,Male,Economics,3.19,2,2,true,0.2224
+922,28,Female,Nursing,3.62,1,2,false,0.2353
+923,23,Male,Psychology,3.24,3,4,false,0.2324
+924,21,Female,Data Science,3.63,1,1,true,0.2287
+925,24,Non-Binary,Law,3.4,2,1,false,0.2362
+926,21,Male,Business,3.21,2,4,false,0.2219
+927,23,Female,Mathematics,2.5,5,4,false,0.2347
+928,24,Non-Binary,Nursing,2.4,1,5,false,0.2288
+929,28,Non-Binary,Business,2.05,4,5,false,0.2636
+930,22,Male,Biology,3.16,3,2,false,0.2258
+931,28,Non-Binary,Engineering,3.16,2,2,true,0.2319
+932,18,Female,Engineering,3.43,3,4,false,0.2333
+933,22,Female,Computer Science,3.96,3,1,false,0.2418
+934,28,Non-Binary,Biology,3.6,2,2,true,0.2607
+935,19,Non-Binary,Computer Science,1.22,5,5,true,0.2484
+936,23,Non-Binary,Arts,2.99,2,2,true,0.2418
+937,18,Male,Biology,2.36,2,5,false,0.2213
+938,26,Male,Education,2.25,5,5,true,0.2379
+939,23,Female,Education,2.84,1,5,false,0.2435
+940,27,Non-Binary,Computer Science,2.8,1,5,false,0.2212
+941,28,Non-Binary,Psychology,1.85,4,3,false,0.2271
+942,22,Male,Nursing,2.36,2,3,false,0.2172
+943,20,Female,Law,2.46,1,1,true,0.2724
+944,28,Female,Computer Science,2.96,1,1,true,0.2356
+945,19,Male,Economics,3.86,3,4,false,0.2205
+946,21,Male,Biology,3.46,5,2,false,0.23
+947,24,Female,Arts,3.32,2,2,true,0.2553
+948,23,Non-Binary,Psychology,3.26,2,3,false,0.2293
+949,27,Female,Education,2.54,3,5,false,0.2475
+950,22,Non-Binary,Engineering,2.92,1,4,false,0.2229
+951,28,Non-Binary,Engineering,3.53,3,2,false,0.2426
+952,21,Non-Binary,Mathematics,2.84,1,5,false,0.2356
+953,18,Female,Engineering,3.17,1,4,false,0.2327
+954,22,Non-Binary,Mathematics,3.94,2,4,false,0.2277
+955,23,Non-Binary,Mathematics,3.09,5,5,true,0.2306
+956,18,Non-Binary,Education,2.96,4,5,false,0.2587
+957,20,Male,Nursing,2.78,5,3,false,0.219
+958,25,Female,Business,3.09,1,5,false,0.2281
+959,21,Non-Binary,Engineering,2.58,1,4,false,0.2213
+960,21,Male,Engineering,3.35,5,4,false,0.2498
+961,26,Male,Business,2.37,2,5,false,0.2267
+962,21,Non-Binary,Arts,2.17,1,3,false,0.2258
+963,20,Male,Business,3.31,4,4,true,0.2218
+964,21,Male,Mathematics,3.44,4,4,true,0.2532
+965,28,Non-Binary,Education,4,3,2,false,0.2467
+966,19,Female,Economics,1.98,2,5,false,0.2256
+967,28,Female,Education,3.18,5,5,true,0.2342
+968,22,Non-Binary,Law,4,1,1,true,0.2378
+969,25,Non-Binary,Biology,3.16,3,2,false,0.2334
+970,28,Female,Economics,3.92,2,2,true,0.2438
+971,19,Male,Business,3.83,4,4,true,0.2228
+972,27,Male,Economics,2.44,2,4,false,0.2204
+973,26,Male,Mathematics,2.99,2,4,false,0.2542
+974,22,Non-Binary,Arts,2.73,5,2,false,0.2298
+975,19,Female,Law,3.63,4,1,false,0.2722
+976,19,Non-Binary,Arts,3.15,3,2,false,0.2283
+977,23,Male,Arts,3.45,5,2,false,0.2576
+978,23,Female,Business,3.46,4,5,false,0.2222
+979,20,Non-Binary,Mathematics,3.57,5,4,false,0.2254
+980,28,Non-Binary,Economics,2.51,1,5,false,0.2289
+981,19,Male,Computer Science,1.58,2,1,false,0.2313
+982,22,Female,Psychology,3.48,4,1,false,0.2488
+983,18,Non-Binary,Law,3.69,5,1,false,0.2436
+984,25,Male,Education,2.22,2,5,false,0.2389
+985,28,Female,Mathematics,2.43,2,4,false,0.2372
+986,23,Non-Binary,Engineering,2.28,1,4,false,0.2214
+987,22,Male,Engineering,3.78,3,4,false,0.2508
+988,27,Male,Engineering,3.25,5,4,false,0.2516
+989,28,Male,Business,3.42,3,2,false,0.2313
+990,19,Non-Binary,Psychology,2.54,2,3,false,0.2464
+991,28,Male,Mathematics,3.07,5,4,false,0.2554
+992,26,Female,Biology,2.64,3,5,false,0.2273
+993,28,Non-Binary,Business,2.89,4,5,false,0.2466
+994,23,Female,Biology,3.44,3,2,false,0.2336
+995,19,Male,Business,3.67,1,4,false,0.2224
+996,19,Non-Binary,Education,2.23,4,5,false,0.2726
+997,21,Female,Arts,2.44,4,1,false,0.2204
+998,18,Non-Binary,Data Science,3.68,5,5,true,0.2098
+999,25,Non-Binary,Nursing,3.13,3,5,false,0.2156
+1000,25,Female,Education,1.92,2,5,false,0.2607
+1001,21,Female,Computer Science,2.67,4,1,false,0.247
+1002,22,Female,Computer Science,3.32,2,1,false,0.2439
+1003,20,Male,Education,3.28,1,5,false,0.2213
+1004,20,Male,Data Science,3.2,5,4,false,0.2173
+1005,27,Male,Arts,3.15,1,2,false,0.2676
+1006,27,Non-Binary,Computer Science,2.6,3,5,false,0.2247
+1007,24,Non-Binary,Business,2.36,4,5,false,0.259
+1008,23,Non-Binary,Nursing,4,1,2,false,0.224
+1009,18,Male,Biology,3.52,5,2,false,0.2188
+1010,28,Female,Education,3.29,4,5,false,0.232
+1011,25,Male,Psychology,2.63,4,4,true,0.2313
+1012,22,Non-Binary,Law,2.47,2,1,false,0.2397
+1013,25,Female,Arts,3.12,3,2,false,0.254
+1014,22,Non-Binary,Biology,1.43,1,5,false,0.2677
+1015,28,Female,Psychology,3.83,5,1,false,0.2396
+1016,26,Female,Computer Science,2.99,5,1,false,0.2386
+1017,18,Female,Data Science,3.73,1,1,true,0.2329
+1018,18,Non-Binary,Economics,3.86,2,5,false,0.2084
+1019,24,Non-Binary,Data Science,3.37,1,5,false,0.2136
+1020,20,Non-Binary,Education,2.24,1,5,false,0.2722
+1021,26,Male,Arts,4,3,2,false,0.2892
+1022,23,Female,Education,3.05,5,5,true,0.2395
+1023,21,Male,Data Science,2.89,4,4,true,0.2168
+1024,18,Female,Mathematics,4,2,4,false,0.2377
+1025,24,Non-Binary,Law,2.81,2,1,false,0.237
+1026,18,Male,Computer Science,3.55,4,1,false,0.2291
+1027,28,Female,Engineering,2.68,3,4,false,0.2357
+1028,18,Male,Mathematics,3.42,2,4,false,0.2513
+1029,26,Female,Mathematics,3.68,1,4,false,0.2403
+1030,21,Female,Data Science,3.17,3,1,false,0.23
+1031,20,Female,Nursing,2.28,3,5,false,0.2174
+1032,28,Non-Binary,Nursing,2.76,5,5,true,0.221
+1033,21,Male,Arts,2.51,2,4,false,0.2255
+1034,26,Non-Binary,Economics,3.46,1,2,false,0.2218
+1035,18,Male,Psychology,2.76,4,3,false,0.2389
+1036,27,Non-Binary,Arts,4,5,2,false,0.2925
+1037,24,Female,Business,3.58,2,5,false,0.2194
+1038,28,Male,Engineering,2.76,2,4,false,0.2512
+1039,23,Male,Mathematics,3.88,5,4,false,0.2555
+1040,25,Non-Binary,Psychology,3.69,1,3,false,0.22
+1041,28,Non-Binary,Arts,4,4,2,false,0.2977
+1042,26,Non-Binary,Law,2.68,1,1,true,0.2346
+1043,21,Female,Computer Science,3.95,4,1,false,0.2435
+1044,26,Female,Biology,3.32,4,2,false,0.2434
+1045,27,Male,Economics,2.02,4,4,true,0.2191
+1046,25,Female,Mathematics,3.36,5,4,false,0.239
+1047,22,Non-Binary,Arts,3.01,2,2,true,0.2378
+1048,19,Non-Binary,Biology,3.44,1,5,false,0.2302
+1049,18,Non-Binary,Data Science,3.14,1,5,false,0.2188
+1050,18,Male,Nursing,3.02,2,3,false,0.2225
+1051,27,Non-Binary,Nursing,3.18,3,2,false,0.2179
+1052,26,Female,Engineering,2.65,3,4,false,0.2349
+1053,25,Female,Computer Science,3.13,4,1,false,0.2398
+1054,24,Male,Psychology,2.96,3,4,false,0.232
+1055,22,Male,Data Science,2.79,5,4,false,0.2171
+1056,28,Non-Binary,Computer Science,2.6,2,5,false,0.2244
+1057,19,Male,Mathematics,3.34,5,4,false,0.2516
+1058,20,Female,Business,4,3,5,false,0.2137
+1059,25,Female,Computer Science,2.21,4,1,false,0.2422
+1060,27,Male,Education,4,4,2,false,0.2471
+1061,26,Male,Biology,3.58,4,2,false,0.2563
+1062,21,Male,Mathematics,2.59,1,4,false,0.2498
+1063,20,Non-Binary,Economics,3.42,3,5,false,0.2154
+1064,26,Male,Nursing,2.52,5,4,false,0.2171
+1065,23,Male,Computer Science,2.64,4,1,false,0.2245
+1066,25,Non-Binary,Data Science,2.88,2,5,false,0.2218
+1067,28,Non-Binary,Education,3.04,3,5,false,0.2526
+1068,25,Male,Arts,1.87,5,4,false,0.2263
+1069,25,Non-Binary,Computer Science,2.25,3,5,false,0.2311
+1070,27,Female,Psychology,2.72,5,1,false,0.2435
+1071,20,Non-Binary,Law,3.69,5,1,false,0.2411
+1072,26,Non-Binary,Mathematics,2.9,1,5,false,0.233
+1073,18,Non-Binary,Arts,2.48,2,3,false,0.2317
+1074,24,Female,Psychology,2.81,5,1,false,0.2473
+1075,20,Female,Law,3.56,4,1,false,0.2709
+1076,21,Male,Arts,2.9,2,2,true,0.2325
+1077,27,Male,Computer Science,3.46,4,4,true,0.22
+1078,19,Male,Computer Science,4,3,1,false,0.2263
+1079,20,Male,Psychology,2.73,4,3,false,0.2336
+1080,23,Male,Engineering,3.25,4,4,true,0.2504
+1081,26,Male,Mathematics,2.86,1,4,false,0.2538
+1082,23,Male,Biology,2.7,2,2,true,0.217
+1083,24,Female,Law,2.89,3,1,false,0.2662
+1084,28,Male,Law,3.06,4,1,false,0.2395
+1085,26,Non-Binary,Mathematics,3.08,1,5,false,0.2297
+1086,24,Non-Binary,Computer Science,3.37,4,1,false,0.2145
+1087,26,Female,Biology,3.3,1,2,false,0.2428
+1088,20,Male,Biology,3.57,2,2,true,0.2289
+1089,25,Male,Education,3.35,4,4,true,0.223
+1090,18,Female,Business,3.1,2,5,false,0.2307
+1091,21,Female,Economics,2.79,3,5,false,0.2116
+1092,25,Non-Binary,Psychology,3.38,1,3,false,0.2228
+1093,28,Female,Mathematics,3.29,5,4,false,0.24
+1094,25,Female,Mathematics,2.46,4,4,true,0.2357
+1095,21,Male,Data Science,3.53,1,4,false,0.2188
+1096,22,Non-Binary,Engineering,1.99,1,4,false,0.2198
+1097,18,Non-Binary,Business,3.96,1,5,false,0.2306
+1098,27,Female,Arts,2.62,4,2,false,0.2485
+1099,27,Male,Education,3.96,5,2,false,0.2459
+1100,24,Male,Mathematics,2.78,5,4,false,0.2524
+1101,23,Female,Mathematics,3.02,4,4,true,0.2368
+1102,27,Male,Mathematics,2.85,2,4,false,0.2543
+1103,24,Non-Binary,Biology,4,3,2,false,0.2546
+1104,28,Female,Data Science,2.97,1,1,true,0.22
+1105,21,Female,Law,3.23,2,1,false,0.27
+1106,25,Female,Economics,2.92,3,5,false,0.2081
+1107,25,Male,Business,3.32,5,4,false,0.2237
+1108,28,Female,Engineering,3.9,2,2,true,0.2525
+1109,19,Non-Binary,Mathematics,2.56,2,5,false,0.2409
+1110,26,Male,Law,1.73,4,1,false,0.2447
+1111,22,Non-Binary,Education,3.79,1,5,false,0.2408
+1112,25,Female,Data Science,2.72,2,1,false,0.2254
+1113,24,Male,Economics,3.1,1,4,false,0.2208
+1114,18,Female,Education,3.43,3,5,false,0.2344
+1115,18,Non-Binary,Education,2.9,4,5,false,0.2598
+1116,19,Non-Binary,Education,3.17,2,5,false,0.2543
+1117,23,Female,Business,3.65,2,5,false,0.2186
+1118,19,Female,Arts,2.71,2,1,false,0.2223
+1119,24,Female,Engineering,3.37,2,4,false,0.2356
+1120,24,Non-Binary,Nursing,3.02,2,5,false,0.2178
+1121,28,Non-Binary,Economics,2.92,1,5,false,0.2213
+1122,26,Female,Data Science,2.2,2,1,false,0.2252
+1123,26,Female,Computer Science,3.21,1,1,true,0.2379
+1124,19,Female,Arts,3.06,2,2,true,0.2252
+1125,26,Non-Binary,Computer Science,3.32,5,5,true,0.2125
+1126,24,Non-Binary,Business,3.49,4,5,false,0.2368
+1127,28,Non-Binary,Economics,3.77,2,2,true,0.2395
+1128,27,Female,Mathematics,3.72,3,4,false,0.2407
+1129,26,Male,Arts,3.54,5,2,false,0.2748
+1130,28,Non-Binary,Engineering,3.41,4,2,false,0.2391
+1131,26,Male,Psychology,3.43,4,4,true,0.2358
+1132,28,Male,Arts,3.2,2,2,true,0.274
+1133,25,Non-Binary,Arts,4,3,2,false,0.2824
+1134,22,Female,Psychology,3.57,4,1,false,0.2486
+1135,19,Male,Data Science,2.77,1,4,false,0.2151
+1136,20,Male,Nursing,2.42,1,3,false,0.2224
+1137,25,Female,Law,3.69,2,1,false,0.2628
+1138,23,Non-Binary,Education,3.02,2,5,false,0.2557
+1139,24,Non-Binary,Arts,3.01,4,2,false,0.247
+1140,26,Non-Binary,Business,3.15,1,5,false,0.2425
+1141,28,Non-Binary,Business,2.34,1,5,false,0.2577
+1142,18,Male,Nursing,2.41,1,3,false,0.2284
+1143,19,Non-Binary,Arts,3.41,5,2,false,0.2357
+1144,22,Non-Binary,Computer Science,2.49,4,5,false,0.2273
+1145,21,Female,Engineering,2.22,1,4,false,0.2313
+1146,22,Female,Arts,4,5,2,false,0.2662
+1147,27,Non-Binary,Psychology,3.86,1,1,true,0.2149
+1148,23,Male,Economics,2.91,3,4,false,0.2199
+1149,19,Non-Binary,Biology,2.91,3,5,false,0.2402
+1150,25,Non-Binary,Mathematics,2.81,2,5,false,0.235
+1151,28,Female,Business,2.94,5,5,true,0.2294
+1152,18,Female,Psychology,3.07,3,1,false,0.2543
+1153,21,Male,Economics,2.61,3,4,false,0.2179
+1154,24,Female,Biology,2.28,4,5,false,0.235
+1155,21,Female,Business,2.63,3,5,false,0.2384
+1156,19,Female,Education,2.45,2,5,false,0.2524
+1157,24,Non-Binary,Psychology,2.29,3,3,true,0.2345
+1158,28,Non-Binary,Data Science,4,5,2,false,0.2298
+1159,22,Non-Binary,Biology,2.48,1,5,false,0.2473
+1160,27,Female,Arts,2.7,1,2,false,0.2509
+1161,26,Non-Binary,Nursing,2.76,3,5,false,0.2218
+1162,18,Female,Psychology,3.72,5,1,false,0.2536
+1163,19,Male,Law,1.95,3,1,false,0.2531
+1164,25,Non-Binary,Engineering,2.57,1,4,false,0.2233
+1165,21,Female,Engineering,3.63,3,4,false,0.235
+1166,20,Non-Binary,Mathematics,3.66,5,4,false,0.2258
+1167,28,Female,Data Science,2.61,4,1,false,0.2211
+1168,22,Male,Biology,2.74,5,2,false,0.214
+1169,27,Non-Binary,Business,3.63,2,5,false,0.2324
+1170,27,Non-Binary,Nursing,2.96,1,5,false,0.2178
+1171,23,Male,Biology,2.76,3,2,false,0.2187
+1172,19,Female,Biology,2.48,2,5,false,0.2331
+1173,18,Female,Psychology,3.26,1,1,true,0.2542
+1174,23,Non-Binary,Nursing,2.03,4,5,false,0.2355
+1175,26,Non-Binary,Psychology,3.86,2,1,false,0.2161
+1176,26,Non-Binary,Nursing,2.49,5,5,true,0.2266
+1177,26,Male,Psychology,2.82,1,4,false,0.2331
+1178,25,Non-Binary,Education,2.86,2,5,false,0.258
+1179,25,Male,Nursing,3.03,5,4,false,0.2179
+1180,24,Male,Education,2.92,3,5,false,0.2262
+1181,27,Non-Binary,Data Science,3.33,4,5,false,0.2132
+1182,25,Male,Business,3.63,4,2,false,0.2246
+1183,24,Female,Education,3.48,4,5,false,0.2307
+1184,23,Male,Computer Science,3.83,2,1,false,0.2209
+1185,28,Male,Nursing,2.67,2,4,false,0.2183
+1186,21,Female,Engineering,2.21,5,4,false,0.2313
+1187,27,Male,Data Science,2.85,4,4,true,0.2199
+1188,24,Male,Education,3.48,2,4,false,0.223
+1189,24,Female,Mathematics,2.43,2,4,false,0.235
+1190,22,Female,Economics,3.39,2,1,false,0.2074
+1191,27,Female,Arts,2.97,3,2,false,0.2589
+1192,28,Non-Binary,Education,3.43,1,5,false,0.2446
+1193,27,Non-Binary,Mathematics,2.99,1,5,false,0.231
+1194,22,Non-Binary,Psychology,3.61,5,3,false,0.2291
+1195,22,Male,Mathematics,3.19,3,4,false,0.2528
+1196,25,Non-Binary,Psychology,3.56,1,3,false,0.2212
+1197,26,Non-Binary,Nursing,2.67,1,5,false,0.2234
+1198,24,Female,Mathematics,3.17,3,4,false,0.2379
+1199,23,Male,Computer Science,4,1,1,true,0.2203
+1200,21,Female,Law,3.7,4,1,false,0.269
+1201,25,Male,Data Science,3.1,1,4,false,0.2196
+1202,19,Female,Economics,2.74,4,1,false,0.2134
+1203,27,Male,Engineering,1.83,3,4,false,0.2488
+1204,19,Male,Business,3.55,5,4,false,0.2221
+1205,27,Non-Binary,Economics,2.47,4,5,false,0.23
+1206,21,Male,Economics,2.57,5,4,false,0.2178
+1207,28,Female,Law,2.97,4,1,false,0.2599
+1208,20,Male,Law,1.83,3,1,false,0.2519
+1209,23,Female,Biology,3.42,4,2,false,0.233
+1210,28,Non-Binary,Engineering,2.42,4,4,true,0.2241
+1211,18,Non-Binary,Biology,4,5,2,false,0.2274
+1212,19,Non-Binary,Data Science,3.26,5,5,true,0.2166
+1213,27,Female,Arts,2.92,1,2,false,0.2574
+1214,20,Non-Binary,Arts,3.58,5,2,false,0.2452
+1215,19,Female,Business,2.72,1,5,false,0.2373
+1216,26,Non-Binary,Law,3.18,3,1,false,0.2339
+1217,24,Female,Arts,2.26,5,2,false,0.2248
+1218,23,Non-Binary,Data Science,3.94,5,2,false,0.2072
+1219,22,Non-Binary,Computer Science,4,1,1,true,0.2156
+1220,23,Female,Arts,4,4,2,false,0.2711
+1221,21,Female,Law,2.1,5,1,false,0.2713
+1222,25,Male,Arts,3.07,2,2,true,0.2557
+1223,20,Female,Arts,4,1,2,false,0.2567
+1224,24,Female,Nursing,3.09,3,4,false,0.2039
+1225,23,Male,Computer Science,2.19,3,1,false,0.2254
+1226,25,Male,Mathematics,2.55,2,4,false,0.2521
+1227,18,Female,Computer Science,3.69,5,1,false,0.249
+1228,20,Male,Education,3.95,5,4,false,0.2229
+1229,20,Non-Binary,Computer Science,2.62,4,5,false,0.2253
+1230,19,Male,Computer Science,3.6,2,1,false,0.2275
+1231,21,Female,Nursing,2.88,4,5,false,0.2073
+1232,26,Male,Arts,3.54,3,2,false,0.2748
+1233,21,Female,Computer Science,2.03,3,1,false,0.2481
+1234,21,Female,Arts,3.05,2,2,true,0.2337
+1235,19,Female,Business,2.53,2,5,false,0.2408
+1236,20,Female,Business,3.28,2,5,false,0.2268
+1237,23,Non-Binary,Business,3.71,5,5,true,0.2331
+1238,27,Non-Binary,Mathematics,3.86,3,4,false,0.2294
+1239,18,Non-Binary,Computer Science,3.49,1,1,true,0.2223
+1240,19,Non-Binary,Biology,3.49,2,5,false,0.2293
+1241,19,Male,Education,3.03,4,5,false,0.2262
+1242,23,Non-Binary,Engineering,3.26,2,4,false,0.2242
+1243,18,Non-Binary,Nursing,2.69,5,3,false,0.233
+1244,28,Female,Computer Science,3.73,3,1,false,0.2327
+1245,19,Non-Binary,Biology,3.03,5,5,true,0.2379
+1246,27,Non-Binary,Nursing,4,4,2,false,0.2416
+1247,21,Male,Psychology,2.68,2,3,false,0.2313
+1248,20,Non-Binary,Biology,2.79,5,5,true,0.2421
+1249,24,Non-Binary,Engineering,3.52,4,4,true,0.225
+1250,21,Non-Binary,Data Science,2.76,2,5,false,0.2247
+1251,23,Female,Business,2.82,3,5,false,0.2341
+1252,25,Non-Binary,Data Science,3.92,3,2,false,0.2149
+1253,23,Male,Computer Science,3.3,4,1,false,0.2227
+1254,24,Non-Binary,Computer Science,3.26,5,1,false,0.2148
+1255,22,Non-Binary,Computer Science,2.51,4,5,false,0.227
+1256,21,Female,Nursing,3.64,3,2,false,0.2063
+1257,24,Male,Engineering,2.5,2,4,false,0.2492
+1258,19,Non-Binary,Data Science,3.83,1,5,false,0.2071
+1259,23,Non-Binary,Business,2.88,2,5,false,0.2492
+1260,18,Non-Binary,Psychology,3.33,5,3,false,0.2427
+1261,21,Non-Binary,Nursing,3.12,2,3,false,0.22
+1262,28,Non-Binary,Data Science,3.35,3,5,false,0.2125
+1263,23,Male,Economics,3.25,3,4,false,0.2208
+1264,20,Non-Binary,Engineering,3.45,4,4,true,0.2234
+1265,21,Non-Binary,Data Science,3.21,3,5,false,0.2171
+1266,18,Non-Binary,Engineering,3.61,4,4,true,0.2229
+1267,22,Female,Computer Science,3.43,1,1,true,0.2436
+1268,28,Non-Binary,Biology,2.29,3,5,false,0.2485
+1269,21,Non-Binary,Computer Science,3.89,5,1,false,0.2173
+1270,26,Male,Computer Science,2.77,1,1,true,0.2199
+1271,28,Male,Business,3.77,2,2,true,0.2415
+1272,19,Female,Economics,1.86,4,5,false,0.2276
+1273,25,Female,Biology,4,3,2,false,0.2597
+1274,26,Female,Law,2.5,3,1,false,0.2639
+1275,19,Non-Binary,Business,3.6,4,5,false,0.237
+1276,20,Male,Mathematics,1.62,2,4,false,0.2441
+1277,26,Non-Binary,Arts,2.98,1,2,false,0.2554
+1278,24,Male,Economics,4,1,2,false,0.2324
+1279,25,Female,Data Science,3.41,3,1,false,0.2232
+1280,21,Female,Education,3.23,2,5,false,0.2369
+1281,24,Female,Mathematics,2.68,2,4,false,0.236
+1282,20,Non-Binary,Mathematics,2.71,5,5,true,0.2381
+1283,23,Male,Engineering,2.9,3,4,false,0.2497
+1284,25,Male,Data Science,3.41,1,4,false,0.2204
+1285,19,Male,Data Science,2.32,3,1,false,0.2156
+1286,19,Non-Binary,Engineering,2.42,3,4,false,0.2196
+1287,24,Male,Economics,3.86,3,2,false,0.2284
+1288,26,Male,Data Science,4,3,2,false,0.2247
+1289,20,Female,Arts,4,2,2,true,0.2567
+1290,28,Non-Binary,Law,3.51,1,1,true,0.2304
+1291,23,Non-Binary,Nursing,3.8,5,2,false,0.2183
+1292,23,Female,Law,3.61,1,1,true,0.2662
+1293,28,Male,Psychology,3.26,5,4,false,0.2367
+1294,24,Female,Mathematics,3.25,3,4,false,0.2382
+1295,20,Male,Nursing,3.76,4,4,true,0.2175
+1296,28,Female,Engineering,3.6,5,2,false,0.2437
+1297,28,Female,Biology,2.98,4,2,false,0.2421
+1298,22,Non-Binary,Education,3.43,2,5,false,0.248
+1299,27,Male,Business,3.24,4,4,true,0.2241
+1300,22,Female,Computer Science,2.28,1,1,true,0.2463
+1301,20,Female,Nursing,1.57,2,5,false,0.2293
+1302,19,Female,Economics,3.53,1,1,true,0.2113
+1303,18,Female,Economics,1.67,2,5,false,0.2309
+1304,25,Non-Binary,Education,2.63,2,5,false,0.2626
+1305,22,Non-Binary,Law,3.24,2,1,false,0.2391
+1306,28,Non-Binary,Mathematics,3.58,4,4,true,0.229
+1307,21,Male,Psychology,3.39,5,4,false,0.2314
+1308,27,Female,Law,3.14,3,1,false,0.2611
+1309,20,Male,Computer Science,4,5,1,false,0.2248
+1310,21,Male,Economics,3.81,5,4,false,0.2212
+1311,24,Non-Binary,Nursing,1.86,3,5,false,0.2383
+1312,27,Non-Binary,Data Science,1.95,3,5,false,0.2378
+1313,20,Male,Computer Science,1.84,2,1,false,0.2298
+1314,27,Non-Binary,Psychology,3.69,2,1,false,0.2152
+1315,26,Female,Psychology,3.55,1,1,true,0.2432
+1316,26,Female,Law,3.47,1,1,true,0.2618
+1317,21,Male,Economics,3.16,3,4,false,0.2196
+1318,27,Non-Binary,Arts,2.44,3,2,false,0.244
+1319,18,Non-Binary,Computer Science,3.94,1,1,true,0.2214
+1320,28,Female,Biology,3.03,3,2,false,0.2436
+1321,24,Female,Economics,3.74,4,2,false,0.2213
+1322,28,Non-Binary,Nursing,2.86,5,5,true,0.2192
+1323,22,Non-Binary,Psychology,2.3,4,3,false,0.24
+1324,21,Non-Binary,Computer Science,3.75,3,1,false,0.2177
+1325,28,Female,Data Science,3.11,2,1,false,0.2195
+1326,20,Non-Binary,Education,3.77,2,5,false,0.2422
+1327,19,Female,Engineering,2.93,2,4,false,0.2325
+1328,25,Female,Data Science,1.69,5,1,false,0.2276
+1329,19,Female,Engineering,3.23,1,4,false,0.2333
+1330,25,Male,Arts,4,2,2,true,0.2842
+1331,20,Male,Business,2.71,3,5,false,0.2228
+1332,18,Non-Binary,Psychology,4,3,3,true,0.2369
+1333,28,Female,Law,3.45,4,1,false,0.2586
+1334,24,Non-Binary,Engineering,2.06,1,4,false,0.2212
+1335,23,Non-Binary,Engineering,3.3,1,4,false,0.2242
+1336,26,Male,Business,2.48,4,5,false,0.2247
+1337,27,Male,Biology,1.94,4,5,false,0.2258
+1338,20,Male,Biology,2.26,2,5,false,0.2225
+1339,28,Non-Binary,Biology,3.12,3,2,false,0.2456
+1340,19,Male,Arts,2.44,2,4,false,0.2245
+1341,20,Non-Binary,Biology,2.44,1,5,false,0.2488
+1342,19,Female,Psychology,4,5,1,false,0.2518
+1343,26,Female,Mathematics,3.35,2,4,false,0.2394
+1344,24,Non-Binary,Engineering,2.34,2,4,false,0.2221
+1345,26,Male,Arts,3.85,5,2,false,0.2845
+1346,19,Male,Mathematics,2.96,2,4,false,0.25
+1347,19,Female,Economics,4,3,1,false,0.2098
+1348,18,Non-Binary,Biology,3.27,5,5,true,0.2338
+1349,19,Female,Mathematics,3.17,2,4,false,0.2351
+1350,27,Non-Binary,Data Science,3.07,1,5,false,0.2178
+1351,21,Female,Nursing,3.03,2,5,false,0.2048
+1352,19,Female,Biology,3.24,2,5,false,0.2193
+1353,27,Male,Nursing,2.17,4,4,true,0.2165
+1354,18,Female,Mathematics,3.2,3,4,false,0.2346
+1355,20,Female,Mathematics,1.9,3,5,false,0.2367
+1356,21,Non-Binary,Business,2.96,2,5,false,0.2484
+1357,19,Female,Data Science,3.78,5,1,false,0.2312
+1358,27,Female,Data Science,2.83,4,1,false,0.222
+1359,20,Male,Mathematics,4,1,4,false,0.2545
+1360,28,Male,Engineering,3.87,2,2,true,0.2549
+1361,28,Male,Biology,2.41,1,2,false,0.2301
+1362,18,Non-Binary,Arts,4,1,2,false,0.2483
+1363,27,Female,Law,2.39,2,1,false,0.2627
+1364,18,Female,Data Science,2.97,3,1,false,0.2348
+1365,22,Female,Data Science,3.23,2,1,false,0.2284
+1366,18,Male,Business,3.59,4,4,true,0.2217
+1367,25,Male,Nursing,3.6,5,2,false,0.2252
+1368,21,Male,Engineering,3.97,4,4,true,0.2507
+1369,18,Non-Binary,Business,2.88,1,5,false,0.2509
+1370,24,Non-Binary,Computer Science,2.55,5,5,true,0.2261
+1371,22,Male,Data Science,2.7,2,4,false,0.2167
+1372,20,Male,Law,3.22,5,1,false,0.2504
+1373,21,Female,Arts,2.66,5,2,false,0.2229
+1374,24,Female,Nursing,3.69,5,2,false,0.22
+1375,18,Female,Economics,4,5,1,false,0.2113
+1376,18,Male,Law,2.73,3,1,false,0.2537
+1377,23,Female,Nursing,3.63,4,2,false,0.2142
+1378,24,Female,Arts,3.77,1,2,false,0.2689
+1379,18,Male,Engineering,2.88,4,4,true,0.2471
+1380,20,Non-Binary,Mathematics,1.97,3,5,false,0.2513
+1381,24,Female,Nursing,3.66,1,2,false,0.2192
+1382,23,Female,Biology,3.39,5,2,false,0.2321
+1383,27,Non-Binary,Education,3.47,5,5,true,0.2444
+1384,22,Female,Nursing,3.09,4,5,false,0.2035
+1385,27,Male,Biology,2.4,5,2,false,0.2255
+1386,25,Female,Psychology,4,1,1,true,0.2435
+1387,19,Female,Data Science,3.28,5,1,false,0.2327
+1388,22,Female,Nursing,2.83,4,5,false,0.2079
+1389,19,Non-Binary,Education,2.62,5,5,true,0.265
+1390,26,Female,Education,3.89,1,2,false,0.2354
+1391,26,Male,Data Science,2.47,4,4,true,0.2182
+1392,23,Non-Binary,Nursing,2.41,2,5,false,0.2288
+1393,24,Non-Binary,Mathematics,2.23,4,5,false,0.2459
+1394,20,Male,Mathematics,2.68,1,4,false,0.2495
+1395,25,Non-Binary,Economics,2.66,3,5,false,0.2273
+1396,23,Male,Mathematics,3.51,4,4,true,0.2544
+1397,18,Male,Economics,3.11,1,4,false,0.2179
+1398,24,Non-Binary,Data Science,4,2,2,true,0.2129
+1399,21,Non-Binary,Nursing,3.62,5,3,false,0.2151
+1400,26,Male,Business,3.44,4,4,true,0.2242
+1401,18,Male,Computer Science,3.51,4,1,false,0.2292
+1402,23,Non-Binary,Arts,2.39,5,2,false,0.2246
+1403,20,Male,Mathematics,3.78,1,4,false,0.2538
+1404,24,Female,Biology,2.51,3,5,false,0.2307
+1405,25,Non-Binary,Biology,2.94,5,5,true,0.237
+1406,28,Male,Psychology,2.23,1,4,false,0.232
+1407,18,Female,Law,3.11,1,1,true,0.2745
+1408,19,Female,Mathematics,3.01,3,4,false,0.2344
+1409,19,Male,Education,2.71,3,5,false,0.2319
+1410,18,Non-Binary,Biology,3.67,5,5,true,0.2263
+1411,24,Male,Education,3.94,1,2,false,0.2322
+1412,22,Male,Law,4,1,1,true,0.2457
+1413,19,Male,Law,3.81,4,1,false,0.2506
+1414,23,Non-Binary,Biology,3.42,3,2,false,0.2323
+1415,26,Non-Binary,Mathematics,3.43,5,4,false,0.2278
+1416,28,Male,Law,2.56,5,1,false,0.2407
+1417,24,Male,Nursing,2.36,1,4,false,0.2155
+1418,18,Non-Binary,Law,2.7,1,1,true,0.2443
+1419,27,Male,Mathematics,3.8,5,4,false,0.2568
+1420,27,Male,Mathematics,3.05,4,4,true,0.2549
+1421,24,Female,Education,3.3,4,5,false,0.2341
+1422,18,Male,Law,2.61,3,1,false,0.2538
+1423,21,Male,Arts,3.45,3,2,false,0.2482
+1424,20,Female,Arts,4,5,2,false,0.2567
+1425,26,Non-Binary,Mathematics,2.33,5,5,true,0.2436
+1426,25,Male,Engineering,4,3,4,false,0.2517
+1427,27,Non-Binary,Mathematics,3.86,3,4,false,0.2294
+1428,27,Female,Biology,3.24,4,2,false,0.2455
+1429,19,Female,Arts,3.02,4,2,false,0.2241
+1430,27,Male,Engineering,3.54,2,4,false,0.2518
+1431,25,Female,Data Science,2.29,4,1,false,0.2264
+1432,24,Female,Mathematics,2.92,3,4,false,0.237
+1433,20,Non-Binary,Biology,4,3,2,false,0.2362
+1434,27,Female,Biology,3.29,5,2,false,0.247
+1435,24,Non-Binary,Law,3.76,4,1,false,0.2355
+1436,20,Non-Binary,Education,3.27,2,5,false,0.252
+1437,22,Non-Binary,Mathematics,3.01,1,5,false,0.2323
+1438,22,Non-Binary,Economics,4,2,2,true,0.22
+1439,23,Non-Binary,Data Science,3.01,1,5,false,0.22
+1440,18,Male,Arts,2.23,1,3,false,0.2249
+1441,26,Male,Engineering,2.81,3,4,false,0.2507
+1442,18,Male,Education,4,5,4,false,0.2223
+1443,19,Male,Biology,2.96,4,5,false,0.2106
+1444,23,Male,Business,2.42,2,5,false,0.227
+1445,23,Female,Biology,3.31,2,2,true,0.2298
+1446,22,Male,Engineering,3.85,4,4,true,0.2509
+1447,22,Male,Business,2.85,2,4,false,0.2212
+1448,24,Female,Nursing,2.11,5,5,true,0.2195
+1449,25,Female,Education,3.01,1,5,false,0.2393
+1450,24,Female,Business,3.26,5,5,true,0.2254
+1451,18,Female,Mathematics,3.27,2,4,false,0.2349
+1452,28,Female,Business,4,1,2,false,0.2437
+1453,28,Female,Nursing,2.93,5,2,false,0.2158
+1454,24,Female,Data Science,2.84,4,1,false,0.2265
+1455,23,Non-Binary,Computer Science,1.26,5,5,true,0.2482
+1456,19,Male,Data Science,2.61,2,1,false,0.215
+1457,24,Non-Binary,Mathematics,3.63,1,4,false,0.2276
+1458,23,Female,Nursing,3.1,4,4,true,0.2035
+1459,28,Male,Economics,4,2,2,true,0.2502
+1460,21,Male,Computer Science,3.23,1,1,true,0.2257
+1461,25,Male,Computer Science,3.87,4,4,true,0.22
+1462,28,Female,Psychology,3.85,3,1,false,0.2396
+1463,28,Male,Data Science,2.33,3,4,false,0.2188
+1464,24,Male,Business,3.04,5,4,false,0.2226
+1465,22,Female,Data Science,2.83,3,1,false,0.2295
+1466,28,Non-Binary,Data Science,3.28,3,5,false,0.2137
+1467,25,Non-Binary,Biology,2.89,5,5,true,0.238
+1468,24,Non-Binary,Arts,2.76,2,2,true,0.2396
+1469,20,Male,Law,3.98,1,1,true,0.2487
+1470,21,Non-Binary,Education,2.97,2,5,false,0.2575
+1471,27,Male,Biology,3.13,2,2,true,0.2471
+1472,18,Non-Binary,Computer Science,3.49,1,1,true,0.2223
+1473,23,Non-Binary,Business,2.82,5,5,true,0.2504
+1474,21,Female,Engineering,3.06,5,4,false,0.2338
+1475,25,Non-Binary,Psychology,3.33,4,3,false,0.2232
+1476,18,Non-Binary,Mathematics,3.35,4,5,false,0.2273
+1477,25,Male,Data Science,3.96,1,4,false,0.2215
+1478,26,Non-Binary,Data Science,4,5,2,false,0.2213
+1479,24,Male,Psychology,2.99,5,4,false,0.2321
+1480,28,Female,Data Science,3.4,1,1,true,0.2184
+1481,28,Non-Binary,Law,3.28,2,1,false,0.2309
+1482,27,Non-Binary,Law,2.66,5,5,true,0.2333
+1483,27,Non-Binary,Psychology,2.82,5,3,false,0.222
+1484,24,Non-Binary,Mathematics,2.42,1,5,false,0.2425
+1485,22,Female,Business,3.3,3,5,false,0.2256
+1486,18,Non-Binary,Biology,3.07,2,5,false,0.2375
+1487,22,Non-Binary,Nursing,3.43,1,3,false,0.2141
+1488,25,Male,Business,3.46,4,4,true,0.224
+1489,24,Female,Biology,2.11,1,5,false,0.2383
+1490,22,Female,Computer Science,3.63,5,1,false,0.2429
+1491,27,Male,Arts,3.93,5,2,false,0.2921
+1492,23,Female,Education,2.41,5,5,true,0.2519
+1493,20,Non-Binary,Mathematics,3.52,4,4,true,0.2252
+1494,20,Non-Binary,Psychology,2.75,3,3,true,0.2419
+1495,21,Non-Binary,Law,2.73,3,1,false,0.2408
+1496,28,Non-Binary,Biology,3.41,1,2,false,0.2547
+1497,24,Male,Data Science,3.15,3,4,false,0.2193
+1498,20,Female,Psychology,1.7,1,1,true,0.2526
+1499,26,Female,Nursing,1.46,3,5,false,0.2304
+1500,23,Male,Mathematics,3.18,3,4,false,0.2534
+1501,26,Male,Computer Science,3.26,2,4,false,0.219
+1502,27,Male,Biology,3.33,3,2,false,0.2532
+1503,18,Male,Psychology,2.85,2,3,false,0.2381
+1504,28,Non-Binary,Mathematics,3.19,5,4,false,0.2279
+1505,19,Male,Engineering,3.81,2,4,false,0.2498
+1506,21,Non-Binary,Computer Science,1.75,5,5,true,0.2398
+1507,18,Female,Nursing,2.84,5,3,false,0.2096
+1508,24,Female,Law,3.49,3,1,false,0.2649
+1509,18,Male,Engineering,2.97,3,4,false,0.2473
+1510,24,Male,Data Science,2.23,3,4,false,0.2162
+1511,28,Female,Nursing,2.39,2,5,false,0.2135
+1512,21,Female,Data Science,3.99,2,1,false,0.2274
+1513,27,Female,Computer Science,2.79,3,1,false,0.2377
+1514,28,Non-Binary,Computer Science,3.04,2,5,false,0.2167
+1515,28,Non-Binary,Education,2.8,4,5,false,0.2576
+1516,25,Non-Binary,Data Science,3.33,4,5,false,0.2139
+1517,18,Non-Binary,Computer Science,4,1,1,true,0.2212
+1518,24,Non-Binary,Engineering,3.85,2,2,true,0.2343
+1519,25,Non-Binary,Arts,3.31,5,2,false,0.2607
+1520,22,Female,Biology,2.23,4,5,false,0.2367
+1521,22,Non-Binary,Engineering,2.56,1,4,false,0.2218
+1522,18,Non-Binary,Mathematics,3.01,1,5,false,0.2332
+1523,23,Non-Binary,Computer Science,2.5,3,5,false,0.2271
+1524,27,Male,Psychology,2.16,4,4,true,0.2307
+1525,25,Female,Law,3.34,5,1,false,0.2637
+1526,23,Non-Binary,Computer Science,3.58,2,1,false,0.2153
+1527,20,Male,Nursing,2.93,1,3,false,0.2175
+1528,26,Male,Business,2.13,1,5,false,0.2311
+1529,18,Non-Binary,Nursing,3.21,5,3,false,0.2281
+1530,25,Female,Business,2.65,5,5,true,0.2364
+1531,21,Non-Binary,Arts,2.56,4,3,false,0.2214
+1532,23,Male,Biology,1.93,4,5,false,0.2275
+1533,22,Non-Binary,Law,2.42,1,1,true,0.2398
+1534,22,Non-Binary,Data Science,3.36,2,5,false,0.2143
+1535,28,Male,Psychology,3.79,1,4,false,0.2387
+1536,21,Male,Economics,3.57,1,4,false,0.2207
+1537,21,Female,Psychology,2.38,2,1,false,0.2513
+1538,22,Non-Binary,Education,2.49,3,5,false,0.2667
+1539,25,Female,Engineering,3.88,2,2,true,0.2386
+1540,27,Female,Law,3.56,2,1,false,0.2599
+1541,18,Female,Nursing,3.95,5,1,false,0.2041
+1542,24,Non-Binary,Nursing,3.19,2,5,false,0.2149
+1543,19,Non-Binary,Biology,2.89,4,5,false,0.2405
+1544,25,Male,Business,3.37,4,4,true,0.2238
+1545,19,Female,Business,1.74,2,5,false,0.2553
+1546,18,Female,Computer Science,2.57,3,1,false,0.2514
+1547,24,Non-Binary,Nursing,2.97,5,5,true,0.2187
+1548,18,Non-Binary,Business,3.36,4,5,false,0.2418
+1549,28,Non-Binary,Nursing,3.21,3,2,false,0.223
+1550,21,Non-Binary,Computer Science,3.41,4,1,false,0.2185
+1551,21,Male,Law,3.08,1,1,true,0.2494
+1552,22,Male,Engineering,3.43,5,4,false,0.2503
+1553,21,Male,Engineering,3.38,1,4,false,0.2498
+1554,19,Female,Data Science,3.68,3,1,false,0.2316
+1555,24,Male,Data Science,3.18,2,4,false,0.2194
+1556,19,Non-Binary,Mathematics,3.53,1,4,false,0.2247
+1557,28,Female,Economics,2.17,5,5,true,0.2201
+1558,26,Non-Binary,Business,2.58,4,5,false,0.2538
+1559,19,Non-Binary,Education,1.98,3,5,false,0.2775
+1560,28,Male,Law,2.47,4,1,false,0.2409
+1561,27,Non-Binary,Biology,2.77,1,5,false,0.2393
+1562,28,Non-Binary,Arts,2.69,4,2,false,0.2561
+1563,18,Non-Binary,Mathematics,3.34,1,5,false,0.2275
+1564,24,Female,Business,2.83,4,5,false,0.2335
+1565,28,Male,Business,2.88,2,4,false,0.2235
+1566,22,Male,Biology,4,5,2,false,0.2506
+1567,25,Female,Economics,2.79,4,5,false,0.2103
+1568,19,Female,Mathematics,3.46,2,4,false,0.2363
+1569,19,Female,Arts,3.14,4,2,false,0.2274
+1570,19,Non-Binary,Computer Science,2.74,1,5,false,0.2234
+1571,22,Male,Law,3.96,4,1,false,0.2459
+1572,20,Non-Binary,Business,2.51,2,5,false,0.2574
+1573,26,Male,Computer Science,3.58,1,4,false,0.2198
+1574,18,Female,Psychology,3.53,1,1,true,0.2538
+1575,24,Non-Binary,Business,2.56,5,5,true,0.2551
+1576,22,Female,Engineering,2.74,4,4,true,0.2335
+1577,20,Non-Binary,Nursing,3.46,5,3,false,0.2197
+1578,25,Female,Computer Science,2.96,4,1,false,0.2403
+1579,23,Non-Binary,Education,2.3,4,5,false,0.2701
+1580,20,Female,Law,2.61,2,1,false,0.2723
+1581,22,Male,Mathematics,4,1,4,false,0.2554
+1582,28,Male,Education,2.99,4,4,true,0.223
+1583,19,Female,Biology,3.72,2,2,true,0.2243
+1584,21,Female,Business,3.12,4,5,false,0.2293
+1585,20,Non-Binary,Biology,4,2,2,true,0.2362
+1586,18,Non-Binary,Economics,3.4,2,5,false,0.2163
+1587,22,Female,Business,3.58,4,5,false,0.2204
+1588,26,Female,Business,2.8,2,5,false,0.2331
+1589,23,Male,Mathematics,2.9,5,4,false,0.2523
+1590,22,Female,Business,2.86,2,5,false,0.2337
+1591,25,Female,Law,2.98,2,1,false,0.2645
+1592,23,Non-Binary,Computer Science,3.24,2,1,false,0.2162
+1593,25,Female,Arts,3.66,1,2,false,0.2704
+1594,26,Male,Arts,3.98,5,2,false,0.2886
+1595,20,Male,Law,2.8,1,1,true,0.2511
+1596,27,Female,Economics,3.26,2,2,true,0.2205
+1597,24,Non-Binary,Business,2.9,3,5,false,0.2484
+1598,22,Male,Education,3.68,4,4,true,0.2229
+1599,22,Female,Mathematics,2.95,5,4,false,0.236
+1600,28,Female,Arts,3.17,1,2,false,0.2698
+1601,24,Female,Nursing,3.68,3,2,false,0.2198
+1602,18,Non-Binary,Computer Science,3.42,1,1,true,0.2224
+1603,25,Female,Mathematics,3.08,4,4,true,0.2381
+1604,20,Male,Nursing,2.97,2,3,false,0.2171
+1605,19,Male,Economics,4,2,4,false,0.2208
+1606,21,Non-Binary,Psychology,2.43,5,3,false,0.2417
+1607,22,Non-Binary,Business,3.54,5,5,true,0.2368
+1608,19,Female,Mathematics,3.34,3,4,false,0.2358
+1609,20,Non-Binary,Psychology,3.65,1,3,false,0.2343
+1610,20,Non-Binary,Computer Science,2.32,2,5,false,0.2303
+1611,25,Non-Binary,Law,3.24,4,1,false,0.2351
+1612,28,Female,Nursing,2.83,2,2,true,0.213
+1613,28,Male,Data Science,2.82,2,4,false,0.2202
+1614,26,Male,Biology,2.55,3,2,false,0.2255
+1615,25,Female,Engineering,3.34,3,4,false,0.2359
+1616,18,Male,Psychology,2.8,4,3,false,0.2385
+1617,26,Male,Business,2.45,1,5,false,0.2252
+1618,22,Non-Binary,Engineering,2.72,2,4,false,0.2223
+1619,28,Non-Binary,Biology,2.53,2,5,false,0.2436
+1620,18,Male,Mathematics,3.79,4,4,true,0.2527
+1621,28,Male,Engineering,2.84,4,4,true,0.2514
+1622,19,Male,Business,4,4,4,true,0.2233
+1623,23,Female,Nursing,3.51,4,2,false,0.211
+1624,22,Male,Business,3.67,2,4,false,0.2235
+1625,26,Female,Data Science,3.24,1,1,true,0.2222
+1626,26,Male,Computer Science,3.29,3,4,false,0.2191
+1627,27,Non-Binary,Psychology,3.59,4,1,false,0.2154
+1628,27,Non-Binary,Mathematics,2.82,5,5,true,0.2341
+1629,20,Non-Binary,Computer Science,3.87,1,1,true,0.2188
+1630,28,Non-Binary,Nursing,3.51,3,2,false,0.2316
+1631,20,Female,Education,2.38,3,5,false,0.2535
+1632,18,Female,Nursing,2.87,4,3,false,0.2093
+1633,20,Female,Computer Science,3.08,2,1,false,0.2476
+1634,20,Non-Binary,Business,2.85,1,5,false,0.2509
+1635,19,Female,Education,2.53,2,5,false,0.2509
+1636,20,Female,Computer Science,3.03,3,1,false,0.2477
+1637,24,Non-Binary,Law,2.57,3,1,false,0.2372
+1638,27,Female,Mathematics,3.24,1,4,false,0.2395
+1639,22,Male,Data Science,3.58,2,4,false,0.2195
+1640,22,Non-Binary,Business,3.47,5,5,true,0.2382
+1641,20,Non-Binary,Mathematics,1.77,2,5,false,0.2548
+1642,27,Non-Binary,Law,2.4,2,5,false,0.2378
+1643,26,Female,Psychology,3.89,2,1,false,0.2424
+1644,25,Female,Economics,3.39,4,2,false,0.2158
+1645,20,Female,Arts,3.45,5,2,false,0.2406
+1646,28,Female,Biology,2.83,4,2,false,0.2376
+1647,21,Female,Psychology,2.57,4,1,false,0.2512
+1648,23,Female,Biology,3.02,4,5,false,0.2216
+1649,22,Female,Psychology,3.37,2,1,false,0.249
+1650,20,Male,Psychology,2.68,4,3,false,0.2341
+1651,27,Non-Binary,Psychology,2.97,1,3,false,0.2208
+1652,27,Male,Nursing,2.98,5,4,false,0.2186
+1653,18,Non-Binary,Nursing,2.68,3,3,true,0.2331
+1654,21,Male,Economics,4,4,4,true,0.2216
+1655,23,Female,Law,2.2,3,1,false,0.2686
+1656,23,Female,Law,3.64,2,1,false,0.2661
+1657,21,Non-Binary,Psychology,3.22,3,3,true,0.2352
+1658,25,Male,Biology,2.96,1,2,false,0.233
+1659,26,Non-Binary,Business,3.36,5,5,true,0.2383
+1660,26,Female,Arts,3.02,5,2,false,0.2557
+1661,21,Female,Education,3.18,5,5,true,0.2379
+1662,18,Non-Binary,Nursing,3.73,2,3,false,0.223
+1663,28,Non-Binary,Economics,3.56,2,2,true,0.2333
+1664,26,Non-Binary,Business,3.34,2,5,false,0.2387
+1665,24,Non-Binary,Education,3.28,3,5,false,0.25
+1666,20,Non-Binary,Nursing,2.22,1,5,false,0.2326
+1667,28,Male,Business,2.62,3,4,false,0.2229
+1668,21,Non-Binary,Arts,1.63,1,3,false,0.2318
+1669,22,Non-Binary,Law,2.98,1,1,true,0.2394
+1670,22,Female,Economics,3.21,3,1,false,0.208
+1671,19,Non-Binary,Nursing,3.29,4,3,false,0.2244
+1672,28,Male,Data Science,2.53,2,4,false,0.2194
+1673,19,Non-Binary,Education,3.45,2,5,false,0.2489
+1674,23,Male,Economics,1.66,1,5,false,0.2161
+1675,18,Non-Binary,Engineering,1.98,3,3,true,0.2174
+1676,23,Non-Binary,Psychology,4,5,3,false,0.2228
+1677,19,Female,Data Science,2.8,4,1,false,0.2338
+1678,21,Female,Engineering,4,3,4,false,0.2356
+1679,25,Male,Business,3.07,1,4,false,0.2231
+1680,24,Non-Binary,Biology,3.58,5,2,false,0.2416
+1681,18,Male,Education,3.24,1,5,false,0.2228
+1682,27,Non-Binary,Mathematics,2.97,1,5,false,0.2314
+1683,25,Non-Binary,Data Science,2.35,3,5,false,0.2311
+1684,18,Non-Binary,Education,2.36,1,5,false,0.2703
+1685,21,Non-Binary,Business,3.78,1,5,false,0.2327
+1686,28,Male,Engineering,3.5,4,4,true,0.252
+1687,28,Male,Data Science,3.79,1,2,false,0.2274
+1688,24,Male,Computer Science,3.39,1,1,true,0.2209
+1689,23,Male,Law,3.99,5,1,false,0.2443
+1690,19,Male,Biology,3.56,3,2,false,0.2242
+1691,22,Non-Binary,Arts,3.45,2,2,true,0.2507
+1692,25,Female,Biology,2.66,2,5,false,0.2274
+1693,25,Non-Binary,Psychology,2.88,2,3,false,0.227
+1694,24,Female,Biology,3.49,5,2,false,0.2395
+1695,18,Female,Law,2.87,4,1,false,0.2747
+1696,21,Non-Binary,Engineering,2.94,4,4,true,0.2225
+1697,25,Non-Binary,Arts,3.43,3,2,false,0.2644
+1698,22,Male,Psychology,3.71,5,4,false,0.2337
+1699,22,Male,Economics,3.16,5,4,false,0.2201
+1700,24,Non-Binary,Psychology,3.37,1,3,false,0.2256
+1701,24,Female,Economics,3.89,5,2,false,0.2255
+1702,26,Non-Binary,Business,3.55,2,5,false,0.2345
+1703,19,Non-Binary,Education,2.1,1,5,false,0.2751
+1704,18,Female,Computer Science,2.45,4,1,false,0.2516
+1705,20,Male,Business,4,5,4,false,0.2236
+1706,20,Non-Binary,Economics,2.99,4,5,false,0.2228
+1707,23,Non-Binary,Engineering,3.93,2,2,true,0.2322
+1708,22,Non-Binary,Education,3.44,3,5,false,0.2478
+1709,27,Male,Arts,2.66,5,2,false,0.2529
+1710,28,Female,Law,3.33,4,1,false,0.259
+1711,22,Male,Education,3.42,5,4,false,0.2222
+1712,19,Male,Psychology,2.77,2,3,false,0.236
+1713,21,Female,Economics,2.71,4,5,false,0.2129
+1714,20,Female,Nursing,2.67,1,5,false,0.211
+1715,18,Male,Economics,2.49,1,4,false,0.2156
+1716,21,Female,Education,3.36,1,5,false,0.2344
+1717,23,Female,Arts,3.87,3,2,false,0.2671
+1718,24,Female,Economics,4,4,2,false,0.2286
+1719,26,Female,Education,2.77,4,5,false,0.2435
+1720,18,Non-Binary,Psychology,3.13,3,3,true,0.2444
+1721,21,Male,Nursing,2.77,2,3,false,0.2161
+1722,28,Non-Binary,Education,3.51,4,5,false,0.2429
+1723,24,Non-Binary,Education,2.12,1,5,false,0.2734
+1724,18,Female,Mathematics,2.71,1,4,false,0.2324
+1725,27,Female,Economics,2.61,4,5,false,0.2127
+1726,28,Female,Arts,2.26,3,2,false,0.2426
+1727,23,Female,Economics,3.05,3,1,false,0.207
+1728,24,Non-Binary,Business,3.72,1,5,false,0.2323
+1729,26,Non-Binary,Psychology,2.76,1,3,false,0.2253
+1730,24,Non-Binary,Arts,3.05,2,2,true,0.2481
+1731,26,Non-Binary,Nursing,3.42,1,2,false,0.2204
+1732,23,Non-Binary,Engineering,3.7,2,2,true,0.2257
+1733,25,Male,Biology,2.76,4,2,false,0.2272
+1734,20,Male,Economics,2.64,5,4,false,0.2174
+1735,22,Female,Computer Science,2.3,4,1,false,0.2463
+1736,27,Non-Binary,Mathematics,3.03,1,5,false,0.2302
+1737,28,Female,Mathematics,2.73,5,4,false,0.2383
+1738,25,Male,Data Science,2.97,2,4,false,0.2192
+1739,21,Non-Binary,Nursing,3.55,3,3,true,0.2158
+1740,27,Male,Nursing,3.78,4,2,false,0.2391
+1741,25,Female,Mathematics,3.41,1,4,false,0.2391
+1742,20,Non-Binary,Education,3.35,4,5,false,0.2504
+1743,20,Non-Binary,Law,2.13,1,1,true,0.2421
+1744,26,Female,Education,2.3,3,5,false,0.2528
+1745,20,Female,Arts,3.3,2,2,true,0.2363
+1746,23,Male,Psychology,2.65,5,4,false,0.2295
+1747,25,Female,Mathematics,2.38,1,4,false,0.2354
+1748,22,Male,Engineering,4,1,4,false,0.251
+1749,27,Female,Data Science,2.31,5,1,false,0.2235
+1750,18,Non-Binary,Arts,1.75,1,3,false,0.2398
+1751,26,Non-Binary,Mathematics,3.61,1,4,false,0.2284
+1752,20,Female,Computer Science,2.79,4,1,false,0.2482
+1753,22,Non-Binary,Arts,2.75,1,2,false,0.2303
+1754,18,Female,Mathematics,2.91,5,4,false,0.2333
+1755,28,Female,Law,3.27,4,1,false,0.2591
+1756,24,Male,Education,3.55,3,4,false,0.2232
+1757,24,Non-Binary,Arts,3.69,3,2,false,0.2676
+1758,20,Non-Binary,Arts,4,3,2,false,0.2578
+1759,19,Male,Engineering,1.92,5,4,false,0.2444
+1760,20,Female,Biology,3.15,4,5,false,0.2205
+1761,27,Male,Psychology,2.49,4,4,true,0.2324
+1762,25,Non-Binary,Engineering,4,5,2,false,0.243
+1763,28,Female,Computer Science,2.61,2,1,false,0.2366
+1764,24,Non-Binary,Engineering,2.87,2,4,false,0.2236
+1765,21,Non-Binary,Economics,2.32,3,5,false,0.2344
+1766,18,Male,Psychology,2.81,4,3,false,0.2384
+1767,19,Female,Arts,3.65,5,2,false,0.2418
+1768,19,Non-Binary,Nursing,2.49,4,3,false,0.2319
+1769,19,Non-Binary,Law,3.54,2,1,false,0.2425
+1770,28,Female,Engineering,3.61,4,2,false,0.244
+1771,25,Female,Engineering,3,2,4,false,0.2353
+1772,23,Non-Binary,Nursing,4,5,2,false,0.224
+1773,21,Female,Economics,2.15,5,5,true,0.2224
+1774,26,Non-Binary,Arts,2.95,5,2,false,0.2545
+1775,26,Non-Binary,Computer Science,2.87,4,5,false,0.2202
+1776,25,Female,Education,2.71,1,5,false,0.2451
+1777,23,Male,Data Science,3.11,4,4,true,0.2186
+1778,23,Non-Binary,Data Science,3.94,2,2,true,0.2072
+1779,18,Female,Psychology,2.94,2,1,false,0.2545
+1780,21,Non-Binary,Data Science,3.15,3,5,false,0.2181
+1781,26,Female,Data Science,3,1,1,true,0.223
+1782,24,Male,Law,3.58,3,1,false,0.244
+1783,26,Female,Psychology,2.51,2,1,false,0.2451
+1784,24,Non-Binary,Nursing,2.6,1,5,false,0.2252
+1785,25,Female,Psychology,2.67,3,1,false,0.2462
+1786,27,Male,Biology,2.32,1,2,false,0.2232
+1787,18,Male,Education,2.96,1,5,false,0.2278
+1788,19,Male,Biology,3.2,3,2,false,0.2142
+1789,19,Male,Psychology,2.36,1,3,false,0.2395
+1790,19,Male,Engineering,3.84,2,4,false,0.2498
+1791,28,Female,Law,3.86,3,1,false,0.2572
+1792,27,Female,Nursing,2.79,3,2,false,0.2079
+1793,23,Non-Binary,Business,3.15,1,5,false,0.2439
+1794,24,Female,Computer Science,3.27,1,1,true,0.2409
+1795,18,Female,Biology,3.03,1,5,false,0.2234
+1796,26,Female,Nursing,4,3,2,false,0.2375
+1797,26,Non-Binary,Biology,2.08,3,5,false,0.2536
+1798,25,Male,Engineering,2.34,4,4,true,0.2492
+1799,18,Female,Psychology,3.29,3,1,false,0.2541
+1800,22,Non-Binary,Data Science,3.4,5,5,true,0.2136
+1801,19,Non-Binary,Psychology,4,2,3,false,0.234
+1802,24,Female,Arts,3.25,4,2,false,0.2532
+1803,22,Male,Engineering,3.49,2,4,false,0.2504
+1804,27,Non-Binary,Data Science,4,4,2,false,0.2255
+1805,23,Non-Binary,Computer Science,3.58,5,1,false,0.2153
+1806,26,Female,Psychology,3.54,1,1,true,0.2433
+1807,19,Non-Binary,Psychology,2.93,4,3,false,0.2432
+1808,24,Non-Binary,Arts,2.23,3,2,false,0.2245
+1809,25,Non-Binary,Psychology,3.56,2,3,false,0.2212
+1810,20,Male,Data Science,3.1,1,4,false,0.2169
+1811,26,Non-Binary,Economics,2.86,2,5,false,0.2233
+1812,26,Male,Mathematics,2.5,4,4,true,0.2525
+1813,23,Female,Education,2.42,1,5,false,0.2517
+1814,26,Female,Data Science,1.68,3,5,false,0.227
+1815,28,Female,Education,3.33,4,5,false,0.2312
+1816,20,Female,Education,3.34,5,5,true,0.2353
+1817,27,Male,Business,3.14,4,4,true,0.2238
+1818,24,Male,Engineering,2.74,2,4,false,0.2498
+1819,26,Male,Psychology,3.1,3,4,false,0.2344
+1820,20,Male,Data Science,4,4,4,true,0.2196
+1821,28,Female,Nursing,3.49,5,2,false,0.2315
+1822,22,Male,Nursing,3.09,2,4,false,0.2167
+1823,19,Non-Binary,Data Science,3.22,5,5,true,0.2173
+1824,20,Female,Mathematics,3.7,2,4,false,0.2377
+1825,25,Female,Law,2.93,4,1,false,0.2646
+1826,23,Non-Binary,Arts,2.58,5,2,false,0.2299
+1827,26,Female,Biology,3.11,2,2,true,0.2371
+1828,18,Male,Biology,2.67,2,5,false,0.2159
+1829,26,Female,Education,3.75,1,2,false,0.2313
+1830,28,Non-Binary,Law,3.83,1,1,true,0.2295
+1831,24,Female,Business,3.16,1,5,false,0.2273
+1832,22,Female,Business,1.99,3,5,false,0.25
+1833,22,Female,Psychology,2.47,1,1,true,0.2501
+1834,25,Male,Engineering,2.59,1,4,false,0.2498
+1835,27,Female,Psychology,2.95,2,1,false,0.2431
+1836,23,Non-Binary,Arts,3.13,1,2,false,0.2459
+1837,27,Male,Business,2.34,1,5,false,0.2268
+1838,21,Non-Binary,Engineering,2.2,5,4,false,0.22
+1839,26,Non-Binary,Law,3.12,5,1,false,0.234
+1840,28,Male,Engineering,2.9,5,4,false,0.2514
+1841,18,Male,Engineering,3.94,1,4,false,0.2496
+1842,22,Female,Engineering,3,3,4,false,0.2341
+1843,20,Non-Binary,Nursing,3.11,4,3,false,0.2231
+1844,21,Male,Psychology,3.16,3,4,false,0.2302
+1845,24,Female,Arts,4,1,2,false,0.276
+1846,26,Non-Binary,Mathematics,3.17,5,5,true,0.2281
+1847,19,Non-Binary,Computer Science,2.41,5,5,true,0.2288
+1848,23,Male,Data Science,2.32,4,4,true,0.216
+1849,21,Male,Psychology,2.67,2,3,false,0.2314
+1850,26,Female,Business,3.43,3,5,false,0.2212
+1851,20,Non-Binary,Business,3.22,4,5,false,0.2438
+1852,28,Non-Binary,Nursing,3.41,5,2,false,0.2287
+1853,24,Non-Binary,Business,3.32,5,5,true,0.2401
+1854,21,Non-Binary,Biology,1.99,2,5,false,0.2571
+1855,22,Female,Computer Science,2.11,5,1,false,0.2466
+1856,19,Male,Mathematics,3.52,2,4,false,0.2523
+1857,25,Female,Arts,2.19,4,2,false,0.2272
+1858,24,Female,Data Science,3.83,5,1,false,0.2232
+1859,21,Non-Binary,Engineering,3.78,5,4,false,0.2245
+1860,21,Non-Binary,Engineering,2.9,1,4,false,0.2223
+1861,25,Non-Binary,Nursing,3.51,4,2,false,0.2187
+1862,19,Non-Binary,Nursing,3.56,2,3,false,0.2217
+1863,27,Male,Psychology,2.39,3,4,false,0.2319
+1864,19,Male,Engineering,2.63,3,4,false,0.2469
+1865,26,Male,Education,2.27,2,5,false,0.2375
+1866,18,Non-Binary,Engineering,4,5,4,false,0.2238
+1867,21,Female,Business,3.62,3,5,false,0.2201
+1868,24,Female,Business,2.84,5,5,true,0.2333
+1869,23,Non-Binary,Law,4,1,1,true,0.2364
+1870,19,Male,Law,1.81,3,1,false,0.2531
+1871,27,Male,Education,3.37,3,2,false,0.2286
+1872,22,Non-Binary,Computer Science,3,4,5,false,0.2188
+1873,21,Non-Binary,Arts,2.05,2,3,false,0.2272
+1874,20,Non-Binary,Computer Science,2.75,2,5,false,0.2232
+1875,24,Female,Business,2.87,3,5,false,0.2327
+1876,25,Male,Education,3.88,2,2,true,0.2348
+1877,21,Male,Psychology,2.89,2,1,false,0.23
+1878,19,Male,Mathematics,2.47,4,4,true,0.2478
+1879,23,Non-Binary,Arts,3.82,4,2,false,0.2668
+1880,23,Male,Engineering,2.76,1,4,false,0.2494
+1881,23,Female,Computer Science,3.55,5,1,false,0.2416
+1882,25,Non-Binary,Computer Science,2.07,1,5,false,0.2342
+1883,27,Female,Law,3.16,2,1,false,0.261
+1884,21,Female,Economics,2.85,1,5,false,0.2106
+1885,27,Male,Biology,1.97,1,5,false,0.2252
+1886,27,Male,Psychology,3.1,1,4,false,0.2352
+1887,26,Non-Binary,Engineering,3.22,1,4,false,0.2251
+1888,23,Female,Computer Science,3.16,5,1,false,0.2428
+1889,28,Female,Mathematics,3.51,2,4,false,0.2406
+1890,24,Non-Binary,Data Science,3.08,2,5,false,0.2186
+1891,27,Non-Binary,Arts,3.38,3,2,false,0.2726
+1892,23,Female,Arts,4,3,2,false,0.2711
+1893,21,Female,Mathematics,2.63,4,4,true,0.234
+1894,27,Non-Binary,Law,1.22,5,5,true,0.2581
+1895,26,Female,Psychology,3.49,3,1,false,0.2434
+1896,28,Male,Business,2.77,1,4,false,0.2233
+1897,21,Male,Data Science,3.01,3,4,false,0.2172
+1898,24,Male,Engineering,2.96,4,4,true,0.2502
+1899,21,Male,Law,3.71,2,1,false,0.248
+1900,23,Male,Education,2.51,4,5,false,0.2342
+1901,20,Non-Binary,Biology,2.71,2,5,false,0.2436
+1902,20,Male,Engineering,4,5,4,false,0.2504
+1903,18,Male,Mathematics,3.17,3,4,false,0.2503
+1904,22,Male,Nursing,4,5,2,false,0.2236
+1905,27,Male,Biology,4,2,2,true,0.2743
+1906,28,Non-Binary,Computer Science,3.09,5,5,true,0.2159
+1907,18,Non-Binary,Nursing,3.53,4,3,false,0.225
+1908,24,Female,Education,4,1,2,false,0.23
+1909,27,Female,Business,3.64,5,2,false,0.2289
+1910,22,Female,Economics,3.28,4,1,false,0.2077
+1911,26,Non-Binary,Computer Science,2.71,1,5,false,0.223
+1912,19,Male,Economics,2.79,1,4,false,0.2174
+1913,25,Male,Education,1.53,4,5,false,0.252
+1914,22,Male,Mathematics,2.31,2,4,false,0.2492
+1915,20,Female,Biology,3.13,3,5,false,0.2209
+1916,28,Female,Education,2.14,3,5,false,0.255
+1917,18,Non-Binary,Education,3.58,4,5,false,0.2467
+1918,19,Male,Biology,2.1,1,5,false,0.2256
+1919,23,Female,Business,3.22,4,5,false,0.2266
+1920,23,Female,Education,3.26,2,5,false,0.2354
+1921,22,Female,Computer Science,4,5,1,false,0.2417
+1922,19,Female,Mathematics,3.15,3,4,false,0.235
+1923,24,Male,Law,4,1,1,true,0.2427
+1924,28,Male,Computer Science,2.73,2,4,false,0.2185
+1925,19,Non-Binary,Engineering,1.62,3,3,true,0.2177
+1926,25,Non-Binary,Computer Science,2.65,3,5,false,0.2242
+1927,25,Female,Arts,3.04,1,2,false,0.2516
+1928,19,Male,Psychology,2.93,1,3,false,0.2347
+1929,23,Male,Biology,3.46,4,2,false,0.2389
+1930,22,Male,Business,3.85,3,4,false,0.2239
+1931,27,Female,Engineering,2.96,4,4,true,0.2359
+1932,25,Female,Biology,2.41,4,5,false,0.2321
+1933,24,Non-Binary,Economics,3.38,2,5,false,0.2147
+1934,27,Male,Education,3.3,2,2,true,0.2266
+1935,28,Female,Arts,3,5,2,false,0.2646
+1936,21,Male,Arts,3.22,5,2,false,0.2415
+1937,20,Non-Binary,Psychology,2.31,4,3,false,0.2454
+1938,21,Female,Business,3.44,1,5,false,0.2234
+1939,25,Male,Law,2.8,3,1,false,0.2444
+1940,19,Male,Arts,4,4,2,false,0.255
+1941,22,Female,Education,3.18,5,5,true,0.2374
+1942,19,Non-Binary,Data Science,3.79,4,5,false,0.2078
+1943,24,Non-Binary,Data Science,3.19,5,5,true,0.2167
+1944,21,Male,Education,3.41,3,4,false,0.2218
+1945,27,Non-Binary,Biology,2.6,3,5,false,0.2428
+1946,27,Non-Binary,Data Science,2.77,3,5,false,0.2231
+1947,24,Female,Nursing,3.3,2,2,true,0.2094
+1948,24,Female,Computer Science,3.23,3,1,false,0.2411
+1949,22,Male,Biology,3.12,2,2,true,0.2246
+1950,26,Male,Arts,2.64,1,2,false,0.2477
+1951,26,Female,Engineering,3.61,4,4,true,0.2365
+1952,27,Non-Binary,Business,2.69,4,5,false,0.2511
+1953,27,Female,Mathematics,3.56,1,4,false,0.2404
+1954,26,Female,Arts,3.4,5,2,false,0.2672
+1955,22,Non-Binary,Arts,2.92,4,2,false,0.2352
+1956,20,Male,Business,3.46,2,4,false,0.2222
+1957,18,Male,Biology,3.23,1,2,false,0.2108
+1958,20,Female,Engineering,2.02,3,4,false,0.23
+1959,22,Female,Education,3,2,5,false,0.2409
+1960,23,Female,Mathematics,3.62,4,4,true,0.2389
+1961,24,Female,Law,3.37,1,1,true,0.2652
+1962,24,Male,Computer Science,2.07,5,1,false,0.2244
+1963,19,Male,Data Science,3.82,2,4,false,0.2186
+1964,24,Male,Engineering,2.66,2,4,false,0.2496
+1965,23,Male,Biology,2.3,4,5,false,0.2208
+1966,18,Female,Data Science,4,2,1,false,0.2321
+1967,27,Male,Data Science,4,2,2,true,0.229
+1968,22,Female,Arts,3.24,1,2,false,0.2436
+1969,22,Female,Computer Science,3.74,1,1,true,0.2426
+1970,27,Male,Education,3.51,3,2,false,0.2327
+1971,26,Non-Binary,Psychology,2.51,3,3,true,0.2273
+1972,18,Female,Psychology,2.98,1,1,true,0.2544
+1973,25,Non-Binary,Law,2.77,1,1,true,0.2358
+1974,26,Male,Computer Science,3.23,3,4,false,0.2189
+1975,21,Non-Binary,Arts,2.3,5,3,false,0.2243
+1976,28,Female,Mathematics,4,1,4,false,0.2416
+1977,28,Male,Law,3.25,2,1,false,0.239
+1978,21,Male,Arts,2.96,2,2,true,0.2342
+1979,22,Non-Binary,Psychology,1.7,2,3,false,0.2446
+1980,26,Non-Binary,Education,4,5,2,false,0.2379
+1981,24,Male,Economics,2.69,3,4,false,0.2197
+1982,25,Female,Data Science,2.99,1,1,true,0.2246
+1983,21,Female,Data Science,3.27,1,1,true,0.2298
+1984,20,Male,Education,2.31,4,5,false,0.2389
+1985,20,Female,Computer Science,2.61,4,1,false,0.2486
+1986,25,Male,Business,3.75,3,2,false,0.228
+1987,19,Non-Binary,Biology,3.4,2,5,false,0.2309
+1988,27,Male,Engineering,2.94,5,4,false,0.2512
+1989,19,Female,Business,4,4,5,false,0.2142
+1990,27,Male,Education,3.47,2,2,true,0.2315
+1991,23,Male,Computer Science,3.84,1,1,true,0.2208
+1992,25,Female,Data Science,3.58,2,1,false,0.2226
+1993,28,Non-Binary,Biology,3.07,5,2,false,0.2441
+1994,22,Male,Data Science,3.97,1,4,false,0.2204
+1995,26,Male,Economics,2.83,4,4,true,0.221
+1996,24,Female,Data Science,3.49,3,1,false,0.2245
+1997,19,Female,Biology,3.01,4,5,false,0.2234
+1998,24,Male,Law,2.92,4,1,false,0.2456
+1999,19,Non-Binary,Economics,3.18,4,5,false,0.2198
+2000,27,Male,Engineering,2.39,5,4,false,0.2502

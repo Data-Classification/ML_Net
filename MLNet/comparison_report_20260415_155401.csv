@@ -1,0 +1,8 @@
+﻿RunId,RunName,Trainer,Seed,TestFraction,LearningRate,NumberOfLeaves,NumberOfIterations,MaxBins,L2,ModelPath,TrainedAtUtc,MacroAccuracy,MicroAccuracy,LogLoss,LogLossReduction,DurationSeconds,Accuracy,EvaluatedSamples,CorrectPredictions,IncorrectPredictions
+57fb945e52ae4a3db7496ffc827197a9,,lbfgs-maxent,42,0.2,,,,,,D:\old_data\code\MLTest\MLNet\SentimentModel.mlnet,2026-04-15T08:53:28.8315518+00:00,0.194711,0.201995,1.61455,-0.005,7.835,0.2115,2000,423,1577
+815fb96225344fdf80d27a88e2784020,,lbfgs-maxent,42,0.2,,,,,,C:\Users\Hieu\Desktop\code\MLNet\MLNet\SentimentModel.mlnet,2026-04-01T06:09:21.0024330+00:00,0.194236,0.201995,1.613345,-0.00425,1.857,,,,
+98d5bb350b3f4310b03c1708c228916d,,lbfgs-maxent,42,0.2,,,,,,C:\Users\Hieu\Desktop\code\MLNet\MLNet\SentimentModel.mlnet,2026-04-01T06:05:00.8579189+00:00,0.189615,0.197007,1.613625,-0.004424,1.587,,,,
+ebba5f4674e94da8973690e8730ac12d,,lbfgs-maxent,42,0.2,,,,,,C:\Users\Hieu\Desktop\code\MLNet\MLNet\SentimentModel.mlnet,2026-03-25T05:52:55.2513880+00:00,0.197351,0.204489,1.613593,-0.004404,1.003,,,,
+9256d9d3fb7a4977b6b3b776142de508,,lbfgs-maxent,42,0.2,,,,,,C:\Users\Hieu\Desktop\code\MLNet\MLNet\SentimentModel.mlnet,2026-03-25T05:47:38.5688703+00:00,0.201351,0.206983,1.613707,-0.004475,0.957,,,,
+0f9ad0743f1c44909c0f88ba0adf9c77,,lbfgs-maxent,42,0.2,,,,,,C:\Users\Hieu\Desktop\code\MLNet\MLNet\SentimentModel.mlnet,2026-03-25T05:39:18.0028940+00:00,0.194737,0.201995,1.61389,-0.004589,1.104,,,,
+0af69cf11bd44edb989f8313275d61a6,,lbfgs-maxent,42,0.2,,,,,,C:\Users\Hieu\Desktop\code\MLNet\MLNet\SentimentModel.mlnet,2026-03-25T05:33:36.9720575+00:00,0.183586,0.19202,1.613492,-0.004341,0.968,,,,

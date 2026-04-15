@@ -1,4 +1,4 @@
-﻿{
+{
   "Scenario": "Classification",
   "DataSource": {
     "Version": 3,
@@ -8,7 +8,7 @@
     "KeepPunctuations": false,
     "AllowQuoting": false,
     "Type": "TabularFile",
-    "FilePath": "C:\\Users\\Hieu\\Desktop\\code\\MLTest\\MLTest\\Student_mental_health_data.csv",
+    "FilePath": "C:\\Users\\Hieu\\Desktop\\code\\MLNet\\MLNet\\Student_mental_health_data.csv",
     "Delimiter": ",",
     "DecimalMarker": ".",
     "HasHeader": true,
@@ -391,7 +391,7 @@
     },
     "Schema": "e0 * e1 * e2 * e3 * e4 * (e5 + e6 + e7 + e8 + e9 + e10 + e11) * e12",
     "MetricName": "MacroAccuracy",
-    "ModelFilePath": "C:\\Users\\Hieu\\Desktop\\code\\MLTest\\MLTest\\SentimentModel.mlnet"
+    "ModelFilePath": "C:\\Users\\Hieu\\Desktop\\code\\MLNet\\MLNet\\SentimentModel.mlnet"
   },
   "Type": "TrainingConfig",
   "Version": 5,

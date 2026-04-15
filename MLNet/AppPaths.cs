@@ -1,4 +1,4 @@
-namespace MLTest;
+namespace MLNet;
 
 internal static class AppPaths
 {
@@ -53,7 +53,7 @@ internal static class AppPaths
 
         while (current is not null)
         {
-            if (File.Exists(Path.Combine(current.FullName, "MLTest.csproj")))
+            if (File.Exists(Path.Combine(current.FullName, "MLNet.csproj")))
             {
                 return current.FullName;
             }

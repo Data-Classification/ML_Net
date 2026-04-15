@@ -1,6 +1,6 @@
-﻿using static System.Console;
+using static System.Console;
 
-namespace MLTest;
+namespace MLNet;
 
 internal class Program
 {
@@ -20,7 +20,7 @@ internal class Program
         var command = args[0];
         var commandArgs = args.Skip(1).ToArray();
 
-        WriteLine("=== MLTest - YearOfStudy workflow ===");
+        WriteLine("=== MLNet - YearOfStudy workflow ===");
 
         return command.ToLowerInvariant() switch
         {
@@ -281,14 +281,14 @@ internal class Program
         var defaultTrainingLog = AppPaths.GetTrainingRunsJsonlPath(launchDirectory);
         var defaultEvalDir = AppPaths.ResolveProjectDirectory(launchDirectory);
 
-        WriteLine("=== MLTest - YearOfStudy workflow ===");
+        WriteLine("=== MLNet - YearOfStudy workflow ===");
         WriteLine("Train model -> Predict data_set_1.csv -> Evaluate with data_set_1_full.csv");
         WriteLine();
         WriteLine("Usage:");
-        WriteLine("  dotnet run --project .\\MLTest\\MLTest.csproj -- train [model-path] [--data <train-csv>] [--model-out <model-path>] [--runs-dir <training-runs-dir>] [--trainer <lbfgs|sdca|lightgbm>] [--seed <int>] [--test-fraction <0..1>] [--run-name <name>] [--learning-rate <float>] [--number-of-leaves <int>] [--number-of-iterations <int>] [--max-bins <int>] [--l2 <float>]");
-        WriteLine("  dotnet run --project .\\MLTest\\MLTest.csproj -- predict [predict-csv] [--model <model-path>] [--out <predictions-csv>] [--summary <summary-json>] [--verbose]");
-        WriteLine("  dotnet run --project .\\MLTest\\MLTest.csproj -- evaluate [predict-csv] [ground-truth-csv] [--model <model-path>] [--out <evaluation-csv>] [--summary <summary-json>] [--verbose]");
-        WriteLine("  dotnet run --project .\\MLTest\\MLTest.csproj -- compare [--runs-dir <training-runs-dir>] [--training-log <training_runs.jsonl>] [--eval-dir <dir-containing-summary_evaluation_json>] [--out <comparison.csv>] [--out-json <comparison.json>]");
+        WriteLine("  dotnet run --project .\\MLNet\\MLNet.csproj -- train [model-path] [--data <train-csv>] [--model-out <model-path>] [--runs-dir <training-runs-dir>] [--trainer <lbfgs|sdca|lightgbm>] [--seed <int>] [--test-fraction <0..1>] [--run-name <name>] [--learning-rate <float>] [--number-of-leaves <int>] [--number-of-iterations <int>] [--max-bins <int>] [--l2 <float>]");
+        WriteLine("  dotnet run --project .\\MLNet\\MLNet.csproj -- predict [predict-csv] [--model <model-path>] [--out <predictions-csv>] [--summary <summary-json>] [--verbose]");
+        WriteLine("  dotnet run --project .\\MLNet\\MLNet.csproj -- evaluate [predict-csv] [ground-truth-csv] [--model <model-path>] [--out <evaluation-csv>] [--summary <summary-json>] [--verbose]");
+        WriteLine("  dotnet run --project .\\MLNet\\MLNet.csproj -- compare [--runs-dir <training-runs-dir>] [--training-log <training_runs.jsonl>] [--eval-dir <dir-containing-summary_evaluation_json>] [--out <comparison.csv>] [--out-json <comparison.json>]");
         WriteLine();
         WriteLine("Default compare behavior:");
         WriteLine($"  Runs directory    : {defaultRunsDir}");
@@ -298,14 +298,14 @@ internal class Program
         WriteLine("  Override jsonl    : --training-log <path>");
         WriteLine();
         WriteLine("Examples:");
-        WriteLine("  dotnet run --project .\\MLTest\\MLTest.csproj -- train");
-        WriteLine("  dotnet run --project .\\MLTest\\MLTest.csproj -- train --runs-dir .\\MLTest\\training_runs");
-        WriteLine("  dotnet run --project .\\MLTest\\MLTest.csproj -- train --trainer sdca --seed 2026 --test-fraction 0.2 --run-name sdca_baseline");
-        WriteLine("  dotnet run --project .\\MLTest\\MLTest.csproj -- train --trainer lightgbm --learning-rate 0.1 --number-of-leaves 64 --number-of-iterations 300 --max-bins 255 --l2 0.1");
-        WriteLine("  dotnet run --project .\\MLTest\\MLTest.csproj -- predict .\\MLTest\\data_set_1.csv --model .\\MLTest\\SentimentModel.mlnet");
-        WriteLine("  dotnet run --project .\\MLTest\\MLTest.csproj -- evaluate .\\MLTest\\data_set_1.csv .\\MLTest\\data_set_1_full.csv --model .\\MLTest\\SentimentModel.mlnet");
-        WriteLine("  dotnet run --project .\\MLTest\\MLTest.csproj -- compare --eval-dir .\\MLTest");
-        WriteLine("  dotnet run --project .\\MLTest\\MLTest.csproj -- compare --runs-dir .\\MLTest\\training_runs --eval-dir .\\MLTest");
+        WriteLine("  dotnet run --project .\\MLNet\\MLNet.csproj -- train");
+        WriteLine("  dotnet run --project .\\MLNet\\MLNet.csproj -- train --runs-dir .\\MLNet\\training_runs");
+        WriteLine("  dotnet run --project .\\MLNet\\MLNet.csproj -- train --trainer sdca --seed 2026 --test-fraction 0.2 --run-name sdca_baseline");
+        WriteLine("  dotnet run --project .\\MLNet\\MLNet.csproj -- train --trainer lightgbm --learning-rate 0.1 --number-of-leaves 64 --number-of-iterations 300 --max-bins 255 --l2 0.1");
+        WriteLine("  dotnet run --project .\\MLNet\\MLNet.csproj -- predict .\\MLNet\\data_set_1.csv --model .\\MLNet\\SentimentModel.mlnet");
+        WriteLine("  dotnet run --project .\\MLNet\\MLNet.csproj -- evaluate .\\MLNet\\data_set_1.csv .\\MLNet\\data_set_1_full.csv --model .\\MLNet\\SentimentModel.mlnet");
+        WriteLine("  dotnet run --project .\\MLNet\\MLNet.csproj -- compare --eval-dir .\\MLNet");
+        WriteLine("  dotnet run --project .\\MLNet\\MLNet.csproj -- compare --runs-dir .\\MLNet\\training_runs --eval-dir .\\MLNet");
     }
 
     private static int HandleCompare(string[] args, string launchDirectory)

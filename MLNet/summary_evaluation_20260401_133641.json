@@ -1,9 +1,9 @@
-﻿{
-  "generatedAtUtc": "2026-04-01T06:14:24.8112064\u002B00:00",
+{
+  "generatedAtUtc": "2026-04-01T06:36:41.0853439\u002B00:00",
   "mode": "evaluate",
   "command": "evaluate data_set_1.csv data_set_1_full.csv",
   "model": {
-    "path": "C:\\Users\\Hieu\\Desktop\\code\\MLTest\\MLTest\\bin\\Debug\\net10.0\\SentimentModel.mlnet",
+    "path": "C:\\Users\\Hieu\\Desktop\\code\\MLNet\\MLNet\\bin\\Debug\\net10.0\\SentimentModel.mlnet",
     "trainer": null,
     "runId": null,
     "trainedAtUtc": null,
@@ -12,12 +12,12 @@
     "seed": null
   },
   "input": {
-    "predictCsvPath": "C:\\Users\\Hieu\\Desktop\\code\\MLTest\\MLTest\\data_set_1.csv",
-    "groundTruthCsvPath": "C:\\Users\\Hieu\\Desktop\\code\\MLTest\\MLTest\\data_set_1_full.csv"
+    "predictCsvPath": "C:\\Users\\Hieu\\Desktop\\code\\MLNet\\MLNet\\data_set_1.csv",
+    "groundTruthCsvPath": "C:\\Users\\Hieu\\Desktop\\code\\MLNet\\MLNet\\data_set_1_full.csv"
   },
   "output": {
-    "outputCsvPath": "C:\\Users\\Hieu\\Desktop\\code\\MLTest\\MLTest\\evaluation_20260401_131424.csv",
-    "summaryJsonPath": "C:\\Users\\Hieu\\Desktop\\code\\MLTest\\MLTest\\summary_evaluation_20260401_131424.json"
+    "outputCsvPath": "C:\\Users\\Hieu\\Desktop\\code\\MLNet\\MLNet\\evaluation_20260401_133641.csv",
+    "summaryJsonPath": "C:\\Users\\Hieu\\Desktop\\code\\MLNet\\MLNet\\summary_evaluation_20260401_133641.json"
   },
   "metrics": {
     "totalSamples": 2000,

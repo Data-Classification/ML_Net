@@ -1,19 +1,19 @@
 {
   "$schema": "https://json.schemastore.org/launchsettings.json",
   "profiles": {
-    "MLTest (Train)": {
+    "MLNet (Train)": {
       "commandName": "Project",
       "commandLineArgs": "train"
     },
-    "MLTest (Predict data_set_1)": {
+    "MLNet (Predict data_set_1)": {
       "commandName": "Project",
       "commandLineArgs": "predict data_set_1.csv"
     },
-    "MLTest (Evaluate data_set_1)": {
+    "MLNet (Evaluate data_set_1)": {
       "commandName": "Project",
       "commandLineArgs": "evaluate data_set_1.csv data_set_1_full.csv"
     },
-    "MLTest (Compare reports)": {
+    "MLNet (Compare reports)": {
       "commandName": "Project",
       "commandLineArgs": "compare"
     }

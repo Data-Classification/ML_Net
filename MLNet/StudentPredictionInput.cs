@@ -1,4 +1,4 @@
-namespace MLTest;
+namespace MLNet;
 
 public sealed class StudentPredictionInput
 {

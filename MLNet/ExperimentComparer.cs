@@ -3,7 +3,7 @@ using System.Text;
 using System.Text.Json;
 using static System.Console;
 
-namespace MLTest;
+namespace MLNet;
 
 internal static class ExperimentComparer
 {

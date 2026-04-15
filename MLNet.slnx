@@ -1,4 +1,4 @@
 <Solution>
-  <Project Path="MLTest/MLTest.csproj" />
+  <Project Path="MLNet/MLNet.csproj" />
   <Project Path="MLNET_API/MLNET_API.csproj" />
 </Solution>

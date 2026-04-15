@@ -1,6 +1,6 @@
 using Microsoft.ML;
 
-namespace MLTest;
+namespace MLNet;
 
 public sealed class YearOfStudyPredictionService
 {

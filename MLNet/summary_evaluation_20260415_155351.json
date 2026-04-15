@@ -1,0 +1,47 @@
+﻿{
+  "generatedAtUtc": "2026-04-15T08:53:51.8429840\u002B00:00",
+  "mode": "evaluate",
+  "command": "evaluate data_set_1.csv data_set_1_full.csv",
+  "model": {
+    "path": "D:\\old_data\\code\\MLTest\\MLNet\\SentimentModel.mlnet",
+    "trainer": "lbfgs-maxent",
+    "runId": "57fb945e52ae4a3db7496ffc827197a9",
+    "trainedAtUtc": "2026-04-15T08:53:28.8315518\u002B00:00",
+    "trainingDataPath": "D:\\old_data\\code\\MLTest\\MLNet\\Student_mental_health_data.csv",
+    "testFraction": 0.2,
+    "seed": 42
+  },
+  "input": {
+    "predictCsvPath": "D:\\old_data\\code\\MLTest\\MLNet\\data_set_1.csv",
+    "groundTruthCsvPath": "D:\\old_data\\code\\MLTest\\MLNet\\data_set_1_full.csv"
+  },
+  "output": {
+    "outputCsvPath": "D:\\old_data\\code\\MLTest\\MLNet\\evaluation_20260415_155351.csv",
+    "summaryJsonPath": "D:\\old_data\\code\\MLTest\\MLNet\\summary_evaluation_20260415_155351.json"
+  },
+  "metrics": {
+    "totalSamples": 2000,
+    "evaluatedSamples": 2000,
+    "predictedSamples": 2000,
+    "correctPredictions": 423,
+    "incorrectPredictions": 1577,
+    "accuracy": 0.2115,
+    "fallbackMatchedByRowOrder": 0
+  },
+  "distribution": {
+    "predicted": {
+      "4": 514,
+      "5": 545,
+      "1": 429,
+      "2": 398,
+      "3": 114
+    },
+    "actual": {
+      "5": 386,
+      "1": 394,
+      "3": 374,
+      "4": 424,
+      "2": 422
+    }
+  }
+}
