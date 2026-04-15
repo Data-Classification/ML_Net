@@ -4,10 +4,10 @@
 
 Mục tiêu: tách phần machine learning ra khỏi lớp API để hệ thống có thể tái sử dụng mô hình dự đoán một cách rõ ràng và ổn định.
 
-- **Hoàng Khôi Nguyên**: phụ trách lõi dự đoán cục bộ của hệ thống.
-- **Nguyễn Minh Hiếu**: phụ trách lớp Web API của hệ thống (để client/ứng dụng khác gọi trực tiếp).
-- **Tạ Việt Quang Khải**: phụ trách tích hợp dịch vụ bên ngoài, cụ thể là `Ollama Cloud` và cấu hình API ngoài.
-- **Trịnh Xuân Thiện**: phụ trách luồng tổng hợp của API (ghép dự đoán cục bộ với giải thích), xử lý batch và kiểm thử toàn bộ luồng.
+- **Hoàng Khôi Nguyên - DTC235210040**: phụ trách lõi dự đoán cục bộ của hệ thống.
+- **Nguyễn Minh Hiếu - DTC235210023**: phụ trách lớp Web API của hệ thống (để client/ứng dụng khác gọi trực tiếp).
+- **Tạ Việt Quang Khải - DTC235210074**: phụ trách tích hợp dịch vụ bên ngoài, cụ thể là `Ollama Cloud` và cấu hình API ngoài.
+- **Trịnh Xuân Thiện - DTC245340018**: phụ trách luồng tổng hợp của API (ghép dự đoán cục bộ với giải thích), xử lý batch và kiểm thử toàn bộ luồng.
 
 ## Tổng quan
 
