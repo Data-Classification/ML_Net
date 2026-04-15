@@ -2,15 +2,16 @@
 
 ## Overview
 
-This solution now covers the two required parts of the assignment:
+This solution contains two projects:
 
-- `Cung cấp API`: `MLNET_API` exposes health, single prediction, and batch prediction endpoints.
-- `Sử dụng API từ nguồn khác`: `MLNET_API` calls Google Gemini through `Google.GenAI` after local prediction to generate a short explanation when external configuration is available.
+- `MLTest`: existing console/ML project that owns training, evaluation, comparison, artifacts, and the reusable local prediction core.
+- `MLNET_API`: ASP.NET Core Web API host that exposes health, single prediction, and batch prediction endpoints.
 
-Projects:
+The external explanation provider is now `ollama-cloud`. The API keeps the same safe flow:
 
-- `MLTest`: existing console/ML project. It still owns training, evaluation, comparison, artifacts, and the reusable prediction core.
-- `MLNET_API`: ASP.NET Core Web API host used for demo/testing via Swagger or Postman.
+1. Run local prediction first.
+2. Call Ollama Cloud only for `POST /predict`.
+3. Return the local prediction even if the external explanation fails.
 
 ## Architecture
 
@@ -26,9 +27,10 @@ Client / Swagger / Postman
                 |       |
                 |       +--> SentimentModel.mlnet
                 |
-                +--> GoogleGenAiPredictionExplanationService (optional)
+                +--> OllamaCloudPredictionExplanationService (optional)
                         |
-                        +--> Google Gemini API via Google.GenAI
+                        +--> https://ollama.com/api/generate
+                        +--> Authorization: Bearer <API_KEY>
         |
         v
    JSON response
@@ -39,9 +41,9 @@ Client / Swagger / Postman
 - `GET /health`
 - `POST /predict`
 - `POST /predict/batch`
-- `POST /predict` fallback when external explanation is unavailable
+- `POST /predict` fallback when Ollama Cloud is unavailable
 
-What is intentionally still out of scope:
+Still intentionally out of scope:
 
 - Auth / database / frontend
 - CSV upload API
@@ -56,25 +58,28 @@ What is intentionally still out of scope:
 dotnet build .\MLTest.slnx
 ```
 
-2. Optional: configure external explanation if you want Gemini explanations to run.
+2. Optional: configure Ollama Cloud explanation.
 
 User-secrets:
 
 ```powershell
-dotnet user-secrets set "PredictionExplanation:ApiKey" "<your-google-api-key>" --project .\MLNET_API\MLNET_API.csproj
-dotnet user-secrets set "PredictionExplanation:Model" "gemini-2.0-flash" --project .\MLNET_API\MLNET_API.csproj
+dotnet user-secrets set "PredictionExplanation:ApiKey" "<your-ollama-api-key>" --project .\MLNET_API\MLNET_API.csproj
+dotnet user-secrets set "PredictionExplanation:BaseUrl" "https://ollama.com/api" --project .\MLNET_API\MLNET_API.csproj
+dotnet user-secrets set "PredictionExplanation:Model" "gemma3:4b-cloud" --project .\MLNET_API\MLNET_API.csproj
 ```
 
 Environment variable alternative:
 
 ```powershell
-$env:GOOGLE_API_KEY = "<your-google-api-key>"
+$env:OLLAMA_API_KEY = "<your-ollama-api-key>"
+$env:PredictionExplanation__BaseUrl = "https://ollama.com/api"
+$env:PredictionExplanation__Model = "gemma3:4b-cloud"
 ```
 
 3. Run the API:
 
 ```powershell
-dotnet run --project .\MLNET_API\MLNET_API.csproj
+dotnet run --project .\MLNET_API\MLNET_API.csproj --launch-profile http
 ```
 
 4. Open Swagger:
@@ -83,72 +88,59 @@ dotnet run --project .\MLNET_API\MLNET_API.csproj
 
 ## Configuration
 
-`MLNET_API/appsettings.json` now exposes the two main config groups:
+`MLNET_API/appsettings.json` exposes two main config groups:
 
 - `Prediction:ModelPath`
-  Use this only if you want to override the default model path resolver. If left empty, the API resolves `MLTest/SentimentModel.mlnet` automatically during local development and falls back to the output copy when needed.
+  Optional override for model resolution. If left empty, the API resolves `MLTest/SentimentModel.mlnet` automatically during local development and falls back to the output copy when needed.
 - `PredictionExplanation`
-  Controls Google Gemini explanation generation:
+  Controls Ollama Cloud explanation generation:
   - `Enabled`
+  - `Provider`
   - `ApiKey`
+  - `BaseUrl`
   - `Model`
   - `TimeoutMilliseconds`
 
 Do not store a real API key in `appsettings.json`.
 
-## Demo Endpoints
+## External Explanation Behavior
+
+- Default provider: `ollama-cloud`
+- Target API: `https://ollama.com/api/generate`
+- Auth: `Authorization: Bearer <API_KEY>`
+- Request mode: `stream=false`
+- Where it runs: local prediction first, explanation second, only for `POST /predict`
+- Fallback behavior: if the API key is missing, the key is rejected, the base URL is invalid/unreachable, the provider times out, or the cloud response is empty, the API still returns the local prediction and marks `explanation.available = false`
 
 Detailed payload examples are in [API_USAGE.md](/D:/old_data/code/MLTest/API_USAGE.md).
 
-Available endpoints:
-
-- `GET /health`
-- `POST /predict`
-- `POST /predict/batch`
-
-## External API Usage
-
-- Provider: Google Gemini through `Google.GenAI`
-- Where it runs:
-  local prediction first, explanation second, only for `POST /predict`
-- Failure behavior:
-  if the key is missing, the provider errors, or timeout happens, the API still returns the local prediction and sets `explanation.available = false` with a status/message
-
 ## Manual Verification Summary
 
-Latest local verification:
+Latest local verification on April 15, 2026:
 
 - Solution build: passed
 - Swagger UI endpoint: usable
 - `GET /health`: passed
-- `POST /predict`: passed
-- `POST /predict/batch`: passed
-- `POST /predict` without external key: passed, local prediction still returned and `explanation.status = missing_api_key`
+- `POST /predict` with no API key: passed, local prediction still returned and `explanation.status = missing_api_key`
+- `POST /predict` with a fake API key against Ollama Cloud: passed, local prediction still returned and `explanation.status = unauthorized`
+- `POST /predict` with bad base URL `https://example.invalid/api`: passed, local prediction still returned and `explanation.status = connection_error`
+- `POST /predict/batch`: still works and keeps `explanation = not_requested`
 
 Current environment limitation:
 
-- No real Gemini API key was available in environment variables or user-secrets during verification, so the live success path for explanation generation is code-ready but not runtime-verified here.
+- No real Ollama Cloud API key was available in environment variables or user-secrets during verification, so the live success path for explanation generation is code-ready but not runtime-verified here.
 
 ## Important Files
 
 - [MLNET_API/Program.cs](/D:/old_data/code/MLTest/MLNET_API/Program.cs)
 - [MLNET_API/Controllers/PredictionController.cs](/D:/old_data/code/MLTest/MLNET_API/Controllers/PredictionController.cs)
 - [MLNET_API/Services/PredictionApiService.cs](/D:/old_data/code/MLTest/MLNET_API/Services/PredictionApiService.cs)
-- [MLNET_API/Services/GoogleGenAiPredictionExplanationService.cs](/D:/old_data/code/MLTest/MLNET_API/Services/GoogleGenAiPredictionExplanationService.cs)
+- [MLNET_API/Services/OllamaCloudPredictionExplanationService.cs](/D:/old_data/code/MLTest/MLNET_API/Services/OllamaCloudPredictionExplanationService.cs)
 - [MLTest/YearOfStudyPredictionService.cs](/D:/old_data/code/MLTest/MLTest/YearOfStudyPredictionService.cs)
 - [API_USAGE.md](/D:/old_data/code/MLTest/API_USAGE.md)
 
-## Assignment Coverage
+## Known Limitations
 
-The system now satisfies the core goals of bai 3 in these points:
-
-- Provided a working Web API over the existing ML model.
-- Exposed demo-friendly endpoints for health, single prediction, and batch prediction.
-- Integrated an external API after prediction to enrich the response with natural-language explanation.
-- Preserved the original ML console workflow instead of rewriting the project from scratch.
-
-Known limitations:
-
-- External explanation success still needs one live run with a real key.
+- External explanation success still needs one live run with a real Ollama Cloud API key.
 - Batch responses keep explanation as `not_requested` for now.
 - No evaluate/compare API was added because it is outside the prompt chain scope.

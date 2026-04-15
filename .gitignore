@@ -4,3 +4,6 @@ obj/
 prompts/
 clean-prompts.bat
 *.zip
+.github/
+*.md
+appsettings.json

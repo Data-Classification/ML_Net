@@ -2,26 +2,27 @@
 
 ## Swagger
 
-- Start the API: `dotnet run --project .\MLNET_API\MLNET_API.csproj`
+- Start the API: `dotnet run --project .\MLNET_API\MLNET_API.csproj --launch-profile http`
 - Swagger UI: `http://localhost:5157/swagger`
 
-## External Explanation
+## Quick Ollama Cloud Setup
 
-- Provider: `Google.GenAI` (Gemini Developer API).
-- Flow: local ML prediction runs first; explanation generation runs afterward only for `POST /predict`.
-- The API never hardcodes the secret. Keep `PredictionExplanation:ApiKey` empty in `appsettings.json` and supply the real key via user-secrets or environment variables.
+The explanation provider runs only for `POST /predict`. Local prediction always runs first.
 
 Recommended local setup with user-secrets:
 
 ```powershell
-dotnet user-secrets set "PredictionExplanation:ApiKey" "<your-google-api-key>" --project .\MLNET_API\MLNET_API.csproj
-dotnet user-secrets set "PredictionExplanation:Model" "gemini-2.0-flash" --project .\MLNET_API\MLNET_API.csproj
+dotnet user-secrets set "PredictionExplanation:ApiKey" "<your-ollama-api-key>" --project .\MLNET_API\MLNET_API.csproj
+dotnet user-secrets set "PredictionExplanation:BaseUrl" "https://ollama.com/api" --project .\MLNET_API\MLNET_API.csproj
+dotnet user-secrets set "PredictionExplanation:Model" "gemma3:4b-cloud" --project .\MLNET_API\MLNET_API.csproj
 ```
 
-Alternative environment variables:
+Environment variable alternative:
 
 ```powershell
-$env:GOOGLE_API_KEY = "<your-google-api-key>"
+$env:OLLAMA_API_KEY = "<your-ollama-api-key>"
+$env:PredictionExplanation__BaseUrl = "https://ollama.com/api"
+$env:PredictionExplanation__Model = "gemma3:4b-cloud"
 ```
 
 Supported config section:
@@ -29,19 +30,52 @@ Supported config section:
 ```json
 "PredictionExplanation": {
   "Enabled": true,
+  "Provider": "ollama-cloud",
   "ApiKey": "",
-  "Model": "gemini-2.0-flash",
+  "BaseUrl": "https://ollama.com/api",
+  "Model": "gemma3:4b-cloud",
   "TimeoutMilliseconds": 10000
 }
 ```
 
+Request details:
+
+- Provider: `ollama-cloud`
+- HTTP target: `https://ollama.com/api/generate`
+- Auth: `Authorization: Bearer <API_KEY>`
+- Payload includes `model`, `prompt`, and `stream=false`
+
 Fallback behavior:
 
-- If the key is missing, the model name is missing, the external provider times out, or the provider returns an error, `/predict` still returns the local prediction with `explanation.available = false` and a status/message that explains the fallback.
+- If the API key is missing, the key is rejected, the base URL is invalid/unreachable, the provider times out, or the cloud response is empty, `/predict` still returns the local prediction with `explanation.available = false` and a status/message that explains the fallback.
+
+## Quick Manual Test
+
+1. Start the API.
+2. Check health:
+
+```powershell
+Invoke-RestMethod -Uri "http://localhost:5157/health"
+```
+
+3. Send one prediction request:
+
+```powershell
+$body = @{
+  studentId = 1
+  age = 22
+  gender = "Male"
+  major = "Economics"
+  gpa = 3.16
+} | ConvertTo-Json
+
+Invoke-RestMethod -Uri "http://localhost:5157/predict" `
+  -Method Post `
+  -ContentType "application/json" `
+  -Body $body
+```
 
 ## `GET /health`
-
-- Purpose: check API availability and whether the prediction model can be loaded.
 
 Sample success response:
 
@@ -57,8 +91,6 @@ Sample success response:
 
 ## `POST /predict`
 
-- Purpose: predict `YearOfStudy` for one student record.
-
 Sample request:
 
 ```json
@@ -71,7 +103,27 @@ Sample request:
 }
 ```
 
-Sample success response:
+Expected explanation success shape when a real Ollama Cloud API key and valid model are configured:
+
+```json
+{
+  "modelPath": "D:\\old_data\\code\\MLTest\\MLTest\\SentimentModel.mlnet",
+  "predictedYearOfStudy": 4,
+  "rawPredictedLabel": 4,
+  "topScore": 0.2199474,
+  "scores": [0.20363325, 0.19287746, 0.2199474, 0.19200988, 0.19153203],
+  "explanation": {
+    "status": "success",
+    "available": true,
+    "provider": "ollama-cloud",
+    "model": "gemma3:4b-cloud",
+    "text": "The model predicts this student is in year 4. This is only a short model-based estimate from the provided features, not a confirmed fact.",
+    "message": null
+  }
+}
+```
+
+Actual fallback example from this environment with no API key configured:
 
 ```json
 {
@@ -83,15 +135,22 @@ Sample success response:
   "explanation": {
     "status": "missing_api_key",
     "available": false,
-    "provider": "google-genai",
-    "model": "gemini-2.0-flash",
+    "provider": "ollama-cloud",
+    "model": "gemma3:4b-cloud",
     "text": null,
-    "message": "External explanation is unavailable because no API key was configured."
+    "message": "External explanation is unavailable because no Ollama Cloud API key was configured."
   }
 }
 ```
 
-When a valid key/model is configured and the external provider is available, the same `explanation` object switches to `status = "success"`, `available = true`, and `text` contains a short natural-language explanation.
+Other fallback statuses you may see during testing:
+
+- `unauthorized`: API key was rejected by Ollama Cloud
+- `connection_error`: base URL is unreachable or DNS/network failed
+- `timeout`: cloud request exceeded the configured timeout
+- `endpoint_not_found`: wrong API path/base URL
+- `model_not_found`: configured model name was rejected by the provider
+- `http_error`: other non-success HTTP response from Ollama Cloud
 
 Sample validation error:
 
@@ -113,136 +172,32 @@ Sample validation error:
 
 ## `POST /predict/batch`
 
-- Purpose: predict `YearOfStudy` for many student records in one request.
-- Item-level validation errors do not fail the entire batch. The API keeps processing the remaining valid records.
-
-Sample request:
-
-```json
-{
-  "students": [
-    {
-      "studentId": 1,
-      "age": 22,
-      "gender": "Male",
-      "major": "Economics",
-      "gpa": 3.16
-    },
-    {
-      "studentId": 2,
-      "age": 25,
-      "gender": "Female",
-      "major": "Economics",
-      "gpa": 2.8
-    }
-  ]
-}
-```
-
-Sample response:
+- Batch prediction still reuses the same local prediction core.
+- Batch explanation is intentionally not enabled in this demo.
+- Each successful batch item keeps:
 
 ```json
 {
-  "totalRecords": 2,
-  "successCount": 2,
-  "failureCount": 0,
-  "results": [
-    {
-      "index": 0,
-      "studentId": 1,
-      "success": true,
-      "prediction": {
-        "modelPath": "D:\\old_data\\code\\MLTest\\MLTest\\SentimentModel.mlnet",
-        "predictedYearOfStudy": 4,
-        "rawPredictedLabel": 4,
-        "topScore": 0.2199474,
-        "scores": [0.20363325, 0.19287746, 0.2199474, 0.19200988, 0.19153203],
-        "explanation": {
-          "status": "not_requested",
-          "available": false,
-          "provider": null,
-          "model": null,
-          "text": null,
-          "message": "Explanation was not requested for this response."
-        }
-      },
-      "errors": []
-    },
-    {
-      "index": 1,
-      "studentId": 2,
-      "success": true,
-      "prediction": {
-        "modelPath": "D:\\old_data\\code\\MLTest\\MLTest\\SentimentModel.mlnet",
-        "predictedYearOfStudy": 5,
-        "rawPredictedLabel": 5,
-        "topScore": 0.20888862,
-        "scores": [0.20484312, 0.17615987, 0.20737807, 0.20888862, 0.20273033],
-        "explanation": {
-          "status": "not_requested",
-          "available": false,
-          "provider": null,
-          "model": null,
-          "text": null,
-          "message": "Explanation was not requested for this response."
-        }
-      },
-      "errors": []
-    }
-  ]
+  "explanation": {
+    "status": "not_requested",
+    "available": false,
+    "provider": null,
+    "model": null,
+    "text": null,
+    "message": "Explanation was not requested for this response."
+  }
 }
 ```
 
-Mixed valid/invalid batch behavior:
+## Latest Manual Verification
 
-```json
-{
-  "totalRecords": 2,
-  "successCount": 1,
-  "failureCount": 1,
-  "results": [
-    {
-      "index": 0,
-      "studentId": 1,
-      "success": true,
-      "prediction": {
-        "modelPath": "D:\\old_data\\code\\MLTest\\MLTest\\SentimentModel.mlnet",
-        "predictedYearOfStudy": 4,
-        "rawPredictedLabel": 4,
-        "topScore": 0.2199474,
-        "scores": [0.20363325, 0.19287746, 0.2199474, 0.19200988, 0.19153203],
-        "explanation": {
-          "status": "not_requested",
-          "available": false,
-          "provider": null,
-          "model": null,
-          "text": null,
-          "message": "Explanation was not requested for this response."
-        }
-      },
-      "errors": []
-    },
-    {
-      "index": 1,
-      "studentId": 2,
-      "success": false,
-      "prediction": null,
-      "errors": [
-        "Major is required.",
-        "GPA must be between 0 and 4."
-      ]
-    }
-  ]
-}
-```
+Verification run on April 15, 2026:
 
-Latest manual batch test summary:
+- `GET /health`: passed
+- `POST /predict` with no API key: passed, local prediction returned with `explanation.status = missing_api_key`
+- `POST /predict` with fake API key against `https://ollama.com/api`: passed, local prediction returned with `explanation.status = unauthorized`
+- `POST /predict` with bad base URL `https://example.invalid/api`: passed, local prediction returned with `explanation.status = connection_error`
 
-- `POST /predict/batch` with 2 valid records returned `200`, `successCount=2`, `failureCount=0`.
-- `POST /predict/batch` with 1 valid record and 1 invalid record returned `200`, `successCount=1`, `failureCount=1`, and the invalid item reported its own `errors` array without breaking the whole batch.
+What was not verified here:
 
-Latest manual external explanation test summary:
-
-- Current environment had no `GOOGLE_API_KEY`, `GEMINI_API_KEY`, or user-secret configured for `MLNET_API`.
-- `POST /predict` still returned `200` with the local prediction, while `explanation.status` was `missing_api_key` and `explanation.available` was `false`.
-- Success-path explanation generation is code/config ready, but it was not runtime-verified in this environment because no real API key was available.
+- Live `success` response from Ollama Cloud, because no real API key was available in this environment.
