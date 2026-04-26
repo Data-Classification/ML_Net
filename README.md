@@ -32,6 +32,8 @@ Lưu ý quan trọng: tên file model hiện tại là `SentimentModel.mlnet` (d
 - [10. Kết quả mẫu hiện có trong repo](#10-kết-quả-mẫu-hiện-có-trong-repo)
 - [11. Giới hạn hiện tại](#11-giới-hạn-hiện-tại)
 - [12. Thành viên nhóm](#12-thành-viên-nhóm)
+- [13. Triển khai VPS Ubuntu](#13-triển-khai-vps-ubuntu)
+- [14. Quick Setup VPS (Ubuntu + Nginx + systemd)](#14-quick-setup-vps-ubuntu--nginx--systemd)
 
 ## 1. Tổng quan hệ thống
 
@@ -338,3 +340,126 @@ Từ file `MLNet/summary_evaluation_20260401_133641.json`:
 - Local run: `dotnet run --project .\MLNET_API\MLNET_API.csproj --launch-profile http`
 - Cloud deployment guide: [docs/deployment_vps_ubuntu.md](docs/deployment_vps_ubuntu.md)
 - Environment variables cần thiết: `ASPNETCORE_ENVIRONMENT`, `ASPNETCORE_URLS`, `Prediction__ModelPath`, `PredictionExplanation__BaseUrl`, `PredictionExplanation__Model`, `OLLAMA_API_KEY`
+
+## 14. Quick Setup VPS (Ubuntu + Nginx + systemd)
+
+Checklist này tích hợp trực tiếp từ hướng dẫn setup VPS để có thể triển khai nhanh bằng các file cấu hình đã có trong repo.
+
+### 14.1 Cài dependencies và runtime
+
+```bash
+apt update
+apt install -y unzip curl wget ca-certificates gnupg lsb-release nginx ufw
+apt install -y aspnetcore-runtime-10.0
+dotnet --info
+```
+
+Nếu chưa cài được package `aspnetcore-runtime-10.0`, thêm Microsoft package feed rồi cài lại runtime.
+
+### 14.2 Upload và giải nén bản publish
+
+```bash
+mkdir -p /var/www/mlnet-api
+unzip -o /var/www/publish.zip -d /var/www/mlnet-api
+ls -la /var/www/mlnet-api
+```
+
+Đảm bảo có các file quan trọng: `MLNET_API.dll`, `SentimentModel.mlnet`, `appsettings.json`.
+
+### 14.3 Cấu hình systemd service
+
+Nếu VPS chỉ có `publish.zip` thì tạo service trực tiếp bằng lệnh sau:
+
+```bash
+cat > /etc/systemd/system/mlnet-api.service <<'EOF'
+[Unit]
+Description=MLNET_API service
+After=network.target
+
+[Service]
+WorkingDirectory=/var/www/mlnet-api
+ExecStart=/usr/bin/dotnet /var/www/mlnet-api/MLNET_API.dll
+Restart=always
+RestartSec=5
+Environment=ASPNETCORE_ENVIRONMENT=Production
+Environment=ASPNETCORE_URLS=http://127.0.0.1:5000
+Environment=Prediction__ModelPath=/var/www/mlnet-api/SentimentModel.mlnet
+Environment=PredictionExplanation__BaseUrl=https://ollama.com/api
+Environment=PredictionExplanation__Model=gemma3:4b-cloud
+Environment=OLLAMA_API_KEY=your_ollama_api_key
+
+[Install]
+WantedBy=multi-user.target
+EOF
+```
+
+Sau đó sửa giá trị `OLLAMA_API_KEY` thực tế trong file service nếu bật explanation cloud.
+
+```bash
+systemctl daemon-reload
+systemctl enable mlnet-api
+systemctl start mlnet-api
+systemctl status mlnet-api
+```
+
+### 14.4 Cấu hình Nginx reverse proxy
+
+Tạo file cấu hình Nginx:
+
+```bash
+cat > /etc/nginx/sites-available/mlnet-api <<'EOF'
+server {
+  listen 80;
+  server_name YOUR_DOMAIN_OR_IP;
+
+  location / {
+    proxy_pass http://127.0.0.1:5000;
+    proxy_http_version 1.1;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+  }
+}
+EOF
+ln -sf /etc/nginx/sites-available/mlnet-api /etc/nginx/sites-enabled/mlnet-api
+rm -f /etc/nginx/sites-enabled/default
+nginx -t
+systemctl reload nginx
+```
+
+### 14.5 Mở firewall an toàn
+
+```bash
+ufw allow OpenSSH
+ufw allow 80/tcp
+ufw allow 443/tcp
+ufw default deny incoming
+ufw default allow outgoing
+ufw enable
+ufw status verbose
+```
+
+Không cần mở public port `5000`; API nội bộ chỉ chạy qua `127.0.0.1:5000` sau Nginx.
+
+### 14.6 Xác thực sau deploy
+
+```bash
+curl http://127.0.0.1:5000/health
+curl http://X.X.X.X/health
+curl -X POST http://X.X.X.X/predict \
+  -H "Content-Type: application/json" \
+  -d '{
+    "studentId": 1,
+    "age": 21,
+    "gender": "Male",
+    "major": "Computer Science",
+    "gpa": 3.2
+  }'
+```
+
+Trạng thái mong muốn:
+
+- `status = healthy`
+- `modelReady = true`
+- Swagger mở được tại `http://X.X.X.X/swagger`
