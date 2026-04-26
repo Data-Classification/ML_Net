@@ -1,21 +1,27 @@
 using System.ComponentModel.DataAnnotations;
 using MLNET_API.Contracts;
+using MLNET_API.Options;
+using Microsoft.Extensions.Options;
 using MLNet;
 
 namespace MLNET_API.Services;
 
 public sealed class PredictionApiService : IPredictionApiService
 {
-    private readonly string? configuredModelPath;
+    private readonly PredictionExplanationOptions predictionExplanationOptions;
     private readonly IPredictionExplanationService predictionExplanationService;
     private readonly Lazy<YearOfStudyPredictionService> predictionCore;
+    private readonly string environmentName;
 
     public PredictionApiService(
         IConfiguration configuration,
         IWebHostEnvironment environment,
+        IOptions<PredictionExplanationOptions> predictionExplanationOptionsAccessor,
         IPredictionExplanationService predictionExplanationService)
     {
-        configuredModelPath = NullIfWhiteSpace(configuration["Prediction:ModelPath"]);
+        var configuredModelPath = NullIfWhiteSpace(configuration["Prediction:ModelPath"]);
+        predictionExplanationOptions = predictionExplanationOptionsAccessor.Value;
+        environmentName = environment.EnvironmentName;
         this.predictionExplanationService = predictionExplanationService;
         predictionCore = new Lazy<YearOfStudyPredictionService>(
             () => new YearOfStudyPredictionService(configuredModelPath, [environment.ContentRootPath]),
@@ -26,24 +32,30 @@ public sealed class PredictionApiService : IPredictionApiService
     {
         try
         {
-            var core = predictionCore.Value;
+            _ = predictionCore.Value;
             return new HealthResponse
             {
-                Status = "ok",
+                Service = "MLNET_API",
+                Status = "healthy",
                 ModelReady = true,
-                ModelPath = core.ModelPath,
-                ConfiguredModelPath = configuredModelPath
+                ExplanationProvider = NullIfWhiteSpace(predictionExplanationOptions.Provider) ?? "ollama-cloud",
+                ExplanationEnabled = predictionExplanationOptions.Enabled,
+                TimestampUtc = DateTimeOffset.UtcNow,
+                Environment = environmentName
             };
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             return new HealthResponse
             {
-                Status = "degraded",
+                Service = "MLNET_API",
+                Status = "unhealthy",
                 ModelReady = false,
-                ModelPath = null,
-                ConfiguredModelPath = configuredModelPath,
-                Error = ex.Message
+                ExplanationProvider = NullIfWhiteSpace(predictionExplanationOptions.Provider) ?? "ollama-cloud",
+                ExplanationEnabled = predictionExplanationOptions.Enabled,
+                TimestampUtc = DateTimeOffset.UtcNow,
+                Environment = environmentName,
+                Message = "Prediction model is unavailable."
             };
         }
     }

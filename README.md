@@ -223,10 +223,11 @@ Response gồm:
 ## 8. Cấu hình và Ollama Cloud explanation
 
 File cấu hình: `MLNET_API/appsettings.json`
+File mẫu: `MLNET_API/appsettings.json.example`
 
 ```json
 "Prediction": {
-  "ModelPath": ""
+  "ModelPath": "SentimentModel.mlnet"
 },
 "PredictionExplanation": {
   "Enabled": true,
@@ -253,6 +254,19 @@ $env:OLLAMA_API_KEY = "<your-ollama-api-key>"
 $env:PredictionExplanation__BaseUrl = "https://ollama.com/api"
 $env:PredictionExplanation__Model = "gemma3:4b-cloud"
 ```
+
+Triển khai trên VPS Ubuntu qua Nginx:
+
+```bash
+export ASPNETCORE_ENVIRONMENT=Production
+export ASPNETCORE_URLS=http://127.0.0.1:5000
+export Prediction__ModelPath=/var/www/mlnet-api/SentimentModel.mlnet
+export PredictionExplanation__BaseUrl=https://ollama.com/api
+export PredictionExplanation__Model=gemma3:4b-cloud
+export OLLAMA_API_KEY=your_ollama_api_key
+```
+
+Nếu deploy kiểu copy file, giữ `appsettings.json.example` làm mẫu và để `appsettings.json` không chứa secret thật.
 
 Một số trạng thái `explanation.status` có thể gặp:
 
@@ -317,3 +331,10 @@ Từ file `MLNet/summary_evaluation_20260401_133641.json`:
 - Nguyễn Minh Hiếu - DTC235210023: lớp Web API.
 - Tạ Việt Quang Khải - DTC235210074: tích hợp Ollama Cloud và cấu hình API ngoài.
 - Trịnh Xuân Thiện - DTC245340018: luồng tổng hợp API, batch, kiểm thử luồng.
+
+## 13. Triển khai VPS Ubuntu
+
+- API endpoints: `GET /health`, `POST /predict`, `POST /predict/batch`, `GET /swagger`
+- Local run: `dotnet run --project .\MLNET_API\MLNET_API.csproj --launch-profile http`
+- Cloud deployment guide: [docs/deployment_vps_ubuntu.md](docs/deployment_vps_ubuntu.md)
+- Environment variables cần thiết: `ASPNETCORE_ENVIRONMENT`, `ASPNETCORE_URLS`, `Prediction__ModelPath`, `PredictionExplanation__BaseUrl`, `PredictionExplanation__Model`, `OLLAMA_API_KEY`

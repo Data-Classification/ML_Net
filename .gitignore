@@ -7,3 +7,4 @@ clean-prompts.bat
 .github/
 *.md
 appsettings.json
+publish/

@@ -1,4 +1,5 @@
 using System.Net.Http.Headers;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.Extensions.Options;
 using MLNET_API.Options;
 using MLNET_API.Services;
@@ -8,6 +9,24 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("PublicApi", policy =>
+    {
+        policy
+            .AllowAnyOrigin()
+            .AllowAnyHeader()
+            .AllowAnyMethod();
+    });
+});
+builder.Services.Configure<ForwardedHeadersOptions>(options =>
+{
+    options.ForwardedHeaders =
+        ForwardedHeaders.XForwardedFor |
+        ForwardedHeaders.XForwardedProto;
+    options.KnownIPNetworks.Clear();
+    options.KnownProxies.Clear();
+});
 builder.Services.Configure<PredictionExplanationOptions>(
     builder.Configuration.GetSection(PredictionExplanationOptions.SectionName));
 builder.Services.AddHttpClient("PredictionExplanation", (serviceProvider, client) =>
@@ -33,8 +52,24 @@ builder.Services.AddSingleton<IPredictionApiService, PredictionApiService>();
 
 var app = builder.Build();
 
+app.UseForwardedHeaders();
 app.UseSwagger();
 app.UseSwaggerUI();
+app.UseCors("PublicApi");
+
+app.MapGet("/", () => Results.Ok(new
+{
+    service = "MLNET_API",
+    status = "running",
+    environment = app.Environment.EnvironmentName,
+    endpoints = new[]
+    {
+        "GET /health",
+        "POST /predict",
+        "POST /predict/batch",
+        "GET /swagger"
+    }
+}));
 
 app.MapControllers();
 

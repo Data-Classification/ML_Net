@@ -6,7 +6,7 @@
     }
   },
   "Prediction": {
-    "ModelPath": ""
+    "ModelPath": "SentimentModel.mlnet"
   },
   "PredictionExplanation": {
     "Enabled": true,

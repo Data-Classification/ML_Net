@@ -15,4 +15,12 @@
     <ProjectReference Include="..\MLNet\MLNet.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Include="..\MLNet\SentimentModel.mlnet">
+      <Link>SentimentModel.mlnet</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>

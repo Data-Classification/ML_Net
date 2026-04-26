@@ -1,0 +1,18 @@
+[Unit]
+Description=MLNET_API service
+After=network.target
+
+[Service]
+WorkingDirectory=/var/www/mlnet-api
+ExecStart=/usr/bin/dotnet /var/www/mlnet-api/MLNET_API.dll
+Restart=always
+RestartSec=5
+Environment=ASPNETCORE_ENVIRONMENT=Production
+Environment=ASPNETCORE_URLS=http://127.0.0.1:5000
+Environment=Prediction__ModelPath=/var/www/mlnet-api/SentimentModel.mlnet
+Environment=PredictionExplanation__BaseUrl=https://ollama.com/api
+Environment=PredictionExplanation__Model=gemma3:4b-cloud
+Environment=OLLAMA_API_KEY=your_ollama_api_key
+
+[Install]
+WantedBy=multi-user.target
